@@ -7,6 +7,11 @@ from Bio import AlignIO
 import os,sys
 import csv
 
+input_file = sys.argv[1]
+output_file = sys.argv[2]
+query_species = sys.argv[3]
+target_species = sys.argv[4]
+
 # MSA input file from MAFFT
 MIC10 = "Mic10_mafft_fasta.txt"
 MIC13 = "Mic13_mafft_fasta.txt"
@@ -30,9 +35,9 @@ def getting_residue_range(query,target,start,end,p1_name,p2_name): # for mapping
             output.append(target[id_])
 
     if len(output) != 0: # to fix value error; if the length of target sequence is less than that of query, don't print it in the output file
-        return (sys.argv[4], p1_name,min(output),max(output),sys.argv[4],p2_name)
+        return (target_species, p1_name,min(output),max(output),target_species,p2_name)
 
-def mapping_to_human(col1,p1,p2):
+def mapping_to_human(query_species,p1,p2):
     p1_name = p1
     p2_name = p2
     if p1 == 'MIC10':
@@ -54,19 +59,19 @@ def mapping_to_human(col1,p1,p2):
         p2 = MIC19
 
     if len(data_list[0]) == 8: #for pairwise restraint, we are checking only one protein
-        query = converting_to_list(col1,p1) # the species name should be present in the fasta id
-        target = converting_to_list(sys.argv[4],p1)
+        query = converting_to_list(query_species,p1) # the species name should be present in the fasta id
+        target = converting_to_list(target_species,p1)
         return getting_residue_range(query,target,start,end,p1_name,p2_name)
 
     else:
         if p1 == p2: #here we are checking two proteins and their residues (xlink restraints) (intra-crosslinks)
-            query = converting_to_list(col1,p1) # the species name should be present in the fasta id, col1 is the query species name
-            target = converting_to_list(sys.argv[4],p1)
+            query = converting_to_list(query_species,p1) # the species name should be present in the fasta id
+            target = converting_to_list(target_species,p1)
 
         else:
             for i in [p1,p2]: # inter-crosslinks
-                query = converting_to_list(col1,i) # the species name should be present in the fasta id
-                target = converting_to_list(sys.argv[4],i)
+                query = converting_to_list(query_species,i) # the species name should be present in the fasta id
+                target = converting_to_list(target_species,i)
         return getting_residues(query, target,residue1,residue2,p1_name,p2_name)
 
 def getting_residues(query,target,start_range,end_range,p1_name,p2_name):
@@ -109,13 +114,13 @@ def converting_to_list(species_name, protein_name): #converting the query and ta
 
 final = []
 
-with open (sys.argv[1], "r") as data_file:
+with open (input_file, "r") as data_file:
       data_file = csv.reader(data_file)
       data_list = list(data_file)
 
       if "MIC" in data_list[0][0]:
           print("this is xlink file") #to print which type of file is there in input
-          col1 = sys.argv[3]
+
           for i in range(len(data_list)):
               if str(data_list[i][0]) != 'MIC27' and str(data_list[i][0]) != 'MIC26' and str(data_list[i][2]) != 'MIC27'and str(data_list[i][2]) != 'MIC26':
                   protein1 = str(data_list[i][0])
@@ -123,7 +128,7 @@ with open (sys.argv[1], "r") as data_file:
                   residue1 = int(data_list[i][1])
                   residue2 = int(data_list[i][3])
 
-                  corresponding_res_in_human = mapping_to_human(col1,protein1,protein2)
+                  corresponding_res_in_human = mapping_to_human(query_species,protein1,protein2)
                   final.append(corresponding_res_in_human)
 
 
@@ -131,11 +136,11 @@ with open (sys.argv[1], "r") as data_file:
       elif len(data_list[0]) == 8: # because its a
           print("this is Pairwise_table")
           for i in range(len(data_list)):
-              if str(data_list[i][0]) == sys.argv[4]:
+              if str(data_list[i][0]) == target_species:
                   final.append(data_list[i])
 
               else:
-                  col1 = sys.argv[3]
+
                   if str(data_list[i][1]) != 'MIC26' and str(data_list[i][5]) != 'MIC26':
                       protein1 = str(data_list[i][1])
                       protein2 = str(data_list[i][5])
@@ -145,10 +150,10 @@ with open (sys.argv[1], "r") as data_file:
                       else:
                           end = int(data_list[i][3])
 
-                      corresponding_res_in_human = mapping_to_human(col1,protein1,protein2)
-                      if corresponding_res_in_human is not None: 
+                      corresponding_res_in_human = mapping_to_human(query_species,protein1,protein2)
+                      if corresponding_res_in_human is not None:
                           final.append(corresponding_res_in_human)
 
-with open(sys.argv[2], 'w') as writeFile:
+with open(output_file, 'w') as writeFile:
     writer = csv.writer(writeFile)
     writer.writerows(final)

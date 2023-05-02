@@ -1,9 +1,3 @@
-IMP_SWIG_OBJECT(IMP::desmosome, SingleAxisMinGaussianRestraint, SingleAxisMinGaussianRestraints)
-IMP_SWIG_OBJECT(IMP::desmosome, SingleAxisGaussianScore, SingleAxisGaussianScores)
-IMP_SWIG_OBJECT(IMP::desmosome, CylinderLocalizationRestraint, CylinderLocalizationRestraints)
-IMP_SWIG_OBJECT(IMP::desmosome, AxialLocalizationRestraint, AxialLocalizationRestraints)
+IMP_SWIG_OBJECT(IMP::micos, MembraneInclusionRestraint, MembraneInclusionRestraints)
 
-%include "IMP/desmosome/SingleAxisMinGaussianRestraint.h"
-%include "IMP/desmosome/SingleAxisGaussianScore.h"
-%include "IMP/desmosome/CylinderLocalizationRestraint.h"
-%include "IMP/desmosome/AxialLocalizationRestraint.h"
+%include "IMP/micos/MembraneInclusionRestraint.h"

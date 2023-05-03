@@ -49,7 +49,7 @@ topology_file = "../../../Data/inputs/topology.txt"
 ### WRAPPERS ###
 ### --------------------------------
 
-# wrapper for the Binding Restraint
+# wrapper for the Biochemical Binding Restraint
 class MinimumPairDistanceBindingRestraint(IMP.pmi.restraints.RestraintBase):
 
     def __init__(self, model, plist1, plist2, x0=0, kappa=1, label=None, weight=1):
@@ -66,6 +66,7 @@ class MinimumPairDistanceBindingRestraint(IMP.pmi.restraints.RestraintBase):
         print("RESTRAINT: Added MPDBR on particles", len(plist1), ":", len(plist2), "at x0:kappa", str(x0), ":",
               str(kappa))
 
+# wrapper for membrane inclusion restraint
 
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -105,6 +106,17 @@ molecules = t.get_components()
 # IMP.rmf.add_hierarchy(rh, root_hier)
 # IMP.rmf.save_frame(rh)
 
+
+# adding TM regions of all proteins to TM_regions list
+# select_by_tuple_2(start,stop,molname,copynum,statenum);  use 'None' for them which will get all
+
+TM_regions = []
+
+# MIC60
+mic60 = IMP.pmi.tools.select_by_tuple_2(149,171,MIC60,None,None)
+TM_regions.append(mic60)
+
+ # MIC10
 
 
 

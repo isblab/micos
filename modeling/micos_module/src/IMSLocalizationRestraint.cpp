@@ -8,9 +8,9 @@ IMPMICOS_BEGIN_NAMESPACE
 IMSLocalizationRestraint::IMSLocalizationRestraint(IMP::ParticlesTemp plist, double r, double sigma) :
 
 		Restraint(plist[0]->get_model(), "IMSLocalizationRestraint %1%"),
-		sigma_(sigma),
+		plist_(plist),
 		rsq_(r * r),
-		plist_(plist) {}
+		sigma_(sigma){}
 
  /* calculate distance of each particle from origin, which is the center of the base of cylinder */
 
@@ -20,9 +20,9 @@ double IMSLocalizationRestraint::getDistance(IMP::Particle* p) const {
     // Calculate the coordinate-wise distance from the center
 
     double radial = (x * x) + (y * y);  // radial = (euclidean distance from center) ^ 2
-    if (radial > rsq_) {  // Continue only if the distance lesser than the inner radius
-        double deviation = radial - rsq_;
-        // deviation = squared difference of distance of particle and the inner radius
+    if (radial > rsq_) {  // Continue only if the distance greater than the inner radius
+        double deviation = radial + rsq_ - 2 * sqrt(radial*rsq_);
+        // deviation = (sqrt(radial) - sqrt(rsq_))^2
         return fabs(deviation);
     }
     else {

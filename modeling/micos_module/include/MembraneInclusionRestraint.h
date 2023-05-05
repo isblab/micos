@@ -1,4 +1,4 @@
-/* Restraint to calculate a Harmonic restraint for particles if they move out of cylinder */
+/* Restraint to calculate a Harmonic restraint for particles if they move out of outer cylinder or if they move into the inner cylinder */
 
 #ifndef IMPMICOS_MEMBRANE_INCLUSION_RESTRAINT_H  // Header guard
 #define IMPMICOS_MEMBRANE_INCLUSION_RESTRAINT_H
@@ -11,14 +11,15 @@ IMPMICOS_BEGIN_NAMESPACE
 
 class IMPMICOSEXPORT MembraneInclusionRestraint : public IMP::Restraint {
     IMP::ParticlesTemp plist_; // All the particles to which to apply this to (individual scores are summed)
-    double sigma_;  // The sigma for the harmonic
+
     double Rsq_;  // outer radius sqaured
     double rsq_;  // inner radius squared
-   
+    double sigma_;  // The sigma for the harmonic
+
     public:
-        MembraneInclusionRestraint(IMP::ParticlesTemp plist, double sigma, double R,
-        double r);
-       
+        MembraneInclusionRestraint(IMP::ParticlesTemp plist, double R,
+        double r,double sigma);
+
         // unprotected_evaluate calculates the score
         // do_get_inputs returns the particles for which the score was calculated
         virtual double unprotected_evaluate(IMP::DerivativeAccumulator* accum) const IMP_OVERRIDE;

@@ -11,7 +11,7 @@ def setup_p(m, name, vec):
     return p
 
 class Tests(IMP.test.TestCase):
-    """ Test Membrane Inclusion Restraint"""
+    """ Test IMS localization Restraint"""
 
     def setUp(self):
         IMP.test.TestCase.setUp(self)
@@ -24,16 +24,15 @@ class Tests(IMP.test.TestCase):
             (0,3,0)
         ]
 
-        self.r = 7
-        self.R = 14
+        self.R = 7
         self.sigma = 1
 
         self.particles = [setup_p(self.m, i, self.particle_coordinates[i]) for i in
                           range(len(self.particle_coordinates))]
 
-    def test_membrane_inclusion(self):
+    def test_IMS_localization(self):
         """Test restraint"""
-        res = IMP.micos.MembraneInclusionRestraint(self.particles, self.R, self.r,self.sigma) 
+        res = IMP.micos.MatrixLocalizationRestraint(self.particles, self.R, self.sigma)
         val = res.unprotected_evaluate(None)
         print(val)
 

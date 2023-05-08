@@ -26,7 +26,7 @@ class Tests(IMP.test.TestCase):
 
         self.r = 7
         self.sigma = 1
-
+        self.answers = 17.47
         self.particles = [setup_p(self.m, i, self.particle_coordinates[i]) for i in
                           range(len(self.particle_coordinates))]
 
@@ -34,7 +34,7 @@ class Tests(IMP.test.TestCase):
         """Test restraint"""
         res = IMP.micos.IMSLocalizationRestraint(self.particles, self.r, self.sigma)
         val = res.unprotected_evaluate(None)
-        print(val)
+        self.assertAlmostEqual(val, self.answers, places = 0) # this will check your ans with the computed score
 
 if __name__ == '__main__':
     IMP.test.main()

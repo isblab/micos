@@ -11,7 +11,7 @@ def setup_p(m, name, vec):
     return p
 
 class Tests(IMP.test.TestCase):
-    """ Test IMS localization Restraint"""
+    """ Test surface localization Restraint"""
 
     def setUp(self):
         IMP.test.TestCase.setUp(self)
@@ -24,15 +24,16 @@ class Tests(IMP.test.TestCase):
             (0,3,0)
         ]
 
-        self.R = 7
+        self.r = 7
         self.sigma = 1
-        self.answers = 65.0
+        self.max_limit = 5
+        self.answers = 46.47
         self.particles = [setup_p(self.m, i, self.particle_coordinates[i]) for i in
                           range(len(self.particle_coordinates))]
 
-    def test_IMS_localization(self):
+    def test_surface_localization(self):
         """Test restraint"""
-        res = IMP.micos.MatrixLocalizationRestraint(self.particles, self.R, self.sigma)
+        res = IMP.micos.SurfaceLocalizationRestraint(self.particles, self.r, self.sigma, self.max_limit)
         val = res.unprotected_evaluate(None)
         self.assertAlmostEqual(val, self.answers, places = 0) # this will check your ans with the computed score
 

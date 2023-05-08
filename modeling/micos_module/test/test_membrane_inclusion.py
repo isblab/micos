@@ -27,15 +27,16 @@ class Tests(IMP.test.TestCase):
         self.r = 7
         self.R = 14
         self.sigma = 1
+        self.answers = 65.0
 
         self.particles = [setup_p(self.m, i, self.particle_coordinates[i]) for i in
                           range(len(self.particle_coordinates))]
 
     def test_membrane_inclusion(self):
         """Test restraint"""
-        res = IMP.micos.MembraneInclusionRestraint(self.particles, self.R, self.r,self.sigma) 
+        res = IMP.micos.MembraneInclusionRestraint(self.particles, self.R, self.r,self.sigma)
         val = res.unprotected_evaluate(None)
-        print(val)
+        self.assertAlmostEqual(val, self.answers, places = 0) # this will check your ans with the computed score
 
 if __name__ == '__main__':
     IMP.test.main()

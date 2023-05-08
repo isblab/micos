@@ -1,3 +1,9 @@
 IMP_SWIG_OBJECT(IMP::micos, MembraneInclusionRestraint, MembraneInclusionRestraints)
+IMP_SWIG_OBJECT(IMP::micos, IMSLocalizationRestraint, IMSLocalizationRestraints)
+IMP_SWIG_OBJECT(IMP::micos, MatrixLocalizationRestraint, MatrixLocalizationRestraints)
+IMP_SWIG_OBJECT(IMP::micos, SurfaceLocalizationRestraint, SurfaceLocalizationRestraints)
 
 %include "IMP/micos/MembraneInclusionRestraint.h"
+%include "IMP/micos/IMSLocalizationRestraint.h"
+%include "IMP/micos/MatrixLocalizationRestraint.h"
+%include "IMP/micos/SurfaceLocalizationRestraint.h"

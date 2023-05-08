@@ -12,32 +12,38 @@ SurfaceLocalizationRestraint::SurfaceLocalizationRestraint(IMP::ParticlesTemp pl
 		plist_(plist),
 		rsq_(r * r),
 		sigma_(sigma),
-		max_limit_ (max_limit) {}
+		max_limit_ (max_limit * max_limit) {}
 
+double SurfaceLocalizationRestraint::getDistance(IMP::Particle* p) const {
 
-double SurfaceLocalizationRestraint::unprotected_evaluate(IMP::Model *m, IMP::Particle* p, IMP::DerivativeAccumulator* accum) const {
+    double x = IMP::core::XYZ(p).get_coordinate(0);  // The coordinates of the particle
+    double y = IMP::core::XYZ(p).get_coordinate(1);
+    // Calculate the coordinate-wise distance from the center
 
-	// check if rigid body
-   	IMP_USAGE_CHECK(core::RigidBody::get_is_setup(m, p),
-							"Particle is not a rigid body");
+    double radial = (x * x) + (y * y);  // radial = (euclidean distance from center) ^ 2
+    if (radial < max_limit_) {  // Continue only if the distance greater than the max limit
+        double deviation = radial + max_limit_ - 2 * sqrt(radial*max_limit_);
+        // deviation = (sqrt(radial) - sqrt(rsq_))^2
+        return fabs(deviation);
+    }
+		if (radial > rsq_) {
+			double deviation = radial + rsq_ - 2* sqrt(radial*rsq_);
 
-
-		double x = IMP::core::XYZ(p).get_coordinate(0);  // The global coordinates of the rb
-		double y = IMP::core::XYZ(p).get_coordinate(1);
-		// Calculate the coordinate-wise distance from the center
-
-		double radial = (x * x) + (y * y);  // radial = (euclidean distance from center) ^ 2
-
-		if (accum){};
-
-		if (sqrt(rsq_) - sqrt(radial) > max_limit_) {  // Continue only if the distance greater than the max value
-				double deviation = rsq_ + radial - 2 * sqrt(radial * rsq_);
-				// deviation = squared difference of distance of particle and the inner radius
-				return fabs(deviation)/sigma_;
+			return fabs(deviation);
 		}
-		else {
-				return 0;
-		}
+    else {
+        return 0;
+    }
+}
+
+double SurfaceLocalizationRestraint::unprotected_evaluate(IMP::DerivativeAccumulator* accum) const {
+    double score = 0;
+    for (unsigned int i=0; i < plist_.size(); i++){
+        score += getDistance(plist_[i]);
+        }
+
+    if (accum){};
+    return (score/sigma_);
 }
 
 IMP::ModelObjectsTemp SurfaceLocalizationRestraint::do_get_inputs() const {

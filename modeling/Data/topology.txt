@@ -9,13 +9,17 @@
 |MIC60      |blue             |MIC60.fasta    |MIC60_Q16891    |mic60-tet.B99990015.pdb                                 |A|1,173          |409   	  |10    |10   |1    |1  | |
 |MIC60      |blue             |MIC60.fasta    |MIC60_Q16891    |BEADS                                                   | |583,587        |0   	  |10    |10   |     |1  | |
 |MIC60      |blue             |MIC60.fasta    |MIC60_Q16891    |MIC60_human_confident.pdb                               |A|588,626        |0   	  |10    |10   |2    |1  | |
-|MIC60      |blue             |MIC60.fasta    |MIC60_Q16891    |Mic60_19_627-751_103-227.B99990020.pdb                  |A|1,125          |626    |10    |10   |3    |1  | |
+|MIC60      |blue             |MIC60.fasta    |MIC60_Q16891    |Mic60_19_627-751_103-227.B99990020.pdb                  |A|1,22           |626    |10    |10   |3    |1  | |
+|MIC60      |blue             |MIC60.fasta    |MIC60_Q16891    |BEADS                                                   | |649,682        |0   	  |10    |10   |     |1  | |
+|MIC60      |blue             |MIC60.fasta    |MIC60_Q16891    |Mic60_19_627-751_103-227.B99990020.pdb                  |A|57,125         |626    |10    |10   |3    |1  | |
 |MIC60      |blue             |MIC60.fasta    |MIC60_Q16891    |BEADS                                                   | |752,758        |0   	  |10    |10   |     |1  | |
 
 |MIC60.1      |pink             |MIC60.fasta    |MIC60_Q16891    |mic60-tet.B99990015.pdb                                 |B|174,346        |236   	  |10    |10   |1   |1  | |
 |MIC60.1      |pink             |MIC60.fasta    |MIC60_Q16891    |BEADS                                                   | |583,587        |0   	  |10    |10   |     |1  | |
 |MIC60.1      |pink             |MIC60.fasta    |MIC60_Q16891    |MIC60_human_confident.pdb                               |A|588,626        |0   	  |10    |10   |4   |1  | |
-|MIC60.1      |pink             |MIC60.fasta    |MIC60_Q16891    |Mic60_19_627-751_103-227.B99990020.pdb                  |C|167,291        |460 	  |10    |10   |3   |1  | |
+|MIC60.1      |pink             |MIC60.fasta    |MIC60_Q16891    |Mic60_19_627-751_103-227.B99990020.pdb                  |C|167,188        |460 	  |10    |10   |3   |1  | |
+|MIC60.1      |pink             |MIC60.fasta    |MIC60_Q16891    |BEADS                                                   | |649,682        |0   	  |10    |10   |    |1  | |
+|MIC60.1      |pink             |MIC60.fasta    |MIC60_Q16891    |Mic60_19_627-751_103-227.B99990020.pdb                  |C|223,291        |460   	  |10    |10   |3   |1  | |
 |MIC60.1      |pink             |MIC60.fasta    |MIC60_Q16891    |BEADS                                                   | |752,758        |0   	  |10    |10   |    |1  | |
 
 |MIC60.2      |orange             |MIC60.fasta    |MIC60_Q16891    |BEADS                                                   | |1,66          |0   	  |10    |10   |    |1  | |

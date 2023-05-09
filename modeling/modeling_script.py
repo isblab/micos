@@ -30,7 +30,7 @@ runID = sys.argv[2]   # Specify the number of runs
 run_output_dir = 'run_' + str(runID)
 
 if runType == "test":
-    num_frames = 500
+    num_frames = 100
 elif runType == "prod":
     num_frames = 20000
 
@@ -42,7 +42,7 @@ rex_max_temp = 1.5
 
 # xl_data = '../../../Data/inputs/xlinks/out_inter_xl.csv'
 # Topology File
-topology_file = "../Data/topology.txt"
+topology_file = "../micos/modeling/Data/topology.txt"
 
 
 
@@ -77,7 +77,7 @@ class MemnbraneInclusionRestraintC(IMP.pmi.restraints.RestraintBase):
         super(MemnbraneInclusionRestraintC, self).__init__(model, name=name, weight=weight)
         res_main = IMP.micos.MembraneInclusionRestraint(particles, R, r, sigma)
         self.rs.add_restraint(res_main)
-        print("Membrane inclusion Restraint applied")
+        # print("Membrane inclusion Restraint applied")
 
 # wrapper for surface localization restraint
 class SurfaceLocalizationRestraintC(IMP.pmi.restraints.RestraintBase):
@@ -88,7 +88,7 @@ class SurfaceLocalizationRestraintC(IMP.pmi.restraints.RestraintBase):
         super(SurfaceLocalizationRestraintC, self).__init__(model, name=name, weight=weight)
         res_main = IMP.micos.SurfaceLocalizationRestraint(particles, r, sigma, max_limit)
         self.rs.add_restraint(res_main)
-        print("surface localization Restraint applied")
+        # print("surface localization Restraint applied")
 
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -132,21 +132,33 @@ IMP.rmf.save_frame(rh)
 # adding TM regions of all proteins to TM_regions list
 # select_by_tuple_2(start,stop,molname,copynum,statenum);  use 'None' for them which will get all
 output_objects = []
-TM_regions = (149,171,'MIC60',None,None)
-mem_surface = (627,751, 'MIC60', None, None)
+
+TM_regions = ()
+
+
+for i in [0,1,2,3]:
+
+    TM_regions = (149,171,'MIC60',i,None)
+    mem_surface = (627,751, 'MIC60', i, None)
+    mic60_tet = (410,582,'MIC60',i, None)
+    mic60_N = (1,148,'MIC60',i, None)
+
+
 
 # MIC60
 mic60 = IMP.pmi.tools.select_by_tuple_2(root_hier,TM_regions,10)
 mic60_19 = IMP.pmi.tools.select_by_tuple_2(root_hier, mem_surface ,10)
 
-mir = IMP.micos.MembraneInclusionRestraint(mic60, 14, 7, 1)
+mir = MemnbraneInclusionRestraintC(mdl,mic60, 32, 25, 1)
 output_objects.append(mir)
 print("Membrane inclusion Restraint applied")
 
-slr = IMP.micos.SurfaceLocalizationRestraint(mic60_19, 7, 1, 5)
+slr = SurfaceLocalizationRestraintC(mdl, mic60_19, 20, 1, 25)
 output_objects.append(slr)
 print("surface localization restraint applied")
 
+for i in output_objects:         #Add all restarints to the model
+    i.add_to_model()
 #
 # #####################################################
 # ##################### RESTRAINTS ####################
@@ -166,35 +178,35 @@ print("surface localization restraint applied")
 # # Each restraint should be appended to this list.
 # output_objects = []
 #
-# # -----------------------------
-# # %%%%% CONNECTIVITY RESTRAINT
-# #
-# # Restrains residues/particles that are connected in sequence
-# # This should be used for any system without an atomic force field (e.g. CHARMM)
-# # We apply the restraint to each molecule
+# -----------------------------
+# %%%%% CONNECTIVITY RESTRAINT
 #
-# for m in root_hier.get_children()[0].get_children():
-#     cr = IMP.pmi.restraints.stereochemistry.ConnectivityRestraint(m)
-#     cr.add_to_model()
-#     output_objects.append(cr)
+# Restrains residues/particles that are connected in sequence
+# This should be used for any system without an atomic force field (e.g. CHARMM)
+# We apply the restraint to each molecule
+
+for m in root_hier.get_children()[0].get_children():
+    cr = IMP.pmi.restraints.stereochemistry.ConnectivityRestraint(m)
+    cr.add_to_model()
+    output_objects.append(cr)
+
+print("Connectivity restraint applied")
+
+
+# -----------------------------
+# %%%%% EXCLUDED VOLUME RESTRAINT
 #
-# print("Connectivity restraint applied")
+# Keeps particles from occupying the same area in space.
+# Here, we pass a list of all molecule chains to included_objects to apply this to every residue.
+# We could also have passed root_hier to obtain the same behavior.
 #
-#
-# # -----------------------------
-# # %%%%% EXCLUDED VOLUME RESTRAINT
-# #
-# # Keeps particles from occupying the same area in space.
-# # Here, we pass a list of all molecule chains to included_objects to apply this to every residue.
-# # We could also have passed root_hier to obtain the same behavior.
-# #
-# # resolution=1000 applies this expensive restraint to the lowest resolution for each particle.
-# evr = IMP.pmi.restraints.stereochemistry.ExcludedVolumeSphere(
-#                                             included_objects=[root_hier],
-#                                             resolution=1000)
-# output_objects.append(evr)
-#
-# print("Excluded volume restraint applied")
+# resolution=1000 applies this expensive restraint to the lowest resolution for each particle.
+evr = IMP.pmi.restraints.stereochemistry.ExcludedVolumeSphere(
+                                            included_objects=[root_hier],
+                                            resolution=1000)
+output_objects.append(evr)
+
+print("Excluded volume restraint applied")
 #
 #
 #
@@ -290,8 +302,8 @@ print("surface localization restraint applied")
 # #####################################################
 # ###################### SAMPLING #####################
 # #####################################################
-# # With our representation and scoring functions determined, we can now sample
-# # the configurations of our model with respect to the information.
+# With our representation and scoring functions determined, we can now sample
+# the configurations of our model with respect to the information.
 # print("The type of run is: " + str(runType))
 # print("Number of sampling frames: " + str(num_frames))
 # # First shuffle all particles to randomize the starting point of the
@@ -307,31 +319,31 @@ print("surface localization restraint applied")
 # # restraint scores.  100-500 steps is generally sufficient.
 # dof.optimize_flexible_beads(1000)
 #
-# IMP.pmi.dof.DegreesOfFreedom.enable_all_movers(dof)
-#
-# # Now, add all of the other restraints to the scoring function to start sampling
-# evr.add_to_model()
-# xlr.add_to_model()
-#
-# print("Replica Exchange Maximum Temperature : " + str(rex_max_temp))
-#
-# # Run replica exchange Monte Carlo sampling
-# rex=IMP.pmi.macros.ReplicaExchange0(mdl,
-#         root_hier=root_hier,                    # pass the root hierarchy
-#         crosslink_restraints=[xlr],
-#         # This allows viewing the crosslinks in Chimera. Also, there is not inter-protein ADH crosslink available. Hence it is not mentioned in this list
-#         monte_carlo_temperature = 1.0,
-#         replica_exchange_minimum_temperature = 1.0,
-#         replica_exchange_maximum_temperature = rex_max_temp,
-# 	    monte_carlo_sample_objects=dof.get_movers(),  # pass all objects to be moved ( almost always dof.get_movers() )
-#         global_output_directory=run_output_dir,      # The output directory for this sampling run.
-#         output_objects=output_objects,          # Items in output_objects write information to the stat file.
-#         monte_carlo_steps=10,                   # Number of MC steps between writing frames
-#         number_of_best_scoring_models=0,        # set >0 to store best PDB files (but this is slow)
-#         number_of_frames=num_frames)            # Total number of frames to run / write to the RMF file.
-#         #test_mode=test_mode)                    # (Ignore this) Run in test mode (don't write anything)
-#
-# # Ok, now we finally do the sampling!
-# rex.execute_macro()
+IMP.pmi.dof.DegreesOfFreedom.enable_all_movers(dof)
 
+# Now, add all of the other restraints to the scoring function to start sampling
+evr.add_to_model()
+# xlr.add_to_model()
+
+print("Replica Exchange Maximum Temperature : " + str(rex_max_temp))
+
+# Run replica exchange Monte Carlo sampling
+rex=IMP.pmi.macros.ReplicaExchange0(mdl,
+        root_hier=root_hier,                    # pass the root hierarchy
+        # crosslink_restraints=[xlr],
+        # This allows viewing the crosslinks in Chimera. Also, there is not inter-protein ADH crosslink available. Hence it is not mentioned in this list
+        monte_carlo_temperature = 1.0,
+        replica_exchange_minimum_temperature = 1.0,
+        replica_exchange_maximum_temperature = rex_max_temp,
+	    monte_carlo_sample_objects=dof.get_movers(),  # pass all objects to be moved ( almost always dof.get_movers() )
+        global_output_directory=run_output_dir,      # The output directory for this sampling run.
+        output_objects=output_objects,          # Items in output_objects write information to the stat file.
+        monte_carlo_steps=10,                   # Number of MC steps between writing frames
+        number_of_best_scoring_models=0,        # set >0 to store best PDB files (but this is slow)
+        number_of_frames=num_frames)            # Total number of frames to run / write to the RMF file.
+        #test_mode=test_mode)                    # (Ignore this) Run in test mode (don't write anything)
+
+# Ok, now we finally do the sampling!
+rex.execute_macro()
+#
 # Outputs are then analyzed in a separate analysis script.

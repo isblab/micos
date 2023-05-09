@@ -69,12 +69,12 @@ class MinimumPairDistanceBindingRestraint(IMP.pmi.restraints.RestraintBase):
 
 
 # wrapper for membrane inclusion restraint
-class MemnbraneInclusionRestraintC(IMP.pmi.restraints.RestraintBase):
+class MembraneInclusionRestraintC(IMP.pmi.restraints.RestraintBase):
 
     def __init__(self, model, plist, R, r, sigma, weight=1):
         particles = plist
         name = 'MembraneInclusionRestraint%1%'
-        super(MemnbraneInclusionRestraintC, self).__init__(model, name=name, weight=weight)
+        super(MembraneInclusionRestraintC, self).__init__(model, name=name, weight=weight)
         res_main = IMP.micos.MembraneInclusionRestraint(particles, R, r, sigma)
         self.rs.add_restraint(res_main)
         # print("Membrane inclusion Restraint applied")
@@ -88,8 +88,27 @@ class SurfaceLocalizationRestraintC(IMP.pmi.restraints.RestraintBase):
         super(SurfaceLocalizationRestraintC, self).__init__(model, name=name, weight=weight)
         res_main = IMP.micos.SurfaceLocalizationRestraint(particles, r, sigma, max_limit)
         self.rs.add_restraint(res_main)
-        # print("surface localization Restraint applied")
 
+
+# wrapper for IMS localization restraint
+class IMSLocalizationRestraintC(IMP.pmi.restraints.RestraintBase):
+
+    def __init__(self, model, plist,r, sigma, weight=1):
+        particles = plist
+        name = 'IMSLocalizationRestraint%1%'
+        super(IMSLocalizationRestraintC, self).__init__(model, name=name, weight=weight)
+        res_main = IMP.micos.IMSLocalizationRestraint(particles, r, sigma)
+        self.rs.add_restraint(res_main)
+
+# wrapper for matrix localization restraint
+class MatrixLocalizationRestraintC(IMP.pmi.restraints.RestraintBase):
+
+    def __init__(self, model, plist,R, sigma, weight=1):
+        particles = plist
+        name = 'MatrixLocalizationRestraint%1%'
+        super(MatrixLocalizationRestraintC, self).__init__(model, name=name, weight=weight)
+        res_main = IMP.micos.MatrixLocalizationRestraint(particles, R, sigma)
+        self.rs.add_restraint(res_main)
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 # Here is where the work begins
@@ -133,29 +152,75 @@ IMP.rmf.save_frame(rh)
 # select_by_tuple_2(start,stop,molname,copynum,statenum);  use 'None' for them which will get all
 output_objects = []
 
-TM_regions = ()
+#
+#
+#
+# for i in [1,2,3]:
+#     TM_regions = (149,171,'MIC60',i,None)
+#     print(TM_regions)
+#     mic60 = IMP.pmi.tools.select_by_tuple_2(root_hier,TM_regions,10)
+#     print(mic60)
+#     mir = MembraneInclusionRestraintC(mdl, mic60, 32, 25, 1)
+#     print("ddkkk")
+#     output_objects.append(mir)
+#     exit()
+#
+#     mem_surface = (627,751, 'MIC60', i, None)
+#     mic60_19 = IMP.pmi.tools.select_by_tuple_2(root_hier, mem_surface ,10)
+#     slr = SurfaceLocalizationRestraintC(mdl, mic60_19, 20, 1, 25)
+#     output_objects.append(slr)
+#
+#     mic60_C = (149,582,'MIC60',i, None)
 
+#
+#     mic60_N = (1,148,'MIC60',i, None)
+#     mic60_N_ = IMP.pmi.tools.select_by_tuple_2(root_hier, mic60_N ,10)
+#     mlr = MatrixLocalizationRestraintC(mdl,mic60_N_,32,1)
+#     output_objects.append(mlr)
 
-for i in [0,1,2,3]:
-
-    TM_regions = (149,171,'MIC60',i,None)
-    mem_surface = (627,751, 'MIC60', i, None)
-    mic60_tet = (410,582,'MIC60',i, None)
-    mic60_N = (1,148,'MIC60',i, None)
-
-
-
+# exit()
 # MIC60
+TM_regions = (149,171,'MIC60',None,None)
 mic60 = IMP.pmi.tools.select_by_tuple_2(root_hier,TM_regions,10)
-mic60_19 = IMP.pmi.tools.select_by_tuple_2(root_hier, mem_surface ,10)
-
-mir = MemnbraneInclusionRestraintC(mdl,mic60, 32, 25, 1)
+mir = MembraneInclusionRestraintC(mdl,mic60, 32, 25, 1)
 output_objects.append(mir)
 print("Membrane inclusion Restraint applied")
 
+
+
+mem_surface = (627,751, 'MIC60', None, None)
+mic60_19 = IMP.pmi.tools.select_by_tuple_2(root_hier, mem_surface ,10)
 slr = SurfaceLocalizationRestraintC(mdl, mic60_19, 20, 1, 25)
 output_objects.append(slr)
 print("surface localization restraint applied")
+
+mic60_C = (149,582,'MIC60',None, None)
+mic60_C_ = IMP.pmi.tools.select_by_tuple_2(root_hier, mic60_C ,10)
+ilr = IMSLocalizationRestraintC(mdl,mic60_C_,25,1)
+output_objects.append(ilr)
+print("IMS localization restraint applied")
+
+mic60_N = (1,148,'MIC60',None, None)
+mic60_N_ = IMP.pmi.tools.select_by_tuple_2(root_hier, mic60_N ,10)
+mlr = MatrixLocalizationRestraintC(mdl,mic60_N_,32,1)
+output_objects.append(mlr)
+print("matrix localization restraint applied")
+
+
+
+
+# slr = SurfaceLocalizationRestraintC(mdl, mic60_19, 20, 1, 25)
+# output_objects.append(slr)
+
+
+# ilr = IMSLocalizationRestraintC(mdl, mic60_C, 25,1)
+# output_objects.append(slr)
+
+#
+# mlr = MatrixLocalizationRestraintC(mdl, mic60_N, 32, 1)
+# output_objects.append(slr)
+
+
 
 for i in output_objects:         #Add all restarints to the model
     i.add_to_model()

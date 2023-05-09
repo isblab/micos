@@ -1,0 +1,19 @@
+|MIC19      |yellow             |MIC19.fasta   |MIC19_Q9NX63   |BEADS                                                   | |1,58            |0   	  |10    |10   |    |2  | |
+|MIC19      |yellow             |MIC19.fasta   |MIC19_Q9NX63   |MIC19_human_confident.pdb                               |A|59,174          |0  	    |10    |10   |   |2  | |
+|MIC19      |yellow             |MIC19.fasta   |MIC19_Q9NX63   |BEADS                                                   | |175,185          |0  	    |10    |10   |   |2  | |
+|MIC19      |yellow             |MIC19.fasta   |MIC19_Q9NX63   |Mic60_19_627-751_103-227.B99990020.pdb                  |A|186,227         |   	  |10    |10   |   |2  | |
+
+|MIC19.1      |yellow             |MIC19.fasta   |MIC19_Q9NX63   |BEADS                                                   | |1,58            |0   	  |10    |10   |    |2  | |
+|MIC19.1      |yellow             |MIC19.fasta   |MIC19_Q9NX63   |MIC19_human_confident.pdb                               |A|59,174          |0  	    |10    |10   |   |2  | |
+|MIC19.1      |yellow             |MIC19.fasta   |MIC19_Q9NX63   |BEADS                                                   | |175,185          |0  	    |10    |10   |   |2  | |
+|MIC19.1      |yellow             |MIC19.fasta   |MIC19_Q9NX63   |Mic60_19_627-751_103-227.B99990020.pdb                  |A|186,227         |   	  |10    |10   |   |2  | |
+
+|MIC10      |red             |MIC10.fasta   |MIC10_Q5TGZ0   |BEADS                                                      | |1,12           |0   	  |10    |10   |    |3  | |
+|MIC10      |red             |MIC10.fasta   |MIC10_Q5TGZ0   |MIC10_human.pdb                                            |A|13,36         |0   	  |10    |10   |4   |3  | |
+|MIC10      |red             |MIC10.fasta   |MIC10_Q5TGZ0   |BEADS                                                      | |37,39        |0   	  |10    |10   |    |3  | |
+|MIC10      |red             |MIC10.fasta   |MIC10_Q5TGZ0   |MIC10_human.pdb                                            | |40,60        |0   	  |10    |10   |    |3  | |
+
+
+|MIC13      |green             |MIC13.fasta   |MIC13_Q5XKP0   |BEADS                                                   | |1,          |0   	  |10    |10   |    |4  | |
+|MIC13      |green             |MIC13.fasta   |MIC13_Q5XKP0   |MIC13_human_confident.pdb                               |A|2,117       |0      |10    |10   |5   |4  | |
+|MIC13      |green             |MIC13.fasta   |MIC13_Q5XKP0   |BEADS                                                   | |118         |0   	  |10    |10   |    |4  | |

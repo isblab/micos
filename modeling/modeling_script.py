@@ -148,101 +148,68 @@ IMP.rmf.add_hierarchy(rh, root_hier)
 IMP.rmf.save_frame(rh)
 
 
-# adding TM regions of all proteins to TM_regions list
-# select_by_tuple_2(start,stop,molname,copynum,statenum);  use 'None' for them which will get all
+
+
+
+#####################################################
+##################### RESTRAINTS ####################
+#####################################################
+
+# Restraints define functions that score the model based on
+# input information.
+#
+# Restraint objects are first created in the definition.
+# To be evaluated, the restraint object must be add_to_model().
+#
+# In some cases, sampled parameters for restraints must be added to the DOF
+# object
+
+# The output_objects list is used to collect all restraints
+# where we want to log the output in the STAT file.
+# Each restraint should be appended to this list.
 output_objects = []
+#
 
+# # # -------------------------------
+# # MEMBRANE RESTRAINTS
+# these restraints are applied to localize the beads w.r.t. membrane topology
+# there are 4 restaints: Membrane inclusion for TM regions, IMS localization to localize beads within the inner radius,
+# Matrix localization to keep beads farther away from outer radius and surface localization to keep the beads close to inner cylinder
+# by defining max_limit and keeping the beads between the max_limit and the inner radius
+# add center beads for membrane surface so that it can score based on those beads only
+# a cylinder can be used (using BILD files) to visualize the restraints
 #
-#
-#
-# for i in [1,2,3]:
-#     TM_regions = (149,171,'MIC60',i,None)
-#     print(TM_regions)
-#     mic60 = IMP.pmi.tools.select_by_tuple_2(root_hier,TM_regions,10)
-#     print(mic60)
-#     mir = MembraneInclusionRestraintC(mdl, mic60, 32, 25, 1)
-#     print("ddkkk")
-#     output_objects.append(mir)
-#     exit()
-#
-#     mem_surface = (627,751, 'MIC60', i, None)
-#     mic60_19 = IMP.pmi.tools.select_by_tuple_2(root_hier, mem_surface ,10)
-#     slr = SurfaceLocalizationRestraintC(mdl, mic60_19, 20, 1, 25)
-#     output_objects.append(slr)
-#
-#     mic60_C = (149,582,'MIC60',i, None)
+# select_by_tuple_2(start,stop,molname,copynum,statenum);  use 'None' for them which will get all
+# # # -------------------------------
 
-#
-#     mic60_N = (1,148,'MIC60',i, None)
-#     mic60_N_ = IMP.pmi.tools.select_by_tuple_2(root_hier, mic60_N ,10)
-#     mlr = MatrixLocalizationRestraintC(mdl,mic60_N_,32,1)
-#     output_objects.append(mlr)
+############ MIC60 #################
 
-# exit()
-# MIC60
 TM_regions = (149,171,'MIC60',None,None)
 mic60 = IMP.pmi.tools.select_by_tuple_2(root_hier,TM_regions,10)
-mir = MembraneInclusionRestraintC(mdl,mic60, 32, 25, 1)
+mir = MembraneInclusionRestraintC(mdl,mic60, 50, 30, 1)
 output_objects.append(mir)
 print("Membrane inclusion Restraint applied")
 
-
-
 mem_surface = (627,751, 'MIC60', None, None)
 mic60_19 = IMP.pmi.tools.select_by_tuple_2(root_hier, mem_surface ,10)
-slr = SurfaceLocalizationRestraintC(mdl, mic60_19, 20, 1, 25)
+slr = SurfaceLocalizationRestraintC(mdl, mic60_19, 10, 1, 30)
 output_objects.append(slr)
 print("surface localization restraint applied")
 
 mic60_C = (149,582,'MIC60',None, None)
 mic60_C_ = IMP.pmi.tools.select_by_tuple_2(root_hier, mic60_C ,10)
-ilr = IMSLocalizationRestraintC(mdl,mic60_C_,25,1)
+ilr = IMSLocalizationRestraintC(mdl,mic60_C_,30,1)
 output_objects.append(ilr)
 print("IMS localization restraint applied")
 
 mic60_N = (1,148,'MIC60',None, None)
 mic60_N_ = IMP.pmi.tools.select_by_tuple_2(root_hier, mic60_N ,10)
-mlr = MatrixLocalizationRestraintC(mdl,mic60_N_,32,1)
+mlr = MatrixLocalizationRestraintC(mdl,mic60_N_,50,1)
 output_objects.append(mlr)
 print("matrix localization restraint applied")
 
 
 
-
-# slr = SurfaceLocalizationRestraintC(mdl, mic60_19, 20, 1, 25)
-# output_objects.append(slr)
-
-
-# ilr = IMSLocalizationRestraintC(mdl, mic60_C, 25,1)
-# output_objects.append(slr)
-
-#
-# mlr = MatrixLocalizationRestraintC(mdl, mic60_N, 32, 1)
-# output_objects.append(slr)
-
-
-
-for i in output_objects:         #Add all restarints to the model
-    i.add_to_model()
-#
-# #####################################################
-# ##################### RESTRAINTS ####################
-# #####################################################
-#
-# # Restraints define functions that score the model based on
-# # input information.
-# #
-# # Restraint objects are first created in the definition.
-# # To be evaluated, the restraint object must be add_to_model().
-# #
-# # In some cases, sampled parameters for restraints must be added to the DOF
-# # object
-#
-# # The output_objects list is used to collect all restraints
-# # where we want to log the output in the STAT file.
-# # Each restraint should be appended to this list.
-# output_objects = []
-#
 # -----------------------------
 # %%%%% CONNECTIVITY RESTRAINT
 #
@@ -272,9 +239,8 @@ evr = IMP.pmi.restraints.stereochemistry.ExcludedVolumeSphere(
 output_objects.append(evr)
 
 print("Excluded volume restraint applied")
-#
-#
-#
+
+
 # # # -----------------------------
 # # # %%%%% MINIMUM PAIR RESTRAINT
 # # mpr1 = IMP.pmi.restraints.basic.MinimumPairRestraint(tuple_selection1=(468,546,"MTA1",0),tuple_selection2=(1,425,"RBBP4",2),distmax=10.0,root_hier=root_hier,label="MTA1-RBBP4.2_mpr1")
@@ -282,25 +248,8 @@ print("Excluded volume restraint applied")
 # #
 # # output_objects.append(mpr1)
 # # output_objects.append(mpr2)
-#
-#
-# # # -------------------------------
-# # MEMBRANE RESTRAINTS
-# # # -------------------------------
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
+
+
 # # -------------------------
 # # %%%%% CROSSLINKING RESTRAINT
 # #
@@ -383,7 +332,13 @@ print("Excluded volume restraint applied")
 # # allow these to optimize first to relax large connectivity
 # # restraint scores.  100-500 steps is generally sufficient.
 # dof.optimize_flexible_beads(1000)
-#
+
+
+
+for i in output_objects:         #Add all restarints to the model
+    i.add_to_model()
+
+
 IMP.pmi.dof.DegreesOfFreedom.enable_all_movers(dof)
 
 # Now, add all of the other restraints to the scoring function to start sampling

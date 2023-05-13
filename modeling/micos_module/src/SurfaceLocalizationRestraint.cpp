@@ -16,23 +16,35 @@ SurfaceLocalizationRestraint::SurfaceLocalizationRestraint(IMP::ParticlesTemp pl
 
 double SurfaceLocalizationRestraint::getDistance(IMP::Particle* p) const {
 
-    double x = IMP::core::XYZ(p).get_coordinate(0);  // The coordinates of the particle
-    double y = IMP::core::XYZ(p).get_coordinate(1);
-    // Calculate the coordinate-wise distance from the center
-
-    double radial = (x * x) + (y * y);  // radial = (euclidean distance from center) ^ 2
-    if (radial < max_limit_) {  // Continue only if the distance greater than the max limit
-        double deviation = radial + max_limit_ - 2 * sqrt(radial*max_limit_);
-        // deviation = (sqrt(radial) - sqrt(rsq_))^2
-        return fabs(deviation);
-    }
-		if (radial > rsq_) {
-			double deviation = radial + rsq_ - 2* sqrt(radial*rsq_);
-
-			return fabs(deviation);
-		}
-    else {
-        return 0;
+    if (IMP::core::RigidMember::get_is_setup(p)) {
+        IMP::core::RigidMember rb_member(p);
+        IMP::core::RigidBody rb = rb_member.get_rigid_body();
+        double x = rb.get_coordinates()[0];
+        double y = rb.get_coordinates()[1];
+        double radial = (x * x) + (y * y);
+        if (radial < max_limit_) {
+            double deviation = radial + max_limit_ - 2 * sqrt(radial * max_limit_);
+            return fabs(deviation);
+        } else if (radial > rsq_) {
+            double deviation = radial + rsq_ - 2 * sqrt(radial * rsq_);
+            return fabs(deviation);
+        } else {
+            return 0;
+        }
+    } else {
+        // Handle the case where p is not a rigid body member
+				double x = IMP::core::XYZ(p).get_coordinate(0);  // The coordinates of the particle
+				double y = IMP::core::XYZ(p).get_coordinate(1);
+				double radial = (x * x) + (y * y);
+        if (radial < max_limit_) {
+            double deviation = radial + max_limit_ - 2 * sqrt(radial * max_limit_);
+            return fabs(deviation);
+        } else if (radial > rsq_) {
+            double deviation = radial + rsq_ - 2 * sqrt(radial * rsq_);
+            return fabs(deviation);
+        } else {
+            return 0;
+        }
     }
 }
 

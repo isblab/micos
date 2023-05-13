@@ -1,6 +1,6 @@
 
 ##########################################################################################
-######################### IMP Modeling Script for MICOS Complex ###########################
+######################### IMP Modeling Script for MICOS Complex ##########################
 ##########################################################################################
 
 
@@ -22,6 +22,8 @@ import IMP.pmi.restraints.em
 import IMP.pmi.dof
 import IMP.atom
 import IMP.micos
+import math
+# from fixed_shuffle import shuffle_configuration
 import os
 import sys
 
@@ -179,32 +181,37 @@ output_objects = []
 # add center beads for membrane surface so that it can score based on those beads only
 # a cylinder can be used (using BILD files) to visualize the restraints
 #
-# select_by_tuple_2(start,stop,molname,copynum,statenum);  use 'None' for them which will get all
+# select_by_tuple_2(start,stop,molname,copynum,statenum);  use 'None' for them which will get all copies and states
 # # # -------------------------------
 
 ############ MIC60 #################
+outer_R = 50 #radius of the outer cylinder
+inner_r = 30 #radius of the inner cylinder
+sigma = 1 #weight
+Max_limit = 10 #for surface localization, this is the distance from the center. the beads should stay within this and inner radius
+thickness = outer_R-inner_r
 
 TM_regions = (149,171,'MIC60',None,None)
 mic60 = IMP.pmi.tools.select_by_tuple_2(root_hier,TM_regions,10)
-mir = MembraneInclusionRestraintC(mdl,mic60, 50, 30, 1)
+mir = MembraneInclusionRestraintC(mdl,mic60, outer_R,inner_r,sigma)
 output_objects.append(mir)
 print("Membrane inclusion Restraint applied")
 
 mem_surface = (627,751, 'MIC60', None, None)
 mic60_19 = IMP.pmi.tools.select_by_tuple_2(root_hier, mem_surface ,10)
-slr = SurfaceLocalizationRestraintC(mdl, mic60_19, 10, 1, 30)
+slr = SurfaceLocalizationRestraintC(mdl, mic60_19, inner_r, sigma, Max_limit)
 output_objects.append(slr)
 print("surface localization restraint applied")
 
 mic60_C = (149,582,'MIC60',None, None)
 mic60_C_ = IMP.pmi.tools.select_by_tuple_2(root_hier, mic60_C ,10)
-ilr = IMSLocalizationRestraintC(mdl,mic60_C_,30,1)
+ilr = IMSLocalizationRestraintC(mdl,mic60_C_,inner_r,sigma)
 output_objects.append(ilr)
 print("IMS localization restraint applied")
 
 mic60_N = (1,148,'MIC60',None, None)
 mic60_N_ = IMP.pmi.tools.select_by_tuple_2(root_hier, mic60_N ,10)
-mlr = MatrixLocalizationRestraintC(mdl,mic60_N_,50,1)
+mlr = MatrixLocalizationRestraintC(mdl,mic60_N_,outer_R,sigma)
 output_objects.append(mlr)
 print("matrix localization restraint applied")
 
@@ -318,20 +325,46 @@ print("Excluded volume restraint applied")
 # #####################################################
 # With our representation and scoring functions determined, we can now sample
 # the configurations of our model with respect to the information.
-# print("The type of run is: " + str(runType))
-# print("Number of sampling frames: " + str(num_frames))
-# # First shuffle all particles to randomize the starting point of the
-# # system. For larger systems, you may want to increase max_translation
-#
-# IMP.pmi.tools.shuffle_configuration(root_hier,
-#                                     max_translation=50)
-#                                     # excluded_rigid_bodies=fixed_set1_core)
-#                                     # hierarchies_included_in_collision=fixed_set1_core)
-#
-# # Shuffling randomizes the bead positions. It's good to
-# # allow these to optimize first to relax large connectivity
-# # restraint scores.  100-500 steps is generally sufficient.
-# dof.optimize_flexible_beads(1000)
+print("The type of run is: " + str(runType))
+print("Number of sampling frames: " + str(num_frames))
+
+
+############ SHUFFLING ##################
+## 3 bounding boxes for 3 regions - membrane, IMS and Matrix to shuffle the proteins in that region only
+
+# side of the maximal square inside the cylinder
+
+molecules = root_hier.get_children()[0].get_children()
+# molecules.get_residue('MIC60',150)
+# print(molecules)
+
+
+IMS_span = inner_r * math.sqrt(2)
+Matrix_span = outer_R * math.sqrt(2)
+mem_span =  thickness *math.sqrt(2)
+
+membrane = (mem_span/2,mem_span/2,0),(mem_span/2,mem_span/2,200)
+# temp = [x for x in molecules if ('MIC60' == x.get_name())]
+# print(temp)
+# exit()
+
+# shuffle_configuration(temp, bounding_box=bb_IMS, avoidcollision_rb=False)
+
+
+# First shuffle all particles to randomize the starting point of the
+# system. For larger systems, you may want to increase max_translation
+
+IMP.pmi.tools.shuffle_configuration(mic60,
+                                    bounding_box = membrane,
+                                    avoidcollision_rb = False,
+                                    max_translation=50)
+                                    # excluded_rigid_bodies=fixed_set1_core)
+                                    # hierarchies_included_in_collision=fixed_set1_core)
+
+# Shuffling randomizes the bead positions. It's good to
+# allow these to optimize first to relax large connectivity
+# restraint scores.  100-500 steps is generally sufficient.
+dof.optimize_flexible_beads(1000)
 
 
 

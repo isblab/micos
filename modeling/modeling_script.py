@@ -18,12 +18,10 @@ import IMP.pmi.restraints
 import IMP.pmi.restraints.basic
 import IMP.pmi.restraints.stereochemistry
 import IMP.pmi.restraints.crosslinking
-import IMP.pmi.restraints.em
 import IMP.pmi.dof
 import IMP.atom
 import IMP.micos
 import math
-# from fixed_shuffle import shuffle_configuration
 import os
 import sys
 
@@ -32,7 +30,7 @@ runID = sys.argv[2]   # Specify the number of runs
 run_output_dir = 'run_' + str(runID)
 
 if runType == "test":
-    num_frames = 100
+    num_frames = 1000
 elif runType == "prod":
     num_frames = 20000
 
@@ -150,7 +148,7 @@ IMP.rmf.add_hierarchy(rh, root_hier)
 IMP.rmf.save_frame(rh)
 
 
-
+# exit()
 
 
 #####################################################
@@ -191,29 +189,36 @@ sigma = 1 #weight
 Max_limit = 10 #for surface localization, this is the distance from the center. the beads should stay within this and inner radius
 thickness = outer_R-inner_r
 
-TM_regions = (149,171,'MIC60',None,None)
-mic60 = IMP.pmi.tools.select_by_tuple_2(root_hier,TM_regions,10)
-mir = MembraneInclusionRestraintC(mdl,mic60, outer_R,inner_r,sigma)
-output_objects.append(mir)
-print("Membrane inclusion Restraint applied")
+TM_regions = [(149,171,'MIC60',None,None),(13,36,'MIC10',None,None),(40,60,'MIC10',None,None),(8,23,'MIC13',None,None)]
+mem_surface = [(627,751, 'MIC60', None, None),(186,227, 'MIC19', None, None)]
+IMS_regions = [(149,582,'MIC60',None, None),(1,12,'MIC10',None, None),(61,78,'MIC10',None, None),
+                (1,227,'MIC19',None, None),(24,118,'MIC13',None, None)]
+matrix_regions = [(1,148,'MIC60',None, None),(37,39,'MIC10',None, None),(1,7,'MIC13',None, None)]
 
-mem_surface = (627,751, 'MIC60', None, None)
-mic60_19 = IMP.pmi.tools.select_by_tuple_2(root_hier, mem_surface ,10)
-slr = SurfaceLocalizationRestraintC(mdl, mic60_19, inner_r, sigma, Max_limit)
-output_objects.append(slr)
-print("surface localization restraint applied")
 
-mic60_C = (149,582,'MIC60',None, None)
-mic60_C_ = IMP.pmi.tools.select_by_tuple_2(root_hier, mic60_C ,10)
-ilr = IMSLocalizationRestraintC(mdl,mic60_C_,inner_r,sigma)
-output_objects.append(ilr)
-print("IMS localization restraint applied")
+for i in TM_regions:
+    mic60 = IMP.pmi.tools.select_by_tuple_2(root_hier,i,10)
+    mir = MembraneInclusionRestraintC(mdl,mic60, outer_R,inner_r,sigma)
+    output_objects.append(mir)
+    print("Membrane inclusion Restraint applied")
 
-mic60_N = (1,148,'MIC60',None, None)
-mic60_N_ = IMP.pmi.tools.select_by_tuple_2(root_hier, mic60_N ,10)
-mlr = MatrixLocalizationRestraintC(mdl,mic60_N_,outer_R,sigma)
-output_objects.append(mlr)
-print("matrix localization restraint applied")
+for j in mem_surface:
+    mic60_19 = IMP.pmi.tools.select_by_tuple_2(root_hier, j ,10)
+    slr = SurfaceLocalizationRestraintC(mdl, mic60_19, inner_r, sigma, Max_limit)
+    output_objects.append(slr)
+    print("surface localization restraint applied")
+
+for k in IMS_regions:
+    mic60_C_ = IMP.pmi.tools.select_by_tuple_2(root_hier, k ,10)
+    ilr = IMSLocalizationRestraintC(mdl,mic60_C_,inner_r,sigma)
+    output_objects.append(ilr)
+    print("IMS localization restraint applied")
+
+for l in matrix_regions:
+    mic60_N_ = IMP.pmi.tools.select_by_tuple_2(root_hier, l ,10)
+    mlr = MatrixLocalizationRestraintC(mdl,mic60_N_,outer_R,sigma)
+    output_objects.append(mlr)
+    print("matrix localization restraint applied")
 
 
 
@@ -248,76 +253,7 @@ output_objects.append(evr)
 print("Excluded volume restraint applied")
 
 
-# # # -----------------------------
-# # # %%%%% MINIMUM PAIR RESTRAINT
-# # mpr1 = IMP.pmi.restraints.basic.MinimumPairRestraint(tuple_selection1=(468,546,"MTA1",0),tuple_selection2=(1,425,"RBBP4",2),distmax=10.0,root_hier=root_hier,label="MTA1-RBBP4.2_mpr1")
-# # mpr2 = IMP.pmi.restraints.basic.MinimumPairRestraint(tuple_selection1=(468,546,"MTA1",1),tuple_selection2=(1,425,"RBBP4",3),distmax=10.0,root_hier=root_hier,label="MTA1.1-RBBP4.3_mpr2")
-# #
-# # output_objects.append(mpr1)
-# # output_objects.append(mpr2)
 
-
-# # -------------------------
-# # %%%%% CROSSLINKING RESTRAINT
-# #
-# # Restrains two particles via a distance restraint based on
-# # an observed crosslink.
-# #
-# # First, create the crosslinking database from the input file
-# # The "standard keys" correspond to a crosslink csv file of the form:
-# #
-# # Protein1,Residue1,Protein2,Residue2
-# # A,18,G,24
-# # A,18,G,146
-# # A,50,G,146
-# # A,50,G,171
-# # A,50,G,189
-# #
-# # This restraint allows for ambiguity in the crosslinked residues,
-# # a confidence metric for each crosslink and multiple states.
-# # See the PMI documentation or the MMB book chapter for a
-# # full discussion of implementing crosslinking restraints.
-#
-# # This first step is used to translate the crosslinking data file.
-# # The KeywordsConverter maps a column label from the xl data file
-# # to the value that PMI understands.
-# # Here, we just use the standard keys.
-# # One can define custom keywords using the syntax below.
-# # For example if the Protein1 column header is "prot_1"
-# # xldbkc["Protein1"]="prot_1"
-#
-# # The CrossLinkDataBase translates and stores the crosslink information
-# # from the file "xl_data" using the KeywordsConverter.
-#
-# xldbkc = IMP.pmi.io.crosslink.CrossLinkDataBaseKeywordsConverter()
-# xldbkc.set_standard_keys()
-#
-# xldb = IMP.pmi.io.crosslink.CrossLinkDataBase()
-# xldb.create_set_from_file(file_name=xl_data,
-#                                  converter=xldbkc)
-# xlr_DSSO = IMP.pmi.restraints.crosslinking.CrossLinkingMassSpectrometryRestraint(
-#                 root_hier=root_hier,    # Must pass the root hierarchy to the system
-#                 database=xldb, # The crosslink database.
-#                 length=25,              # The crosslinker plus side chain length
-#                 resolution=1,           # The resolution at which to evaluate the crosslink
-#                 slope=0.0001,           # This adds a linear term to the scoring function
-#                 label="all_xl",                        #   to bias crosslinks towards each other
-#                 weight=10)       # Scaling factor for the restraint score.
-#
-# output_objects.append(xlr_DSSO)
-#
-# xlr_BDP_PIR = IMP.pmi.restraints.crosslinking.CrossLinkingMassSpectrometryRestraint(
-#                 root_hier=root_hier,    # Must pass the root hierarchy to the system
-#                 database=xldb, # The crosslink database.
-#                 length=33,              # The crosslinker plus side chain length
-#                 resolution=1,           # The resolution at which to evaluate the crosslink
-#                 slope=0.0001,           # This adds a linear term to the scoring function
-#                 label="all_xl",                        #   to bias crosslinks towards each other
-#                 weight=10)       # Scaling factor for the restraint score.
-#
-# output_objects.append(xlr_BDP_PIR)
-#
-# print("Cross-linking restraint applied")
 #
 #
 # #####################################################
@@ -334,30 +270,27 @@ print("Number of sampling frames: " + str(num_frames))
 
 # side of the maximal square inside the cylinder
 
-molecules = root_hier.get_children()[0].get_children()
+# molecules = root_hier.get_children()[0].get_children()
 # molecules.get_residue('MIC60',150)
 # print(molecules)
 
+#
+# IMS_span = inner_r * math.sqrt(2)
+# Matrix_span = outer_R * math.sqrt(2)
+# mem_span =  thickness *math.sqrt(2)
 
-IMS_span = inner_r * math.sqrt(2)
-Matrix_span = outer_R * math.sqrt(2)
-mem_span =  thickness *math.sqrt(2)
-
-membrane = (mem_span/2,mem_span/2,0),(mem_span/2,mem_span/2,200)
-# temp = [x for x in molecules if ('MIC60' == x.get_name())]
-# print(temp)
-# exit()
-
-# shuffle_configuration(temp, bounding_box=bb_IMS, avoidcollision_rb=False)
-
+membrane = ((-inner_r,-inner_r,-100),(inner_r,inner_r,200))
+# print(mic60)
 
 # First shuffle all particles to randomize the starting point of the
 # system. For larger systems, you may want to increase max_translation
 
-IMP.pmi.tools.shuffle_configuration(mic60,
-                                    bounding_box = membrane,
-                                    avoidcollision_rb = False,
+
+IMP.pmi.tools.shuffle_configuration(root_hier,
                                     max_translation=50)
+                                    # bounding_box = membrane,
+                                    # avoidcollision_rb = False)
+
                                     # excluded_rigid_bodies=fixed_set1_core)
                                     # hierarchies_included_in_collision=fixed_set1_core)
 
@@ -367,7 +300,7 @@ IMP.pmi.tools.shuffle_configuration(mic60,
 dof.optimize_flexible_beads(1000)
 
 
-
+# exit()
 for i in output_objects:         #Add all restarints to the model
     i.add_to_model()
 

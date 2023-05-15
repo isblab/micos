@@ -1,0 +1,4 @@
+.color white
+.cylinder 0 0 0 0 0 200 12 open
+.color red
+.cylinder 0 0 0 0 0 200 19 open

@@ -6,7 +6,7 @@ import IMP.test
 
 def setup_p(m, name, vec):
     p = m.add_particle(str(name))
-    p = IMP.core.XYZ.setup_particle(m, p)
+    p = IMP.core.RigidBody.setup_particle(m, p, IMP.algebra.ReferenceFrame3D())
     p.set_coordinates(IMP.algebra.Vector3D(*vec))
     return p
 

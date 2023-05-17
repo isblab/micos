@@ -30,7 +30,7 @@ runID = sys.argv[2]   # Specify the number of runs
 run_output_dir = 'run_' + str(runID)
 
 if runType == "test":
-    num_frames = 1000
+    num_frames = 5000
 elif runType == "prod":
     num_frames = 20000
 
@@ -42,7 +42,7 @@ rex_max_temp = 1.5
 
 # xl_data = '../../../Data/inputs/xlinks/out_inter_xl.csv'
 # Topology File
-topology_file = "../micos/modeling/Data/topology.txt"
+topology_file = "../micos/modeling/Data/topo_2.txt"
 
 
 
@@ -127,7 +127,7 @@ bs.add_state(t)
 # executing the macro will return the root hierarchy and degrees of freedom (dof) objects
 root_hier, dof = bs.execute_macro(max_rb_trans= 1,
                                   max_rb_rot= 0.1,
-                                  max_bead_trans= 1.5,
+                                  max_bead_trans= 3.2,
                                   max_srb_trans= 0.01,
                                   max_srb_rot=0.04)
 
@@ -183,17 +183,15 @@ output_objects = []
 # # # -------------------------------
 
 ############ MIC60 #################
-outer_R = 50 #radius of the outer cylinder
-inner_r = 30 #radius of the inner cylinder
-sigma = 1 #weight
-Max_limit = 10 #for surface localization, this is the distance from the center. the beads should stay within this and inner radius
+outer_R = 19 #radius of the outer cylinder
+inner_r = 12 #radius of the inner cylinder
+sigma = .0001 #weight
+Max_limit = 5 #for surface localization, this is the distance from the center. the beads should stay within this and inner radius
 thickness = outer_R-inner_r
 
-TM_regions = [(149,171,'MIC60',None,None),(13,36,'MIC10',None,None),(40,60,'MIC10',None,None),(8,23,'MIC13',None,None)]
-mem_surface = [(627,751, 'MIC60', None, None),(186,227, 'MIC19', None, None)]
-IMS_regions = [(149,582,'MIC60',None, None),(1,12,'MIC10',None, None),(61,78,'MIC10',None, None),
-                (1,227,'MIC19',None, None),(24,118,'MIC13',None, None)]
-matrix_regions = [(1,148,'MIC60',None, None),(37,39,'MIC10',None, None),(1,7,'MIC13',None, None)]
+TM_regions = [(13,36,'MIC10',None,None),(40,60,'MIC10',None,None)]
+IMS_regions = [(1,12,'MIC10',None, None),(61,78,'MIC10',None, None)]
+matrix_regions = [(37,39,'MIC10',None, None)]
 
 
 for i in TM_regions:
@@ -202,11 +200,11 @@ for i in TM_regions:
     output_objects.append(mir)
     print("Membrane inclusion Restraint applied")
 
-for j in mem_surface:
-    mic60_19 = IMP.pmi.tools.select_by_tuple_2(root_hier, j ,10)
-    slr = SurfaceLocalizationRestraintC(mdl, mic60_19, inner_r, sigma, Max_limit)
-    output_objects.append(slr)
-    print("surface localization restraint applied")
+# for j in mem_surface:
+#     mic60_19 = IMP.pmi.tools.select_by_tuple_2(root_hier, j ,10)
+#     slr = SurfaceLocalizationRestraintC(mdl, mic60_19, inner_r, sigma, Max_limit)
+#     output_objects.append(slr)
+#     print("surface localization restraint applied")
 
 for k in IMS_regions:
     mic60_C_ = IMP.pmi.tools.select_by_tuple_2(root_hier, k ,10)
@@ -248,6 +246,7 @@ print("Connectivity restraint applied")
 evr = IMP.pmi.restraints.stereochemistry.ExcludedVolumeSphere(
                                             included_objects=[root_hier],
                                             resolution=1000)
+                                            # kappa = 0.1)
 output_objects.append(evr)
 
 print("Excluded volume restraint applied")

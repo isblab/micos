@@ -30,19 +30,19 @@ runID = sys.argv[2]   # Specify the number of runs
 run_output_dir = 'run_' + str(runID)
 
 if runType == "test":
-    num_frames = 5000
+    num_frames = 1000
 elif runType == "prod":
     num_frames = 20000
 
 max_shuffle_core = 5
 max_rotation_core = 0.5238      # 30 degree
 max_shuffle_set2 = 75
-rex_max_temp = 1.5
+rex_max_temp = 4
 
 
 # xl_data = '../../../Data/inputs/xlinks/out_inter_xl.csv'
 # Topology File
-topology_file = "../micos/modeling/Data/topo_2.txt"
+topology_file = "/home/muskaan/Documents/modeling_micos_complex/Data/topology.txt"
 
 
 
@@ -120,8 +120,10 @@ mdl = IMP.Model()
 # Read the topology file for a given state
 t = IMP.pmi.topology.TopologyReader(topology_file)
 
+
 # Create a BuildSystem macro to and add a state from a topology file
 bs = IMP.pmi.macros.BuildSystem(mdl)
+
 bs.add_state(t)
 
 # executing the macro will return the root hierarchy and degrees of freedom (dof) objects
@@ -130,9 +132,6 @@ root_hier, dof = bs.execute_macro(max_rb_trans= 1,
                                   max_bead_trans= 3.2,
                                   max_srb_trans= 0.01,
                                   max_srb_rot=0.04)
-
-
-
 
 molecules = t.get_components()
 
@@ -183,39 +182,45 @@ output_objects = []
 # # # -------------------------------
 
 ############ MIC60 #################
-outer_R = 19 #radius of the outer cylinder
-inner_r = 12 #radius of the inner cylinder
-sigma = .0001 #weight
-Max_limit = 5 #for surface localization, this is the distance from the center. the beads should stay within this and inner radius
+outer_R = 190 #radius of the outer cylinder
+inner_r = 120 #radius of the inner cylinder
+sigma = 0.00002 #weight
+Max_limit = 40 #for surface localization, this is the distance from the center. the beads should stay within this and inner radius
 thickness = outer_R-inner_r
 
-TM_regions = [(13,36,'MIC10',None,None),(40,60,'MIC10',None,None)]
-IMS_regions = [(1,12,'MIC10',None, None),(61,78,'MIC10',None, None)]
-matrix_regions = [(37,39,'MIC10',None, None)]
+TM_regions = [(149,171,'MIC60',None,None),(13,36,'MIC10',None,None),(40,60,'MIC10',None,None),(8,23,'MIC13',None,None)]
+mem_surface = [(627,751, 'MIC60', None, None),(186,227, 'MIC19', None, None)]
+IMS_regions = [(172,626,'MIC60',None, None),(1,12,'MIC10',None, None),(61,78,'MIC10',None, None),
+                (1,185,'MIC19',None, None),(24,118,'MIC13',None, None),(752,758, 'MIC60', None, None)]
+matrix_regions = [(1,148,'MIC60',None, None),(37,39,'MIC10',None, None),(1,7,'MIC13',None, None)]
 
 
 for i in TM_regions:
     mic60 = IMP.pmi.tools.select_by_tuple_2(root_hier,i,10)
     mir = MembraneInclusionRestraintC(mdl,mic60, outer_R,inner_r,sigma)
     output_objects.append(mir)
+    mir.add_to_model()
     print("Membrane inclusion Restraint applied")
 
-# for j in mem_surface:
-#     mic60_19 = IMP.pmi.tools.select_by_tuple_2(root_hier, j ,10)
-#     slr = SurfaceLocalizationRestraintC(mdl, mic60_19, inner_r, sigma, Max_limit)
-#     output_objects.append(slr)
-#     print("surface localization restraint applied")
+for j in mem_surface:
+    mic60_19 = IMP.pmi.tools.select_by_tuple_2(root_hier, j ,10)
+    slr = SurfaceLocalizationRestraintC(mdl, mic60_19, inner_r, sigma, Max_limit)
+    output_objects.append(slr)
+    slr.add_to_model()
+    print("surface localization restraint applied")
 
 for k in IMS_regions:
     mic60_C_ = IMP.pmi.tools.select_by_tuple_2(root_hier, k ,10)
     ilr = IMSLocalizationRestraintC(mdl,mic60_C_,inner_r,sigma)
     output_objects.append(ilr)
+    ilr.add_to_model()
     print("IMS localization restraint applied")
 
 for l in matrix_regions:
     mic60_N_ = IMP.pmi.tools.select_by_tuple_2(root_hier, l ,10)
     mlr = MatrixLocalizationRestraintC(mdl,mic60_N_,outer_R,sigma)
     output_objects.append(mlr)
+    mlr.add_to_model()
     print("matrix localization restraint applied")
 
 
@@ -228,7 +233,7 @@ for l in matrix_regions:
 # We apply the restraint to each molecule
 
 for m in root_hier.get_children()[0].get_children():
-    cr = IMP.pmi.restraints.stereochemistry.ConnectivityRestraint(m)
+    cr = IMP.pmi.restraints.stereochemistry.ConnectivityRestraint(m,scale = 4)
     cr.add_to_model()
     output_objects.append(cr)
 
@@ -246,8 +251,8 @@ print("Connectivity restraint applied")
 evr = IMP.pmi.restraints.stereochemistry.ExcludedVolumeSphere(
                                             included_objects=[root_hier],
                                             resolution=1000)
-                                            # kappa = 0.1)
 output_objects.append(evr)
+evr.add_to_model()
 
 print("Excluded volume restraint applied")
 
@@ -299,16 +304,7 @@ IMP.pmi.tools.shuffle_configuration(root_hier,
 dof.optimize_flexible_beads(1000)
 
 
-# exit()
-for i in output_objects:         #Add all restarints to the model
-    i.add_to_model()
-
-
 IMP.pmi.dof.DegreesOfFreedom.enable_all_movers(dof)
-
-# Now, add all of the other restraints to the scoring function to start sampling
-evr.add_to_model()
-# xlr.add_to_model()
 
 print("Replica Exchange Maximum Temperature : " + str(rex_max_temp))
 

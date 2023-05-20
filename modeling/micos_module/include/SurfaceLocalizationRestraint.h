@@ -14,10 +14,10 @@ class IMPMICOSEXPORT SurfaceLocalizationRestraint : public IMP::Restraint {
     IMP::ParticlesTemp plist_; // All the particles to which to apply this to (individual scores are summed)
     double rsq_;  // inner radius squared
     double sigma_;  // The sigma for the harmonic
-    double max_limit_;
+    double allowed_dist_;
 
     public:
-        SurfaceLocalizationRestraint(IMP::ParticlesTemp plist, double r, double sigma, double max_limit);
+        SurfaceLocalizationRestraint(IMP::ParticlesTemp plist, double r, double sigma, double allowed_dist);
 
         // unprotected_evaluate calculates the score
         // do_get_inputs returns the particles for which the score was calculated
@@ -27,8 +27,8 @@ class IMPMICOSEXPORT SurfaceLocalizationRestraint : public IMP::Restraint {
         IMP_OBJECT_METHODS(SurfaceLocalizationRestraint);  //add the usual IMP object methods
 
     private:
-        double getDistance(IMP::Particle* p) const;
-
+        double getCoordinates(IMP::Particle* p) const;
+ 	double getDistance(double x, double y) const;
 };
 
 IMPMICOS_END_NAMESPACE

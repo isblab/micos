@@ -1,13 +1,13 @@
 #include <math.h>
 #include <IMP/core/XYZ.h>
-#include <IMP/micos/MembraneInclusionRestraint.h>
+#include <IMP/micos/TransMembraneRestraint.h>
 
 IMPMICOS_BEGIN_NAMESPACE
 
 // tries to keep the particles within the membrane thickness (R-r)
-MembraneInclusionRestraint::MembraneInclusionRestraint(IMP::ParticlesTemp plist, double R, double r, double sigma) :
+TransMembraneRestraint::TransMembraneRestraint(IMP::ParticlesTemp plist, double R, double r, double sigma) :
 
-		Restraint(plist[0]->get_model(), "MembraneInclusionRestraint %1%"),
+		Restraint(plist[0]->get_model(), "TransMembraneRestraint %1%"),
 		plist_(plist),
 		Rsq_(R * R),
 		rsq_(r * r),
@@ -15,7 +15,7 @@ MembraneInclusionRestraint::MembraneInclusionRestraint(IMP::ParticlesTemp plist,
 
  /* calculate distance of each particle from origin, which is the center of the base of cylinder */
 
-double MembraneInclusionRestraint::getDistance(IMP::Particle* p) const {
+double TransMembraneRestraint::getDistance(IMP::Particle* p) const {
     double x = IMP::core::XYZ(p).get_coordinate(0);  // The coordinates of the particle
     double y = IMP::core::XYZ(p).get_coordinate(1);
     // Calculate the coordinate-wise distance from the center
@@ -37,7 +37,7 @@ double MembraneInclusionRestraint::getDistance(IMP::Particle* p) const {
 }
 
 
-double MembraneInclusionRestraint::unprotected_evaluate(IMP::DerivativeAccumulator* accum) const {
+double TransMembraneRestraint::unprotected_evaluate(IMP::DerivativeAccumulator* accum) const {
     double score = 0;
     for (unsigned int i=0; i < plist_.size(); i++){
         score += getDistance(plist_[i]);
@@ -47,7 +47,7 @@ double MembraneInclusionRestraint::unprotected_evaluate(IMP::DerivativeAccumulat
     return (score/sigma_);
 }
 
-IMP::ModelObjectsTemp MembraneInclusionRestraint::do_get_inputs() const {
+IMP::ModelObjectsTemp TransMembraneRestraint::do_get_inputs() const {
     return plist_;
 }
 

@@ -11,7 +11,7 @@ def setup_p(m, name, vec):
     return p
 
 class Tests(IMP.test.TestCase):
-    """ Test Membrane Inclusion Restraint"""
+    """ Test Trans membrane Restraint"""
 
     def setUp(self):
         IMP.test.TestCase.setUp(self)
@@ -34,7 +34,7 @@ class Tests(IMP.test.TestCase):
 
     def test_membrane_inclusion(self):
         """Test restraint"""
-        res = IMP.micos.MembraneInclusionRestraint(self.particles, self.R, self.r,self.sigma)
+        res = IMP.micos.TransMembraneRestraint(self.particles, self.R, self.r,self.sigma)
         val = res.unprotected_evaluate(None)
         self.assertAlmostEqual(val, self.answers, places = 0) # this will check your ans with the computed score
 

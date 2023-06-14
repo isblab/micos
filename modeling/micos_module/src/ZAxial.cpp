@@ -1,34 +1,27 @@
 #include <math.h>
 #include <IMP/core/XYZ.h>
-#include <IMP/micos/TransMembraneRestraint.h>
+#include <IMP/micos/ZAxialRestraint.h>
 
 IMPMICOS_BEGIN_NAMESPACE
 
-// tries to keep the particles within the membrane thickness (R-r)
-TransMembraneRestraint::TransMembraneRestraint(IMP::ParticlesTemp plist, double R, double r, double sigma) :
+// tries to keep the particles above CJ
+ZAxialRestraint::ZAxialRestraint(IMP::ParticlesTemp plist, double sigma) :
 
-		Restraint(plist[0]->get_model(), "TransMembraneRestraint %1%"),
+		Restraint(plist[0]->get_model(), "ZAxialRestraint %1%"),
 		plist_(plist),
-		Rsq_(R * R),
-		rsq_(r * r),
 		sigma_(sigma){}
 
- /* calculate distance of each particle from origin, which is the center of the base of cylinder */
 
-double TransMembraneRestraint::getDistance(IMP::Particle* p) const {
-    double x = IMP::core::XYZ(p).get_coordinate(0);  // The coordinates of the particle
-    double y = IMP::core::XYZ(p).get_coordinate(1);
-    // Calculate the coordinate-wise distance from the center
+double ZAxialRestraint::getDistance(IMP::Particle* p) const {
+    double z = IMP::core::XYZ(p).get_coordinate(2);  // The coordinates of the particle
 
-    double radial = (x * x) + (y * y);  // radial = (euclidean distance from center) ^ 2
-    if (radial < rsq_) {  // Continue only if the distance lesser than the inner radius
-        double deviation = radial + rsq_ - 2 * sqrt(radial*rsq_);
-        // deviation = (sqrt(rsq_) - sqrt(radial))^2
+
+    if (z > 0) {  // Continue only if z is above cj centre
+        double deviation = z-0;
         return fabs(deviation);
     }
-    if (radial > Rsq_) {  // Continue only if the distance is more than outer radius
-        double deviation = radial + Rsq_ - 2 * sqrt(radial*Rsq_);
-        // deviation = (sqrt(radial) - sqrt(Rsq_))^2
+    if (z < -50) {  // Continue only if z is not outside OM
+        double deviation = -50-z;
         return fabs(deviation);
     }
     else {
@@ -37,7 +30,7 @@ double TransMembraneRestraint::getDistance(IMP::Particle* p) const {
 }
 
 
-double TransMembraneRestraint::unprotected_evaluate(IMP::DerivativeAccumulator* accum) const {
+double ZAxialRestraint::unprotected_evaluate(IMP::DerivativeAccumulator* accum) const {
     double score = 0;
     for (unsigned int i=0; i < plist_.size(); i++){
         score += getDistance(plist_[i]);
@@ -47,7 +40,7 @@ double TransMembraneRestraint::unprotected_evaluate(IMP::DerivativeAccumulator* 
     return (score/sigma_);
 }
 
-IMP::ModelObjectsTemp TransMembraneRestraint::do_get_inputs() const {
+IMP::ModelObjectsTemp ZAxialRestraint::do_get_inputs() const {
     return plist_;
 }
 

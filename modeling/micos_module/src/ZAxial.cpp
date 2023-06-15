@@ -5,10 +5,12 @@
 IMPMICOS_BEGIN_NAMESPACE
 
 // tries to keep the particles above CJ
-ZAxialRestraint::ZAxialRestraint(IMP::ParticlesTemp plist, double sigma) :
+ZAxialRestraint::ZAxialRestraint(IMP::ParticlesTemp plist, double cj, double om, double sigma) :
 
 		Restraint(plist[0]->get_model(), "ZAxialRestraint %1%"),
 		plist_(plist),
+		cj_(cj),
+		om_(om),
 		sigma_(sigma){}
 
 
@@ -16,12 +18,12 @@ double ZAxialRestraint::getDistance(IMP::Particle* p) const {
     double z = IMP::core::XYZ(p).get_coordinate(2);  // The coordinates of the particle
 
 
-    if (z > 0) {  // Continue only if z is above cj centre
-        double deviation = z-0;
+    if (z > cj_) {  // Continue only if z is above cj centre
+        double deviation = z*z + cj_*cj_ -2 *cj_*z;
         return fabs(deviation);
     }
-    if (z < -50) {  // Continue only if z is not outside OM
-        double deviation = -50-z;
+    if (z < om_) {  // Continue only if z is not outside OM
+        double deviation = z*z + om_*om_ -2*om_*z;
         return fabs(deviation);
     }
     else {

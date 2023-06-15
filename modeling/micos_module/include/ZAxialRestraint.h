@@ -11,10 +11,13 @@ IMPMICOS_BEGIN_NAMESPACE
 
 class IMPMICOSEXPORT ZAxialRestraint : public IMP::Restraint {
     IMP::ParticlesTemp plist_; // All the particles to which to apply this to (individual scores are summed)
+
+    double cj_;
+    double om_;
     double sigma_;  // The sigma for the harmonic
 
     public:
-        ZAxialRestraint(IMP::ParticlesTemp plist,double sigma);
+        ZAxialRestraint(IMP::ParticlesTemp plist, double cj, double om, double sigma);
 
         // unprotected_evaluate calculates the score
         // do_get_inputs returns the particles for which the score was calculated

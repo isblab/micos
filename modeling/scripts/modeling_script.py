@@ -21,9 +21,11 @@ import IMP.pmi.restraints.crosslinking
 import IMP.pmi.dof
 import IMP.atom
 import IMP.micos
+import IMP.container
 import math
 import os
 import sys
+import ihm
 
 runType = sys.argv[1] # Specify test or prod
 runID = sys.argv[2]   # Specify the number of runs
@@ -32,7 +34,7 @@ run_output_dir = 'run_' + str(runID)
 if runType == "test":
     num_frames = 1000
 elif runType == "prod":
-    num_frames = 20000
+    num_frames = 6000
 
 max_shuffle_core = 5
 max_rotation_core = 0.5238      # 30 degree
@@ -83,7 +85,7 @@ class TransMembraneRestraintC(IMP.pmi.restraints.RestraintBase):
         super(TransMembraneRestraintC, self).__init__(model, name=name, weight=weight)
         res_main = IMP.micos.TransMembraneRestraint(particles, R, r, sigma)
         self.rs.add_restraint(res_main)
-        print("Trans membrane Restraint applied")
+
 
 # wrapper for surface localization restraint
 class SurfaceLocalizationRestraintC(IMP.pmi.restraints.RestraintBase):
@@ -125,7 +127,7 @@ class ZAxialRestraintC(IMP.pmi.restraints.RestraintBase):
         super(ZAxialRestraintC, self).__init__(model, name=name, weight=weight)
         res_main = IMP.micos.ZAxialRestraint(particles, cj, om, sigma)
         self.rs.add_restraint(res_main)
-        print("zaxial Restraint applied")
+
 
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -145,10 +147,10 @@ bs = IMP.pmi.macros.BuildSystem(mdl)
 bs.add_state(t)
 
 # executing the macro will return the root hierarchy and degrees of freedom (dof) objects
-root_hier, dof = bs.execute_macro(max_rb_trans= 0.73,
-                                  max_rb_rot= 0.23,
-                                  max_bead_trans= 3.29,
-                                  max_srb_trans= 0.1,
+root_hier, dof = bs.execute_macro(max_rb_trans= 1.37,
+                                  max_rb_rot= 0.1,
+                                  max_bead_trans= 3.71,
+                                  max_srb_trans= 0.4,
                                   max_srb_rot=0.01)
 
 # molecules = t.get_components()
@@ -205,7 +207,7 @@ root_hier, dof = bs.execute_macro(max_rb_trans= 0.73,
 # where we want to log the output in the STAT file.
 # Each restraint should be appended to this list.
 output_objects = []
-#
+
 # # # -------------------------------
 # # MEMBRANE RESTRAINTS
 # these restraints are applied to localize the beads w.r.t. membrane topology
@@ -223,13 +225,17 @@ tm_particles = []
 mem_surface_particles = []
 matrix_particles = []
 above_cj_particles = []
+# ims_particles_ = []
 
-ims_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(410,752)).get_selected_particles()
-ims_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',residue_indexes = range(1,227)).get_selected_particles()
+# ims_particles_ += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',residue_indexes = range(1,35)).get_selected_particles()
+
+ims_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(410,626)).get_selected_particles()
 ims_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [2,3],residue_indexes = range(172,582)).get_selected_particles()
 ims_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(24,118)).get_selected_particles()
 ims_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(1,12)).get_selected_particles()
 ims_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(61,78)).get_selected_particles()
+# ims_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',residue_indexes = range(36,185)).get_selected_particles()
+ims_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',residue_indexes = range(1,185)).get_selected_particles()
 
 tm_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(13,36)).get_selected_particles()
 tm_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(40,60)).get_selected_particles()
@@ -243,8 +249,7 @@ matrix_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',re
 mem_surface_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',residue_indexes = range(627,758)).get_selected_particles()
 mem_surface_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',residue_indexes = range(186,227)).get_selected_particles()
 
-above_cj_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',residue_indexes = range(1,50)).get_selected_particles()
-
+above_cj_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',residue_indexes = range(1,35)).get_selected_particles()
 
 output_objects = []
 R = 130 #radius of the outer cylinder
@@ -252,35 +257,90 @@ r = 90 #radius of the inner cylinder
 sigma = 0.002 #weight
 allowed_dist = 5 #for surface localization, this is the distance from the center. the beads should stay within this and inner radius
 cj = 0
-om = -50
+om = -70
 
-mir = TransMembraneRestraintC(mdl,tm_particles, R,r,sigma)
-output_objects.append(mir)
-mir.add_to_model()
+tmr = TransMembraneRestraintC(mdl,tm_particles, R,r,sigma)
+output_objects.append(tmr)
 print("Trans membrane Restraint applied")
 
 
 slr = SurfaceLocalizationRestraintC(mdl,mem_surface_particles, r, sigma, allowed_dist)
 output_objects.append(slr)
-slr.add_to_model()
 print("surface localization restraint applied")
 
 
 ilr = IMSLocalizationRestraintC(mdl,ims_particles,r,sigma)
 output_objects.append(ilr)
-ilr.add_to_model()
 print("IMS localization restraint applied")
-
+#
+# ilr_mic19 = IMSLocalizationRestraintC(mdl,ims_particles_,r,sigma)
+# output_objects.append(ilr_mic19)
+# ilr_mic19.add_to_model()
 
 mlr = MatrixLocalizationRestraintC(mdl,matrix_particles,R,sigma)
 output_objects.append(mlr)
-mlr.add_to_model()
 print("matrix localization restraint applied")
 
 zar = ZAxialRestraintC(mdl,above_cj_particles,cj,om,sigma)
 output_objects.append(zar)
-zar.add_to_model()
 print("zaxial restraint applied")
+
+# zar_ims = ZAxialRestraintC(mdl,ims_particles,cj,100,0.02)
+# output_objects.append(zar_ims)
+# zar_ims.add_to_model()
+#
+# zar_matrix = ZAxialRestraintC(mdl,matrix_particles,cj,100,0.02)
+# output_objects.append(zar_matrix)
+# zar_matrix.add_to_model()
+#
+# zar_tm = ZAxialRestraintC(mdl,tm_particles,cj,100,0.02)
+# output_objects.append(zar_tm)
+# zar_tm.add_to_model()
+
+tmr.add_to_model()
+slr.add_to_model()
+ilr.add_to_model()
+mlr.add_to_model()
+zar.add_to_model()
+
+# -----------------------------
+# %%%%% MINIMUM PAIR RESTRAINT
+# co-IP > BN-PAGE > WB as 12, 8 6 respectively
+# mpr1 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(15,19,"MIC13"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10"),10),0,1,"MIC13_TM_MIC10_mpr1",10)
+mpr2 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(81,85,"MIC13"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10"),10),0,1,"MIC13_RDWN_MIC10_mpr2",12)
+mpr3 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(2,26,"MIC13"),10), IMP.pmi.tools.select_by_tuple_2(root_hier,(1,758,"MIC60"),10),0,1,"MIC13_MIC60_mpr1",12)
+mpr5 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(172,221,"MIC19"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,758,"MIC60"),10),0,1,"MIC19_MIC60_mpr",6)
+mpr6 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(371,590,"MIC60"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,227,"MIC19"),10),0,1,"MIC60_MIC19_mpr",6)
+mpr7 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(24,28,"MIC10"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10"),10),0,1,"MIC10_MIC10_mpr1",8)
+mpr8 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(46,52,"MIC10"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10"),10),0,1,"MIC10_MIC10_mpr2",8)
+
+
+# output_objects.append(mpr1)
+output_objects.append(mpr2)
+output_objects.append(mpr3)
+# output_objects.append(mpr4)
+output_objects.append(mpr5)
+output_objects.append(mpr6)
+output_objects.append(mpr7)
+output_objects.append(mpr8)
+
+
+
+
+## AF-multimer -------------------------------
+# mic10-13, mic10-60, mic13-60
+
+AF1 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(18,22,"MIC13"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(23,27,"MIC10"),10),0,1,"MIC13_TM_MIC10_af1",20)
+AF2 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(88,92,"MIC13"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(657,668,"MIC60",0),10),0,1,"MIC13_MIC60_af2",20)
+AF3 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(3,3,"MIC10"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(639,642,"MIC60",0),10),0,1,"MIC10_MIC60_af2",20)
+AF4 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(2,3,"MIC10"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(720,724,"MIC60",0),10),0,1,"MIC10_MIC60_af3",20)
+
+output_objects.append(AF1)
+output_objects.append(AF2)
+output_objects.append(AF3)
+output_objects.append(AF4)
+
+
 
 # -------------------------
 # %%%%% CROSSLINKING RESTRAINT
@@ -323,14 +383,15 @@ xldb_BDP_PIR_human.create_set_from_file(file_name=xl_BDP_PIR_human,
 xlr_BDP_PIR_human = IMP.pmi.restraints.crosslinking.CrossLinkingMassSpectrometryRestraint(
                 root_hier=root_hier,    # Must pass the root hierarchy to the system
                 database=xldb_BDP_PIR_human, # The crosslink database.
-                length=33,              # The crosslinker plus side chain length
+                length=42,              # The crosslinker plus side chain length
                 resolution=1,           # The resolution at which to evaluate the crosslink
-                slope=0.02,           # This adds a linear term to the scoring function
+                slope=0.0001,           # This adds a linear term to the scoring function
                 label="BDP_PIR_human",                        #   to bias crosslinks towards each other
-                weight=10)       # Scaling factor for the restraint score.
+                weight=10,                              # Scaling factor for the restraint score.
+                linker=ihm.ChemDescriptor("bruce"))
 
 output_objects.append(xlr_BDP_PIR_human)
-xlr_BDP_PIR_human.add_to_model()
+
 
 xldb_BDP_PIR_mouse = IMP.pmi.io.crosslink.CrossLinkDataBase()
 xldb_BDP_PIR_mouse.create_set_from_file(file_name=xl_BDP_PIR_mouse,
@@ -338,14 +399,15 @@ xldb_BDP_PIR_mouse.create_set_from_file(file_name=xl_BDP_PIR_mouse,
 xlr_BDP_PIR_mouse = IMP.pmi.restraints.crosslinking.CrossLinkingMassSpectrometryRestraint(
                 root_hier=root_hier,    # Must pass the root hierarchy to the system
                 database=xldb_BDP_PIR_mouse, # The crosslink database.
-                length=33,              # The crosslinker plus side chain length
+                length=42,              # The crosslinker plus side chain length
                 resolution=1,           # The resolution at which to evaluate the crosslink
-                slope=0.02,           # This adds a linear term to the scoring function
+                slope=0.0001,           # This adds a linear term to the scoring function
                 label="BDP_PIR_mouse",                        #   to bias crosslinks towards each other
-                weight=10)       # Scaling factor for the restraint score.
+                weight=10,                                     # Scaling factor for the restraint score.
+                linker=ihm.ChemDescriptor("bruce"))
 
 output_objects.append(xlr_BDP_PIR_mouse)
-xlr_BDP_PIR_mouse.add_to_model()
+
 
 xldb_DSS_BS3 = IMP.pmi.io.crosslink.CrossLinkDataBase()
 xldb_DSS_BS3.create_set_from_file(file_name=xl_DSS_BS3,
@@ -355,12 +417,14 @@ xlr_DSS_BS3 = IMP.pmi.restraints.crosslinking.CrossLinkingMassSpectrometryRestra
                 database=xldb_DSS_BS3, # The crosslink database.
                 length=25,              # The crosslinker plus side chain length
                 resolution=1,           # The resolution at which to evaluate the crosslink
-                slope=0.02,           # This adds a linear term to the scoring function
+                slope=0.0001,           # This adds a linear term to the scoring function
                 label="DSS_BS3",                        #   to bias crosslinks towards each other
-                weight=10)       # Scaling factor for the restraint score.
+                weight=10,                              # Scaling factor for the restraint score.
+                linker=ihm.ChemDescriptor("bruce"))
 
 output_objects.append(xlr_DSS_BS3)
-xlr_DSS_BS3.add_to_model()
+
+
 
 xldb_DHSO_DSSO = IMP.pmi.io.crosslink.CrossLinkDataBase()
 xldb_DHSO_DSSO.create_set_from_file(file_name=xl_DHSO_DSSO,
@@ -370,12 +434,13 @@ xlr_DHSO_DSSO = IMP.pmi.restraints.crosslinking.CrossLinkingMassSpectrometryRest
                 database=xldb_DHSO_DSSO, # The crosslink database.
                 length=21,              # The crosslinker plus side chain length
                 resolution=1,           # The resolution at which to evaluate the crosslink
-                slope=0.02,           # This adds a linear term to the scoring function
+                slope=0.0001,           # This adds a linear term to the scoring function
                 label="DHSO_DSSO",                        #   to bias crosslinks towards each other
-                weight=10)       # Scaling factor for the restraint score.
+                weight=10,                              # Scaling factor for the restraint score.
+                linker=ihm.ChemDescriptor("bruce"))
 
 output_objects.append(xlr_DHSO_DSSO)
-xlr_DHSO_DSSO.add_to_model()
+
 
 xldb_DSSO_mouse = IMP.pmi.io.crosslink.CrossLinkDataBase()
 xldb_DSSO_mouse.create_set_from_file(file_name=xl_DSSO_mouse,
@@ -385,12 +450,12 @@ xlr_DSSO_mouse = IMP.pmi.restraints.crosslinking.CrossLinkingMassSpectrometryRes
                 database=xldb_DSSO_mouse, # The crosslink database.
                 length=21,              # The crosslinker plus side chain length
                 resolution=1,           # The resolution at which to evaluate the crosslink
-                slope=0.02,           # This adds a linear term to the scoring function
+                slope=0.0001,           # This adds a linear term to the scoring function
                 label="DSSO_mouse",                        #   to bias crosslinks towards each other
-                weight=10)       # Scaling factor for the restraint score.
-
+                weight=10,                       # Scaling factor for the restraint score.
+                linker=ihm.ChemDescriptor("bruce"))
 output_objects.append(xlr_DSSO_mouse)
-xlr_DSSO_mouse.add_to_model()
+
 
 # -----------------------------
 # %%%%% CONNECTIVITY RESTRAINT
@@ -419,10 +484,7 @@ evr = IMP.pmi.restraints.stereochemistry.ExcludedVolumeSphere(
                                             included_objects=[root_hier],
                                             resolution=1000)
 output_objects.append(evr)
-evr.add_to_model()
-
 print("Excluded volume restraint applied")
-
 
 
 
@@ -439,7 +501,7 @@ print("Excluded volume restraint applied")
 ## 3 bounding boxes for 3 regions - membrane, IMS and Matrix to shuffle the proteins in that region only
 
 ims_bb = ((0,-r,0),(r,0,100))
-tm_bb = ((90,90,0),(130,130,100))
+tm_bb = ((r,r,0),(R,R,100))
 
 # First shuffle all particles to randomize the starting point of the
 # system. For larger systems, you may want to increase max_translation
@@ -449,6 +511,10 @@ IMP.pmi.tools.shuffle_configuration(ims_particles,
                                     bounding_box = ims_bb,
                                     avoidcollision_rb = False)
 
+IMP.pmi.tools.shuffle_configuration(mem_surface_particles,
+                                    max_translation=50,
+                                    bounding_box = ims_bb,
+                                    avoidcollision_rb = False)
 
 IMP.pmi.tools.shuffle_configuration(tm_particles,
                                     max_translation=50,
@@ -468,10 +534,32 @@ IMP.pmi.dof.DegreesOfFreedom.enable_all_movers(dof)
 
 print("Replica Exchange Maximum Temperature : " + str(rex_max_temp))
 
+# adding all restraints to the model
+
+mpr2.add_to_model()
+mpr3.add_to_model()
+mpr5.add_to_model()
+mpr6.add_to_model()
+mpr7.add_to_model()
+mpr8.add_to_model()
+
+AF1.add_to_model()
+AF2.add_to_model()
+AF3.add_to_model()
+AF4.add_to_model()
+
+xlr_BDP_PIR_human.add_to_model()
+xlr_BDP_PIR_mouse.add_to_model()
+xlr_DSS_BS3.add_to_model()
+xlr_DHSO_DSSO.add_to_model()
+xlr_DSSO_mouse.add_to_model()
+
+evr.add_to_model()
+
 # Run replica exchange Monte Carlo sampling
-rex=IMP.pmi.macros.ReplicaExchange0(mdl,
+rex=IMP.pmi.macros.ReplicaExchange(mdl,
         root_hier=root_hier,                    # pass the root hierarchy
-        crosslink_restraints=[xlr_BDP_PIR_human, xlr_BDP_PIR_mouse, xlr_DSS_BS3, xlr_DHSO_DSSO, xlr_DSSO_mouse],
+        # crosslink_restraints=[xlr_BDP_PIR_human, xlr_BDP_PIR_mouse, xlr_DSS_BS3, xlr_DHSO_DSSO, xlr_DSSO_mouse],
         # This allows viewing the crosslinks in Chimera. Also, there is not inter-protein ADH crosslink available. Hence it is not mentioned in this list
         monte_carlo_temperature = 1.0,
         replica_exchange_minimum_temperature = 1.0,

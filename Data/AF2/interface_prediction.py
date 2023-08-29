@@ -5,6 +5,8 @@ from Bio.PDB import PDBParser
 import json
 import pandas as pd
 
+#TODO 5 A, 10 A
+#  
 path = sys.argv[1] # path to output of AF2 multimer
 outf = sys.argv[2] # path to where output should be stored
 name = sys.argv[3] # name of complex e.g. dp-pg
@@ -34,7 +36,7 @@ def custom_sort(item):
 
 def calculate_distance (res1, res2, res3, res4):
 
-    for model in models:
+    for model in models: #TODO do not read models again and again. 
 
         chains = [c for c in model.get_chains()]
 
@@ -102,19 +104,24 @@ for model in models:
 
     chains = [c for c in model.get_chains()]
 
-    len_chain_1 = len([r for r in chains[0]])
+    len_chain_1 = len([r for r in chains[0]]) #TODO remove if not used 
 
     for i,resa in enumerate(chains[0]):
 
         sorted_pairs = 0
-        all_pairs = []
+        all_pairs = [] {(i+1,resa,j+1,resb):atoma-atomb} 2. [i+1,resa]
         for atoma in resa:
             if atoma.get_bfactor() > 70:
                 for j, resb in enumerate(chains[1]):
                     for atomb in resb:
                         if atomb.get_bfactor() > 70:
                             if atoma-atomb < 10.0:
+                                if not (i+1, atoma, j+1, atomb) in all_pairs:
                                 all_pairs.append((i+1, atoma, j+1, atomb, atoma-atomb))
+                                #TODO chains[0][i]; resa.get_resnum(), resa.get_com() 
+                                #TODO store chains A, B. resa.get_resnum(), A, resa.get_com(),
+                                #TODO need a break/continue 
+                                #TODO linalg.norm()
 
         # to sort the interface residue pairs and selecting the residue pair with the shortest distance between atoms
         sorted_pairs = sorted(all_pairs, key = custom_sort)
@@ -131,10 +138,21 @@ for model in models:
                     interface_pairs.append(sorted_pairs[pair])
 
 # calculating the distance between adjacent residues
+#TODO look at all previous patches. 
 for i in range(len(interface_pairs)-1):
+
+    if (interface_pairs[i][0]-interface_pairs[i+1][0]) < 10 A and ([2]):
+        
+
     dist = calculate_distance(interface_pairs[i][0], interface_pairs[i+1][0], interface_pairs[i][2], interface_pairs[i+1][2])
     # print(interface_pairs[i][0], interface_pairs[i+1][0], interface_pairs[i][2], interface_pairs[i+1][2], dist)
-    f2.write(f'{interface_pairs[i][0], interface_pairs[i+1][0], interface_pairs[i][2], interface_pairs[i+1][2], dist}\n')
+
+
+    f2.write(f'{interface_pairs[i][0], interface_pairs[i+1][0], interface_pairs[i][2], interface_pairs[i+1][2], dist}\n') #TODO do not write to file till the end 
 
 print(dist)
+
+#TODO implement all vs all PAE and interface pairs? 
+#TODO implement 5 A or 10 A 
+
 # file format is

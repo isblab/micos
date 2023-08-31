@@ -5,11 +5,22 @@ from Bio.PDB import PDBParser
 import json
 from itertools import product
 from sklearn.cluster import AffinityPropagation
-#TODO 5 A, 10 A
-#
-path = sys.argv[1] # path to output of AF2 multimer
-outf = sys.argv[2] # path to where output should be stored
-name = sys.argv[3] # name of complex e.g. dp-pg
+import argparse
+
+parser = argparse.ArgumentParser(description="predciting interface residues")
+parser.add_argument("--interface_cutoff","-i", help="defining interface distance", default=10)
+parser.add_argument("--residue_distance_cutoff","-d", help="defining distance between two residue pairs", default=10)
+parser.add_argument("--path","-p", help="path to output of AF2 multimer", default=None)
+parser.add_argument("--output_path","-o", help="output path", default=None)
+parser.add_argument("--out_name","-n", help="output file name", default=None)
+
+args = parser.parse_args()
+
+path = args.path # path to output of AF2 multimer
+outf = args.output_path # path to where output should be stored
+name = args.out_name # name of complex e.g. dp-pg
+interface_cutoff = int(args.interface_cutoff)
+residue_distance_cutoff = int(args.residue_distance_cutoff)
 
 
 pdb = f'{path}/ranked_0.pdb'
@@ -22,7 +33,7 @@ with open(pkl, 'rb') as f:
 
 models = PDBParser().get_structure('pdb', pdb)
 
-f2 = open(f'{outf}/{name}_distance_cutoff.txt', 'w')
+f2 = open(f'{outf}/{name}_interface_residues.txt', 'w')
 
 interface_pairs = []
 
@@ -34,11 +45,12 @@ for model in models:
         for resb in (chains[1]):
             for atoma, atomb in product(resa, resb):
                 if atoma.get_bfactor() > 70 and atomb.get_bfactor() > 70:
-                    if atoma-atomb < 10.0:
+                    if atoma-atomb < interface_cutoff:
                         interface_pairs.append((resa.get_id()[1], 'A', resa.center_of_mass(), resb.get_id()[1], 'B', resb.center_of_mass()))
                         break
 
 # print(interface_pairs)
+# calculating half the traingle ?? not done yet
 
 N = len(interface_pairs)
 distance_matrix = np.zeros((N, N))
@@ -50,7 +62,7 @@ for i in range(N):
             dist1 = np.linalg.norm(interface_pairs[i][2] - interface_pairs[j][2])
             dist2 = np.linalg.norm(interface_pairs[i][5] - interface_pairs[j][5])
 
-            if dist1 < 10 and dist2 < 10:
+            if dist1 < residue_distance_cutoff and dist2 < residue_distance_cutoff:
                 max_dist = max(dist1, dist2)
                 distance_matrix[i][j] = max_dist
             else:
@@ -58,6 +70,7 @@ for i in range(N):
 
 # print(distance_matrix)
 
+### affinity propogation clustering ####
 affinity_propagation = AffinityPropagation(affinity='precomputed', random_state = 0 )
 affinity_propagation.fit(-distance_matrix)  # Use negative distances as input
 
@@ -74,6 +87,11 @@ for i in range(N):
             clustered_interface_pairs[cluster_label].append((i, j))
         j += 1
 
+### Kd Tree clustering
+
+
+
+## function to calculate pae in both ways
 def calculate_pae(patch):
 # all vs all PAE
     var = 0
@@ -92,6 +110,7 @@ def calculate_pae(patch):
     for i in range(len(patch)):
         pae += data['predicted_aligned_error'][patch[i][0]][patch[i][2]]
 
+# pairwise
     avg_pae_pairwise = pae/len(patch)
     # print(avg_pae_pairwise)
 
@@ -105,6 +124,8 @@ def calculate_pae(patch):
 
     return len(confident_patches_all), len(confident_patches_pairwise)
 
+
+## to make one list without duplicate entries in each cluster and calculate pae of that cluster
 for cluster_label, pairs_list in enumerate(clustered_interface_pairs):
     print(f"Cluster {cluster_label}:")
     patches = []

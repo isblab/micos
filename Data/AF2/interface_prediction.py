@@ -3,10 +3,10 @@ import sys
 import pickle
 from Bio.PDB import PDBParser
 import json
-import pandas as pd
-
+from itertools import product
+from sklearn.cluster import AffinityPropagation
 #TODO 5 A, 10 A
-#  
+#
 path = sys.argv[1] # path to output of AF2 multimer
 outf = sys.argv[2] # path to where output should be stored
 name = sys.argv[3] # name of complex e.g. dp-pg
@@ -23,136 +23,104 @@ with open(pkl, 'rb') as f:
 models = PDBParser().get_structure('pdb', pdb)
 
 f2 = open(f'{outf}/{name}_distance_cutoff.txt', 'w')
-# f3 = open(f'{outf}/{name}_interface_pae.txt', 'w')
 
-all_pairs = []
 interface_pairs = []
-
-## defining functions##
-
-def custom_sort(item):
-    return (item[0], item[2], -item[4])
-
-
-def calculate_distance (res1, res2, res3, res4):
-
-    for model in models: #TODO do not read models again and again. 
-
-        chains = [c for c in model.get_chains()]
-
-        if res1 in chains[0] and res2 in chains[0]:
-            dist1 = abs(chains[0][res1]['CA'] - chains[0][res2]['CA'])
-
-        if res3 in chains[1] and res4 in chains[1]:
-            dist2 = abs(chains[1][res3]['CA'] - chains[1][res4]['CA'])
-
-
-    return create_patch(res1, res2, res3, res4, dist1, dist2)
-
-
-def create_patch(res1, res2, res3, res4, dist1, dist2):
-
-     # '''take list of res_pairs
-     #    check if the distance between two pairs are less than 5
-     #    if yes, save in one patch
-     #    if not, create and save in new patch
-     #    do it for all res_pairs going through all patches, if none of them matches, then create new patch
-     #    return list of all created patches'''
-
-    lists = []
-    new_list = []
-
-    if dist1 < 10.0 and dist2 < 10.0:
-        lists.append((res1, res3, res2, res4))
-
-    else:
-        new_list.append((res1, res3))
-        new_list.append((res2, res4))
-
-    return lists, new_list
-
-
-
-## to calculate PAE in a given patch
-# def calculate_pae(patch):
-#     # '''for all res pairs in input (which is a patch), calculate pae all vs all with two for loops
-#     # increment the values in a variable
-#     # take the average and that will be the average pae for the patch
-#     # return that and use it for cutoff '''
-#
-#     var = 0
-#     count = 0
-#     confident_patches = []
-#
-#     for i in range(len(patch)):
-#         for j in range(1, len(patch)):
-#             var += data['predicted_aligned_error'][patch[i][0]][patch[j][1]]
-#             count += 1
-#
-#     avg_pae = var / count
-#
-#     for pair in patch:
-#         if data['predicted_aligned_error'][pair[0]][pair[1]] < avg_pae:
-#             confident_patches.append((pair[0], pair[1], data['predicted_aligned_error'][pair[0]][pair[1]]))
-#
-#     return confident_patches
-
 
 ## reading the pdb structure
 
 for model in models:
-
     chains = [c for c in model.get_chains()]
+    for resa in (chains[0]):
+        for resb in (chains[1]):
+            for atoma, atomb in product(resa, resb):
+                if atoma.get_bfactor() > 70 and atomb.get_bfactor() > 70:
+                    if atoma-atomb < 10.0:
+                        interface_pairs.append((resa.get_id()[1], 'A', resa.center_of_mass(), resb.get_id()[1], 'B', resb.center_of_mass()))
+                        break
 
-    len_chain_1 = len([r for r in chains[0]]) #TODO remove if not used 
+# print(interface_pairs)
 
-    for i,resa in enumerate(chains[0]):
+N = len(interface_pairs)
+distance_matrix = np.zeros((N, N))
+max_num = 100000
 
-        sorted_pairs = 0
-        all_pairs = [] {(i+1,resa,j+1,resb):atoma-atomb} 2. [i+1,resa]
-        for atoma in resa:
-            if atoma.get_bfactor() > 70:
-                for j, resb in enumerate(chains[1]):
-                    for atomb in resb:
-                        if atomb.get_bfactor() > 70:
-                            if atoma-atomb < 10.0:
-                                if not (i+1, atoma, j+1, atomb) in all_pairs:
-                                all_pairs.append((i+1, atoma, j+1, atomb, atoma-atomb))
-                                #TODO chains[0][i]; resa.get_resnum(), resa.get_com() 
-                                #TODO store chains A, B. resa.get_resnum(), A, resa.get_com(),
-                                #TODO need a break/continue 
-                                #TODO linalg.norm()
+for i in range(N):
+    for j in range(N):
+        if i != j:
+            dist1 = np.linalg.norm(interface_pairs[i][2] - interface_pairs[j][2])
+            dist2 = np.linalg.norm(interface_pairs[i][5] - interface_pairs[j][5])
 
-        # to sort the interface residue pairs and selecting the residue pair with the shortest distance between atoms
-        sorted_pairs = sorted(all_pairs, key = custom_sort)
-        if len(sorted_pairs) != 0:
-            for pair in range(len(sorted_pairs)):
-                try:
-                    if sorted_pairs[pair][0] == sorted_pairs[pair+1][0] and sorted_pairs[pair][2] != sorted_pairs[pair+1][2]:
-                        interface_pairs.append(sorted_pairs[pair])
-                    if sorted_pairs[pair][0] != sorted_pairs[pair+1][0]:
-                        interface_pairs.append(sorted_pairs[pair])
+            if dist1 < 10 and dist2 < 10:
+                max_dist = max(dist1, dist2)
+                distance_matrix[i][j] = max_dist
+            else:
+                distance_matrix[i][j] = max_num
 
-                except:
-                    IndexError
-                    interface_pairs.append(sorted_pairs[pair])
+# print(distance_matrix)
 
-# calculating the distance between adjacent residues
-#TODO look at all previous patches. 
-for i in range(len(interface_pairs)-1):
+affinity_propagation = AffinityPropagation(affinity='precomputed', random_state = 0 )
+affinity_propagation.fit(-distance_matrix)  # Use negative distances as input
 
-    if (interface_pairs[i][0]-interface_pairs[i+1][0]) < 10 A and ([2]):
-        
+cluster_labels = affinity_propagation.labels_
+n_clusters = len(set(cluster_labels))
 
-    dist = calculate_distance(interface_pairs[i][0], interface_pairs[i+1][0], interface_pairs[i][2], interface_pairs[i+1][2])
-    # print(interface_pairs[i][0], interface_pairs[i+1][0], interface_pairs[i][2], interface_pairs[i+1][2], dist)
+clustered_interface_pairs = [[] for _ in range(n_clusters)]
+
+for i in range(N):
+    cluster_label = cluster_labels[i]
+    j = i + 1
+    while j < N:
+        if cluster_labels[j] == cluster_label:
+            clustered_interface_pairs[cluster_label].append((i, j))
+        j += 1
+
+def calculate_pae(patch):
+# all vs all PAE
+    var = 0
+    count = 0
+    pae = 0
+    confident_patches_all = []
+    confident_patches_pairwise = []
+
+    for i in range(len(patch)):
+        for j in range(len(patch)):
+            var += data['predicted_aligned_error'][patch[i][0]][patch[j][2]]
+            count += 1
+
+    avg_pae_all = var / count
+
+    for i in range(len(patch)):
+        pae += data['predicted_aligned_error'][patch[i][0]][patch[i][2]]
+
+    avg_pae_pairwise = pae/len(patch)
+    # print(avg_pae_pairwise)
+
+    for pair in patch:
+        if data['predicted_aligned_error'][pair[0]][pair[2]] < avg_pae_all:
+            confident_patches_all.append((pair[0], pair[2], data['predicted_aligned_error'][pair[0]][pair[2]]))
+
+        if data['predicted_aligned_error'][pair[0]][pair[2]] < avg_pae_pairwise:
+            confident_patches_pairwise.append((pair[0], pair[2], data['predicted_aligned_error'][pair[0]][pair[2]]))
 
 
-    f2.write(f'{interface_pairs[i][0], interface_pairs[i+1][0], interface_pairs[i][2], interface_pairs[i+1][2], dist}\n') #TODO do not write to file till the end 
+    return len(confident_patches_all), len(confident_patches_pairwise)
 
-print(dist)
+for cluster_label, pairs_list in enumerate(clustered_interface_pairs):
+    print(f"Cluster {cluster_label}:")
+    patches = []
+    for pairs in pairs_list:
+        i, j = pairs
+        pair1 = (interface_pairs[i][0], interface_pairs[i][1], interface_pairs[i][3], interface_pairs[i][4])
+        pair2 = (interface_pairs[j][0], interface_pairs[j][1], interface_pairs[j][3], interface_pairs[j][4])
 
-#TODO implement all vs all PAE and interface pairs? 
-#TODO implement 5 A or 10 A 
+        if pair1 not in patches:
+            patches.append(pair1)
 
-# file format is
+        if pair2 not in patches:
+            patches.append(pair2)
+
+    print(calculate_pae(patches))
+
+
+#TODO implement all vs all PAE and interface pairs?
+#TODO implement 5 A or 10 A

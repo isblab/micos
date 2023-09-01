@@ -7,6 +7,8 @@ from itertools import product
 from sklearn.cluster import AffinityPropagation
 from scipy.spatial import KDTree
 import argparse
+import matplotlib.pyplot as plt
+
 
 parser = argparse.ArgumentParser(description="predciting interface residues")
 parser.add_argument("--interface_cutoff","-i", help="defining interface distance cutoff", default=10.0, type=float)
@@ -52,27 +54,7 @@ for model in models:
                         interface_pairs.append((i, resa.get_id()[1], 'A', resa.center_of_mass(), j, resb.get_id()[1], 'B', resb.center_of_mass()))  #TODO add indx as well as residue number
                         break
 
-# print(interface_pairs)
 # Step 2. Get distance matrix to cluster interface residue pairs
-# N = len(interface_pairs)
-# distance_matrix = np.zeros((N, N))
-# max_num = 100000
-#
-# for i in range(N):
-#     for j in range(N):
-#         if i != j:
-#             dist1 = np.linalg.norm(interface_pairs[i][3] - interface_pairs[j][3])
-#             dist2 = np.linalg.norm(interface_pairs[i][7] - interface_pairs[j][7])
-#
-#             if dist1 < intra_chain_residue_distance_cutoff and dist2 < intra_chain_residue_distance_cutoff:
-#                 max_dist = max(dist1, dist2)
-#                 distance_matrix[i][j] = max_dist
-#             else:
-#                 distance_matrix[i][j] = max_num
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Your code for calculating the distance matrix
 N = len(interface_pairs)
 distance_matrix = np.zeros((N, N))
 max_num = 100000

@@ -3,9 +3,11 @@ IMP_SWIG_OBJECT(IMP::micos, IMSLocalizationRestraint, IMSLocalizationRestraints)
 IMP_SWIG_OBJECT(IMP::micos, MatrixLocalizationRestraint, MatrixLocalizationRestraints)
 IMP_SWIG_OBJECT(IMP::micos, SurfaceLocalizationRestraint, SurfaceLocalizationRestraints)
 IMP_SWIG_OBJECT(IMP::micos, ZAxialRestraint, ZAxialRestraints)
+IMP_SWIG_OBJECT(IMP::micos, ZAxialRestraintProteinwise, ZAxialRestraintsProteinwise)
 
 %include "IMP/micos/TransMembraneRestraint.h"
 %include "IMP/micos/IMSLocalizationRestraint.h"
 %include "IMP/micos/MatrixLocalizationRestraint.h"
 %include "IMP/micos/SurfaceLocalizationRestraint.h"
 %include "IMP/micos/ZAxialRestraint.h"
+%include "IMP/micos/ZAxialRestraintProteinwise.h"

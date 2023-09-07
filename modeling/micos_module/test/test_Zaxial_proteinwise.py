@@ -26,17 +26,17 @@ class Tests(IMP.test.TestCase):
             (2,3,46)
         ]
 
-        self.lower_bound = -5
-        self.upper_bound = 5
+        self.lower_bound = -.4
+        self.upper_bound = 0
         self.sigma = 1
-        self.answers = 0.0
+        self.answers = 32
 
         self.particles = [setup_p(self.m, i, self.particle_coordinates[i]) for i in
                           range(len(self.particle_coordinates))]
 
     def test_zaxial_restraint(self):
         """Test restraint"""
-        res = IMP.micos.ZAxialRestraintProteinwise(self.particles, self.upper_bound, self.lower_bound,self.sigma)
+        res = IMP.micos.ZAxialProteinwiseRestraint(self.particles, self.lower_bound,self.upper_bound,self.sigma)
         val = res.unprotected_evaluate()
         self.assertAlmostEqual(val, self.answers, places = 0) # this will check your ans with the computed score
 

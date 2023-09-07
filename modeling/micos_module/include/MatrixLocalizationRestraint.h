@@ -21,9 +21,9 @@ class IMPMICOSEXPORT MatrixLocalizationRestraint : public IMP::Restraint {
 
         // unprotected_evaluate calculates the score
         // do_get_inputs returns the particles for which the score was calculated
-        virtual double unprotected_evaluate(IMP::DerivativeAccumulator* accum) const ;
+        virtual double unprotected_evaluate(IMP::DerivativeAccumulator* accum) const override;
         //IMP_OVERRIDE macro ensures that this overrides (and not overloads) a parent method
-        virtual IMP::ModelObjectsTemp do_get_inputs() const ;
+        virtual IMP::ModelObjectsTemp do_get_inputs() const override;
         IMP_OBJECT_METHODS(MatrixLocalizationRestraint);  //add the usual IMP object methods
 
     private:

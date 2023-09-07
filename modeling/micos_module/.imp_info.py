@@ -1,3 +1,3 @@
 {
-    "name": "IMP.desmosome"
+    "name": "IMP.micos"
 }

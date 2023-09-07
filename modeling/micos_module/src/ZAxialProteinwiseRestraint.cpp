@@ -1,26 +1,26 @@
 #include <cmath>
 #include <IMP/core/XYZ.h>
-#include <IMP/micos/ZAxialRestraintProteinwise.h>
+#include <IMP/micos/ZAxialProteinwiseRestraint.h>
 
 IMPMICOS_BEGIN_NAMESPACE
 
 // tries to keep the particles above CJ
-ZAxialRestraintProteinwise::ZAxialRestraintProteinwise(IMP::ParticlesTemp plist, double upper_bound, double lower_bound, double sigma) :
+ZAxialProteinwiseRestraint::ZAxialProteinwiseRestraint(IMP::ParticlesTemp plist, double lower_bound,double upper_bound, double sigma) :
 
-		Restraint(plist[0]->get_model(), "ZAxialRestraintProteinwise %1%"),
+		Restraint(plist[0]->get_model(), "ZAxialProteinwiseRestraint %1%"),
 		plist_(plist),
-		upper_bound_(upper_bound),
 		lower_bound_(lower_bound),
+		upper_bound_(upper_bound),
 		sigma_(sigma){}
 
 
-double ZAxialRestraintProteinwise::unprotected_evaluate(IMP::Particle* p, IMP::DerivativeAccumulator* accum) const {
+double ZAxialProteinwiseRestraint::unprotected_evaluate() const {
 	double score = 0;
 	for (unsigned int i=0; i < plist_.size(); i++){
 		score += IMP::core::XYZ(plist_[i]).get_coordinate(2);
 		        }
 
-	double avg = score/plist_.size()
+	double avg = score/plist_.size();
 
 	if (avg<lower_bound_) {
 		double deviation = avg*avg + lower_bound_*lower_bound_ - 2*avg*lower_bound_;
@@ -37,7 +37,7 @@ double ZAxialRestraintProteinwise::unprotected_evaluate(IMP::Particle* p, IMP::D
 	}
 }
 
-IMP::ModelObjectsTemp ZAxialRestraintProteinwise::do_get_inputs() const {
+IMP::ModelObjectsTemp ZAxialProteinwiseRestraint::do_get_inputs() const {
     return plist_;
 }
 

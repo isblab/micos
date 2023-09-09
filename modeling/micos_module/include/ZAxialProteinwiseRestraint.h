@@ -21,7 +21,7 @@ class IMPMICOSEXPORT ZAxialProteinwiseRestraint : public IMP::Restraint {
 
         // unprotected_evaluate calculates the score
         // do_get_inputs returns the particles for which the score was calculated
-        virtual double unprotected_evaluate() const;
+        virtual double unprotected_evaluate(IMP::DerivativeAccumulator* da) const;
         //IMP_OVERRIDE macro ensures that this overrides (and not overloads) a parent method
         virtual IMP::ModelObjectsTemp do_get_inputs() const override;
         IMP_OBJECT_METHODS(ZAxialProteinwiseRestraint);  //add the usual IMP object methods

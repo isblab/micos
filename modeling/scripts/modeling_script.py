@@ -118,24 +118,14 @@ class MatrixLocalizationRestraintC(IMP.pmi.restraints.RestraintBase):
         res_main = IMP.micos.MatrixLocalizationRestraint(particles, R, sigma)
         self.rs.add_restraint(res_main)
 
-# # wrapper for z axial Restraint
-# class ZAxialRestraintC(IMP.pmi.restraints.RestraintBase):
-#
-#     def __init__(self, model, plist, cj, om, sigma, weight=1):
-#         particles = plist
-#         name = 'ZAxialRestraint%1%'
-#         super(ZAxialRestraintC, self).__init__(model, name=name, weight=weight)
-#         res_main = IMP.micos.ZAxialRestraint(particles, cj, om, sigma)
-#         self.rs.add_restraint(res_main)
-
 # wrapper for zaxial restraint on protein level
-class ZAxialRestraintProteinwiseC(IMP.pmi.restraints.RestraintBase):
+class ZAxialProteinwiseRestraintC(IMP.pmi.restraints.RestraintBase):
 
     def __init__(self, model, plist, lower_bound, upper_bound, sigma, weight=1):
         particles = plist
-        name = 'ZAxialRestraintProteinwise%1%'
-        super(ZAxialRestraintProteinwiseC, self).__init__(model, name=name, weight=weight)
-        res_main = IMP.micos.ZAxialRestraintProteinwise(particles, lower_bound, upper_bound, sigma)
+        name = 'ZAxialProteinwiseRestraint%1%'
+        super(ZAxialProteinwiseRestraintC, self).__init__(model, name=name, weight=weight)
+        res_main = IMP.micos.ZAxialProteinwiseRestraint(particles, lower_bound, upper_bound, sigma)
         self.rs.add_restraint(res_main)
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -163,7 +153,6 @@ root_hier, dof = bs.execute_macro(max_rb_trans= 1.37,
 
 # molecules = t.get_components()
 # print(molecules)
-# exit()
 
 # Uncomment the following lines to get test.rmf file to visualise the system representation
 
@@ -176,7 +165,6 @@ root_hier, dof = bs.execute_macro(max_rb_trans= 1.37,
 # IMP.rmf.save_frame(rh)
 
 
-# exit()
 ################################################################################
 ########################## Fixing Particles ####################################
 ################################################################################
@@ -255,15 +243,15 @@ mem_surface_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC6
 mem_surface_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',residue_indexes = range(186,227)).get_selected_particles()
 
 zaxial_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',residue_indexes = range(1,35)).get_selected_particles()
-zaxial_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',residue_indexes = range(410,758)).get_selected_particles()
+zaxial_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(410,758)).get_selected_particles()
 
 output_objects = []
 R = 130 #radius of the outer cylinder
 r = 90 #radius of the inner cylinder
 sigma = 0.002 #weight
 allowed_dist = 5 #for surface localization, this is the distance from the center. the beads should stay within this and inner radius
-lb = -5
-ub = 5
+lb = 0
+ub = 10
 
 tmr = TransMembraneRestraintC(mdl,tm_particles, R,r,sigma)
 output_objects.append(tmr)
@@ -284,21 +272,9 @@ mlr = MatrixLocalizationRestraintC(mdl,matrix_particles,R,sigma)
 output_objects.append(mlr)
 print("matrix localization restraint applied")
 
-zar = ZAxialRestraintProteinwiseC(mdl,zaxial_particles,lb, ub,0.02)
+zar = ZAxialProteinwiseRestraintC(mdl,zaxial_particles,lb, ub,0.02)
 output_objects.append(zar)
 print("zaxial restraint applied")
-
-# zar_ims = ZAxialRestraintC(mdl,ims_particles,cj,100,0.02)
-# output_objects.append(zar_ims)
-# zar_ims.add_to_model()
-#
-# zar_matrix = ZAxialRestraintC(mdl,matrix_particles,cj,100,0.02)
-# output_objects.append(zar_matrix)
-# zar_matrix.add_to_model()
-#
-# zar_tm = ZAxialRestraintC(mdl,tm_particles,cj,100,0.02)
-# output_objects.append(zar_tm)
-# zar_tm.add_to_model()
 
 tmr.add_to_model()
 slr.add_to_model()
@@ -501,37 +477,36 @@ print("Excluded volume restraint applied")
 
 ############ SHUFFLING ##################
 ## 3 bounding boxes for 3 regions - membrane, IMS and Matrix to shuffle the proteins in that region only
-
-ims_bb = ((0,-r,0),(0.1,r,100)) # this is for half cylinder
-tm_bb = ((r,0,0),(R,0.1,100))
-
-# First shuffle all particles to randomize the starting point of the
-# system. For larger systems, you may want to increase max_translation
-
-IMP.pmi.tools.shuffle_configuration(ims_particles,
-                                    max_translation=50,
-                                    bounding_box = ims_bb,
-                                    avoidcollision_rb = False)
+ims_bb = ((0,-r,0),(r,r,100)) # this is for half cylinder
+tm_bb = ((r,r,0),(R,R,100))
+#
+# # First shuffle all particles to randomize the starting point of the
+# # system. For larger systems, you may want to increase max_translation
+# #
+# IMP.pmi.tools.shuffle_configuration(ims_particles,
+#                                     max_translation=5,
+#                                     bounding_box = ims_bb,
+#                                     avoidcollision_rb = False)
 
 IMP.pmi.tools.shuffle_configuration(mem_surface_particles,
-                                    max_translation=50,
+                                    max_translation=5,
                                     bounding_box = ims_bb,
                                     avoidcollision_rb = False)
 
 IMP.pmi.tools.shuffle_configuration(tm_particles,
-                                    max_translation=50,
+                                    max_translation=5,
                                     bounding_box = tm_bb,
                                     avoidcollision_rb = False)
-
+#
 IMP.pmi.tools.shuffle_configuration(matrix_particles,
-                                    max_translation=50)
-
+                                    max_translation=5)
 # Shuffling randomizes the bead positions. It's good to
 # allow these to optimize first to relax large connectivity
 # restraint scores.  100-500 steps is generally sufficient.
-dof.optimize_flexible_beads(1000)
+# exit()
+dof.optimize_flexible_beads(5000)
 
-
+# exit()
 IMP.pmi.dof.DegreesOfFreedom.enable_all_movers(dof)
 
 print("Replica Exchange Maximum Temperature : " + str(rex_max_temp))

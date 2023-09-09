@@ -14,7 +14,7 @@ ZAxialProteinwiseRestraint::ZAxialProteinwiseRestraint(IMP::ParticlesTemp plist,
 		sigma_(sigma){}
 
 
-double ZAxialProteinwiseRestraint::unprotected_evaluate() const {
+double ZAxialProteinwiseRestraint::unprotected_evaluate(IMP::DerivativeAccumulator* da) const {
 	double score = 0;
 	for (unsigned int i=0; i < plist_.size(); i++){
 		score += IMP::core::XYZ(plist_[i]).get_coordinate(2);

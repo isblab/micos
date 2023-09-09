@@ -26,10 +26,10 @@ class Tests(IMP.test.TestCase):
             (2,3,46)
         ]
 
-        self.lower_bound = -.4
-        self.upper_bound = 0
+        self.lower_bound = 0
+        self.upper_bound = 10
         self.sigma = 1
-        self.answers = 32
+        self.answers = 0
 
         self.particles = [setup_p(self.m, i, self.particle_coordinates[i]) for i in
                           range(len(self.particle_coordinates))]

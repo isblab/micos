@@ -12,22 +12,23 @@ IMPMICOS_BEGIN_NAMESPACE
 class IMPMICOSEXPORT ZAxialRestraint : public IMP::Restraint {
     IMP::ParticlesTemp plist_; // All the particles to which to apply this to (individual scores are summed)
 
-    double cj_;
-    double om_;
+    double ub_;
+    double lb_;
     double sigma_;  // The sigma for the harmonic
+    String method_;  
 
     public:
-        ZAxialRestraint(IMP::ParticlesTemp plist, double cj, double om, double sigma);
+        ZAxialRestraint(IMP::ParticlesTemp plist, double ub, double lb, double sigma, String method);
 
         // unprotected_evaluate calculates the score
         // do_get_inputs returns the particles for which the score was calculated
-        virtual double unprotected_evaluate(IMP::DerivativeAccumulator* accum) const override;
+        virtual double unprotected_evaluate(IMP::DerivativeAccumulator* accum) const;
         //IMP_OVERRIDE macro ensures that this overrides (and not overloads) a parent method
         virtual IMP::ModelObjectsTemp do_get_inputs() const override;
         IMP_OBJECT_METHODS(ZAxialRestraint);  //add the usual IMP object methods
 
     private:
-        double getDistance(IMP::Particle* p) const;
+        double getDistance( double z) const;
 
 };
 

@@ -119,13 +119,13 @@ class MatrixLocalizationRestraintC(IMP.pmi.restraints.RestraintBase):
         self.rs.add_restraint(res_main)
 
 # wrapper for zaxial restraint on protein level
-class ZAxialProteinwiseRestraintC(IMP.pmi.restraints.RestraintBase):
+class ZAxialRestraintC(IMP.pmi.restraints.RestraintBase):
 
-    def __init__(self, model, plist, lower_bound, upper_bound, sigma, weight=1):
+    def __init__(self, model, plist, ub, lb, sigma, method, weight=1):
         particles = plist
-        name = 'ZAxialProteinwiseRestraint%1%'
-        super(ZAxialProteinwiseRestraintC, self).__init__(model, name=name, weight=weight)
-        res_main = IMP.micos.ZAxialProteinwiseRestraint(particles, lower_bound, upper_bound, sigma)
+        name = 'ZAxialRestraint%1%'
+        super(ZAxialRestraintC, self).__init__(model, name=name, weight=weight)
+        res_main = IMP.micos.ZAxialRestraint(particles, ub, lb, sigma,method)
         self.rs.add_restraint(res_main)
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -222,6 +222,7 @@ tm_particles = []
 mem_surface_particles = []
 matrix_particles = []
 zaxial_particles = []
+zaxial_cc =[]
 
 ims_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(410,626)).get_selected_particles()
 ims_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [2,3],residue_indexes = range(410,582)).get_selected_particles()
@@ -242,8 +243,9 @@ matrix_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',re
 mem_surface_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(627,758)).get_selected_particles()
 mem_surface_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',residue_indexes = range(186,227)).get_selected_particles()
 
-zaxial_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',residue_indexes = range(1,35)).get_selected_particles()
-zaxial_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(410,758)).get_selected_particles()
+zaxial_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',residue_indexes = range(1,14)).get_selected_particles()
+zaxial_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(583,758)).get_selected_particles()
+zaxial_cc += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',residue_indexes = range(410,582)).get_selected_particles()
 
 output_objects = []
 R = 130 #radius of the outer cylinder
@@ -251,37 +253,34 @@ r = 90 #radius of the inner cylinder
 sigma = 0.002 #weight
 allowed_dist = 5 #for surface localization, this is the distance from the center. the beads should stay within this and inner radius
 lb = 0
-ub = 10
+ub = 5
 
 tmr = TransMembraneRestraintC(mdl,tm_particles, R,r,sigma)
 output_objects.append(tmr)
-print("Trans membrane Restraint applied")
-
 
 slr = SurfaceLocalizationRestraintC(mdl,mem_surface_particles, r, sigma, allowed_dist)
 output_objects.append(slr)
-print("surface localization restraint applied")
-
 
 ilr = IMSLocalizationRestraintC(mdl,ims_particles,r,sigma)
 output_objects.append(ilr)
-print("IMS localization restraint applied")
-
 
 mlr = MatrixLocalizationRestraintC(mdl,matrix_particles,R,sigma)
 output_objects.append(mlr)
-print("matrix localization restraint applied")
 
-zar = ZAxialProteinwiseRestraintC(mdl,zaxial_particles,lb, ub,0.02)
+zar = ZAxialRestraintC(mdl,zaxial_particles, 0, 10,0.02, 'average')
 output_objects.append(zar)
-print("zaxial restraint applied")
+
+zar_cc = ZAxialRestraintC(mdl,zaxial_cc, ub, lb,0.02, 'None')
+output_objects.append(zar_cc)
 
 tmr.add_to_model()
 slr.add_to_model()
 ilr.add_to_model()
 mlr.add_to_model()
 zar.add_to_model()
+zar_cc.add_to_model()
 
+# exit()
 # -----------------------------
 # %%%%% MINIMUM PAIR RESTRAINT
 # co-IP > BN-PAGE > WB as 12, 8 6 respectively
@@ -471,14 +470,11 @@ print("Excluded volume restraint applied")
 # #####################################################
 # With our representation and scoring functions determined, we can now sample
 # the configurations of our model with respect to the information.
-# print("The type of run is: " + str(runType))
-# print("Number of sampling frames: " + str(num_frames))
-
 
 ############ SHUFFLING ##################
 ## 3 bounding boxes for 3 regions - membrane, IMS and Matrix to shuffle the proteins in that region only
 ims_bb = ((0,-r,0),(r,r,100)) # this is for half cylinder
-tm_bb = ((r,r,0),(R,R,100))
+tm_bb = ((r,-r,0),(R,R,100))
 #
 # # First shuffle all particles to randomize the starting point of the
 # # system. For larger systems, you may want to increase max_translation
@@ -532,7 +528,6 @@ xlr_DHSO_DSSO.add_to_model()
 xlr_DSSO_mouse.add_to_model()
 
 evr.add_to_model()
-
 # Run replica exchange Monte Carlo sampling
 rex=IMP.pmi.macros.ReplicaExchange(mdl,
         root_hier=root_hier,                    # pass the root hierarchy

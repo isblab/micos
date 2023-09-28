@@ -36,14 +36,17 @@ double ZAxialRestraint::unprotected_evaluate(IMP::DerivativeAccumulator* accum) 
 	double score = 0;
 	double total_com = 0;
 	double avg = 0;
+	double mass =0;
 
 
 	if (method_=="average"){
 		for (unsigned int i = 0; i < plist_.size(); i++){
 			double com = IMP::atom::Mass(plist_[i]).get_mass();
-			total_com += com;
+			double z = IMP::core::XYZ(plist_[i]).get_coordinate(2);
+			total_com += com*z;
+			mass += com;
 		}
-	 avg = total_com/plist_.size();
+	 avg = total_com/mass;
 	 score += getDistance(avg);
 	}
 

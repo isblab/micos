@@ -45,8 +45,8 @@ rex_max_temp = 1.25
 #xlinkdata files
 xl_BDP_PIR_human = f'{data_direc}/crosslinks/human/sampling_BDP_PIR_human.csv'
 xl_BDP_PIR_mouse = f'{data_direc}/crosslinks/human/sampling_BDP_PIR_mouse.csv'
-xl_DSS_BS3 = f'{data_direc}/crosslinks/human/sampling_DSS_BS3_human.csv'
-xl_DHSO_DSSO = f'{data_direc}/crosslinks/human/sampling_DHSO_DSSO_human.csv' # yu. bartolec, xlinkdb dsso xlinks
+xl_DSS_BS3 = f'{data_direc}/crosslinks/human/sampling_DSS_BS3.csv'
+xl_DHSO_DSSO = f'{data_direc}/crosslinks/human/sampling_DHSO_DSSO.csv' # yu. bartolec, xlinkdb dsso xlinks
 xl_DSSO_mouse = f'{data_direc}/crosslinks/human/sampling_DSSO_XLinkDB_mouse.csv'
 
 
@@ -218,101 +218,83 @@ output_objects = []
 # select_by_tuple_2(start,stop,molname,copynum,statenum);  use 'None' for them which will get all copies and states
 # # # -------------------------------
 
-ims_particles = []
-tm_particles = []
-mem_surface_particles = []
-matrix_particles = []
-zaxial_nterm = []
-zaxial_cc =[]
-zaxial_cterm = []
-zaxial_all = []
+mic10 = []
+mic10.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(1,12)).get_selected_particles())
+mic10.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(13,36)).get_selected_particles())
+mic10.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(37,39)).get_selected_particles())
+mic10.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(40,60)).get_selected_particles())
+mic10.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(61,78)).get_selected_particles())
 
-ims_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(410,626)).get_selected_particles()
-ims_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [2,3],residue_indexes = range(410,582)).get_selected_particles()
-ims_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(24,118)).get_selected_particles()
-ims_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(1,12)).get_selected_particles()
-ims_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(61,78)).get_selected_particles()
-ims_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',residue_indexes = range(1,185)).get_selected_particles()
+mic60 = []
+mic60.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',residue_indexes = range(410,626)).get_selected_particles())
+mic60.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(627,758)).get_selected_particles())
+mic60.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(583,758)).get_selected_particles())
+mic60.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',residue_indexes = range(410,582)).get_selected_particles())
 
-tm_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(13,36)).get_selected_particles()
-tm_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(40,60)).get_selected_particles()
-# tm_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',residue_indexes = range(149,171)).get_selected_particles()
-tm_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(8,23)).get_selected_particles()
+mic13 = []
+mic13.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(1,7)).get_selected_particles())
+mic13.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(8,23)).get_selected_particles())
+mic13.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(24,118)).get_selected_particles())
 
-matrix_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(1,7)).get_selected_particles()
-matrix_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(37,39)).get_selected_particles()
-# matrix_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',residue_indexes = range(1,148)).get_selected_particles()
+mic19 = []
+mic19.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1],residue_indexes = range(1,185)).get_selected_particles())
+mic19.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1],residue_indexes = range(1,14)).get_selected_particles())
+mic19.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1],residue_indexes = range(186,227)).get_selected_particles())
+mic19.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1],residue_indexes = range(15,185)).get_selected_particles())
 
-mem_surface_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(627,758)).get_selected_particles()
-mem_surface_particles += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',residue_indexes = range(186,227)).get_selected_particles()
-
-zaxial_nterm += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1],residue_indexes = range(1,14)).get_selected_particles()
-zaxial_cterm += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(583,758)).get_selected_particles()
-zaxial_cterm += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',residue_indexes = range(186,227)).get_selected_particles()
-zaxial_cc += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1,2,3],residue_indexes = range(410,582)).get_selected_particles()
-
-
-# zaxial_all += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(1,12)).get_selected_particles()
-# zaxial_all += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(61,78)).get_selected_particles()
-# zaxial_all += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(13,36)).get_selected_particles()
-# zaxial_all += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(40,60)).get_selected_particles()
-# zaxial_all += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(37,39)).get_selected_particles()
-# zaxial_all += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(1,7)).get_selected_particles()
-# zaxial_all += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(8,23)).get_selected_particles()
-# zaxial_all += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(24,118)).get_selected_particles()
-# zaxial_all += IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',residue_indexes = range(15,185)).get_selected_particles()
-
-
-# zaxial_all.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(1,7)).get_selected_particles())
-# zaxial_all.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(8,23)).get_selected_particles())
-zaxial_all.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(24,118)).get_selected_particles())
 
 output_objects = []
 R = 130 #radius of the outer cylinder
 r = 90 #radius of the inner cylinder
-sigma = 0.002 #weight
-allowed_dist = 5 #for surface localization, this is the distance from the center. the beads should stay within this and inner radius
+sigma = 0.02 #weight
+allowed_dist = 10 #for surface localization, this is the distance from the center. the beads should stay within this and inner radius
 lb = 0
 ub = 50
 
-tmr = TransMembraneRestraintC(mdl,tm_particles, R,r,sigma)
-output_objects.append(tmr)
+for particle in (mic10[1], mic10[3], mic13[1]):
+    tmr = TransMembraneRestraintC(mdl,particle, R,r,sigma)
+    output_objects.append(tmr)
+    tmr.add_to_model()
 
-slr = SurfaceLocalizationRestraintC(mdl,mem_surface_particles, r, sigma, allowed_dist)
-output_objects.append(slr)
+for particle in (mic60[1],mic19[2]):
+    slr = SurfaceLocalizationRestraintC(mdl,particle, r, sigma, allowed_dist)
+    output_objects.append(slr)
+    slr.add_to_model()
 
-ilr = IMSLocalizationRestraintC(mdl,ims_particles,r,sigma)
-output_objects.append(ilr)
+for particle in (mic10[0],mic10[4],mic13[2],mic60[0],mic60[1],mic19[0],mic19[2]):
+    ilr = IMSLocalizationRestraintC(mdl,particle,r,sigma)
+    output_objects.append(ilr)
+    ilr.add_to_model()
 
-mlr = MatrixLocalizationRestraintC(mdl,matrix_particles,R,sigma)
-output_objects.append(mlr)
+for particle in (mic10[2],mic13[0]):
+    mlr = MatrixLocalizationRestraintC(mdl,particle,R,sigma)
+    output_objects.append(mlr)
+    mlr.add_to_model()
 
-zar_nterm = ZAxialRestraintC(mdl,zaxial_nterm, 0, -70,0.02, 'None', label = 'zar_nterm')
-output_objects.append(zar_nterm)
+for particle in (mic19[0],mic60[2]):
+    zar_above = ZAxialRestraintC(mdl,particle, 0, -70, 0.2, 'None', label = 'zar_above')
+    output_objects.append(zar_above)
 
-zar_cc = ZAxialRestraintC(mdl,zaxial_cc, ub, lb,0.02, 'None', label = 'zar_cc')
+zar_cc = ZAxialRestraintC(mdl,mic60[3], ub, lb, 0.2, 'None', label = 'zar_cc')
 output_objects.append(zar_cc)
-
-zar_cterm = ZAxialRestraintC(mdl,zaxial_cterm, 0, -70,0.02, 'None', label = 'zar_cterm')
-output_objects.append(zar_cterm)
-
-for i in range(len(zaxial_all)):
-    zar_all = ZAxialRestraintC(mdl,zaxial_all[i], lb, 100 ,0.2, 'average', label = 'zar_all')
-    output_objects.append(zar_all)
-    zar_all.add_to_model()
-
-tmr.add_to_model()
-slr.add_to_model()
-ilr.add_to_model()
-mlr.add_to_model()
-zar_nterm.add_to_model()
 zar_cc.add_to_model()
-zar_cterm.add_to_model()
 
+for particle in (mic10[0],mic10[1],mic10[2],mic10[3],mic10[4],mic13[0],mic13[1],mic13[2],mic19[3]):
+    zar_below = ZAxialRestraintC(mdl,particle, 10, 100 ,0.2, 'average', label = 'zar_below')
+    output_objects.append(zar_below)
+    zar_below.add_to_model()
 
+ims_particles = []
+tm_particles = []
+mem_surface_particles = []
+matrix_particles = []
 
+ims_particles.extend([mic10[0], mic10[4], mic13[2], mic60[0], mic60[1], mic19[0], mic19[2]])
+tm_particles.extend([mic10[1], mic10[3], mic13[1]])
+matrix_particles.extend([mic10[2],mic13[0]])
+mem_surface_particles.extend([mic60[1],mic19[2]])
 
-# -----------------------------
+# # -----------------------------
 # %%%%% CONNECTIVITY RESTRAINT
 #
 # Restrains residues/particles that are connected in sequence
@@ -353,10 +335,10 @@ print("Excluded volume restraint applied")
 ## 3 bounding boxes for 3 regions - membrane, IMS and Matrix to shuffle the proteins in that region only
 ims_bb = ((0,-r,0),(r,r,100)) # this is for half cylinder
 tm_bb = ((r,-r,0),(R,R,100))
-#
-# # First shuffle all particles to randomize the starting point of the
-# # system. For larger systems, you may want to increase max_translation
-# #
+
+# First shuffle all particles to randomize the starting point of the
+# system. For larger systems, you may want to increase max_translation
+
 IMP.pmi.tools.shuffle_configuration(ims_particles,
                                     max_translation=5,
                                     bounding_box = ims_bb,
@@ -386,18 +368,14 @@ print("Replica Exchange Maximum Temperature : " + str(rex_max_temp))
 # -----------------------------
 # %%%%% MINIMUM PAIR RESTRAINT
 # co-IP > BN-PAGE > WB as 12, 8 6 respectively
-mpr2 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(81,85,"MIC13",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC13_RDWN_MIC10_mpr2",4)
-# mpr3 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(172,221,"MIC19"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(410,758,"MIC60"),10),0,1,"MIC19_MIC60_mpr",6)
-# mpr4 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(410,582,"MIC60"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,227,"MIC19"),10),0,1,"MIC60_MIC19_mpr",6)
-mpr5 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(24,28,"MIC10",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC10_MIC10_mpr1",2)
-mpr6 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(46,52,"MIC10",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC10_MIC10_mpr2",2)
+mpr1 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(81,85,"MIC13",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC13_RDWN_MIC10_mpr2",4)
+mpr2 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(24,28,"MIC10",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC10_MIC10_mpr1",2)
+mpr3 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(46,52,"MIC10",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC10_MIC10_mpr2",2)
 
 
+output_objects.append(mpr1)
 output_objects.append(mpr2)
-# output_objects.append(mpr3)
-# output_objects.append(mpr4)
-output_objects.append(mpr5)
-output_objects.append(mpr6)
+output_objects.append(mpr3)
 
 
 for i in range(4):
@@ -436,11 +414,9 @@ for i in range(2):
 
 # exit()
 
+mpr1.add_to_model()
 mpr2.add_to_model()
-# mpr3.add_to_model()
-# mpr4.add_to_model()
-mpr5.add_to_model()
-mpr6.add_to_model()
+mpr3.add_to_model()
 ## AF-multimer -------------------------------
 # mic10-13, mic10-60, mic13-60
 

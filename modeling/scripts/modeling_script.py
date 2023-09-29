@@ -271,8 +271,8 @@ for particle in (mic10[2],mic13[0]):
     output_objects.append(mlr)
     mlr.add_to_model()
 
-for particle in (mic19[0],mic60[2]):
-    zar_above = ZAxialRestraintC(mdl,particle, 0, -70, 0.2, 'None', label = 'zar_above')
+for particle in (mic19[1],mic60[2],mic19[2]):
+    zar_above = ZAxialRestraintC(mdl,particle, 20, -70, 0.2, 'None', label = 'zar_above')
     output_objects.append(zar_above)
 
 zar_cc = ZAxialRestraintC(mdl,mic60[3], ub, lb, 0.2, 'None', label = 'zar_cc')
@@ -280,7 +280,7 @@ output_objects.append(zar_cc)
 zar_cc.add_to_model()
 
 for particle in (mic10[0],mic10[1],mic10[2],mic10[3],mic10[4],mic13[0],mic13[1],mic13[2],mic19[3]):
-    zar_below = ZAxialRestraintC(mdl,particle, 10, 100 ,0.2, 'average', label = 'zar_below')
+    zar_below = ZAxialRestraintC(mdl,particle, 0, 100 ,0.2, 'average', label = 'zar_below')
     output_objects.append(zar_below)
     zar_below.add_to_model()
 

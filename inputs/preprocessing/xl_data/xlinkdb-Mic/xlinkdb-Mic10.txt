@@ -1,0 +1,3 @@
+pepA	kposA	pepA_id	accessionA	uniprotA	modposA	geneA	startPosA	pdbA	pdbA_type	siteA	atomNumA	pepB	kposB	pepB_id	accessionB	uniprotB	modposB	geneB	startPosB	pdbB	pdbB_type	siteB	atomNumB	distance	NetworkDistance	NumberIDs	Confidence	Datasets(s)	DatasetCount	FileName	MS2ScanNum	MS2PrecMz	MS2PrecCharge	AvailableStructures
+YVKEQ	2	YVKEQ_2_Minos1	Q7TNS2	MIC10_MOUSE	74	Minos1	71	####		####	####	RVAQDWLKEAR	7	RVAQDWLKEAR_7_Immt	Q8CAQ8	MIC60_MOUSE	725	Immt	717	Q8CAQ8	Phyre	####	####	####	3		0	SchweppemousemitoPNAS2017_BruceLab	1				
+YVKEQ	2	YVKEQ_2_Minos1	Q7TNS2	MIC10_MOUSE	74	Minos1	71	####		####	####	VAQDWLKEAR	6	VAQDWLKEAR_6_Immt	Q8CAQ8	MIC60_MOUSE	725	Immt	718	####		####	####	####	3	4,0	1	Caudal_iqPIR_TACsham_Bruce	1	030120_3752_TAC_iqPIR_F6_7_mango_2h_1	12021	772.3878	4	

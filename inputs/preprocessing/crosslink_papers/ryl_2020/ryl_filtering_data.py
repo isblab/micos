@@ -28,7 +28,7 @@ with open('Ryl_supp_S2B.csv', 'r') as readFile: #save th einput file as csv othe
             except:
                 ValueError
 
-with open('../../xl_data/scripts/ryl_micos_BS3.csv', 'w') as writeFile:
+with open('../../xl_data/inputs/ryl_BS3.csv', 'w') as writeFile:
     writer = csv.writer(writeFile)
     writer.writerow(["Protein1","Residue1","Protein2", "Residue2"])
     writer.writerows(lines)

@@ -148,11 +148,13 @@ target_species = sys.argv[4]
 
 
 # MSA input file from MAFFT
-MIC10_MSA = "/home/muskaan/Documents/modeling_micos_complex/supp_data/MSA/MAFFT/Mic10_mafft_fasta.txt"
-MIC13_MSA = "/home/muskaan/Documents/modeling_micos_complex/supp_data/MSA/MAFFT/Mic13_mafft_fasta.txt"
-MIC60_MSA = "/home/muskaan/Documents/modeling_micos_complex/supp_data/MSA/MAFFT/Mic60_mafft_fasta.txt"
-MIC19_MSA = "/home/muskaan/Documents/modeling_micos_complex/supp_data/MSA/MAFFT/Mic19_mafft_fasta.txt"
-MIC25_MSA = "/home/muskaan/Documents/modeling_micos_complex/supp_data/MSA/MAFFT/Mic25_Mic19_mafft.txt"
+MAFFT_input = "../../MSA/MAFFT"
+xl_BDP_PIR_human = f'{MAFFT_input}/Mic10_mafft_fasta.txt'
+MIC10_MSA = f'{MAFFT_input}/Mic10_mafft_fasta.txt'
+MIC13_MSA = f'{MAFFT_input}/Mic13_mafft_fasta.txt'
+MIC60_MSA = f'{MAFFT_input}/Mic60_mafft_fasta.txt'
+MIC19_MSA = f'{MAFFT_input}/Mic19_mafft_fasta.txt'
+MIC25_MSA = f'{MAFFT_input}/Mic25_Mic19_mafft.txt'
 
 
 #dictionary for getting sequence as list for all the proteins in one go

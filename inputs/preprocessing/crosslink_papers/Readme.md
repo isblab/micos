@@ -24,6 +24,6 @@ run yugandhar_filtering_data.py
 download supplementary table 3 excel file and save 3rd and 8th sheet as csv files.
 manually added the three croslinks in a csv file.
 
-```
-Linden_2020 study done in yeast, while aligning to the human, they map to gaps. Not considered further.
-```
+
+####### Linden_2020 study done in yeast, while aligning to the human, they map to gaps. Not considered further.
+

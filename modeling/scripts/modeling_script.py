@@ -367,15 +367,21 @@ print("Replica Exchange Maximum Temperature : " + str(rex_max_temp))
 
 # -----------------------------
 # %%%%% MINIMUM PAIR RESTRAINT
-# co-IP > BN-PAGE > WB as 12, 8 6 respectively
-mpr1 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(81,85,"MIC13",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC13_RDWN_MIC10_mpr2",4)
+# co-IP > BN-PAGE > WB as 1, 2, 4, respectively
+mpr1 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(81,85,"MIC13",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC13_RDWN_MIC10_mpr",4)
 mpr2 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(24,28,"MIC10",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC10_MIC10_mpr1",2)
 mpr3 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(46,52,"MIC10",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC10_MIC10_mpr2",2)
+mpr4 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(15,19,"MIC13",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC13_GXXXG_MIC10_mpr",4)
+mpr5 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(2,26,"MIC13",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(410,758,"MIC60",None,None),10),0,1,"MIC13_MIC60_mpr1",4)
+mpr6 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(84,103,"MIC13",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(410,758,"MIC60",None,None),10),0,1,"MIC13_MIC60_mpr2",4)
 
 
 output_objects.append(mpr1)
 output_objects.append(mpr2)
 output_objects.append(mpr3)
+output_objects.append(mpr4)
+output_objects.append(mpr5)
+output_objects.append(mpr6)
 
 
 for i in range(4):
@@ -417,13 +423,17 @@ for i in range(2):
 mpr1.add_to_model()
 mpr2.add_to_model()
 mpr3.add_to_model()
+mpr4.add_to_model()
+mpr5.add_to_model()
+mpr6.add_to_model()
+
 ## AF-multimer -------------------------------
 # mic10-13, mic10-60, mic13-60
 
 AF1 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(18,22,"MIC13"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(23,27,"MIC10"),10),0,1,"MIC13_TM_MIC10_af1",20)
 AF2 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(88,92,"MIC13"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(657,668,"MIC60"),10),0,1,"MIC13_MIC60_af2",20)
-AF3 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(3,3,"MIC10"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(639,642,"MIC60"),10),0,1,"MIC10_MIC60_af2",20)
-AF4 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(2,3,"MIC10"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(720,724,"MIC60"),10),0,1,"MIC10_MIC60_af3",20)
+AF3 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(3,3,"MIC10"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(639,642,"MIC60"),10),0,1,"MIC10_MIC60_af3",20)
+AF4 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(2,3,"MIC10"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(720,724,"MIC60"),10),0,1,"MIC10_MIC60_af4",20)
 
 output_objects.append(AF1)
 output_objects.append(AF2)

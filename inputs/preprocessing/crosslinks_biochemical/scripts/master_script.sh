@@ -1,27 +1,12 @@
 #!/bin/bash
 
-######### Get XLinkDB crosslinks by type ##############
-
-python get_unique_datasets_with_micos_xlinks.py # get the names of all the datasets that have crosslinks to MICOS proteins
-
-### download the datasets obtained from the previous script ###
-python sorting_dataset_for_micos_proteins_xlinker.py # separate crosslinks based on the xlinker type
-
+########## Map all data to human and yeast species  ###################
 input_dir="../inputs/"
 output_dir="../outputs/"
 
-######### Sort XlinkDB crosslinks specieswise ##############
+##########----Step 1----###################
 
-for file in "${input_dir}"DSSO_xl.csv "${input_dir}"BDP_xl.csv "${input_dir}"PIR_xl.csv
-do
-  base_filename="$(basename "$file")"
-  python species_wise_sorting.py "$file" "${input_dir}human_$base_filename" "${input_dir}mouse_$base_filename" "${input_dir}yeast_$base_filename"
-done
-
-########## Map all data to human and yeast species  ###################
-
-########## Data includes crosslinks and biochemical data ###################
-########## Crosslinks include those from XlinkDB and other papers  ###################
+########## MAP all crosslinks including those from XlinkDB and other papers  ###################
 
 ########## mouse to human ###################
 for input_file in "${input_dir}"mouse_PIR_xl.csv "${input_dir}"mouse_BDP_xl.csv "${input_dir}"mouse_DSSO_xl.csv
@@ -82,6 +67,20 @@ do
   python mapping_crosslinks_biochemical_data_in_homologs.py "$files" "$output_file" "HUMAN" "HUMAN"
 done
 
+##########----Step 2----###################
+
+########## Merge the crosslinks for human only ##################
+
+output_dir_for_xlinks="../../../data/crosslinks/human/"
+
+python merging_files.py "${output_dir_for_xlinks}BDP_PIR_human.csv" "${input_dir}"human_BDP_xl.csv  "${input_dir}"human_PIR_xl.csv
+python merging_files.py "${output_dir_for_xlinks}BDP_PIR_mouse.csv" "${output_dir}"mouse_PIR_xl_XLinkDB_mouse_to_human  "${output_dir}"mouse_BDP_xl_XLinkDB_mouse_to_human
+python merging_files.py "${output_dir_for_xlinks}DHSO_DSSO.csv" "${input_dir}"human_DSSO_xl.csv  "${output_dir}"DSSO_Bartolec_human_to_human "${input_dir}"DHSO_Bartolec.csv "${input_dir}"yu_DSSO.csv
+python merging_files.py "${output_dir_for_xlinks}DSS_BS3.csv" "${input_dir}"ryl_BS3.csv  "${input_dir}"sun_DSS.csv
+python merging_files.py "${output_dir_for_xlinks}DSSO_XLinkDB_mouse.csv" "${output_dir}"mouse_DSSO_xl_XLinkDB_mouse_to_human
+
+##########----Step 3----###################
+
 ########## Map biochemical data to human and yeast specieswise ###################
 
 ########### yeast to human ##############
@@ -99,13 +98,3 @@ do
   output_file="${output_dir}${base_filename%.*}_biochemical_data_human_to_yeast"
   python mapping_crosslinks_biochemical_data_in_homologs.py "$files" "$output_file" "HUMAN" "YEAST"
 done
-
-########## Crosslinks for human only, merge ##################
-
-output_dir_for_xlinks="../../../data/crosslinks/human/"
-
-python merging_files.py "${output_dir_for_xlinks}BDP_PIR_human.csv" "${input_dir}"human_BDP_xl.csv  "${input_dir}"human_PIR_xl.csv
-python merging_files.py "${output_dir_for_xlinks}BDP_PIR_mouse.csv" "${output_dir}"mouse_PIR_xl_XLinkDB_mouse_to_human  "${output_dir}"mouse_BDP_xl_XLinkDB_mouse_to_human
-python merging_files.py "${output_dir_for_xlinks}DHSO_DSSO.csv" "${input_dir}"human_DSSO_xl.csv  "${output_dir}"DSSO_Bartolec_human_to_human "${input_dir}"DHSO_Bartolec.csv "${input_dir}"yu_DSSO.csv
-python merging_files.py "${output_dir_for_xlinks}DSS_BS3.csv" "${input_dir}"ryl_BS3.csv  "${input_dir}"sun_DSS.csv
-python merging_files.py "${output_dir_for_xlinks}DSSO_XLinkDB_mouse.csv" "${output_dir}"mouse_DSSO_xl_XLinkDB_mouse_to_human

@@ -1,4 +1,6 @@
 ### to save crosslinks from each datsets based on the crosslinker type ###
+
+# Datasets ChemBiol17AAG_Bruce and Liu2015NatureMethods_Heck are not considered further.
 import os, sys
 import glob
 import pandas as pd

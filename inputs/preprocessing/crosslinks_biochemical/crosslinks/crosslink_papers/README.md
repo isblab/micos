@@ -24,11 +24,11 @@ ryl_filtering_data.py
 Download supplementary zip file, extract 156740_0_supp_420642_q05ccw.xlsx and save 'supplementary table 4' sheet as csv file.
 Run the script:
 ```
-run yugandhar_filtering_data.py
+yugandhar_filtering_data.py
 ```
 
 `sun_2022`
 
 Download supplementary table 3 excel file and search manually for micos crosslinks. There are two crosslinks in 3rd sheet and one crosslink in 8th sheet, which are manually saved in a csv file.
 
-####### linden_2020 study was done in yeast. Crosslink residues were aligned to gap in human species, so not considered further.
+####### linden_2020 study was done in yeast. Crosslink residues were aligned to gap in MSA in human species, not considered further.

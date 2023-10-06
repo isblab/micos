@@ -3,7 +3,8 @@
 #### Biochemical data
 
 `biochemical`
-Contains pairwise biochemical data studied in human and yeast in pairwise_biochemical_data.csv
+
+This contains pairwise biochemical data studied in human and yeast.
 
 
 #### Crosslink data
@@ -12,9 +13,9 @@ Contains pairwise biochemical data studied in human and yeast in pairwise_bioche
 
 2. Map the micos crosslinks from human to yeast and vice versa.
 
-3. Save the crosslinks mapped to human and studied in human in  `../../data/crosslinks/human` to be used in modeling.
+3. Save the crosslinks mapped and studied in human in  `../../data/crosslinks/human` to be used for modeling.
 
-For step 2 and 3, run the script: 
+Run the following script to map the biochemical and crosslink data: 
 
 ```
 master_script.sh

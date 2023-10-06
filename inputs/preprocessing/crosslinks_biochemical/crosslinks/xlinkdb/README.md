@@ -9,10 +9,10 @@ Get the names of all the datasets that have crosslinks for micos proteins using:
 ```
 
 #### Step 2
-Download all the crosslink datasets from xlinkdb 4 which have micos proteins and save in `xlinkdb_datasets/`.
+Download all the crosslink datasets from xlinkdb which have micos proteins and save in `xlinkdb_datasets/`.
 
 #### Step 3
-Separate crosslinks based on the xlinker type as well as the species using:
+Separate the crosslinks based on the xlinker type and the species using:
 
 ```
 ../scripts/xlinkdb_parse.sh

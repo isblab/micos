@@ -3,6 +3,7 @@
 #### These studies are done on human cells
 
 ##### Note: The filtered crosslinks are save in ../mapping_to_homologs/inputs
+##### Note: linden_2020 study was done in yeast. Crosslink residues were aligned to gap in MSA in human species, not considered further.
 
 
 `bartolec_2023`
@@ -34,4 +35,4 @@ yugandhar_filtering_data.py
 
 Download supplementary table 3 excel file and search manually for micos crosslinks. There are two crosslinks in 3rd sheet and one crosslink in 8th sheet, which are manually saved in a csv file.
 
-####### linden_2020 study was done in yeast. Crosslink residues were aligned to gap in MSA in human species, not considered further.
+

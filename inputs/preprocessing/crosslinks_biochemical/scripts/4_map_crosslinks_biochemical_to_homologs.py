@@ -154,7 +154,7 @@ MIC10_MSA = f'{MAFFT_input}/Mic10_mafft_fasta.txt'
 MIC13_MSA = f'{MAFFT_input}/Mic13_mafft_fasta.txt'
 MIC60_MSA = f'{MAFFT_input}/Mic60_mafft_fasta.txt'
 MIC19_MSA = f'{MAFFT_input}/Mic19_mafft_fasta.txt'
-MIC25_MSA = f'{MAFFT_input}/Mic25_Mic19_mafft.txt'
+MIC25_MSA = f'{MAFFT_input}/Mic25_Mic19_mafft_fasta.txt'
 
 
 #dictionary for getting sequence as list for all the proteins in one go

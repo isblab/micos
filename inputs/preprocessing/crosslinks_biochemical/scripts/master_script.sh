@@ -1,8 +1,9 @@
 #!/bin/bash
 
 ########## Map all data to human and yeast species  ###################
-input_dir="../inputs/"
-output_dir="../outputs/"
+input_dir="../mapping_to_homologs/inputs/"
+output_dir="../mapping_to_homologs/outputs/"
+input_dir_biochem="../biochemical/"
 
 ##########----Step 1----###################
 
@@ -13,7 +14,7 @@ for input_file in "${input_dir}"mouse_PIR_xl.csv "${input_dir}"mouse_BDP_xl.csv 
 do
   base_filename="$(basename "$input_file")"
   output_file="${output_dir}${base_filename%.*}_XLinkDB_mouse_to_human"
-  python mapping_crosslinks_biochemical_data_in_homologs.py "$input_file" "$output_file" "MOUSE" "HUMAN"
+  python 4_map_crosslinks_biochemical_to_homologs.py "$input_file" "$output_file" "MOUSE" "HUMAN"
 done
 
 ########### yeast to human ##############
@@ -22,7 +23,7 @@ for data_ in "${input_dir}"yeast_DSSO_xl.csv
 do
   base_filename="$(basename "$data_")"
   output_file="${output_dir}${base_filename%.*}_XLinkDB_yeast_to_human"
-  python mapping_crosslinks_biochemical_data_in_homologs.py "$data_" "$output_file" "YEAST" "HUMAN"
+  python 4_map_crosslinks_biochemical_to_homologs.py "$data_" "$output_file" "YEAST" "HUMAN"
 done
 
 ############ yeast to human crosslink papers ###############
@@ -30,7 +31,7 @@ for data_ in "${input_dir}"linden_BS3.csv
 do
   base_filename="$(basename "$data_")"
   output_file="${output_dir}${base_filename%.*}_yeast_to_human"
-  python mapping_crosslinks_biochemical_data_in_homologs.py "$data_" "$output_file" "YEAST" "HUMAN"
+  python 4_map_crosslinks_biochemical_to_homologs.py "$data_" "$output_file" "YEAST" "HUMAN"
 done
 
 ########## mouse to yeast ################
@@ -39,7 +40,7 @@ for data in "${input_dir}"mouse_PIR_xl.csv "${input_dir}"mouse_BDP_xl.csv "${inp
 do
   base_filename="$(basename "$data")"
   output_file="${output_dir}${base_filename%.*}_XLinkDB_mouse_to_yeast"
-  python mapping_crosslinks_biochemical_data_in_homologs.py "$data" "$output_file" "MOUSE" "YEAST"
+  python 4_map_crosslinks_biochemical_to_homologs.py "$data" "$output_file" "MOUSE" "YEAST"
 done
 
 ############ human to yeast #############
@@ -48,7 +49,7 @@ for files in "${input_dir}"human_PIR_xl.csv "${input_dir}"human_BDP_xl.csv "${in
 do
   base_filename="$(basename "$files")"
   output_file="${output_dir}${base_filename%.*}_XLinkDB_human_to_yeast"
-  python mapping_crosslinks_biochemical_data_in_homologs.py "$files" "$output_file" "HUMAN" "YEAST"
+  python 4_map_crosslinks_biochemical_to_homologs.py "$files" "$output_file" "HUMAN" "YEAST"
 done
 
 ############ human to yeast crosslink papers ###############
@@ -56,7 +57,7 @@ for files in "${input_dir}"ryl_BS3.csv "${input_dir}"yu_DSSO.csv "${input_dir}"s
 do
   base_filename="$(basename "$files")"
   output_file="${output_dir}${base_filename%.*}_human_to_yeast"
-  python mapping_crosslinks_biochemical_data_in_homologs.py "$files" "$output_file" "HUMAN" "YEAST"
+  python 4_map_crosslinks_biochemical_to_homologs.py "$files" "$output_file" "HUMAN" "YEAST"
 done
 
 ############ human to human to map mic25 to mic19 (only DSSO_Bartolec) ###############
@@ -64,7 +65,7 @@ for files in "${input_dir}"DSSO_Bartolec.csv
 do
   base_filename="$(basename "$files")"
   output_file="${output_dir}${base_filename%.*}_human_to_human"
-  python mapping_crosslinks_biochemical_data_in_homologs.py "$files" "$output_file" "HUMAN" "HUMAN"
+  python 4_map_crosslinks_biochemical_to_homologs.py "$files" "$output_file" "HUMAN" "HUMAN"
 done
 
 ##########----Step 2----###################
@@ -73,28 +74,29 @@ done
 
 output_dir_for_xlinks="../../../data/crosslinks/human/"
 
-python merging_files.py "${output_dir_for_xlinks}BDP_PIR_human.csv" "${input_dir}"human_BDP_xl.csv  "${input_dir}"human_PIR_xl.csv
-python merging_files.py "${output_dir_for_xlinks}BDP_PIR_mouse.csv" "${output_dir}"mouse_PIR_xl_XLinkDB_mouse_to_human  "${output_dir}"mouse_BDP_xl_XLinkDB_mouse_to_human
-python merging_files.py "${output_dir_for_xlinks}DHSO_DSSO.csv" "${input_dir}"human_DSSO_xl.csv  "${output_dir}"DSSO_Bartolec_human_to_human "${input_dir}"DHSO_Bartolec.csv "${input_dir}"yu_DSSO.csv
-python merging_files.py "${output_dir_for_xlinks}DSS_BS3.csv" "${input_dir}"ryl_BS3.csv  "${input_dir}"sun_DSS.csv
-python merging_files.py "${output_dir_for_xlinks}DSSO_XLinkDB_mouse.csv" "${output_dir}"mouse_DSSO_xl_XLinkDB_mouse_to_human
+python 5_merge_files.py "${output_dir_for_xlinks}BDP_PIR_human.csv" "${input_dir}"human_BDP_xl.csv  "${input_dir}"human_PIR_xl.csv
+python 5_merge_files.py "${output_dir_for_xlinks}BDP_PIR_mouse.csv" "${output_dir}"mouse_PIR_xl_XLinkDB_mouse_to_human  "${output_dir}"mouse_BDP_xl_XLinkDB_mouse_to_human
+python 5_merge_files.py "${output_dir_for_xlinks}DHSO_DSSO.csv" "${input_dir}"human_DSSO_xl.csv  "${output_dir}"DSSO_Bartolec_human_to_human "${input_dir}"DHSO_Bartolec.csv "${input_dir}"yu_DSSO.csv
+python 5_merge_files.py "${output_dir_for_xlinks}DSS_BS3.csv" "${input_dir}"ryl_BS3.csv  "${input_dir}"sun_DSS.csv
+python 5_merge_files.py "${output_dir_for_xlinks}DSSO_XLinkDB_mouse.csv" "${output_dir}"mouse_DSSO_xl_XLinkDB_mouse_to_human
 
 ##########----Step 3----###################
 
 ########## Map biochemical data to human and yeast specieswise ###################
 
 ########### yeast to human ##############
-for data_ in "${input_dir}"Pairwise_table.csv
+
+for data_ in "${input_dir_biochem}"pairwise_biochemical_data.csv
 do
   base_filename="$(basename "$data_")"
   output_file="${output_dir}${base_filename%.*}_biochemical_data_yeast_to_human"
-  python mapping_crosslinks_biochemical_data_in_homologs.py "$data_" "$output_file" "YEAST" "HUMAN"
+  python 4_map_crosslinks_biochemical_to_homologs.py "$data_" "$output_file" "YEAST" "HUMAN"
 done
 
 ############ human to yeast #############
-for files in "${input_dir}"Pairwise_table.csv
+for files in "${input_dir_biochem}"pairwise_biochemical_data.csv
 do
   base_filename="$(basename "$files")"
   output_file="${output_dir}${base_filename%.*}_biochemical_data_human_to_yeast"
-  python mapping_crosslinks_biochemical_data_in_homologs.py "$files" "$output_file" "HUMAN" "YEAST"
+  python 4_map_crosslinks_biochemical_to_homologs.py "$files" "$output_file" "HUMAN" "YEAST"
 done

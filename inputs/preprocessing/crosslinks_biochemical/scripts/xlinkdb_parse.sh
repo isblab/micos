@@ -6,7 +6,7 @@
 python 2_get_xlinkdb_crosslinks_by_xlinker.py
 
 # Separate XlinkDB crosslinks by species
-input_dir="../inputs/"
+input_dir="../mapping_to_homologs/inputs/"
 
 for file in "${input_dir}"DSSO_xl.csv "${input_dir}"BDP_xl.csv "${input_dir}"PIR_xl.csv
 do

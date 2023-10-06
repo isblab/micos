@@ -2,6 +2,9 @@
 
 #### These studies are done on human cells
 
+##### Note: The filtered crosslinks are save in ../mapping_to_homologs/inputs
+
+
 `bartolec_2023`
 
 Download supplementary table 1 excel file and 4th and 5th sheet as csv files corresponding to DSSO and DHSO crosslinks, respectively.

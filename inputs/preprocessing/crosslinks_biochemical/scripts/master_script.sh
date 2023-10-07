@@ -76,8 +76,8 @@ output_dir_for_xlinks="../../../data/crosslinks/human/"
 
 python 5_merge_files.py "${output_dir_for_xlinks}BDP_PIR_human.csv" "${input_dir}"human_BDP_xl.csv  "${input_dir}"human_PIR_xl.csv
 python 5_merge_files.py "${output_dir_for_xlinks}BDP_PIR_mouse.csv" "${output_dir}"mouse_PIR_xl_XLinkDB_mouse_to_human  "${output_dir}"mouse_BDP_xl_XLinkDB_mouse_to_human
-python 5_merge_files.py "${output_dir_for_xlinks}DHSO_DSSO.csv" "${input_dir}"human_DSSO_xl.csv  "${output_dir}"DSSO_Bartolec_human_to_human "${input_dir}"DHSO_Bartolec.csv "${input_dir}"yu_DSSO.csv
-python 5_merge_files.py "${output_dir_for_xlinks}DSS_BS3.csv" "${input_dir}"ryl_BS3.csv  "${input_dir}"sun_DSS.csv
+python 5_merge_files.py "${output_dir_for_xlinks}DHSO_DSSO_human.csv" "${input_dir}"human_DSSO_xl.csv  "${output_dir}"DSSO_Bartolec_human_to_human "${input_dir}"DHSO_Bartolec.csv "${input_dir}"yu_DSSO.csv
+python 5_merge_files.py "${output_dir_for_xlinks}DSS_BS3_human.csv" "${input_dir}"ryl_BS3.csv  "${input_dir}"sun_DSS.csv
 python 5_merge_files.py "${output_dir_for_xlinks}DSSO_XLinkDB_mouse.csv" "${output_dir}"mouse_DSSO_xl_XLinkDB_mouse_to_human
 
 ##########----Step 3----###################

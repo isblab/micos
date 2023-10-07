@@ -45,8 +45,8 @@ rex_max_temp = 1.25
 #xlinkdata files
 xl_BDP_PIR_human = f'{data_direc}/crosslinks/human/sampling_BDP_PIR_human.csv'
 xl_BDP_PIR_mouse = f'{data_direc}/crosslinks/human/sampling_BDP_PIR_mouse.csv'
-xl_DSS_BS3 = f'{data_direc}/crosslinks/human/sampling_DSS_BS3.csv'
-xl_DHSO_DSSO = f'{data_direc}/crosslinks/human/sampling_DHSO_DSSO.csv' # yu. bartolec, xlinkdb dsso xlinks
+xl_DSS_BS3_human = f'{data_direc}/crosslinks/human/sampling_DSS_BS3_human.csv'
+xl_DHSO_DSSO_human = f'{data_direc}/crosslinks/human/sampling_DHSO_DSSO_human.csv' # yu. bartolec, xlinkdb dsso xlinks
 xl_DSSO_mouse = f'{data_direc}/crosslinks/human/sampling_DSSO_XLinkDB_mouse.csv'
 
 
@@ -513,7 +513,7 @@ output_objects.append(xlr_BDP_PIR_mouse)
 
 
 xldb_DSS_BS3 = IMP.pmi.io.crosslink.CrossLinkDataBase()
-xldb_DSS_BS3.create_set_from_file(file_name=xl_DSS_BS3,
+xldb_DSS_BS3.create_set_from_file(file_name=xl_DSS_BS3_human,
                                  converter=xldbkc)
 xlr_DSS_BS3 = IMP.pmi.restraints.crosslinking.CrossLinkingMassSpectrometryRestraint(
                 root_hier=root_hier,    # Must pass the root hierarchy to the system
@@ -530,7 +530,7 @@ output_objects.append(xlr_DSS_BS3)
 
 
 xldb_DHSO_DSSO = IMP.pmi.io.crosslink.CrossLinkDataBase()
-xldb_DHSO_DSSO.create_set_from_file(file_name=xl_DHSO_DSSO,
+xldb_DHSO_DSSO.create_set_from_file(file_name=xl_DHSO_DSSO_human,
                                  converter=xldbkc)
 xlr_DHSO_DSSO = IMP.pmi.restraints.crosslinking.CrossLinkingMassSpectrometryRestraint(
                 root_hier=root_hier,    # Must pass the root hierarchy to the system

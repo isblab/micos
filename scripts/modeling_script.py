@@ -371,17 +371,17 @@ print("Replica Exchange Maximum Temperature : " + str(rex_max_temp))
 mpr1 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(81,85,"MIC13",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC13_RDWN_MIC10_mpr",4)
 mpr2 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(24,28,"MIC10",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC10_MIC10_mpr1",2)
 mpr3 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(46,52,"MIC10",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC10_MIC10_mpr2",2)
-mpr4 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(15,19,"MIC13",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC13_GXXXG_MIC10_mpr",4)
+# mpr4 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(15,19,"MIC13",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC13_GXXXG_MIC10_mpr",4)
 mpr5 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(2,26,"MIC13",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(410,758,"MIC60",None,None),10),0,1,"MIC13_MIC60_mpr1",4)
-mpr6 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(84,103,"MIC13",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(410,758,"MIC60",None,None),10),0,1,"MIC13_MIC60_mpr2",4)
+# mpr6 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(84,103,"MIC13",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(410,758,"MIC60",None,None),10),0,1,"MIC13_MIC60_mpr2",4)
 
 
 output_objects.append(mpr1)
 output_objects.append(mpr2)
 output_objects.append(mpr3)
-output_objects.append(mpr4)
+# output_objects.append(mpr4)
 output_objects.append(mpr5)
-output_objects.append(mpr6)
+# output_objects.append(mpr6)
 
 
 for i in range(4):
@@ -423,9 +423,9 @@ for i in range(2):
 mpr1.add_to_model()
 mpr2.add_to_model()
 mpr3.add_to_model()
-mpr4.add_to_model()
+# mpr4.add_to_model()
 mpr5.add_to_model()
-mpr6.add_to_model()
+# mpr6.add_to_model()
 
 ## AF-multimer -------------------------------
 # mic10-13, mic10-60, mic13-60

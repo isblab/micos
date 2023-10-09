@@ -10,7 +10,7 @@ input_dir_biochem="../biochemical/"
 ########## MAP all crosslinks including those from XlinkDB and other papers  ###################
 
 ########## mouse to human ###################
-for input_file in "${input_dir}"mouse_PIR_xl.csv "${input_dir}"mouse_BDP_xl.csv "${input_dir}"mouse_DSSO_xl.csv
+for input_file in "${input_dir}"mouse_PIR.csv "${input_dir}"mouse_BDP.csv "${input_dir}"mouse_DSSO.csv
 do
   base_filename="$(basename "$input_file")"
   output_file="${output_dir}${base_filename%.*}_XLinkDB_mouse_to_human"
@@ -19,7 +19,7 @@ done
 
 ########### yeast to human ##############
 
-for data_ in "${input_dir}"yeast_DSSO_xl.csv
+for data_ in "${input_dir}"yeast_DSSO.csv
 do
   base_filename="$(basename "$data_")"
   output_file="${output_dir}${base_filename%.*}_XLinkDB_yeast_to_human"
@@ -36,7 +36,7 @@ done
 
 ########## mouse to yeast ################
 
-for data in "${input_dir}"mouse_PIR_xl.csv "${input_dir}"mouse_BDP_xl.csv "${input_dir}"mouse_DSSO_xl.csv
+for data in "${input_dir}"mouse_PIR.csv "${input_dir}"mouse_BDP.csv "${input_dir}"mouse_DSSO.csv
 do
   base_filename="$(basename "$data")"
   output_file="${output_dir}${base_filename%.*}_XLinkDB_mouse_to_yeast"
@@ -45,7 +45,7 @@ done
 
 ############ human to yeast #############
 
-for files in "${input_dir}"human_PIR_xl.csv "${input_dir}"human_BDP_xl.csv "${input_dir}"human_DSSO_xl.csv
+for files in "${input_dir}"human_PIR.csv "${input_dir}"human_BDP.csv "${input_dir}"human_DSSO.csv
 do
   base_filename="$(basename "$files")"
   output_file="${output_dir}${base_filename%.*}_XLinkDB_human_to_yeast"
@@ -53,15 +53,15 @@ do
 done
 
 ############ human to yeast crosslink papers ###############
-for files in "${input_dir}"ryl_BS3.csv "${input_dir}"yu_DSSO.csv "${input_dir}"sun_DSS.csv "${input_dir}"DSSO_Bartolec.csv "${input_dir}"DHSO_Bartolec.csv
+for files in "${input_dir}"ryl_BS3.csv "${input_dir}"yu_DSSO.csv "${input_dir}"sun_DSS.csv "${input_dir}"bartolec_DSSO.csv "${input_dir}"bartolec_DHSO.csv
 do
   base_filename="$(basename "$files")"
   output_file="${output_dir}${base_filename%.*}_human_to_yeast"
   python 4_map_crosslinks_biochemical_to_homologs.py "$files" "$output_file" "HUMAN" "YEAST"
 done
 
-############ human to human to map mic25 to mic19 (only DSSO_Bartolec) ###############
-for files in "${input_dir}"DSSO_Bartolec.csv
+############ human to human to map mic25 to mic19 (only bartolec_DSSO) ###############
+for files in "${input_dir}"bartolec_DSSO.csv
 do
   base_filename="$(basename "$files")"
   output_file="${output_dir}${base_filename%.*}_human_to_human"
@@ -74,11 +74,11 @@ done
 
 output_dir_for_xlinks="../../../data/crosslinks/human/"
 
-python 5_merge_files.py "${output_dir_for_xlinks}BDP_PIR_human.csv" "${input_dir}"human_BDP_xl.csv  "${input_dir}"human_PIR_xl.csv
-python 5_merge_files.py "${output_dir_for_xlinks}BDP_PIR_mouse.csv" "${output_dir}"mouse_PIR_xl_XLinkDB_mouse_to_human  "${output_dir}"mouse_BDP_xl_XLinkDB_mouse_to_human
-python 5_merge_files.py "${output_dir_for_xlinks}DHSO_DSSO_human.csv" "${input_dir}"human_DSSO_xl.csv  "${output_dir}"DSSO_Bartolec_human_to_human "${input_dir}"DHSO_Bartolec.csv "${input_dir}"yu_DSSO.csv
+python 5_merge_files.py "${output_dir_for_xlinks}BDP_PIR_human.csv" "${input_dir}"human_BDP.csv  "${input_dir}"human_PIR.csv
+python 5_merge_files.py "${output_dir_for_xlinks}BDP_PIR_mouse.csv" "${output_dir}"mouse_PIR_XLinkDB_mouse_to_human  "${output_dir}"mouse_BDP_XLinkDB_mouse_to_human
+python 5_merge_files.py "${output_dir_for_xlinks}DHSO_DSSO_human.csv" "${input_dir}"human_DSSO.csv  "${output_dir}"bartolec_DSSO_human_to_human "${input_dir}"bartolec_DHSO.csv "${input_dir}"yu_DSSO.csv
 python 5_merge_files.py "${output_dir_for_xlinks}DSS_BS3_human.csv" "${input_dir}"ryl_BS3.csv  "${input_dir}"sun_DSS.csv
-python 5_merge_files.py "${output_dir_for_xlinks}DSSO_XLinkDB_mouse.csv" "${output_dir}"mouse_DSSO_xl_XLinkDB_mouse_to_human
+python 5_merge_files.py "${output_dir_for_xlinks}DSSO_XLinkDB_mouse.csv" "${output_dir}"mouse_DSSO_XLinkDB_mouse_to_human
 
 ##########----Step 3----###################
 
@@ -89,7 +89,7 @@ python 5_merge_files.py "${output_dir_for_xlinks}DSSO_XLinkDB_mouse.csv" "${outp
 for data_ in "${input_dir_biochem}"pairwise_biochemical_data.csv
 do
   base_filename="$(basename "$data_")"
-  output_file="${output_dir}${base_filename%.*}_biochemical_data_yeast_to_human"
+  output_file="${output_dir}${base_filename%.*}_yeast_to_human"
   python 4_map_crosslinks_biochemical_to_homologs.py "$data_" "$output_file" "YEAST" "HUMAN"
 done
 
@@ -97,6 +97,6 @@ done
 for files in "${input_dir_biochem}"pairwise_biochemical_data.csv
 do
   base_filename="$(basename "$files")"
-  output_file="${output_dir}${base_filename%.*}_biochemical_data_human_to_yeast"
+  output_file="${output_dir}${base_filename%.*}_human_to_yeast"
   python 4_map_crosslinks_biochemical_to_homologs.py "$files" "$output_file" "HUMAN" "YEAST"
 done

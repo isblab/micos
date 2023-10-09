@@ -26,6 +26,6 @@ for data in sorted(glob.glob('../crosslinks/xlinkdb/xlinkdb_datasets/*.txt')):
     elif data.startswith("../crosslinks/xlinkdb/xlinkdb_datasets/Liu") or data.startswith("../crosslinks/xlinkdb/xlinkdb_datasets/Mango") or data.startswith("../crosslinks/xlinkdb/xlinkdb_datasets/Yeast"):
         DSSO_df = pd.concat([DSSO_df,cols_])
 
-PIR_df = PIR_df.to_csv('../mapping_to_homologs/inputs/PIR_xl.csv', index = False)
-BDP_df = BDP_df.to_csv('../mapping_to_homologs/inputs/BDP_xl.csv', index = False)
-DSSO_df = DSSO_df.to_csv('../mapping_to_homologs/inputs/DSSO_xl.csv', index = False)
+PIR_df = PIR_df.to_csv('../mapping_to_homologs/inputs/PIR.csv', index = False)
+BDP_df = BDP_df.to_csv('../mapping_to_homologs/inputs/BDP.csv', index = False)
+DSSO_df = DSSO_df.to_csv('../mapping_to_homologs/inputs/DSSO.csv', index = False)

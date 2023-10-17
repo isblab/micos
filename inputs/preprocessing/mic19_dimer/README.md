@@ -9,3 +9,8 @@ The Mic19-Mic19 crosslinks in 59-174 region from BDP_PIR_mouse, DHSO_DSSO_human,
 3. `self_links` contains the crosslinks which are present on same residue i.e., Protein1 Residue1 Protein1 Residue1.
 
 4. `servers` contains the outputs from COILS, MARCOIL, PCOILS and Psipred servers and coiled-coil dimers predicted by CCCP and AF-multimer.
+
+5. `scripts` contains the script `filtering_mic19_xlinks.py` to filter Mic19-Mic19 crosslinks from the datasets and `crosslink_satisfaction.py` to calculate the percentage of crosslinks satisfied. 
+
+
+

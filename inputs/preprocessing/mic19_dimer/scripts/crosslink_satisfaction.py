@@ -74,7 +74,7 @@ if __name__ == "__main__":
             if violated == 'True':
                 df2 = pd.concat([df2, pd.DataFrame({"Residue1": [res1], "Residue2": [res2], "Distance": [distance]})], ignore_index=True)
             else:
-                df3 = pd.concat([df2, pd.DataFrame({"Residue1": [res1], "Residue2": [res2], "Distance": [distance]})], ignore_index=True)
+                df3 = pd.concat([df3, pd.DataFrame({"Residue1": [res1], "Residue2": [res2], "Distance": [distance]})], ignore_index=True)
         else:
             count_not_present += 1
 

@@ -10,7 +10,7 @@ The Mic19-Mic19 crosslinks in 59-174 region from BDP_PIR_mouse, DHSO_DSSO_human,
 
 4. `servers` contains the outputs from COILS, MARCOIL, PCOILS and Psipred servers and coiled-coil dimers predicted by CCCP and AF-multimer.
 
-5. `scripts` contains the script `filtering_mic19_xlinks.py` to filter Mic19-Mic19 crosslinks from the datasets and `crosslink_satisfaction.py` to calculate the percentage of crosslinks satisfied. 
+5. `scripts` contains the script `filtering_mic19_xlinks.py` to filter Mic19-Mic19 crosslinks from the datasets and `crosslink_satisfaction.py` to calculate the percentage of crosslinks satisfied. You can run both together using `master.sh` in the same scripts directory. 
 
 
 

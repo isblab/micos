@@ -53,6 +53,13 @@ xl_DSSO_mouse = f'{data_direc}/crosslinks/human/sampling_DSSO_XLinkDB_mouse.csv'
 # Topology File
 topology_file = f'{data_direc}/topology.txt'
 
+# weights
+sigma = 0.04 # membrane restraint weight
+zar_wt = 0.2
+coIP_wt = 4
+BNPAGE_wt = 2
+WB_wt = 1
+AF_wt = 5
 
 #
 # ### --------------------------------
@@ -219,77 +226,93 @@ output_objects = []
 # # # -------------------------------
 
 mic10 = []
-mic10.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(1,12)).get_selected_particles())
-mic10.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(13,36)).get_selected_particles())
-mic10.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(37,39)).get_selected_particles())
-mic10.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(40,60)).get_selected_particles())
-mic10.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(61,78)).get_selected_particles())
+mic10.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(1,12)).get_selected_particles()) # ims
+mic10.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(13,36)).get_selected_particles()) # tm
+mic10.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(37,39)).get_selected_particles()) # matrix
+mic10.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(40,60)).get_selected_particles()) # tm
+mic10.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',residue_indexes = range(61,78)).get_selected_particles()) # ims
 
 mic60 = []
-mic60.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',residue_indexes = range(410,626)).get_selected_particles())
-mic60.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(627,758)).get_selected_particles())
-mic60.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(583,758)).get_selected_particles())
-mic60.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',residue_indexes = range(410,582)).get_selected_particles())
+mic60.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(627,758)).get_selected_particles()) # surface location
+mic60.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(583,758)).get_selected_particles()) # above z
+mic60.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1,2,3],residue_indexes = range(410,582)).get_selected_particles()) # on the center
 
 mic13 = []
-mic13.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(1,7)).get_selected_particles())
-mic13.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(8,23)).get_selected_particles())
-mic13.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(24,118)).get_selected_particles())
+mic13.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(1,7)).get_selected_particles()) # matrix
+mic13.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(8,23)).get_selected_particles()) # tm
+mic13.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(24,118)).get_selected_particles()) # ims
 
 mic19 = []
-mic19.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1],residue_indexes = range(1,185)).get_selected_particles())
-mic19.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1],residue_indexes = range(1,14)).get_selected_particles())
-mic19.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1],residue_indexes = range(186,227)).get_selected_particles())
-mic19.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1],residue_indexes = range(15,185)).get_selected_particles())
-
+mic19.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1],residue_indexes = range(1,185)).get_selected_particles()) # in ims
+mic19.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1],residue_indexes = range(1,14)).get_selected_particles()) # above z
+mic19.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,2],residue_indexes = range(186,227)).get_selected_particles()) # surface location, above z
+mic19.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1],residue_indexes = range(59,174)).get_selected_particles()) # on the center
+# mic19.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1],residue_indexes = range(15,58)).get_selected_particles()) # below z
+# mic19.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1],residue_indexes = range(175,185)).get_selected_particles()) # below z
 
 output_objects = []
 R = 130 #radius of the outer cylinder
 r = 90 #radius of the inner cylinder
-sigma = 0.02 #weight
 allowed_dist = 10 #for surface localization, this is the distance from the center. the beads should stay within this and inner radius
 lb = 0
 ub = 50
+max_in_cj = 100
+min_up_cj = -70
 
+# TransMembraneRestraint
 for particle in (mic10[1], mic10[3], mic13[1]):
-    tmr = TransMembraneRestraintC(mdl,particle, R,r,sigma)
+    tmr = TransMembraneRestraintC(mdl,particle,R,r,sigma)
     output_objects.append(tmr)
     tmr.add_to_model()
 
-for particle in (mic60[1],mic19[2]):
-    slr = SurfaceLocalizationRestraintC(mdl,particle, r, sigma, allowed_dist)
+# SurfaceLocalizationRestraint
+for particle in (mic60[0],mic19[2]):
+    slr = SurfaceLocalizationRestraintC(mdl,particle,r,sigma,allowed_dist)
     output_objects.append(slr)
     slr.add_to_model()
 
-for particle in (mic10[0],mic10[4],mic13[2],mic60[0],mic60[1],mic19[0],mic19[2]):
+#IMSLocalizationRestraint
+for particle in (mic10[0],mic10[4],mic13[2],mic60[2],mic60[1],mic19[0]):
     ilr = IMSLocalizationRestraintC(mdl,particle,r,sigma)
     output_objects.append(ilr)
     ilr.add_to_model()
 
+#MatrixLocalizationRestraint
 for particle in (mic10[2],mic13[0]):
     mlr = MatrixLocalizationRestraintC(mdl,particle,R,sigma)
     output_objects.append(mlr)
     mlr.add_to_model()
 
-for particle in (mic19[1],mic60[2],mic19[2]):
-    zar_above = ZAxialRestraintC(mdl,particle, 20, -70, 0.2, 'None', label = 'zar_above')
+#ZAxialRestraint above the cylinder
+for particle in (mic19[1],mic60[1],mic19[2]):
+    zar_above = ZAxialRestraintC(mdl,particle,ub,min_up_cj,zar_wt,'None',label='zar_above')
     output_objects.append(zar_above)
+    zar_above.add_to_model()
 
-zar_cc = ZAxialRestraintC(mdl,mic60[3], ub, lb, 0.2, 'None', label = 'zar_cc')
+#ZAxialRestraint at the rim of the cylinder
+# for particle in (mic60[2],mic19[3]):
+#     zar_cc = ZAxialRestraintC(mdl,particle,ub,lb,0.2,'None',label='zar_cc')
+#     output_objects.append(zar_cc)
+#     zar_cc.add_to_model()
+
+#ZAxialRestraint at the rim of the cylinder
+zar_cc = ZAxialRestraintC(mdl,mic60[2],ub,lb,zar_wt,'None',label = 'zar_cc')
 output_objects.append(zar_cc)
 zar_cc.add_to_model()
 
-for particle in (mic10[0],mic10[1],mic10[2],mic10[3],mic10[4],mic13[0],mic13[1],mic13[2],mic19[3]):
-    zar_below = ZAxialRestraintC(mdl,particle, 0, 100 ,0.2, 'average', label = 'zar_below')
+#ZAxialRestraint in the cylinder
+for particle in (mic10[0],mic10[1],mic10[2],mic10[3],mic10[4],mic13[0],mic13[1],mic13[2]): #,mic19[3], mic19[5]
+    zar_below = ZAxialRestraintC(mdl,particle,lb,max_in_cj,zar_wt,'average',label='zar_below')
     output_objects.append(zar_below)
     zar_below.add_to_model()
 
+# To specify the particles in the specific bounding box
 ims_particles = []
 tm_particles = []
 mem_surface_particles = []
 matrix_particles = []
 
-ims_particles.extend([mic10[0], mic10[4], mic13[2], mic60[0], mic60[1], mic19[0], mic19[2]])
+ims_particles.extend([mic10[0], mic10[4], mic13[2], mic60[2], mic60[1], mic19[0], mic19[2]])
 tm_particles.extend([mic10[1], mic10[3], mic13[1]])
 matrix_particles.extend([mic10[2],mic13[0]])
 mem_surface_particles.extend([mic60[1],mic19[2]])
@@ -359,7 +382,7 @@ IMP.pmi.tools.shuffle_configuration(matrix_particles,
 # Shuffling randomizes the bead positions. It's good to
 # allow these to optimize first to relax large connectivity
 # restraint scores.  100-500 steps is generally sufficient.
-dof.optimize_flexible_beads(5000)
+dof.optimize_flexible_beads(1000)
 IMP.pmi.dof.DegreesOfFreedom.enable_all_movers(dof)
 
 print("Replica Exchange Maximum Temperature : " + str(rex_max_temp))
@@ -368,11 +391,11 @@ print("Replica Exchange Maximum Temperature : " + str(rex_max_temp))
 # -----------------------------
 # %%%%% MINIMUM PAIR RESTRAINT
 # co-IP > BN-PAGE > WB as 1, 2, 4, respectively
-mpr1 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(81,85,"MIC13",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC13_RDWN_MIC10_mpr",4)
-mpr2 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(24,28,"MIC10",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC10_MIC10_mpr1",2)
-mpr3 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(46,52,"MIC10",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC10_MIC10_mpr2",2)
+mpr1 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(81,85,"MIC13",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC13_RDWN_MIC10_mpr",coIP_wt)
+mpr2 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(24,28,"MIC10",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC10_MIC10_mpr1",BNPAGE_wt)
+mpr3 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(46,52,"MIC10",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC10_MIC10_mpr2",BNPAGE_wt)
 # mpr4 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(15,19,"MIC13",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(1,78,"MIC10",None,None),10),0,1,"MIC13_GXXXG_MIC10_mpr",4)
-mpr5 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(2,26,"MIC13",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(410,758,"MIC60",None,None),10),0,1,"MIC13_MIC60_mpr1",4)
+mpr5 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(2,26,"MIC13",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(410,758,"MIC60",None,None),10),0,1,"MIC13_MIC60_mpr1",coIP_wt)
 # mpr6 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(84,103,"MIC13",None,None),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(410,758,"MIC60",None,None),10),0,1,"MIC13_MIC60_mpr2",4)
 
 
@@ -384,39 +407,39 @@ output_objects.append(mpr5)
 # output_objects.append(mpr6)
 
 
-for i in range(4):
-    selection_tuple = (172,221,"MIC19",None,None)
-    plist1 = IMP.pmi.tools.select_by_tuple_2(root_hier, selection_tuple, 10)
-    selection_tuple = (410,758,"MIC60",i,None)
-    plist2 = IMP.pmi.tools.select_by_tuple_2(root_hier, selection_tuple, 10)
-    mpr = MinimumPairDistanceBindingRestraint(mdl, plist1, plist2, 0, 1, "MIC19_MIC60_mpr1",2)
-    output_objects.append(mpr)
-    mpr.add_to_model()
-
-    selection_tuple = (1,227,"MIC19",None,None)
-    plist1 = IMP.pmi.tools.select_by_tuple_2(root_hier, selection_tuple, 10)
-    selection_tuple = (410,758,"MIC60",i,None)
-    plist2 = IMP.pmi.tools.select_by_tuple_2(root_hier, selection_tuple, 10)
-    mpr = MinimumPairDistanceBindingRestraint(mdl, plist1, plist2, 0, 1, "MIC19_MIC60_mpr2",2)
-    output_objects.append(mpr)
-    mpr.add_to_model()
-
-for i in range(2):
-    selection_tuple = (172,221,"MIC19",i,None)
-    plist1 = IMP.pmi.tools.select_by_tuple_2(root_hier, selection_tuple, 10)
-    selection_tuple = (410,758,"MIC60",None,None)
-    plist2 = IMP.pmi.tools.select_by_tuple_2(root_hier, selection_tuple, 10)
-    mpr = MinimumPairDistanceBindingRestraint(mdl, plist1, plist2, 0, 1, "MIC19_MIC60_mpr1",2)
-    output_objects.append(mpr)
-    mpr.add_to_model()
-
-    selection_tuple = (1,227,"MIC19",i,None)
-    plist1 = IMP.pmi.tools.select_by_tuple_2(root_hier, selection_tuple, 10)
-    selection_tuple = (410,758,"MIC60",None,None)
-    plist2 = IMP.pmi.tools.select_by_tuple_2(root_hier, selection_tuple, 10)
-    mpr = MinimumPairDistanceBindingRestraint(mdl, plist1, plist2, 0, 1, "MIC19_MIC60_mpr2",6)
-    output_objects.append(mpr)
-    mpr.add_to_model()
+# for i in range(4):
+#     selection_tuple = (172,221,"MIC19",None,None)
+#     plist1 = IMP.pmi.tools.select_by_tuple_2(root_hier, selection_tuple, 10)
+#     selection_tuple = (410,758,"MIC60",i,None)
+#     plist2 = IMP.pmi.tools.select_by_tuple_2(root_hier, selection_tuple, 10)
+#     mpr = MinimumPairDistanceBindingRestraint(mdl, plist1, plist2, 0, 1, "MIC19_MIC60_mpr1",WB_wt)
+#     output_objects.append(mpr)
+#     mpr.add_to_model()
+#
+#     selection_tuple = (1,227,"MIC19",None,None)
+#     plist1 = IMP.pmi.tools.select_by_tuple_2(root_hier, selection_tuple, 10)
+#     selection_tuple = (410,758,"MIC60",i,None)
+#     plist2 = IMP.pmi.tools.select_by_tuple_2(root_hier, selection_tuple, 10)
+#     mpr = MinimumPairDistanceBindingRestraint(mdl, plist1, plist2, 0, 1, "MIC19_MIC60_mpr2",WB_wt)
+#     output_objects.append(mpr)
+#     mpr.add_to_model()
+#
+# for i in range(2):
+#     selection_tuple = (172,221,"MIC19",i,None)
+#     plist1 = IMP.pmi.tools.select_by_tuple_2(root_hier, selection_tuple, 10)
+#     selection_tuple = (410,758,"MIC60",None,None)
+#     plist2 = IMP.pmi.tools.select_by_tuple_2(root_hier, selection_tuple, 10)
+#     mpr = MinimumPairDistanceBindingRestraint(mdl, plist1, plist2, 0, 1, "MIC19_MIC60_mpr1",WB_wt)
+#     output_objects.append(mpr)
+#     mpr.add_to_model()
+#
+#     selection_tuple = (1,227,"MIC19",i,None)
+#     plist1 = IMP.pmi.tools.select_by_tuple_2(root_hier, selection_tuple, 10)
+#     selection_tuple = (410,758,"MIC60",None,None)
+#     plist2 = IMP.pmi.tools.select_by_tuple_2(root_hier, selection_tuple, 10)
+#     mpr = MinimumPairDistanceBindingRestraint(mdl, plist1, plist2, 0, 1, "MIC19_MIC60_mpr2",WB_wt)
+#     output_objects.append(mpr)
+#     mpr.add_to_model()
 
 # exit()
 
@@ -430,10 +453,10 @@ mpr5.add_to_model()
 ## AF-multimer -------------------------------
 # mic10-13, mic10-60, mic13-60
 
-AF1 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(18,22,"MIC13"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(23,27,"MIC10"),10),0,1,"MIC13_TM_MIC10_af1",20)
-AF2 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(88,92,"MIC13"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(657,668,"MIC60"),10),0,1,"MIC13_MIC60_af2",20)
-AF3 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(3,3,"MIC10"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(639,642,"MIC60"),10),0,1,"MIC10_MIC60_af3",20)
-AF4 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(2,3,"MIC10"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(720,724,"MIC60"),10),0,1,"MIC10_MIC60_af4",20)
+AF1 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(18,22,"MIC13"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(23,27,"MIC10"),10),0,1,"MIC13_TM_MIC10_af1",AF_wt)
+AF2 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(88,92,"MIC13"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(657,668,"MIC60"),10),0,1,"MIC13_MIC60_af2",AF_wt)
+AF3 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(3,3,"MIC10"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(639,642,"MIC60"),10),0,1,"MIC10_MIC60_af3",AF_wt)
+AF4 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(2,3,"MIC10"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(720,724,"MIC60"),10),0,1,"MIC10_MIC60_af4",AF_wt)
 
 output_objects.append(AF1)
 output_objects.append(AF2)
@@ -506,7 +529,7 @@ xlr_BDP_PIR_mouse = IMP.pmi.restraints.crosslinking.CrossLinkingMassSpectrometry
                 resolution=1,           # The resolution at which to evaluate the crosslink
                 slope=0.0001,           # This adds a linear term to the scoring function
                 label="BDP_PIR_mouse",                        #   to bias crosslinks towards each other
-                weight=10,                                     # Scaling factor for the restraint score.
+                weight=8,                                     # Scaling factor for the restraint score.
                 linker=ihm.ChemDescriptor("bruce"))
 
 output_objects.append(xlr_BDP_PIR_mouse)
@@ -555,7 +578,7 @@ xlr_DSSO_mouse = IMP.pmi.restraints.crosslinking.CrossLinkingMassSpectrometryRes
                 resolution=1,           # The resolution at which to evaluate the crosslink
                 slope=0.0001,           # This adds a linear term to the scoring function
                 label="DSSO_mouse",                        #   to bias crosslinks towards each other
-                weight=10,                       # Scaling factor for the restraint score.
+                weight=8,                       # Scaling factor for the restraint score.
                 linker=ihm.ChemDescriptor("bruce"))
 output_objects.append(xlr_DSSO_mouse)
 

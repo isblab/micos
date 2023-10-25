@@ -153,10 +153,10 @@ bs = IMP.pmi.macros.BuildSystem(mdl)
 bs.add_state(t)
 
 # executing the macro will return the root hierarchy and degrees of freedom (dof) objects
-root_hier, dof = bs.execute_macro(max_rb_trans= 1,
-                                  max_rb_rot= 0.1,
-                                  max_bead_trans= 3.2,
-                                  max_srb_trans= 0.4,
+root_hier, dof = bs.execute_macro(max_rb_trans= 0.5,
+                                  max_rb_rot= 0.02,
+                                  max_bead_trans= 3,
+                                  max_srb_trans= 0.2,
                                   max_srb_rot=0.01)
 
 # molecules = t.get_components()

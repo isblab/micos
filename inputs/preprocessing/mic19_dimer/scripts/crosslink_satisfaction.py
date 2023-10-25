@@ -49,9 +49,9 @@ def calculate_distance(pdb_file, residue1, residue2, violation):
                 chainB = "B"
 
         if min_distance < violation:
-            return min_distance, chainA, chainB, 'True'
+            return min_distance, chainA, chainB, True
         else:
-            return min_distance, chainA, chainB, 'False'
+            return min_distance, chainA, chainB, False
 
     except KeyError:
         return None
@@ -70,8 +70,8 @@ if __name__ == "__main__":
         result = calculate_distance(pdb_file, res1, res2, violation_)
 
         if result is not None:
-            distance, chainA, chainB, violated = result
-            if violated == 'True':
+            distance, chainA, chainB, not_violated = result
+            if not_violated:
                 df2 = pd.concat([df2, pd.DataFrame({"Residue1": [res1], "Residue2": [res2], "Distance": [distance]})], ignore_index=True)
             else:
                 df3 = pd.concat([df3, pd.DataFrame({"Residue1": [res1], "Residue2": [res2], "Distance": [distance]})], ignore_index=True)

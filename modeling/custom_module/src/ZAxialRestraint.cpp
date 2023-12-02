@@ -16,7 +16,7 @@ ZAxialRestraint::ZAxialRestraint(IMP::ParticlesTemp plist, double ub, double lb,
 		method_(method){}
 
 
-double ZAxialRestraint::getDeviation(double z) const {
+double ZAxialRestraint::getDistance(double z) const {
 
     if (z > ub_) {  // Continue only if z is above ub centre
         double deviation = z*z + ub_*ub_ -2 *ub_*z;

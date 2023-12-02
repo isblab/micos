@@ -228,7 +228,7 @@ mic19_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19
 
 R = 130 #radius of the outer cylinder
 r = 90 #radius of the inner cylinder
-allowed_dist = 5 #for surface localization, this is the distance from the center. the beads should stay within this and the radius of the inner cylinder
+allowed_dist = 10 #for surface localization, this is the distance from the center. the beads should stay within this and the radius of the inner cylinder
 lb = 0
 ub = 50
 max_in_cj = 100
@@ -247,7 +247,7 @@ for particle_set in (mic60_selections[3],mic60_selections[4],mic60_selections[5]
     slr.add_to_model()
 
 #IMSLocalizationRestraint
-for particle_set in (mic10_selections[0],mic10_selections[4],mic13_selections[2],mic60_selections[2], mic60_selections[1],mic19_selections[2]):
+for particle_set in (mic10_selections[0],mic10_selections[4],mic13_selections[2],mic60_selections[2], mic60_selections[1],mic19_selections[2],mic60_selections[0],mic19_selections[0]):
     ilr = IMSLocalizationRestraintC(mdl,particle_set,r,mem_wt)
     output_objects.append(ilr)
     ilr.add_to_model()

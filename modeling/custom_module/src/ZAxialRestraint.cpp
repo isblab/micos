@@ -18,11 +18,11 @@ ZAxialRestraint::ZAxialRestraint(IMP::ParticlesTemp plist, double ub, double lb,
 
 double ZAxialRestraint::getDistance(double z) const {
 
-    if (z > ub_) {  // Continue only if z is above ub centre
+    if (z < ub_) {  // Continue only if z is above ub centre
         double deviation = z*z + ub_*ub_ -2 *ub_*z;
         return fabs(deviation);
     }
-    if (z < lb_) {  // Continue only if z is not outside lb
+    if (z > lb_) {  // Continue only if z is not outside lb
         double deviation = z*z + lb_*lb_ -2*lb_*z;
         return fabs(deviation);
     }
@@ -37,6 +37,7 @@ double ZAxialRestraint::unprotected_evaluate(IMP::DerivativeAccumulator* accum) 
 	double total_com = 0;
 	double avg = 0;
 	double mass =0;
+	
 
 
 	if (method_=="average"){
@@ -49,7 +50,25 @@ double ZAxialRestraint::unprotected_evaluate(IMP::DerivativeAccumulator* accum) 
 	 avg = total_com/mass;
 	 score += getDistance(avg);
 	}
+	
+	else if (method_=="domain"){
+		std::vector<double> score_list;
+		for (unsigned int i = 0; i < plist_.size(); i++){
+		double z = IMP::core::XYZ(plist_[i]).get_coordinate(2);
+		score_list.push_back(getDistance(z));
+		}
+		auto it = std::find(score_list.begin(), score_list.end(), 0.0);
 
+    		if (it != score_list.end()) {
+        	    score = 0.0;
+	       }
+	else {
+        auto minElement = std::min_element(score_list.begin(), score_list.end());
+        if (minElement != score_list.end()) {
+            score = *minElement;
+            }
+    	 }		 
+       }	
 		else {
 			for (unsigned int i = 0; i < plist_.size(); i++){
 		double z = IMP::core::XYZ(plist_[i]).get_coordinate(2);

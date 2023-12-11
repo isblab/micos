@@ -109,7 +109,7 @@ run_output_dir = 'run_' + runID
 data_direc = sys.argv[3]
 
 if runType == "test":
-    num_frames = 1000
+    num_frames = 1500
 elif runType == "prod":
     num_frames = 30000
 
@@ -124,7 +124,7 @@ xl_DSSO_mouse = f'{data_direc}/crosslinks/human/sampling_DSSO_mouse'
 
 
 # Topology File
-topology_file = f'{data_direc}/topology_mic19_1full_1N_1C.txt'
+topology_file = f'{data_direc}/topology_mic19_1full_1N_1C_finer_rep.txt'
 
 # Weights
 mem_wt = 0.04
@@ -156,7 +156,7 @@ root_hier, dof = bs.execute_macro(max_rb_trans= 0.1,
                                   max_rb_rot= 0.1,
                                   max_bead_trans= 2.43,
                                   max_srb_trans= 0.1,
-                                  max_srb_rot= 0.01)
+                                  max_srb_rot= 0.02)
 
 rex_max_temp = 1.25
 
@@ -169,7 +169,8 @@ rex_max_temp = 1.25
 # rh = RMF.create_rmf_file(fname)
 # IMP.rmf.add_hierarchy(rh, root_hier)
 # IMP.rmf.save_frame(rh)
-
+#
+# exit()
 #####################################################
 ##################### RESTRAINTS ####################
 #####################################################
@@ -211,9 +212,9 @@ mic60_selections = []
 mic60_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(627,759)).get_selected_particles()) #ims
 mic60_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(583,627)).get_selected_particles()) # above z
 mic60_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1,2,3],residue_indexes = range(410,583)).get_selected_particles()) # on the center
-mic60_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(634,638)).get_selected_particles()) # slr
+mic60_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(634,636)).get_selected_particles()) # slr
 mic60_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(643,645)).get_selected_particles()) # slr
-mic60_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(692,693)).get_selected_particles()) # slr
+# mic60_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],residue_indexes = range(692,693)).get_selected_particles()) # slr
 
 mic13_selections = []
 mic13_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(1,8)).get_selected_particles()) # matrix
@@ -241,7 +242,7 @@ for particle_set in (mic10_selections[1], mic10_selections[3], mic13_selections[
     tmr.add_to_model()
 
 # SurfaceLocalizationRestraint
-for particle_set in (mic60_selections[3],mic60_selections[4],mic60_selections[5]):
+for particle_set in (mic60_selections[3],mic60_selections[4]):
     slr = SurfaceLocalizationRestraintC(mdl,particle_set,r,mem_wt,allowed_dist)
     output_objects.append(slr)
     slr.add_to_model()
@@ -259,13 +260,19 @@ for particle_set in (mic10_selections[2],mic13_selections[0]):
     mlr.add_to_model()
 
 #ZAxialRestraint for interaction with SAM/TOB complex
-for particle_set in (mic19_selections[1],mic60_selections[1], mic60_selections[0]):
-    zar_sam50 = ZAxialRestraintC(mdl,particle_set,ub,min_up_cj,zar_wt,'None',label='zar_sam50')
+## for Mic60 ateast one bead above cj
+for particle_set in (mic60_selections[1], mic60_selections[0]):
+    zar_sam50 = ZAxialRestraintC(mdl,particle_set,min_up_cj,lb,zar_wt,'domain',label='zar_sam50')
     output_objects.append(zar_sam50)
     zar_sam50.add_to_model()
 
+## for Mic19 N-term, larger bounds
+zar_sam50 = ZAxialRestraintC(mdl,mic19_selections[1],min_up_cj,ub,zar_wt,'None',label='zar_sam50_mic19')
+output_objects.append(zar_sam50)
+zar_sam50.add_to_model()
+
 #ZAxialRestraint at the rim of the cylinder
-zar_cc = ZAxialRestraintC(mdl,mic60_selections[2],ub,lb,zar_wt,'None',label = 'zar_cc')
+zar_cc = ZAxialRestraintC(mdl,mic60_selections[2],lb,ub,zar_wt,'None',label = 'zar_cc')
 output_objects.append(zar_cc)
 zar_cc.add_to_model()
 
@@ -335,22 +342,22 @@ tm_bb = ((r,-r,0),(R,R,100))
 # system. For larger systems, you may want to increase max_translation
 
 IMP.pmi.tools.shuffle_configuration(ims_mem_surface_particles,
-                                    max_translation=30,
+                                    max_translation=50,
                                     bounding_box = ims_bb,
                                     avoidcollision_rb = False)
 
 # IMP.pmi.tools.shuffle_configuration(mem_surface_particles,
-#                                     max_translation=30,
+#                                     max_translation=50,
 #                                     bounding_box = ims_bb,
 #                                     avoidcollision_rb = False)
 
 IMP.pmi.tools.shuffle_configuration(tm_particles,
-                                    max_translation=30,
+                                    max_translation=50,
                                     bounding_box = tm_bb,
                                     avoidcollision_rb = False)
 #
 IMP.pmi.tools.shuffle_configuration(matrix_particles,
-                                    max_translation=30)
+                                    max_translation=50)
 # Shuffling randomizes the bead positions. It's good to
 # allow these to optimize first to relax large connectivity
 # restraint scores.  100-500 steps is generally sufficient.

@@ -27,29 +27,29 @@
 |MIC60.3      |sky blue             |MIC60.fasta    |MIC60_Q16891    |MIC60_tet.pdb                                           |D|520,692        |-110     |10    |10   |1    |4  | |
 
 |MIC19        |red                  |MIC19.fasta   |MIC19_Q9NX63   |BEADS                                                      | |1,58            |0   	  |10    |10   |    |5  | |
-|MIC19        |red                  |MIC19.fasta   |MIC19_Q9NX63   |MIC19.pdb                                                  |A|59,174          |0  	  |10    |10   |15  |5  | |
+|MIC19        |red                  |MIC19.fasta   |MIC19_Q9NX63   |MIC19_initial.pdb                                          |A|59,174          |0  	  |10    |10   |15  |5  | |
 |MIC19        |red                  |MIC19.fasta   |MIC19_Q9NX63   |BEADS                                                      | |175,185         |0   	  |10    |10   |    |5  | |
 |MIC19        |red                  |MIC19.fasta   |MIC19_Q9NX63   |MIC60_19.pdb                                               |B|126,167         |60  	  |10    |10   |3   |5  | |
 
-|MIC19.1      |red           |MIC19.fasta   |MIC19_Q9NX63   |BEADS                                                   | |1,58            |0   	  |10    |10   |    |6  | |
-|MIC19.1      |red           |MIC19.fasta   |MIC19_Q9NX63   |MIC19.pdb                                               |B|59,174          |0  	  |10    |10   |15  |6  | |
-|MIC19.1      |red           |MIC19.fasta   |MIC19_Q9NX63   |BEADS                                                   | |175,185         |0  	  |10    |10   |    |6  | |
-|MIC19.1      |red           |MIC19.fasta   |MIC19_Q9NX63   |MIC60_19.pdb                                            |D|292,333         |-106      |10    |10   |3   |6  | |
+|MIC19.1      |red                  |MIC19.fasta   |MIC19_Q9NX63   |BEADS                                                   | |1,58            |0   	  |10    |10   |    |6  | |
+|MIC19.1      |red                  |MIC19.fasta   |MIC19_Q9NX63   |MIC19_initial.pdb                                       |A|59,174          |0  	    |10    |10   |16  |6  | |
+|MIC19.1      |red                  |MIC19.fasta   |MIC19_Q9NX63   |BEADS                                                   | |175,185         |0  	    |10    |10   |    |6  | |
+|MIC19.1      |red                  |MIC19.fasta   |MIC19_Q9NX63   |MIC60_19.pdb                                            |D|292,333         |-106    |10    |10   |3   |6  | |
 
 |MIC19.2      |orange red           |MIC19.fasta   |MIC19_Q9NX63   |BEADS                                                   | |1,58            |0   	  |10    |10   |    |6  | |
-|MIC19.2      |orange red           |MIC19.fasta   |MIC19_Q9NX63   |MIC19.pdb                                               |A|59,174          |0  	  |10    |10   |16  |6  | |
+|MIC19.2      |orange red           |MIC19.fasta   |MIC19_Q9NX63   |MIC19_initial.pdb                                       |A|59,174          |0  	    |10    |10   |17  |6  | |
 
 |MIC19.3      |orange red           |MIC19.fasta   |MIC19_Q9NX63   |BEADS                                                   | |1,58            |0   	  |10    |10   |    |6  | |
-|MIC19.3      |orange red           |MIC19.fasta   |MIC19_Q9NX63   |MIC19.pdb                                               |B|59,174          |0  	  |10    |10   |16  |6  | |
+|MIC19.3      |orange red           |MIC19.fasta   |MIC19_Q9NX63   |MIC19_initial.pdb                                       |A|59,174          |0  	    |10    |10   |18  |6  | |
 
-|MIC10        |lime green           |MIC10.fasta   |MIC10_Q5TGZ0   |MIC10.pdb                                               |A|1,12           |0   	  |10    |10   |17  |7  | |
-|MIC10        |lime green           |MIC10.fasta   |MIC10_Q5TGZ0   |MIC10.pdb                                               |A|13,36          |0   	  |10    |10   |18  |7  | |
+|MIC10        |lime green           |MIC10.fasta   |MIC10_Q5TGZ0   |MIC10.pdb                                               |A|1,12           |0   	  |10    |10   |19  |7  | |
+|MIC10        |lime green           |MIC10.fasta   |MIC10_Q5TGZ0   |MIC10.pdb                                               |A|13,36          |0   	  |10    |10   |20  |7  | |
 |MIC10        |lime green           |MIC10.fasta   |MIC10_Q5TGZ0   |BEADS                                                   | |37,39          |0   	  |10    |10   |    |7  | |
-|MIC10        |lime green           |MIC10.fasta   |MIC10_Q5TGZ0   |MIC10.pdb                                               |A|40,60          |0   	  |10    |10   |19  |7  | |
+|MIC10        |lime green           |MIC10.fasta   |MIC10_Q5TGZ0   |MIC10.pdb                                               |A|40,60          |0   	  |10    |10   |21  |7  | |
 |MIC10        |lime green           |MIC10.fasta   |MIC10_Q5TGZ0   |BEADS                                                   | |61,78          |0   	  |10    |10   |    |7  | |
 
-|MIC13        |purple               |MIC13.fasta   |MIC13_Q5XKP0   |MIC13.pdb                                               |A|1,7            |0       |10    |10   |20   |8  | |
-|MIC13        |purple               |MIC13.fasta   |MIC13_Q5XKP0   |MIC13.pdb                                               |A|8,23           |0       |10    |10   |21   |8  | |
-|MIC13        |purple               |MIC13.fasta   |MIC13_Q5XKP0   |MIC13.pdb                                               |A|24,68          |0       |10    |10   |22   |8  | |
+|MIC13        |purple               |MIC13.fasta   |MIC13_Q5XKP0   |MIC13.pdb                                               |A|1,7            |0       |10    |10   |22   |8  | |
+|MIC13        |purple               |MIC13.fasta   |MIC13_Q5XKP0   |MIC13.pdb                                               |A|8,23           |0       |10    |10   |23   |8  | |
+|MIC13        |purple               |MIC13.fasta   |MIC13_Q5XKP0   |MIC13.pdb                                               |A|24,68          |0       |10    |10   |24   |8  | |
 |MIC13        |purple               |MIC13.fasta   |MIC13_Q5XKP0   |BEADS                                                   | |69,78          |0       |10    |10   |     |8  | |
-|MIC13        |purple               |MIC13.fasta   |MIC13_Q5XKP0   |MIC13.pdb                                               |A|79,118         |0       |10    |10   |23   |8  | |
+|MIC13        |purple               |MIC13.fasta   |MIC13_Q5XKP0   |MIC13.pdb                                               |A|79,118         |0       |10    |10   |25   |8  | |

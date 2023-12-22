@@ -109,9 +109,9 @@ run_output_dir = 'run_' + runID
 data_direc = sys.argv[3]
 
 if runType == "test":
-    num_frames = 500
+    num_frames = 1500
 elif runType == "prod":
-    num_frames = 30000
+    num_frames = 20000
 
 
 
@@ -124,7 +124,7 @@ xl_DSSO_mouse = f'{data_direc}/crosslinks/human/sampling_DSSO_mouse.csv'
 
 
 # Topology File
-topology_file = f'{data_direc}/topology_mic19_1full_1N_1C.txt'
+topology_file = f'{data_direc}/topology_mic19_2full_2N.txt'
 
 # Weights
 mem_wt = 0.04
@@ -154,9 +154,9 @@ bs.add_state(t)
 # executing the macro will return the root hierarchy and degrees of freedom (dof) objects
 root_hier, dof = bs.execute_macro(max_rb_trans= 0.1,
                                   max_rb_rot= 0.1,
-                                  max_bead_trans= 2.43,
-                                  max_srb_trans= 0.4,
-                                  max_srb_rot= 0.02)
+                                  max_bead_trans= 3.71,
+                                  max_srb_trans= 0.1,
+                                  max_srb_rot= 0.01)
 
 rex_max_temp = 1.25
 
@@ -222,10 +222,10 @@ mic13_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13
 mic13_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC13',residue_indexes = range(24,119)).get_selected_particles()) # ims
 
 mic19_selections = []
-mic19_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1],residue_indexes = range(1,186)).get_selected_particles()) # ims
-mic19_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1],residue_indexes = range(1,15)).get_selected_particles()) # above z
-mic19_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,2],residue_indexes = range(186,228)).get_selected_particles()) # above z
-mic19_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1],residue_indexes = range(59,175)).get_selected_particles()) # on the center
+mic19_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1,2,3],residue_indexes = range(1,186)).get_selected_particles()) # ims
+mic19_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1,2,3],residue_indexes = range(1,15)).get_selected_particles()) # above z
+mic19_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1],residue_indexes = range(186,228)).get_selected_particles()) # above z
+# mic19_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC19',copy_indexes = [0,1],residue_indexes = range(59,175)).get_selected_particles()) # on the center
 
 R = 130 #radius of the outer cylinder
 r = 90 #radius of the inner cylinder
@@ -471,7 +471,7 @@ xlr_BDP_PIR_mouse = IMP.pmi.restraints.crosslinking.CrossLinkingMassSpectrometry
                 resolution=1,           # The resolution at which to evaluate the crosslink
                 slope=0.0001,           # This adds a linear term to the scoring function
                 label="BDP_PIR_mouse",                        #   to bias crosslinks towards each other
-                weight=8,                                     # Scaling factor for the restraint score.
+                weight=10,                                     # Scaling factor for the restraint score.
                 linker=ihm.ChemDescriptor("bruce"))
 
 output_objects.append(xlr_BDP_PIR_mouse)
@@ -520,7 +520,7 @@ xlr_DSSO_mouse = IMP.pmi.restraints.crosslinking.CrossLinkingMassSpectrometryRes
                 resolution=1,           # The resolution at which to evaluate the crosslink
                 slope=0.0001,           # This adds a linear term to the scoring function
                 label="DSSO_mouse",                        #   to bias crosslinks towards each other
-                weight=8,                       # Scaling factor for the restraint score.
+                weight=10,                       # Scaling factor for the restraint score.
                 linker=ihm.ChemDescriptor("bruce"))
 output_objects.append(xlr_DSSO_mouse)
 

@@ -6,7 +6,7 @@ for i in `seq 24`; do
 done
 sleep 600 ;
 
-mpirun -np 8 /home/muskaan/imp-clean/build/setup_environment.sh python /home/muskaan/Documents/modeling_micos_complex/micos/scripts/mic19_1full_1N_1C.py "prod" "25" /home/muskaan/Documents/modeling_micos_complex/micos/inputs/data 2> "err_output_25.log" &
+mpirun -np 8 /home/muskaan/imp-clean/build/setup_environment.sh python /home/muskaan/Documents/modeling_micos_complex/micos/scripts/mic19_1full_1N_1C.py "prod" "25" /home/muskaan/Documents/modeling_micos_complex/micos/inputs/data 2> "err_25.log" &
 
 for i in `seq 26 50`; do
     folder_name="$i"

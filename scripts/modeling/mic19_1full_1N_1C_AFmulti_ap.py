@@ -109,11 +109,9 @@ run_output_dir = 'run_' + runID
 data_direc = sys.argv[3]
 
 if runType == "test":
-    num_frames = 500
+    num_frames = 1500
 elif runType == "prod":
     num_frames = 30000
-
-
 
 #Xlinkdata files
 xl_BDP_PIR_human = f'{data_direc}/crosslinks/human/sampling_BDP_PIR_human.csv'
@@ -124,7 +122,7 @@ xl_DSSO_mouse = f'{data_direc}/crosslinks/human/sampling_DSSO_mouse.csv'
 
 
 # Topology File
-topology_file = f'{data_direc}/topology_mic19_1full_1N_1C.txt'
+topology_file = f'{data_direc}/topology_mic19_1full_1N_1C_AFmulti_ap.txt'
 
 # Weights
 mem_wt = 0.04
@@ -232,7 +230,7 @@ r = 90 #radius of the inner cylinder
 allowed_dist = 10 #for surface localization, this is the distance from the center. the beads should stay within this and the radius of the inner cylinder
 lb = 0
 ub = 50
-max_in_cj = 100
+max_in_cj = 50
 min_up_cj = -70
 
 # TransMembraneRestraint
@@ -262,7 +260,7 @@ for particle_set in (mic10_selections[2],mic13_selections[0]):
 #ZAxialRestraint for interaction with SAM/TOB complex
 ## for Mic60 ateast one bead above cj
 for particle_set in (mic60_selections[1], mic60_selections[0]):
-    zar_sam50 = ZAxialRestraintC(mdl,particle_set,min_up_cj,lb,zar_wt,'domain',label='zar_sam50')
+    zar_sam50 = ZAxialRestraintC(mdl,particle_set,min_up_cj,ub,zar_wt,'domain',label='zar_sam50')
     output_objects.append(zar_sam50)
     zar_sam50.add_to_model()
 
@@ -284,8 +282,6 @@ for particle_set in (mic10_selections[0],mic10_selections[1],mic10_selections[2]
 
 
 # To specify the particles in the specific bounding box
-# ims_particles = []
-# mem_surface_particles = []
 tm_particles = []
 matrix_particles = []
 ims_mem_surface_particles = []
@@ -293,8 +289,6 @@ ims_mem_surface_particles = []
 ims_mem_surface_particles.extend([mic10_selections[0], mic10_selections[4], mic13_selections[2], mic60_selections[2], mic60_selections[1], mic60_selections[0], mic19_selections[0], mic19_selections[2]])
 tm_particles.extend([mic10_selections[1], mic10_selections[3], mic13_selections[1]])
 matrix_particles.extend([mic10_selections[2],mic13_selections[0]])
-# ims_particles.extend([mic10_selections[0], mic10_selections[4], mic13_selections[2], mic60_selections[2], mic60_selections[1], mic19_selections[0], mic19_selections[2]])
-# mem_surface_particles.extend([mic60_selections[1],mic19_selections[2]])
 
 # # -----------------------------
 # %%%%% CONNECTIVITY RESTRAINT
@@ -346,16 +340,11 @@ IMP.pmi.tools.shuffle_configuration(ims_mem_surface_particles,
                                     bounding_box = ims_bb,
                                     avoidcollision_rb = False)
 
-# IMP.pmi.tools.shuffle_configuration(mem_surface_particles,
-#                                     max_translation=50,
-#                                     bounding_box = ims_bb,
-#                                     avoidcollision_rb = False)
-
 IMP.pmi.tools.shuffle_configuration(tm_particles,
                                     max_translation=50,
                                     bounding_box = tm_bb,
                                     avoidcollision_rb = False)
-#
+
 IMP.pmi.tools.shuffle_configuration(matrix_particles,
                                     max_translation=50)
 # Shuffling randomizes the bead positions. It's good to
@@ -397,18 +386,18 @@ mpr6.add_to_model()
 #
 # AF1 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(18,22,"MIC13"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(23,27,"MIC10"),10),0,1,"MIC13_TM_MIC10_af1",AF_wt)
 # AF2 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(88,92,"MIC13"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(657,668,"MIC60"),10),0,1,"MIC13_MIC60_af2",AF_wt)
-# AF3 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(3,3,"MIC10"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(639,642,"MIC60"),10),0,1,"MIC10_MIC60_af3",AF_wt)
-# AF4 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(2,3,"MIC10"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(720,724,"MIC60"),10),0,1,"MIC10_MIC60_af4",AF_wt)
+AF3 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(3,3,"MIC10"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(639,642,"MIC60"),10),0,1,"MIC10_MIC60_af3",AF_wt)
+AF4 = MinimumPairDistanceBindingRestraint(mdl,IMP.pmi.tools.select_by_tuple_2(root_hier,(2,3,"MIC10"),10),IMP.pmi.tools.select_by_tuple_2(root_hier,(720,724,"MIC60"),10),0,1,"MIC10_MIC60_af4",AF_wt)
 #
 # output_objects.append(AF1)
 # output_objects.append(AF2)
-# output_objects.append(AF3)
-# output_objects.append(AF4)
+output_objects.append(AF3)
+output_objects.append(AF4)
 #
 # AF1.add_to_model()
 # AF2.add_to_model()
-# AF3.add_to_model()
-# AF4.add_to_model()
+AF3.add_to_model()
+AF4.add_to_model()
 
 # -------------------------
 # %%%%% CROSSLINKING RESTRAINT

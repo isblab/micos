@@ -471,7 +471,7 @@ xlr_BDP_PIR_mouse = IMP.pmi.restraints.crosslinking.CrossLinkingMassSpectrometry
                 resolution=1,           # The resolution at which to evaluate the crosslink
                 slope=0.0001,           # This adds a linear term to the scoring function
                 label="BDP_PIR_mouse",                        #   to bias crosslinks towards each other
-                weight=10,                                     # Scaling factor for the restraint score.
+                weight=8,                                     # Scaling factor for the restraint score.
                 linker=ihm.ChemDescriptor("bruce"))
 
 output_objects.append(xlr_BDP_PIR_mouse)
@@ -520,7 +520,7 @@ xlr_DSSO_mouse = IMP.pmi.restraints.crosslinking.CrossLinkingMassSpectrometryRes
                 resolution=1,           # The resolution at which to evaluate the crosslink
                 slope=0.0001,           # This adds a linear term to the scoring function
                 label="DSSO_mouse",                        #   to bias crosslinks towards each other
-                weight=10,                       # Scaling factor for the restraint score.
+                weight=8,                       # Scaling factor for the restraint score.
                 linker=ihm.ChemDescriptor("bruce"))
 output_objects.append(xlr_DSSO_mouse)
 

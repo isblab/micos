@@ -13,7 +13,7 @@ For this, go to the respective directories mentioned above and follow the README
 
 Map the micos crosslinks and biochemical data from human to yeast and vice versa. Save the human crosslinks (mapped to human and directly observed in human) in  `../../data/crosslinks/human` to be used for modeling.
 
-Run the following script do the above: 
+Run the following script to do the above: 
 
 ```
 master_script.sh

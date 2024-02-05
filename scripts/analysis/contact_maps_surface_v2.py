@@ -155,8 +155,9 @@ def compute_dmaps():
             binarized_distance_matrix = np.where(
                 mean_distances <= float(args.distance_threshold), 1, 0
             )
+            percent_models_satisfied = np.delete(np.delete(sum_satisfied_models, 0, axis=0), 0, axis=1)
+            percent_models_satisfied = np.where(percent_models_satisfied >= int(args.percentage_threshold*nmodels), 1, 0)
 
-            percent_models_satisfied = np.where(sum_satisfied_models >= int(args.percentage_threshold*nmodels), 1, 0)
 
             save_matrix_to_csv(mean_distances, s1, s2, p1, p2, "distance_matrices", "mean_distances")
             save_matrix_to_csv(binarized_distance_matrix,s1, s2, p1, p2, "binarized_distance_matrices", "binarized_distances")
@@ -167,14 +168,14 @@ def compute_dmaps():
             fig, ax = pyl.subplots(1, 1)
 
             cax = ax.matshow(mean_distances, cmap='hot')
-            ax.set_xticks(np.arange(0.5, (s1[1]-s1[0]+1), 50))
-            ax.set_xticklabels(np.arange(s1[0], s1[1], 50))
+            ax.set_xticks(np.arange(0.5, (s2[1]-s2[0]+1), 50))
+            ax.set_xticklabels(np.arange(s2[0], s2[1], 50))
 
-            ax.set_yticks(np.arange(0.5, (s2[1]-s2[0]+1), 50))
-            ax.set_yticklabels(np.arange(s2[0], s2[1], 50))
+            ax.set_yticks(np.arange(0.5, (s1[1]-s1[0]+1), 50))
+            ax.set_yticklabels(np.arange(s1[0], s1[1], 50))
 
-            pyl.xlabel(p2)
-            pyl.ylabel(p1)
+            pyl.xlabel(p1)
+            pyl.ylabel(p2)
             ax.xaxis.tick_bottom()
             fig.colorbar(cax)
             pyl.savefig(
@@ -187,11 +188,11 @@ def compute_dmaps():
             fig, ax = pyl.subplots(1, 1)
 
             cax = ax.matshow(binarized_distance_matrix, cmap='Greys')
-            ax.set_xticks(np.arange(0.5, (s1[1]-s1[0]+1), 50))
-            ax.set_xticklabels(np.arange(s1[0], s1[1], 50))
+            ax.set_xticks(np.arange(0.5, (s2[1]-s2[0]+1), 50))
+            ax.set_xticklabels(np.arange(s2[0], s2[1], 50))
 
-            ax.set_yticks(np.arange(0.5, (s2[1]-s2[0]+1), 50))
-            ax.set_yticklabels(np.arange(s2[0], s2[1], 50))
+            ax.set_yticks(np.arange(0.5, (s1[1]-s1[0]+1), 50))
+            ax.set_yticklabels(np.arange(s1[0], s1[1], 50))
 
             pyl.xlabel(p2)
             pyl.ylabel(p1)
@@ -210,11 +211,11 @@ def compute_dmaps():
             fig, ax = pyl.subplots(1, 1)
 
             cax = ax.matshow(percent_models_satisfied, cmap='Greys')
-            ax.set_xticks(np.arange(0.5, (s1[1]-s1[0]+1), 50))
-            ax.set_xticklabels(np.arange(s1[0], s1[1], 50))
+            ax.set_xticks(np.arange(0.5, (s2[1]-s2[0]+1), 50))
+            ax.set_xticklabels(np.arange(s2[0], s2[1], 50))
 
-            ax.set_yticks(np.arange(0.5, (s2[1]-s2[0]+1), 50))
-            ax.set_yticklabels(np.arange(s2[0], s2[1], 50))
+            ax.set_yticks(np.arange(0.5, (s1[1]-s1[0]+1), 50))
+            ax.set_yticklabels(np.arange(s1[0], s1[1], 50))
 
             pyl.xlabel(p2)
             pyl.ylabel(p1)
@@ -228,7 +229,7 @@ def compute_dmaps():
                 dpi=600,
             )
             pyl.close()
-
+            # exit()
             done_prot_pairs.append((p1, p2))
 
     toc = time.time()

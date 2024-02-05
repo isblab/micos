@@ -39,9 +39,9 @@ d12 = IMP.atom.Selection(hierarchy=hier, molecule='MIC10',residue_indexes = rang
 
 d13 = IMP.atom.Selection(hierarchy=hier, molecule='MIC10',residue_indexes = range(46,53)).get_selected_particles()
 d14 = IMP.atom.Selection(hierarchy=hier, molecule='MIC10',residue_indexes = range(1,79)).get_selected_particles()
-
-d15 = IMP.atom.Selection(hierarchy=hier, molecule='MIC13',residue_indexes = range(2,27)).get_selected_particles()
-d16 = IMP.atom.Selection(hierarchy=hier, molecule='MIC60',copy_indexes = [0,1,2,3],residue_indexes = range(410,759)).get_selected_particles()
+#
+# d15 = IMP.atom.Selection(hierarchy=hier, molecule='MIC13',residue_indexes = range(2,27)).get_selected_particles()
+# d16 = IMP.atom.Selection(hierarchy=hier, molecule='MIC60',copy_indexes = [0,1,2,3],residue_indexes = range(410,759)).get_selected_particles()
 
 d17 = IMP.atom.Selection(hierarchy=hier, molecule='MIC13',residue_indexes = range(84,104)).get_selected_particles()
 d18 = IMP.atom.Selection(hierarchy=hier, molecule='MIC60',copy_indexes = [0,1,2,3],residue_indexes = range(410,759)).get_selected_particles()
@@ -78,18 +78,18 @@ d7_d8 = calculate_distances(d7,d8,mdl_ids,rmf_file)
 d9_d10 = calculate_distances(d9,d10,mdl_ids,rmf_file)
 d11_d12 = calculate_distances(d11,d12,mdl_ids,rmf_file)
 d13_d14 = calculate_distances(d13,d14,mdl_ids,rmf_file)
-d15_d16 = calculate_distances(d15,d16,mdl_ids,rmf_file)
+# d15_d16 = calculate_distances(d15,d16,mdl_ids,rmf_file)
 d17_18 = calculate_distances(d17,d18,mdl_ids,rmf_file)
 d19_20 = calculate_distances(d19,d20,mdl_ids,rmf_file)
 
 print('\nnow plotting')
 # # print(d15_d16)
-all_data = [d5_d6, d7_d8, d9_d10, d11_d12, d13_d14, d15_d16, d17_18, d19_20] #d1_d2, d3_d4,
+all_data = [d5_d6, d7_d8, d9_d10, d11_d12, d13_d14, d17_18, d19_20] #d1_d2, d3_d4, d15_d16,
 fig, ax = plt.subplots()
-#
+
 tick_positions = np.arange(1, len(all_data) + 1)
 violinplot = ax.violinplot(all_data)
-#
+
 ax.set_xticks(tick_positions)
 # ax.set_xticklabels(['MIC10-MIC60', 'MIC10-MIC60', 'MIC13-MIC10','MIC10-MIC10', 'MIC10-MIC10','MIC13-MIC60','MIC13-MIC60','MIC13-MIC10'], rotation=30, ha='right',fontsize=6) #'MIC10-MIC13', 'MIC13-MIC60',
 # ax.set_xticklabels(['MIC13-MIC60'], rotation=30, ha='right',fontsize=6)

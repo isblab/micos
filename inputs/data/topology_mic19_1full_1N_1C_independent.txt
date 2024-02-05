@@ -45,6 +45,6 @@
 
 |MIC13        |#90ee90                 |MIC13.fasta   |MIC13_Q5XKP0   |MIC13.pdb                                               |A|1,7            |0       |10    |10   |20   |9  | |
 |MIC13        |#90ee90                 |MIC13.fasta   |MIC13_Q5XKP0   |MIC13.pdb                                               |A|8,23           |0       |10    |10   |21   |9  | |
-|MIC13        |#a67573                 |MIC13.fasta   |MIC13_Q5XKP0   |MIC13.pdb                                               |A|24,68          |0       |10    |10   |22   |9  | |
-|MIC13        |#a67573                 |MIC13.fasta   |MIC13_Q5XKP0   |BEADS                                                   | |69,78          |0       |10    |10   |     |9  | |
-|MIC13        |sea green                 |MIC13.fasta   |MIC13_Q5XKP0   |MIC13.pdb                                               |A|79,118         |0       |10    |10   |23   |9  | |
+|MIC13        |#2ed766                 |MIC13.fasta   |MIC13_Q5XKP0   |MIC13.pdb                                               |A|24,68          |0       |10    |10   |22   |9  | |
+|MIC13        |#2ed766                 |MIC13.fasta   |MIC13_Q5XKP0   |BEADS                                                   | |69,78          |0       |10    |10   |     |9  | |
+|MIC13        |sea green               |MIC13.fasta   |MIC13_Q5XKP0   |MIC13.pdb                                               |A|79,118         |0       |10    |10   |23   |9  | |

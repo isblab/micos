@@ -16,6 +16,6 @@ Map the micos crosslinks and biochemical data from human to yeast and vice versa
 Run the following script to do the above: 
 
 ```
-master_script.sh
+scripts/mapping_to_homologs_master_script.sh
 ```
 

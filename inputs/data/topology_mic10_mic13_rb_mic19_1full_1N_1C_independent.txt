@@ -38,19 +38,13 @@
 |MIC19.2      |#a6544d                 |MIC19.fasta   |MIC19_Q9NX63   |MIC60_19.pdb                                               |D|292,333         |-106    |10    |10   |3   |7  | |
 
 |MIC10        |#ffa100                 |MIC10.fasta   |MIC10_Q5TGZ0   |MIC10.pdb                                               |A|1,12           |0   	  |10    |10   |17  |8  | |
-|MIC10        |#ffa100                 |MIC10.fasta   |MIC10_Q5TGZ0   |MIC10_dimer_TM_MIC13_TM.pdb                             |A|13,36          |0   	  |10    |10   |18  |8  | |
+|MIC10        |#ffa100                 |MIC10.fasta   |MIC10_Q5TGZ0   |MIC10_TM_MIC13_TM.pdb                                   |A|13,36          |0   	  |10    |10   |18  |8  | |
 |MIC10        |#d47a00                 |MIC10.fasta   |MIC10_Q5TGZ0   |BEADS                                                   | |37,39          |0   	  |10    |10   |    |8  | |
-|MIC10        |#d47a00                 |MIC10.fasta   |MIC10_Q5TGZ0   |MIC10_dimer_TM_MIC13_TM.pdb                             |A|40,60          |0   	  |10    |10   |18  |8  | |
+|MIC10        |#d47a00                 |MIC10.fasta   |MIC10_Q5TGZ0   |MIC10_TM_MIC13_TM.pdb                                   |A|40,60          |0   	  |10    |10   |18  |8  | |
 |MIC10        |#e06633                 |MIC10.fasta   |MIC10_Q5TGZ0   |BEADS                                                   | |61,78          |0   	  |10    |10   |    |8  | |
 
-|MIC10.1      |#ffa100                 |MIC10.fasta   |MIC10_Q5TGZ0   |MIC10.pdb                                               |A|1,12           |0   	  |10    |10   |19  |8  | |
-|MIC10.1      |#ffa100                 |MIC10.fasta   |MIC10_Q5TGZ0   |MIC10_dimer_TM_MIC13_TM.pdb                             |B|13,36          |0   	  |10    |10   |18  |8  | |
-|MIC10.1      |#d47a00                 |MIC10.fasta   |MIC10_Q5TGZ0   |BEADS                                                   | |37,39          |0   	  |10    |10   |    |8  | |
-|MIC10.1      |#d47a00                 |MIC10.fasta   |MIC10_Q5TGZ0   |MIC10_dimer_TM_MIC13_TM.pdb                             |B|40,60          |0   	  |10    |10   |18  |8  | |
-|MIC10.1      |#e06633                 |MIC10.fasta   |MIC10_Q5TGZ0   |BEADS                                                   | |61,78          |0   	  |10    |10   |    |8  | |
-
 |MIC13        |#90ee90                 |MIC13.fasta   |MIC13_Q5XKP0   |MIC13.pdb                                               |A|1,7            |0       |10    |10   |20   |9  | |
-|MIC13        |#90ee90                 |MIC13.fasta   |MIC13_Q5XKP0   |MIC10_dimer_TM_MIC13_TM.pdb                             |C|8,23           |0       |10    |10   |18   |9  | |
+|MIC13        |#90ee90                 |MIC13.fasta   |MIC13_Q5XKP0   |MIC10_TM_MIC13_TM.pdb                                   |B|8,23           |0       |10    |10   |18   |9  | |
 |MIC13        |#2ed766                 |MIC13.fasta   |MIC13_Q5XKP0   |MIC13.pdb                                               |A|24,68          |0       |10    |10   |21   |9  | |
 |MIC13        |#2ed766                 |MIC13.fasta   |MIC13_Q5XKP0   |BEADS                                                   | |69,78          |0       |10    |10   |     |9  | |
 |MIC13        |sea green               |MIC13.fasta   |MIC13_Q5XKP0   |MIC13.pdb                                               |A|79,118         |0       |10    |10   |22   |9  | |

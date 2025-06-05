@@ -122,7 +122,7 @@ xl_DSSO_mouse = f'{data_direc}/crosslinks/human/sampling_DSSO_mouse.csv'
 
 
 # Topology File
-topology_file = f'{data_direc}/topology_mic10_dimer_mic19_1full_1N_1C_independent.txt'
+topology_file = f'{data_direc}/topology_mic10_mic13_rb_mic19_1full_1N_1C_independent.txt'
 
 # Weights
 mem_wt = 0.04
@@ -208,11 +208,11 @@ output_objects = []
 
 ## These selections are for the membrane restraints.
 mic10_selections = []
-mic10_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',copy_indexes = [0,1], resolution = 10, residue_indexes = range(1,13)).get_selected_particles()) # ims
-mic10_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',copy_indexes = [0,1], resolution = 10,residue_indexes = range(13,37)).get_selected_particles()) # tm
-mic10_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',copy_indexes = [0,1], resolution = 10,residue_indexes = range(37,40)).get_selected_particles()) # matrix
-mic10_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',copy_indexes = [0,1], resolution = 10,residue_indexes = range(40,61)).get_selected_particles()) # tm
-mic10_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',copy_indexes = [0,1], resolution = 10,residue_indexes = range(61,79)).get_selected_particles()) # ims
+mic10_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',resolution = 10, residue_indexes = range(1,13)).get_selected_particles()) # ims
+mic10_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',resolution = 10,residue_indexes = range(13,37)).get_selected_particles()) # tm
+mic10_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',resolution = 10,residue_indexes = range(37,40)).get_selected_particles()) # matrix
+mic10_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',resolution = 10,residue_indexes = range(40,61)).get_selected_particles()) # tm
+mic10_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC10',resolution = 10,residue_indexes = range(61,79)).get_selected_particles()) # ims
 
 mic60_selections = []
 mic60_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],resolution = 10,residue_indexes = range(627,759)).get_selected_particles()) #ims

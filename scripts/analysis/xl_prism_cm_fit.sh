@@ -2,7 +2,7 @@
 
  ~/imp-clean/build/setup_environment.sh python ../../micos/scripts/analysis/extract_sampcon.py sampcon_0_extracted.rmf3 model_analysis/A_models_clust6.rmf3 sampcon/cluster.0.sample_A.txt model_analysis/B_models_clust6.rmf3 sampcon/cluster.0.sample_B.txt
 
-~/imp-clean/build/setup_environment.sh python ~/IMP_Toolbox/analysis/surface_distance_maps_v2/contact_maps_surface_v2.py -rf sampcon_0_extracted.rmf3 -p 120 -t 10
+~/imp-clean/build/setup_environment.sh python ~/IMP_Toolbox/analysis/surface_distance_maps_v2/contact_maps_surface_v2.py -rf sampcon_0_extracted.rmf3 -p 120 -t 10 -pt 0.25
 
 ~/imp-clean/build/setup_environment.sh python ../../micos/scripts/analysis/fit_to_binding_data.py sampcon_0_extracted.rmf3
 

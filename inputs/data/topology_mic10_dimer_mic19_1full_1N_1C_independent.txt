@@ -11,7 +11,7 @@
 |MIC60        |#3050f8                 |MIC60.fasta    |MIC60_Q16891    |BEADS                                                   | |583,587          |0   	  |10    |10   |    |1  | |
 |MIC60        |#3050f8                 |MIC60.fasta    |MIC60_Q16891    |MIC60.pdb                                               |A|588,626          |0   	  |10    |10   |2   |1  | |
 |MIC60        |#006bff                 |MIC60.fasta    |MIC60_Q16891    |MIC60_19.pdb                                            |A|1,22             |626     |10    |10   |3   |1  | |
-|MIC60        |#006bff                 |MIC60.fasta    |MIC60_Q16891    |BEADS                                                   | |649,682          |0   	  |10    |10   |4   |1  | |
+|MIC60        |#006bff                 |MIC60.fasta    |MIC60_Q16891    |BEADS                                                   | |649,682          |0   	  |5     |5    |4   |1  | |
 |MIC60        |#006bff                 |MIC60.fasta    |MIC60_Q16891    |MIC60_19.pdb                                            |A|57,125           |626     |10    |10   |3   |1  | |
 |MIC60        |#006bff                 |MIC60.fasta    |MIC60_Q16891    |BEADS                                                   | |752,758          |0   	  |10    |10   |    |1  | |
 
@@ -19,7 +19,7 @@
 |MIC60.1      |#3050f8                 |MIC60.fasta    |MIC60_Q16891    |BEADS                                                   | |583,587          |0   	  |10    |10   |    |2  | |
 |MIC60.1      |#3050f8                 |MIC60.fasta    |MIC60_Q16891    |MIC60.pdb                                               |A|588,626          |0   	  |10    |10   |5   |2  | |
 |MIC60.1      |#006bff                 |MIC60.fasta    |MIC60_Q16891    |MIC60_19.pdb                                            |C|167,188          |460 	  |10    |10   |3   |2  | |
-|MIC60.1      |#006bff                 |MIC60.fasta    |MIC60_Q16891    |BEADS                                                   | |649,682          |0   	  |10    |10   |6   |2  | |
+|MIC60.1      |#006bff                 |MIC60.fasta    |MIC60_Q16891    |BEADS                                                   | |649,682          |0   	  |5     |5    |6   |2  | |
 |MIC60.1      |#006bff                 |MIC60.fasta    |MIC60_Q16891    |MIC60_19.pdb                                            |C|223,291          |460     |10    |10   |3   |2  | |
 |MIC60.1      |#006bff                 |MIC60.fasta    |MIC60_Q16891    |BEADS                                                   | |752,758          |0   	  |10    |10   |    |2  | |
 

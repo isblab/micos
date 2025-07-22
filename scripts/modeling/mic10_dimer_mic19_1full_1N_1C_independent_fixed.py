@@ -25,7 +25,7 @@ import math
 import os
 import sys
 import ihm
-
+import pandas as pd
 
 # ### --------------------------------
 ### WRAPPERS ###
@@ -121,7 +121,7 @@ run_output_dir = "run_" + runID
 data_direc = sys.argv[3]
 
 if runType == "test":
-    num_frames = 1500
+    num_frames = 2000
 elif runType == "prod":
     num_frames = 30000
 
@@ -132,6 +132,8 @@ xl_DSS_BS3_human = f"{data_direc}/crosslinks/human/sampling_DSS_BS3_human.csv"
 xl_DHSO_DSSO_human = f"{data_direc}/crosslinks/human/sampling_DHSO_DSSO_human.csv"  # yu. bartolec, xlinkdb dsso xlinks
 xl_DSSO_mouse = f"{data_direc}/crosslinks/human/sampling_DSSO_mouse.csv"
 
+# AF3 predictions and biochemical data file
+af3_predictions_biochemical = f"{data_direc}/biochemical/human/af3_predictions_biochemical.csv"
 
 # Topology File
 topology_file = f"{data_direc}/topology_mic10_dimer_mic19_1full_1N_1C_independent.txt"
@@ -161,9 +163,9 @@ bs.add_state(t)
 
 # executing the macro will return the root hierarchy and degrees of freedom (dof) objects
 root_hier, dof = bs.execute_macro(
-    max_rb_trans=0.1,
+    max_rb_trans=0.5,
     max_rb_rot=0.1,
-    max_bead_trans=2.43,
+    max_bead_trans=2.6,
     max_srb_trans=0.4,
     max_srb_rot=0.02,
 )
@@ -544,168 +546,37 @@ print("Replica Exchange Maximum Temperature : " + str(rex_max_temp))
 
 # -----------------------------
 # %%%%% MINIMUM PAIR RESTRAINT
-# co-IP > BN-PAGE > WB as 1, 2, 4, respectively
-mpr1 = MinimumPairDistanceBindingRestraint(
-    mdl,
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (81, 85, "MIC13", None, None), 1),
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (1, 78, "MIC10", None, None), 1),
-    0,
-    1,
-    "MIC13_RDWN_MIC10_mpr",
-    coIP_wt,
-)  # 13-10
-output_objects.append(mpr1)
-mpr1.add_to_model()
 
-## AF-multimer -------------------------------
-# Mic13-60
+df = pd.read_csv(af3_predictions_biochemical)
 
-AF1 = MinimumPairDistanceBindingRestraint(
-    mdl,
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (84, 84, "MIC13", None, None), 1),
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (668, 668, "MIC60", None, None), 1),
-    0,
-    1,
-    "MIC13_MIC60_af",
-    AF_wt,
-)
-AF2 = MinimumPairDistanceBindingRestraint(
-    mdl,
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (84, 84, "MIC13", None, None), 1),
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (669, 669, "MIC60", None, None), 1),
-    0,
-    1,
-    "MIC13_MIC60_af",
-    AF_wt,
-)
-AF3 = MinimumPairDistanceBindingRestraint(
-    mdl,
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (85, 85, "MIC13", None, None), 1),
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (668, 668, "MIC60", None, None), 1),
-    0,
-    1,
-    "MIC13_MIC60_af",
-    AF_wt,
-)
-AF4 = MinimumPairDistanceBindingRestraint(
-    mdl,
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (85, 85, "MIC13", None, None), 1),
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (669, 669, "MIC60", None, None), 1),
-    0,
-    1,
-    "MIC13_MIC60_af",
-    AF_wt,
-)
-AF5 = MinimumPairDistanceBindingRestraint(
-    mdl,
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (88, 88, "MIC13", None, None), 1),
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (667, 667, "MIC60", None, None), 1),
-    0,
-    1,
-    "MIC13_MIC60_af",
-    AF_wt,
-)
-AF6 = MinimumPairDistanceBindingRestraint(
-    mdl,
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (88, 88, "MIC13", None, None), 1),
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (668, 668, "MIC60", None, None), 1),
-    0,
-    1,
-    "MIC13_MIC60_af",
-    AF_wt,
-)
-AF7 = MinimumPairDistanceBindingRestraint(
-    mdl,
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (88, 88, "MIC13", None, None), 1),
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (664, 664, "MIC60", None, None), 1),
-    0,
-    1,
-    "MIC13_MIC60_af",
-    AF_wt,
-)
-AF8 = MinimumPairDistanceBindingRestraint(
-    mdl,
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (89, 89, "MIC13", None, None), 1),
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (664, 664, "MIC60", None, None), 1),
-    0,
-    1,
-    "MIC13_MIC60_af",
-    AF_wt,
-)
-AF9 = MinimumPairDistanceBindingRestraint(
-    mdl,
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (92, 92, "MIC13", None, None), 1),
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (663, 663, "MIC60", None, None), 1),
-    0,
-    1,
-    "MIC13_MIC60_af",
-    AF_wt,
-)
-AF10 = MinimumPairDistanceBindingRestraint(
-    mdl,
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (92, 92, "MIC13", None, None), 1),
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (664, 664, "MIC60", None, None), 1),
-    0,
-    1,
-    "MIC13_MIC60_af",
-    AF_wt,
-)
-AF11 = MinimumPairDistanceBindingRestraint(
-    mdl,
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (96, 96, "MIC13", None, None), 1),
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (657, 657, "MIC60", None, None), 1),
-    0,
-    1,
-    "MIC13_MIC60_af",
-    AF_wt,
-)
-AF12 = MinimumPairDistanceBindingRestraint(
-    mdl,
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (95, 95, "MIC13", None, None), 1),
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (660, 660, "MIC60", None, None), 1),
-    0,
-    1,
-    "MIC13_MIC60_af",
-    AF_wt,
-)
-AF13 = MinimumPairDistanceBindingRestraint(
-    mdl,
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (96, 96, "MIC13", None, None), 1),
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (660, 660, "MIC60", None, None), 1),
-    0,
-    1,
-    "MIC13_MIC60_af",
-    AF_wt,
-)
+for idx, row in df.iterrows():
+    p1 = row['Protein1']
+    p2 = row['Protein2']
+    r1 = row['Region1']
+    r2 = row['Region2']
+    
+    wt = coIP_wt if idx == 0 else AF_wt
 
+    if '-' in r1:
+        start1, end1 = map(int, r1.split('-'))
+    else:
+        start1 = end1 = int(r1)
+    
+    if '-' in r2:
+        start2, end2 = map(int, r2.split('-'))
+    else:
+        start2 = end2 = int(r2)
 
-output_objects.append(AF1)
-output_objects.append(AF2)
-output_objects.append(AF3)
-output_objects.append(AF4)
-output_objects.append(AF5)
-output_objects.append(AF6)
-output_objects.append(AF7)
-output_objects.append(AF8)
-output_objects.append(AF9)
-output_objects.append(AF10)
-output_objects.append(AF11)
-output_objects.append(AF12)
-output_objects.append(AF13)
-
-AF1.add_to_model()
-AF2.add_to_model()
-AF3.add_to_model()
-AF4.add_to_model()
-AF5.add_to_model()
-AF6.add_to_model()
-AF7.add_to_model()
-AF8.add_to_model()
-AF9.add_to_model()
-AF10.add_to_model()
-AF11.add_to_model()
-AF12.add_to_model()
-AF13.add_to_model()
+    mpr = MinimumPairDistanceBindingRestraint(
+    mdl,
+    IMP.pmi.tools.select_by_tuple_2(root_hier, (start1, end1, p1, None, None), 1),
+    IMP.pmi.tools.select_by_tuple_2(root_hier, (start2, end2, p2, None, None), 1),
+    0,
+    1,
+    f'{p1}_{p2}_mpr',
+    wt, )
+    output_objects.append(mpr)
+    mpr.add_to_model()
 
 # -------------------------
 # %%%%% CROSSLINKING RESTRAINT

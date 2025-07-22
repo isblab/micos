@@ -16,9 +16,14 @@ input_file = sys.argv[1]
 
 pdb_files = ['offset_corrected/offset_corrected_MIC60_tet.pdb',\
             'offset_corrected/offset_corrected_MIC60_19.pdb',\
-            'offset_corrected/offset_corrected_MIC60.pdb',\
-            'offset_corrected/offset_corrected_MIC19_initial.pdb',\
-            'offset_corrected/offset_corrected_MIC10.pdb',\
+            'offset_corrected/offset_corrected_MIC60_0.pdb',\
+            'offset_corrected/offset_corrected_MIC60_1.pdb',\
+            'offset_corrected/offset_corrected_MIC19_0.pdb',\
+            'offset_corrected/offset_corrected_MIC19_1.pdb',\
+            'offset_corrected/offset_corrected_MIC10_0.pdb',\
+            'offset_corrected/offset_corrected_MIC10_1.pdb',\
+            'offset_corrected/offset_corrected_MIC10_dimer_TM_MIC13_TM.pdb',\
+            'offset_corrected/offset_corrected_MIC10_dimer_TM_MIC13_TM.pdb',\
             'offset_corrected/offset_corrected_MIC13.pdb']
 
 
@@ -28,10 +33,15 @@ pdb_files = ['offset_corrected/offset_corrected_MIC60_tet.pdb',\
 
 all_proteins = [{'MIC60':{'A':[0,range(410,583)]},'MIC60':{'B':[1,range(410,583)]},'MIC60':{'C':[2,range(410,583)]},'MIC60':{'D':[3,range(410,583)]}},\
             {'MIC60':{'A':[0,range(627,649)]},'MIC60':{'A':[0,range(683,759)]},'MIC60':{'C':[1,range(627,649)]},'MIC60':{'C':[1,range(683,759)]},'MIC19':{'B':[0,range(186,227)]},'MIC19':{'D':[2,range(186,227)]}},\
-            {'MIC60':{'A':[0,range(588,627)]},'MIC60':{'A':[1,range(588,627)]}},\
-            {'MIC19':{'A':[0,range(59,175)]},'MIC19':{'A':[1,range(59,175)]}},\
-            {'MIC10':{'A':[0,range(2,36)]},'MIC10':{'A':[0,range(40,61)]}},\
-            {'MIC13':{'A':[0,range(2,69)]}, 'MIC13':{'A':[0,range(79,118)]}}]
+            {'MIC60':{'A':[0,range(588,627)]}},\
+            {'MIC60':{'A':[1,range(588,627)]}},\
+            {'MIC19':{'A':[0,range(59,175)]}},\
+            {'MIC19':{'A':[1,range(59,175)]}},\
+            {'MIC10':{'A':[0,range(2,13)]}},\
+            {'MIC10':{'A':[1,range(2,13)]}},\
+            {'MIC10':{'A':[0,range(13,37)]},'MIC10':{'A':[0,range(40,61)]}, 'MIC10':{'B':[1,range(13,37)]},'MIC10':{'B':[0,range(40,61)]}},\
+            {'MIC13':{'C':[0,range(8,24)]}},\
+            {'MIC13':{'A':[0,range(1,8)]}, 'MIC13':{'A':[0,range(24,69)]}, 'MIC13':{'A':[0,range(79,118)]}}]
 
 
 ###################################################################################################
@@ -66,7 +76,7 @@ for file_index in range(len(pdb_files)):
             sel_ccm = IMP.atom.Selection(hier,resolution=1,molecule=protein_name,copy_index=proteins[prot][chain_id][0],residue_indexes=[i for i in proteins[prot][chain_id][1]]).get_selected_particles()
             print(len(sel_ca_pdb),len(sel_ccm))
             print(protein_name, proteins[prot][chain_id][0], proteins[prot][chain_id][1])
-            # print(len(sel_ccm),len(sel_ca_pdb))
+
             # Remove coarse grained beads
             new_ccm_sel = []
             for selection in sel_ccm:
@@ -81,7 +91,7 @@ for file_index in range(len(pdb_files)):
 
             coords_pdb_ca[protein_name] = [IMP.core.XYZ(i).get_coordinates() for i in sel_ca_pdb]
             coords_ccm[protein_name] = [IMP.core.XYZ(i).get_coordinates() for i in new_ccm_sel]
-            # print(len(coords_pdb_ca[protein_name]),len(coords_ccm[protein_name]))
+            print(len(coords_pdb_ca[protein_name]),len(coords_ccm[protein_name]))
     _, transformation = IMP.pmi.analysis.Alignment(query=coords_pdb_ca, template=coords_ccm).align()
     print(transformation)
 

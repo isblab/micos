@@ -123,7 +123,7 @@ data_direc = sys.argv[3]
 if runType == "test":
     num_frames = 5000
 elif runType == "prod":
-    num_frames = 30000
+    num_frames = 50000
 
 # Xlinkdata files
 xl_BDP_PIR_human = f"{data_direc}/crosslinks/human/sampling_BDP_PIR_human.csv"

@@ -121,7 +121,7 @@ run_output_dir = "run_" + runID
 data_direc = sys.argv[3]
 
 if runType == "test":
-    num_frames = 2000
+    num_frames = 5000
 elif runType == "prod":
     num_frames = 30000
 
@@ -133,7 +133,7 @@ xl_DHSO_DSSO_human = f"{data_direc}/crosslinks/human/sampling_DHSO_DSSO_human.cs
 xl_DSSO_mouse = f"{data_direc}/crosslinks/human/sampling_DSSO_mouse.csv"
 
 # AF3 predictions and biochemical data file
-af3_predictions_biochemical = f"{data_direc}/biochemical/human/af3_predictions_biochemical.csv"
+af3_predictions_biochemical = f"{data_direc}/biochemical/af3_predictions_biochemical.csv"
 
 # Topology File
 topology_file = f"{data_direc}/topology_mic10_dimer_mic19_1full_1N_1C_independent.txt"
@@ -162,15 +162,13 @@ bs = IMP.pmi.macros.BuildSystem(mdl)
 bs.add_state(t)
 
 # executing the macro will return the root hierarchy and degrees of freedom (dof) objects
-root_hier, dof = bs.execute_macro(
-    max_rb_trans=0.5,
-    max_rb_rot=0.1,
-    max_bead_trans=2.6,
-    max_srb_trans=0.4,
-    max_srb_rot=0.02,
-)
+root_hier, dof = bs.execute_macro(max_rb_trans= 0.5,
+                                  max_rb_rot= 0.1,
+                                  max_bead_trans= 2,
+                                  max_srb_trans= 0.4,
+                                  max_srb_rot=0.02)
 
-rex_max_temp = 1.25
+rex_max_temp = 1.67
 
 ########### Fixing Mic60-Mic19 tetramer close to the membrane ######################
 fixed_particles = []
@@ -524,17 +522,17 @@ fixed_beads, fixed_rbs = dof.disable_movers(
 )
 IMP.pmi.tools.shuffle_configuration(
     ims_mem_surface_particles,
-    max_translation=50,
+    max_translation=100,
     bounding_box=ims_bb,
     excluded_rigid_bodies=fixed_rbs,
     hierarchies_included_in_collision=fixed_particles,
 )
 
 IMP.pmi.tools.shuffle_configuration(
-    tm_particles, max_translation=50, bounding_box=tm_bb, avoidcollision_rb=False
+    tm_particles, max_translation=100, bounding_box=tm_bb, avoidcollision_rb=False
 )
 
-IMP.pmi.tools.shuffle_configuration(matrix_particles, max_translation=50)
+IMP.pmi.tools.shuffle_configuration(matrix_particles, max_translation=100)
 # Shuffling randomizes the bead positions. It's good to
 # allow these to optimize first to relax large connectivity
 # restraint scores.  100-500 steps is generally sufficient.

@@ -69,18 +69,6 @@ class TransMembraneRestraintC(IMP.pmi.restraints.RestraintBase):
         res_main = IMP.micos.TransMembraneRestraint(particles, R, r, sigma)
         self.rs.add_restraint(res_main)
 
-
-# Wrapper for surface localization restraint
-# class SurfaceLocalizationRestraintC(IMP.pmi.restraints.RestraintBase):
-#
-#     def __init__(self, model, plist,r, sigma, allowed_dist, weight=1):
-#         particles = plist
-#         name = 'SurfaceLocalizationRestraint%1%'
-#         super(SurfaceLocalizationRestraintC, self).__init__(model, name=name, weight=weight)
-#         res_main = IMP.micos.SurfaceLocalizationRestraint(particles, r, sigma, allowed_dist)
-#         self.rs.add_restraint(res_main)
-
-
 # Wrapper for IMS localization restraint
 class IMSLocalizationRestraintC(IMP.pmi.restraints.RestraintBase):
     def __init__(self, model, plist, r, sigma, weight=1):
@@ -121,7 +109,7 @@ run_output_dir = "run_" + runID
 data_direc = sys.argv[3]
 
 if runType == "test":
-    num_frames = 5000
+    num_frames = 2000
 elif runType == "prod":
     num_frames = 50000
 
@@ -141,8 +129,8 @@ topology_file = f"{data_direc}/topology_mic10_dimer_mic19_1full_1N_1C_independen
 # Weights
 mem_wt = 0.04
 zar_wt = 0.2
-coIP_wt = 4
-AF_wt = 5
+coIP_wt = 1
+AF_wt = 2
 
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -221,233 +209,113 @@ output_objects = []
 # # MEMBRANE RESTRAINTS
 # these restraints are applied to localize the beads w.r.t. membrane topology
 # there are 4 restaints: Trans membrane for TM regions, IMS localization to localize beads within the inner radius,
-# Matrix localization to keep beads farther away from outer radius and surface localization to keep the beads close to inner cylinder
-# by defining allowed_dist and keeping the beads between the allowed_dist and the inner radius
-# add center beads for membrane surface so that it can score based on those beads only
+# Matrix localization to keep beads farther away from outer radius
 # a cylinder can be used (using BILD files) to visualize the restraints
 # # # -------------------------------
 
 ## These selections are for the membrane restraints.
-mic10_selections = []
-mic10_selections.append(
-    IMP.atom.Selection(
-        hierarchy=root_hier,
-        molecule="MIC10",
-        copy_indexes=[0, 1],
-        resolution=10,
-        residue_indexes=range(1, 13),
-    ).get_selected_particles()
-)  # ims
-mic10_selections.append(
-    IMP.atom.Selection(
-        hierarchy=root_hier,
-        molecule="MIC10",
-        copy_indexes=[0, 1],
-        resolution=10,
-        residue_indexes=range(13, 37),
-    ).get_selected_particles()
-)  # tm
-mic10_selections.append(
-    IMP.atom.Selection(
-        hierarchy=root_hier,
-        molecule="MIC10",
-        copy_indexes=[0, 1],
-        resolution=10,
-        residue_indexes=range(37, 40),
-    ).get_selected_particles()
-)  # matrix
-mic10_selections.append(
-    IMP.atom.Selection(
-        hierarchy=root_hier,
-        molecule="MIC10",
-        copy_indexes=[0, 1],
-        resolution=10,
-        residue_indexes=range(40, 61),
-    ).get_selected_particles()
-)  # tm
-mic10_selections.append(
-    IMP.atom.Selection(
-        hierarchy=root_hier,
-        molecule="MIC10",
-        copy_indexes=[0, 1],
-        resolution=10,
-        residue_indexes=range(61, 79),
-    ).get_selected_particles()
-)  # ims
+protien_selections = {'mic10_n': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC10", copy_indexes=[0, 1], resolution=10,
+                                                    residue_indexes=range(1, 13),).get_selected_particles(),
 
-mic60_selections = []
-mic60_selections.append(
-    IMP.atom.Selection(
-        hierarchy=root_hier,
-        molecule="MIC60",
-        copy_indexes=[0, 1],
-        resolution=10,
-        residue_indexes=range(627, 759),
-    ).get_selected_particles()
-)  # ims
-mic60_selections.append(
-    IMP.atom.Selection(
-        hierarchy=root_hier,
-        molecule="MIC60",
-        copy_indexes=[0, 1],
-        resolution=10,
-        residue_indexes=range(583, 627),
-    ).get_selected_particles()
-)  # above z
-mic60_selections.append(
-    IMP.atom.Selection(
-        hierarchy=root_hier,
-        molecule="MIC60",
-        copy_indexes=[0, 1, 2, 3],
-        resolution=10,
-        residue_indexes=range(410, 583),
-    ).get_selected_particles()
-)  # on the center
-# mic60_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],resolution = 10,residue_indexes = range(634,636)).get_selected_particles()) # slr
-# mic60_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],resolution = 10,residue_indexes = range(643,645)).get_selected_particles()) # slr
-# mic60_selections.append(IMP.atom.Selection(hierarchy = root_hier,molecule='MIC60',copy_indexes = [0,1],resolution = 10,residue_indexes = range(692,693)).get_selected_particles()) # slr
+    'mic10_tm1': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC10", copy_indexes=[0, 1], resolution=10,
+                                    residue_indexes=range(13, 37),).get_selected_particles(),
 
-mic13_selections = []
-mic13_selections.append(
-    IMP.atom.Selection(
-        hierarchy=root_hier,
-        molecule="MIC13",
-        resolution=10,
-        residue_indexes=range(1, 8),
-    ).get_selected_particles()
-)  # matrix
-mic13_selections.append(
-    IMP.atom.Selection(
-        hierarchy=root_hier,
-        molecule="MIC13",
-        resolution=10,
-        residue_indexes=range(8, 24),
-    ).get_selected_particles()
-)  # tm
-mic13_selections.append(
-    IMP.atom.Selection(
-        hierarchy=root_hier,
-        molecule="MIC13",
-        resolution=10,
-        residue_indexes=range(24, 119),
-    ).get_selected_particles()
-)  # ims
+    'mic10_matrix': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC10", copy_indexes=[0, 1], resolution=10,
+                                      residue_indexes=range(37, 40),).get_selected_particles(),
 
-mic19_selections = []
-mic19_selections.append(
-    IMP.atom.Selection(
-        hierarchy=root_hier,
-        molecule="MIC19",
-        copy_indexes=[0, 1],
-        resolution=10,
-        residue_indexes=range(1, 186),
-    ).get_selected_particles()
-)  # ims
-mic19_selections.append(
-    IMP.atom.Selection(
-        hierarchy=root_hier,
-        molecule="MIC19",
-        copy_indexes=[0, 1],
-        resolution=10,
-        residue_indexes=range(1, 15),
-    ).get_selected_particles()
-)  # above z
-mic19_selections.append(
-    IMP.atom.Selection(
-        hierarchy=root_hier,
-        molecule="MIC19",
-        copy_indexes=[0, 2],
-        resolution=10,
-        residue_indexes=range(186, 228),
-    ).get_selected_particles()
-)  # above z
-mic19_selections.append(
-    IMP.atom.Selection(
-        hierarchy=root_hier,
-        molecule="MIC19",
-        copy_indexes=[0, 1],
-        resolution=10,
-        residue_indexes=range(59, 175),
-    ).get_selected_particles()
-)  # on the center
+    'mic10_tm2': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC10", copy_indexes=[0, 1], resolution=10,
+                                    residue_indexes=range(40, 61),).get_selected_particles(),
+
+    'mic10_c': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC10", copy_indexes=[0, 1], resolution=10,
+                                  residue_indexes=range(61, 79),).get_selected_particles(), 
+    
+    'mic13_n': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC13", resolution=10, 
+                                  residue_indexes=range(1, 8),).get_selected_particles(),
+    
+    'mic13_tm': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC13", resolution=10, 
+                                   residue_indexes=range(8, 24),).get_selected_particles(),
+
+    'mic13_central_c': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC13", resolution=10,
+                                          residue_indexes=range(24, 119),).get_selected_particles(),
+
+    'mic60_cc': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC60", copy_indexes=[0, 1, 2, 3], resolution=10, 
+                                   residue_indexes=range(410, 583),).get_selected_particles(),
+
+    'mic60_link': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC60", copy_indexes=[0, 1], resolution=10, 
+                                    residue_indexes=range(583, 627),).get_selected_particles(),
+
+    'mic60_lbs_m': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC60", copy_indexes=[0, 1], resolution=10, 
+                                      residue_indexes=range(627, 759),).get_selected_particles(),
+
+    'mic19_n_cc': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC19", copy_indexes=[0, 1], resolution=10, 
+                                     residue_indexes=range(1, 186),).get_selected_particles(),
+
+    'mic19_chch': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC19", copy_indexes=[0, 2], resolution=10,
+                                     residue_indexes=range(186, 228),).get_selected_particles(),
+
+    'mic19_n_sam50': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC19", copy_indexes=[0, 1], resolution=10,
+                                        residue_indexes=range(1, 15),).get_selected_particles()}
 
 R = 130  # radius of the outer cylinder
 r = 90  # radius of the inner cylinder
-allowed_dist = 10  # for surface localization, this is the distance from the center. the beads should stay within this and the radius of the inner cylinder
-lb = 0
-ub = 50
+on_cj = 0
 max_in_cj = 50
-min_up_cj = -70
+max_above_cj = -30
 
 # TransMembraneRestraint
-for particle_set in (mic10_selections[1], mic10_selections[3], mic13_selections[1]):
+for particle_set in (protien_selections['mic10_tm1'], protien_selections['mic10_tm2'], protien_selections['mic13_tm']):
     tmr = TransMembraneRestraintC(mdl, particle_set, R, r, mem_wt)
     output_objects.append(tmr)
     tmr.add_to_model()
-#
-# # SurfaceLocalizationRestraint
-# for particle_set in (mic60_selections[3],mic60_selections[4]):
-#     slr = SurfaceLocalizationRestraintC(mdl,particle_set,r,mem_wt,allowed_dist)
-#     output_objects.append(slr)
-#     slr.add_to_model()
 
 # IMSLocalizationRestraint
 for particle_set in (
-    mic10_selections[0],
-    mic10_selections[4],
-    mic13_selections[2],
-    mic60_selections[2],
-    mic60_selections[1],
-    mic19_selections[2],
-    mic60_selections[0],
-    mic19_selections[0],
+    protien_selections['mic10_n'],
+    protien_selections['mic10_c'],
+    protien_selections['mic13_central_c'],
+    protien_selections['mic60_cc'],
+    protien_selections['mic60_link'],
+    protien_selections['mic60_lbs_m'],
+    protien_selections['mic19_n_cc'],
+    protien_selections['mic19_chch'],
 ):
     ilr = IMSLocalizationRestraintC(mdl, particle_set, r, mem_wt)
     output_objects.append(ilr)
     ilr.add_to_model()
 
 # MatrixLocalizationRestraint
-for particle_set in (mic10_selections[2], mic13_selections[0]):
+for particle_set in (protien_selections['mic10_matrix'], protien_selections['mic13_n'],):
     mlr = MatrixLocalizationRestraintC(mdl, particle_set, R, mem_wt)
     output_objects.append(mlr)
     mlr.add_to_model()
 
 # ZAxialRestraint for interaction with SAM/TOB complex
 ## for Mic60 ateast one bead above cj
-for particle_set in (mic60_selections[1], mic60_selections[0]):
+for particle_set in (protien_selections['mic19_n_sam50'], 
+                     protien_selections['mic60_cc'], 
+                     protien_selections['mic60_link'],
+                     protien_selections['mic60_lbs_m']):
     zar_sam50 = ZAxialRestraintC(
-        mdl, particle_set, min_up_cj, ub, zar_wt, "domain", label="zar_sam50"
+        mdl, particle_set, max_above_cj, max_in_cj, zar_wt, "domain", label="zar_sam50"
     )
     output_objects.append(zar_sam50)
     zar_sam50.add_to_model()
 
-## for Mic19 N-term, larger bounds
-zar_sam50 = ZAxialRestraintC(
-    mdl, mic19_selections[1], min_up_cj, ub, zar_wt, "None", label="zar_sam50_mic19"
-)
-output_objects.append(zar_sam50)
-zar_sam50.add_to_model()
-
-# ZAxialRestraint at the rim of the cylinder
-zar_cc = ZAxialRestraintC(
-    mdl, mic60_selections[2], lb, ub, zar_wt, "None", label="zar_cc"
-)
-output_objects.append(zar_cc)
-zar_cc.add_to_model()
 
 # ZAxialRestraint in the cylinder
 for particle_set in (
-    mic10_selections[0],
-    mic10_selections[1],
-    mic10_selections[2],
-    mic10_selections[3],
-    mic10_selections[4],
-    mic13_selections[0],
-    mic13_selections[1],
-    mic13_selections[2],
+    protien_selections['mic10_n'],
+    protien_selections['mic10_tm1'],
+    protien_selections['mic10_matrix'],
+    protien_selections['mic10_tm2'],
+    protien_selections['mic10_c'],
+    protien_selections['mic13_n'],
+    protien_selections['mic13_tm'],
+    protien_selections['mic13_central_c'],
+    
 ):
     zar_below = ZAxialRestraintC(
-        mdl, particle_set, lb, max_in_cj, zar_wt, "average", label="zar_below"
+        mdl, particle_set, on_cj, max_in_cj, zar_wt, "average", label="zar_below"
     )
     output_objects.append(zar_below)
     zar_below.add_to_model()
@@ -460,18 +328,18 @@ ims_mem_surface_particles = []
 
 ims_mem_surface_particles.extend(
     [
-        mic10_selections[0],
-        mic10_selections[4],
-        mic13_selections[2],
-        mic60_selections[2],
-        mic60_selections[1],
-        mic60_selections[0],
-        mic19_selections[0],
-        mic19_selections[2],
+        protien_selections['mic10_n'],
+        protien_selections['mic10_c'],
+        protien_selections['mic13_central_c'],
+        protien_selections['mic60_cc'], 
+        protien_selections['mic60_link'],
+        protien_selections['mic60_lbs_m'],
+        protien_selections['mic19_n_cc'],
+        protien_selections['mic19_chch'],
     ]
 )
-tm_particles.extend([mic10_selections[1], mic10_selections[3], mic13_selections[1]])
-matrix_particles.extend([mic10_selections[2], mic13_selections[0]])
+tm_particles.extend([protien_selections['mic10_tm1'], protien_selections['mic10_tm2'], protien_selections['mic13_tm'],])
+matrix_particles.extend([protien_selections['mic10_matrix'], protien_selections['mic13_n'],])
 
 # # -----------------------------
 # %%%%% CONNECTIVITY RESTRAINT
@@ -569,7 +437,7 @@ for idx, row in df.iterrows():
     mdl,
     IMP.pmi.tools.select_by_tuple_2(root_hier, (start1, end1, p1, None, None), 1),
     IMP.pmi.tools.select_by_tuple_2(root_hier, (start2, end2, p2, None, None), 1),
-    0,
+    5,
     1,
     f'{p1}_{p2}_mpr',
     wt, )
@@ -621,7 +489,7 @@ xlr_BDP_PIR_human = (
         resolution=1,  # The resolution at which to evaluate the crosslink
         slope=0.0001,  # This adds a linear term to the scoring function
         label="BDP_PIR_human",  #   to bias crosslinks towards each other
-        weight=10,  # Scaling factor for the restraint score.
+        weight=5,  # Scaling factor for the restraint score.
         linker=ihm.ChemDescriptor("bruce"),
     )
 )
@@ -639,7 +507,7 @@ xlr_BDP_PIR_mouse = (
         resolution=1,  # The resolution at which to evaluate the crosslink
         slope=0.0001,  # This adds a linear term to the scoring function
         label="BDP_PIR_mouse",  #   to bias crosslinks towards each other
-        weight=8,  # Scaling factor for the restraint score.
+        weight=4,  # Scaling factor for the restraint score.
         linker=ihm.ChemDescriptor("bruce"),
     )
 )
@@ -656,7 +524,7 @@ xlr_DSS_BS3 = IMP.pmi.restraints.crosslinking.CrossLinkingMassSpectrometryRestra
     resolution=1,  # The resolution at which to evaluate the crosslink
     slope=0.0001,  # This adds a linear term to the scoring function
     label="DSS_BS3",  #   to bias crosslinks towards each other
-    weight=10,  # Scaling factor for the restraint score.
+    weight=5,  # Scaling factor for the restraint score.
     linker=ihm.ChemDescriptor("bruce"),
 )
 
@@ -672,7 +540,7 @@ xlr_DHSO_DSSO = IMP.pmi.restraints.crosslinking.CrossLinkingMassSpectrometryRest
     resolution=1,  # The resolution at which to evaluate the crosslink
     slope=0.0001,  # This adds a linear term to the scoring function
     label="DHSO_DSSO",  #   to bias crosslinks towards each other
-    weight=10,  # Scaling factor for the restraint score.
+    weight=5,  # Scaling factor for the restraint score.
     linker=ihm.ChemDescriptor("bruce"),
 )
 
@@ -688,7 +556,7 @@ xlr_DSSO_mouse = IMP.pmi.restraints.crosslinking.CrossLinkingMassSpectrometryRes
     resolution=1,  # The resolution at which to evaluate the crosslink
     slope=0.0001,  # This adds a linear term to the scoring function
     label="DSSO_mouse",  #   to bias crosslinks towards each other
-    weight=8,  # Scaling factor for the restraint score.
+    weight=4,  # Scaling factor for the restraint score.
     linker=ihm.ChemDescriptor("bruce"),
 )
 output_objects.append(xlr_DSSO_mouse)
@@ -713,10 +581,6 @@ rex = IMP.pmi.macros.ReplicaExchange(
     monte_carlo_steps=10,  # Number of MC steps between writing frames
     number_of_best_scoring_models=0,  # set >0 to store best PDB files (but this is slow)
     number_of_frames=num_frames,
-)  # Total number of frames to run / write to the RMF file.
-# test_mode=test_mode)                    # (Ignore this) Run in test mode (don't write anything)
+)
 
-# Ok, now we finally do the sampling!
 rex.execute_macro()
-#
-# Outputs are then analyzed in a separate analysis script.

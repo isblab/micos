@@ -84,7 +84,9 @@ num_frames = rmf_fh.get_number_of_frames()
 mdl_ids = [i for i in range(num_frames)]
 
 ### Data used in modeling -----------------------------------------------
+print('Plotting fit to data used')
 plot_fit_to_data(data_used, 'fit_to_data_used')
 
+print('Plotting fit to data not used')
 ### Data not used in modeling -----------------------------------------------
 plot_fit_to_data(data_not_used, 'fit_to_data_not_used')

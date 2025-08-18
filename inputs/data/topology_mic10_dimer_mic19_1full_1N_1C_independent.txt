@@ -36,7 +36,7 @@
 |MIC19.1      |#ffd6e0                 |MIC19.fasta   |MIC19_Q9NX63   |BEADS                                                      | |1,58            |0   	  |10    |10   |    |6  | |
 |MIC19.1      |#cc8f84                 |MIC19.fasta   |MIC19_Q9NX63   |MIC19_initial.pdb                                          |A|59,174          |0  	  |10    |10   |16  |6  | |
 
-|MIC19.2      |#a6544d                 |MIC19.fasta   |MIC19_Q9NX63   |MIC60_19.pdb                                               |D|292,333         |-106    |10    |10   |3   |7  | |
+|MIC19.2      |#a67573                 |MIC19.fasta   |MIC19_Q9NX63   |MIC60_19.pdb                                               |D|292,333         |-106    |10    |10   |3   |7  | |
 
 |MIC10        |#ffa100                 |MIC10.fasta   |MIC10_Q5TGZ0   |MIC10.pdb                                               |A|1,12           |0   	  |10    |10   |17  |8  | |
 |MIC10        |#ffa100                 |MIC10.fasta   |MIC10_Q5TGZ0   |MIC10_dimer_TM_MIC13_TM.pdb                             |A|13,36          |0   	  |10    |10   |18  |8  | |

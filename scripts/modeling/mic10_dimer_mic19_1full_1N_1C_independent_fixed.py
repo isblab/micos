@@ -114,11 +114,11 @@ elif runType == "prod":
     num_frames = 50000
 
 # Xlinkdata files
-xl_BDP_PIR_human = f"{data_direc}/crosslinks/human/sampling_BDP_PIR_human.csv"
-xl_BDP_PIR_mouse = f"{data_direc}/crosslinks/human/sampling_BDP_PIR_mouse.csv"
-xl_DSS_BS3_human = f"{data_direc}/crosslinks/human/sampling_DSS_BS3_human.csv"
-xl_DHSO_DSSO_human = f"{data_direc}/crosslinks/human/sampling_DHSO_DSSO_human.csv"  # yu. bartolec, xlinkdb dsso xlinks
-xl_DSSO_mouse = f"{data_direc}/crosslinks/human/sampling_DSSO_mouse.csv"
+xl_BDP_PIR_human = f"{data_direc}/crosslinks/sampling_BDP_PIR_human.csv"
+xl_BDP_PIR_mouse = f"{data_direc}/crosslinks/sampling_BDP_PIR_mouse.csv"
+xl_DSS_BS3_human = f"{data_direc}/crosslinks/sampling_DSS_BS3_human.csv"
+xl_DHSO_DSSO_human = f"{data_direc}/crosslinks/sampling_DHSO_DSSO_human.csv"  # yu. bartolec, xlinkdb dsso xlinks
+xl_DSSO_mouse = f"{data_direc}/crosslinks/sampling_DSSO_mouse.csv"
 
 # AF3 predictions and biochemical data file
 af3_predictions_biochemical = f"{data_direc}/biochemical/af3_predictions_biochemical.csv"

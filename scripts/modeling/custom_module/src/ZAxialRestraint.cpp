@@ -62,6 +62,18 @@ double ZAxialRestraint::unprotected_evaluate(IMP::DerivativeAccumulator* accum) 
     		if (it != score_list.end()) {
         	    score = 0.0;
 	       }
+
+	else if (method_=="beadwise"){
+		for (unsigned int i = 0; i < plist_.size(); i++) {
+			double z = IMP::core::XYZ(plist_[i]).get_coordinate(2);
+			double dist = getDistance(z);
+
+			if (dist != 0.0) {  // if any particle is not zero, add the distance from the bounds to the score
+				score += dist; 
+			}
+		}
+
+	       }
 	else {
         auto minElement = std::min_element(score_list.begin(), score_list.end());
         if (minElement != score_list.end()) {

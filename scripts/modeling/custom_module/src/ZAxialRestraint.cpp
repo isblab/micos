@@ -16,7 +16,7 @@ ZAxialRestraint::ZAxialRestraint(IMP::ParticlesTemp plist, double ub, double lb,
 		method_(method){}
 
 
-double ZAxialRestraint::getDistance(double z) const {
+double ZAxialRestraint:: get_squared_distance(double z) const {
 
     if (z < ub_) {  // Continue only if z is above ub centre
         double deviation = z*z + ub_*ub_ -2 *ub_*z;
@@ -48,27 +48,29 @@ double ZAxialRestraint::unprotected_evaluate(IMP::DerivativeAccumulator* accum) 
 			mass += com;
 		}
 	 avg = total_com/mass;
-	 score += getDistance(avg);
+	 score +=  get_squared_distance(avg);
 	}
 	
 	else if (method_=="domain"){
 		std::vector<double> score_list;
 		for (unsigned int i = 0; i < plist_.size(); i++){
 		double z = IMP::core::XYZ(plist_[i]).get_coordinate(2);
-		score_list.push_back(getDistance(z));
+		score_list.push_back( get_squared_distance(z));
 		}
 		auto it = std::find(score_list.begin(), score_list.end(), 0.0);
 
     		if (it != score_list.end()) {
         	    score = 0.0;
 	       }
-
+	}
 	else if (method_=="beadwise"){
+		const double eps = 1e-9;
+
 		for (unsigned int i = 0; i < plist_.size(); i++) {
 			double z = IMP::core::XYZ(plist_[i]).get_coordinate(2);
-			double dist = getDistance(z);
+			double dist =  get_squared_distance(z);
 
-			if (dist != 0.0) {  // if any particle is not zero, add the distance from the bounds to the score
+			if (dist > eps) {  // if any particle is not zero, add the distance from the bounds to the score
 				score += dist; 
 			}
 		}
@@ -78,16 +80,15 @@ double ZAxialRestraint::unprotected_evaluate(IMP::DerivativeAccumulator* accum) 
         auto minElement = std::min_element(score_list.begin(), score_list.end());
         if (minElement != score_list.end()) {
             score = *minElement;
-            }
-    	 }		 
-       }	
+            } 
+       	
 		else {
 			for (unsigned int i = 0; i < plist_.size(); i++){
 		double z = IMP::core::XYZ(plist_[i]).get_coordinate(2);
-		score += getDistance(z);
+		score +=  get_squared_distance(z);
 	    }
 	}
-
+	}
     if (accum){};
     return (score/sigma_);
 }

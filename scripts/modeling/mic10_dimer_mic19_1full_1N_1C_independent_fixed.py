@@ -277,11 +277,11 @@ for particle_set in (
     protien_selections['mic13_central_c'],
     protien_selections['mic60_cc'],
     protien_selections['mic60_link'],
-    # protien_selections['mic60_lbs_m'], #Fixed in the model 
+    protien_selections['mic60_lbs_m'],
     protien_selections['mic19_n_cc'],
-    # protien_selections['mic19_chch'], #Fixed in the model
+    protien_selections['mic19_chch'],
 ):
-    ilr = IMSLocalizationRestraintC(mdl, particle_set, r, mem_wt)
+    ilr = IMSLocalizationRestraintC(mdl, particle_set, r, 0.5)
     output_objects.append(ilr)
     ilr.add_to_model()
 
@@ -292,19 +292,18 @@ for particle_set in (protien_selections['mic10_matrix'], protien_selections['mic
     mlr.add_to_model()
 
 
-# ZAxialRestraint for interaction with SAM/TOB complex
-## for Mic19 SAM50 restraint
+# ZAxialRestraints
+## Mic19 SAM50 restraint
 zar_sam50 = ZAxialRestraintC(mdl, protien_selections['mic19_n_sam50'], max_above_cj, on_cj, zar_wt, "beadwise", label="zar_mic19_sam50")
 output_objects.append(zar_sam50)
 zar_sam50.add_to_model()
 
-## for Mic60 CC spanning the CJ diameter
+## Mic60 CC spanning the CJ diameter
 mic60_cc = ZAxialRestraintC(mdl, protien_selections['mic60_cc'], on_cj, max_in_cj, zar_wt, "beadwise", label="mic60_cc")
 output_objects.append(mic60_cc)
 mic60_cc.add_to_model()
 
-
-# ZAxialRestraint in the cylinder
+# Mic10, Mic13, Mic60 link domain to be in the cylinder
 for particle_set in (
     protien_selections['mic10_n'],
     protien_selections['mic10_tm1'],

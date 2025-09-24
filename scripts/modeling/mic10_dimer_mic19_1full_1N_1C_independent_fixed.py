@@ -161,15 +161,17 @@ rex_max_temp = 1.67
 ########### Fixing Mic60-Mic19 tetramer close to the membrane ######################
 fixed_particles = []
 
-
 fixed_particles += IMP.atom.Selection(
     hierarchy=root_hier,
     molecule="MIC60",
     copy_indexes=[0, 1],
     residue_indexes=range(627, 752),
 ).get_selected_particles()
+
 fixed_particles += IMP.atom.Selection(
-    hierarchy=root_hier, molecule="MIC19", residue_indexes=range(186, 227)
+    hierarchy=root_hier, 
+    molecule="MIC19", 
+    residue_indexes=range(186, 227)
 ).get_selected_particles()
 # doesnot work if select residue ranges, can work with full protein
 # print(fixed_particles)
@@ -256,8 +258,8 @@ protien_selections = {'mic10_n': IMP.atom.Selection(hierarchy=root_hier, molecul
     'mic19_n_sam50': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC19", copy_indexes=[0, 1], resolution=10,
                                         residue_indexes=range(1, 15),).get_selected_particles()}
 
-R = 130  # radius of the outer cylinder
-r = 90  # radius of the inner cylinder
+R = 165  # radius of the outer cylinder
+r = 125  # radius of the inner cylinder
 on_cj = 0
 max_in_cj = 50
 max_above_cj = -30
@@ -275,9 +277,9 @@ for particle_set in (
     protien_selections['mic13_central_c'],
     protien_selections['mic60_cc'],
     protien_selections['mic60_link'],
-    protien_selections['mic60_lbs_m'],
+    # protien_selections['mic60_lbs_m'], #Fixed in the model 
     protien_selections['mic19_n_cc'],
-    protien_selections['mic19_chch'],
+    # protien_selections['mic19_chch'], #Fixed in the model
 ):
     ilr = IMSLocalizationRestraintC(mdl, particle_set, r, mem_wt)
     output_objects.append(ilr)
@@ -289,17 +291,17 @@ for particle_set in (protien_selections['mic10_matrix'], protien_selections['mic
     output_objects.append(mlr)
     mlr.add_to_model()
 
+
 # ZAxialRestraint for interaction with SAM/TOB complex
-## for Mic60 ateast one bead above cj
-for particle_set in (protien_selections['mic19_n_sam50'], 
-                     protien_selections['mic60_cc'], 
-                     protien_selections['mic60_link'],
-                     protien_selections['mic60_lbs_m']):
-    zar_sam50 = ZAxialRestraintC(
-        mdl, particle_set, max_above_cj, max_in_cj, zar_wt, "domain", label="zar_sam50"
-    )
-    output_objects.append(zar_sam50)
-    zar_sam50.add_to_model()
+## for Mic19 SAM50 restraint
+zar_sam50 = ZAxialRestraintC(mdl, protien_selections['mic19_n_sam50'], max_above_cj, on_cj, zar_wt, "beadwise", label="zar_mic19_sam50")
+output_objects.append(zar_sam50)
+zar_sam50.add_to_model()
+
+## for Mic60 CC spanning the CJ diameter
+mic60_cc = ZAxialRestraintC(mdl, protien_selections['mic60_cc'], on_cj, max_in_cj, zar_wt, "beadwise", label="mic60_cc")
+output_objects.append(mic60_cc)
+mic60_cc.add_to_model()
 
 
 # ZAxialRestraint in the cylinder
@@ -312,10 +314,11 @@ for particle_set in (
     protien_selections['mic13_n'],
     protien_selections['mic13_tm'],
     protien_selections['mic13_central_c'],
+    protien_selections['mic60_link'],
     
 ):
     zar_below = ZAxialRestraintC(
-        mdl, particle_set, on_cj, max_in_cj, zar_wt, "average", label="zar_below"
+        mdl, particle_set, on_cj, max_in_cj, zar_wt, "beadwise", label="zar_below"
     )
     output_objects.append(zar_below)
     zar_below.add_to_model()

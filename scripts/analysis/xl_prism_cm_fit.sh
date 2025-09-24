@@ -4,7 +4,7 @@
 
 ~/imp-clean/build/setup_environment.sh python ~/IMP_Toolbox/analysis/surface_distance_maps_v2/contact_maps_surface_v2.py -rf sampcon_0_extracted.rmf3 -p 120 -t 10 -pt 0.25
 
-~/imp-clean/build/setup_environment.sh python ../github/scripts/analysis/fit_to_binding_data.py sampcon_0_extracted.rmf3
+~/imp-clean/build/setup_environment.sh python ../github/scripts/analysis/fit_to_binding_data.py sampcon_0_extracted.rmf3 ../github/inputs/data/biochemical/af3_predictions_biochemical.csv ../github/inputs/data/biochemical/validation_biochemical.csv
 
 ~/imp-clean/build/setup_environment.sh sh ../github/scripts/analysis/xl_viol.sh
 

@@ -41,16 +41,3 @@ for file_index in range(len(pdb_files)):
 
     pdb_io.set_structure(structure)
     pdb_io.save('pdb/offset_corrected/offset_corrected_'+pdbfile.split('/')[-1])
-
-
-### for Mic60_tet C chain
-input_pdb = "pdb/MIC60_tet_C.pdb"
-output_pdb = "output.pdb"
-
-with open(input_pdb, 'r') as infile, open(output_pdb, 'w') as outfile:
-    for line in infile:
-        if line.startswith("ATOM"):
-            residue_number = int(line[22:26])
-            new_residue_number = residue_number + 63
-            modified_line = line[:22] + f"{new_residue_number:4d}" + line[26:]
-            outfile.write(modified_line)

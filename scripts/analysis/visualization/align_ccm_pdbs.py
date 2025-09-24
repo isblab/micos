@@ -23,8 +23,9 @@ pdb_files = ['offset_corrected/offset_corrected_MIC60_tet.pdb',\
             'offset_corrected/offset_corrected_MIC10_0.pdb',\
             'offset_corrected/offset_corrected_MIC10_1.pdb',\
             'offset_corrected/offset_corrected_MIC10_dimer_TM_MIC13_TM.pdb',\
-            'offset_corrected/offset_corrected_MIC10_dimer_TM_MIC13_TM.pdb',\
-            'offset_corrected/offset_corrected_MIC13.pdb']
+            'offset_corrected/offset_corrected_MIC13_0.pdb',\
+            'offset_corrected/offset_corrected_MIC13_1.pdb',\
+            'offset_corrected/offset_corrected_MIC13_2.pdb']
 
 
 # The all proteins list has the following architecture:
@@ -39,9 +40,10 @@ all_proteins = [{'MIC60':{'A':[0,range(410,583)]},'MIC60':{'B':[1,range(410,583)
             {'MIC19':{'A':[1,range(59,175)]}},\
             {'MIC10':{'A':[0,range(2,13)]}},\
             {'MIC10':{'A':[1,range(2,13)]}},\
-            {'MIC10':{'A':[0,range(13,37)]},'MIC10':{'A':[0,range(40,61)]}, 'MIC10':{'B':[1,range(13,37)]},'MIC10':{'B':[0,range(40,61)]}},\
-            {'MIC13':{'C':[0,range(8,24)]}},\
-            {'MIC13':{'A':[0,range(1,8)]}, 'MIC13':{'A':[0,range(24,69)]}, 'MIC13':{'A':[0,range(79,118)]}}]
+            {'MIC10':{'A':[0,range(13,37)]},'MIC10':{'A':[0,range(40,61)]}, 'MIC10':{'B':[1,range(13,37)]},'MIC10':{'B':[0,range(40,61)]}, 'MIC13':{'C':[0,range(8,24)]}},\
+            {'MIC13':{'A':[0,range(2,8)]}},\
+            {'MIC13':{'A':[0,range(24,69)]}},\
+            {'MIC13':{'A':[0,range(79,118)]}}]
 
 
 ###################################################################################################

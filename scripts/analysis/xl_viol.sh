@@ -5,7 +5,7 @@ parameters=("52" "52" "30" "35" "30")
 
 for ((i=0; i<${#input_files[@]}; i++))
 do
-    input_file="../github/inputs/data/crosslinks/human/sampling_${input_files[$i]}"
+    input_file="../github/inputs/data/crosslinks/sampling_${input_files[$i]}"
     parameter=${parameters[$i]}
 
     echo "$input_file with parameter $parameter"
@@ -18,7 +18,7 @@ parameters=("52" "30" "35")
 
 for ((i=0; i<${#input_files[@]}; i++))
 do
-    input_file="../github/inputs/data/crosslinks/human/evicalc_${input_files[$i]}"
+    input_file="../github/inputs/data/crosslinks/evicalc_${input_files[$i]}"
     parameter=${parameters[$i]}
 
     echo "$input_file with parameter $parameter"

@@ -28,7 +28,7 @@ class IMPMICOSEXPORT ZAxialRestraint : public IMP::Restraint {
         IMP_OBJECT_METHODS(ZAxialRestraint);  //add the usual IMP object methods
 
     private:
-        double getDistance( double z) const;
+        double get_squared_distance( double z) const;
 
 };
 

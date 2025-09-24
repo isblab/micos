@@ -74,21 +74,8 @@ double ZAxialRestraint::unprotected_evaluate(IMP::DerivativeAccumulator* accum) 
 				score += dist; 
 			}
 		}
+	}
 
-	       }
-	else {
-        auto minElement = std::min_element(score_list.begin(), score_list.end());
-        if (minElement != score_list.end()) {
-            score = *minElement;
-            } 
-       	
-		else {
-			for (unsigned int i = 0; i < plist_.size(); i++){
-		double z = IMP::core::XYZ(plist_[i]).get_coordinate(2);
-		score +=  get_squared_distance(z);
-	    }
-	}
-	}
     if (accum){};
     return (score/sigma_);
 }

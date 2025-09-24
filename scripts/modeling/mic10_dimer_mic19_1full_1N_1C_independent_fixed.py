@@ -127,7 +127,7 @@ af3_predictions_biochemical = f"{data_direc}/biochemical/af3_predictions_biochem
 topology_file = f"{data_direc}/topology_mic10_dimer_mic19_1full_1N_1C_independent.txt"
 
 # Weights
-mem_wt = 0.04
+mem_wt = 0.5
 zar_wt = 0.2
 coIP_wt = 1
 AF_wt = 2
@@ -281,7 +281,7 @@ for particle_set in (
     protien_selections['mic19_n_cc'],
     protien_selections['mic19_chch'],
 ):
-    ilr = IMSLocalizationRestraintC(mdl, particle_set, r, 0.5)
+    ilr = IMSLocalizationRestraintC(mdl, particle_set, r, mem_wt)
     output_objects.append(ilr)
     ilr.add_to_model()
 

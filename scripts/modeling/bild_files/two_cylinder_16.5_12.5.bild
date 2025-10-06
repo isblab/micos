@@ -1,0 +1,5 @@
+.color light grey
+.transparency 0.7
+.cylinder 0 0 0 0 0 50 125 open
+.color light grey
+.cylinder 0 0 0 0 0 50 165 open

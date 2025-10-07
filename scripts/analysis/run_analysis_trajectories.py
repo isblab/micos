@@ -58,7 +58,7 @@ AT.write_models_info()
 AT.get_psi_stats()
 
 # What scores do we cluster on?
-AT.hdbscan_clustering(['EV_sum', 'XLs_sum', 'ILR_sum', 'ZAR_sum', 'TMR_sum', 'MLR_sum', 'MPDBR_sum'], min_cluster_size = 100, min_samples = 5, skip = 2) #'SLR_sum',
+AT.hdbscan_clustering(['EV_sum', 'XLs_sum', 'ILR_sum', 'ZAR_sum', 'TMR_sum', 'MLR_sum', 'MPDBR_sum'], min_cluster_size = 150, min_samples = 5, skip = 1) #'SLR_sum', 
 AT.summarize_XLs_info(ambiguous_XLs_restraint = True)
 
 exit()

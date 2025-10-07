@@ -47,10 +47,10 @@ for i in micos_xlinks.index:
     if micos_xlinks.iloc[i, 1] == 'IMMT' or micos_xlinks.iloc[i, 3] == 'IMMT':
         micos_xlinks.iloc[i, 1] = 'MIC60'
         micos_xlinks.iloc[i, 3] = 'MIC60'
-    if micos_xlinks.iloc[i, 1] == 'CHCHD3' or micos_xlinks.iloc[i, 3] == 'CHCHD3':
+    elif micos_xlinks.iloc[i, 1] == 'CHCHD3' or micos_xlinks.iloc[i, 3] == 'CHCHD3':
         micos_xlinks.iloc[i, 1] = 'MIC19'
         micos_xlinks.iloc[i, 3] = 'MIC19'
-    if micos_xlinks.iloc[i, 1] == 'MINOS1' or micos_xlinks.iloc[i, 3] == 'MINOS1':
+    elif micos_xlinks.iloc[i, 1] == 'MINOS1' or micos_xlinks.iloc[i, 3] == 'MINOS1':
         micos_xlinks.iloc[i, 1] = 'MIC10'
         micos_xlinks.iloc[i, 3] = 'MIC10'
 

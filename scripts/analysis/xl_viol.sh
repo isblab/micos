@@ -13,8 +13,8 @@ do
 done
 
 # #evaluation
-input_files=("BDP_PIR_all.csv" "DHSO_DSSO_all.csv" "DSS_BS3_all.csv")
-parameters=("52" "30" "35")
+input_files=("BDP_PIR_mouse.csv" "DHSO_DSSO_human.csv" "DHSO_DSSO_mouse.csv" "DSS_BS3_human.csv")
+parameters=("52" "30" "30" "35")
 
 for ((i=0; i<${#input_files[@]}; i++))
 do

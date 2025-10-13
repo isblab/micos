@@ -39,19 +39,23 @@ nonmicos_xlinks.reset_index(inplace=True)
 ## Remove all mic60 crosslinks in N and TM domains (residues less than 410)
 to_drop = []
 for i in micos_xlinks.index:
-    if micos_xlinks.iloc[i, 1] == 'IMMT' and micos_xlinks.iloc[i, 3] == 'IMMT':
-        if (int(micos_xlinks.iloc[i, 2]) < 410) or (int(micos_xlinks.iloc[i, 4]) < 410):
-            to_drop.append(i)
+    if micos_xlinks.iloc[i, 1] == 'IMMT' and (int(micos_xlinks.iloc[i, 2]) < 410):
+        to_drop.append(i)
+    if micos_xlinks.iloc[i, 3] == 'IMMT'and (int(micos_xlinks.iloc[i, 4]) < 410):
+        to_drop.append(i)
 
     ## Rename proteins
-    if micos_xlinks.iloc[i, 1] == 'IMMT' or micos_xlinks.iloc[i, 3] == 'IMMT':
+    if micos_xlinks.iloc[i, 1] == 'IMMT':
         micos_xlinks.iloc[i, 1] = 'MIC60'
+    if micos_xlinks.iloc[i, 3] == 'IMMT':
         micos_xlinks.iloc[i, 3] = 'MIC60'
-    elif micos_xlinks.iloc[i, 1] == 'CHCHD3' or micos_xlinks.iloc[i, 3] == 'CHCHD3':
+    if micos_xlinks.iloc[i, 1] == 'CHCHD3':
         micos_xlinks.iloc[i, 1] = 'MIC19'
+    if micos_xlinks.iloc[i, 3] == 'CHCHD3':
         micos_xlinks.iloc[i, 3] = 'MIC19'
-    elif micos_xlinks.iloc[i, 1] == 'MINOS1' or micos_xlinks.iloc[i, 3] == 'MINOS1':
+    if micos_xlinks.iloc[i, 1] == 'MINOS1':
         micos_xlinks.iloc[i, 1] = 'MIC10'
+    if micos_xlinks.iloc[i, 3] == 'MINOS1':
         micos_xlinks.iloc[i, 3] = 'MIC10'
 
 micos_xlinks = micos_xlinks.drop(to_drop).reset_index(drop=True)

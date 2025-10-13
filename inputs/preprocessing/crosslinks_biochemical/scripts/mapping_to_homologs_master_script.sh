@@ -72,7 +72,7 @@ done
 
 ########## Merge the crosslinks for human only ##################
 
-output_dir_for_xlinks="../../../data/crosslinks/human/"
+output_dir_for_xlinks="../../../data/crosslinks/"
 
 python 5_merge_files.py "${output_dir_for_xlinks}BDP_PIR_human.csv" "${input_dir}"human_BDP.csv  "${input_dir}"human_PIR.csv
 python 5_merge_files.py "${output_dir_for_xlinks}BDP_PIR_mouse.csv" "${output_dir}"mouse_PIR_XLinkDB_mouse_to_human  "${output_dir}"mouse_BDP_XLinkDB_mouse_to_human

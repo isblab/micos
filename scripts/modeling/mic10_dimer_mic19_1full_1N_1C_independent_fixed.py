@@ -130,7 +130,7 @@ topology_file = f"{data_direc}/topology_mic10_dimer_mic19_1full_1N_1C_independen
 mem_wt = 0.5
 zar_wt = 0.2
 coIP_wt = 1
-AF_wt = 2
+AF_wt = 0.5
 
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -367,7 +367,7 @@ print("Connectivity restraint applied")
 #
 # resolution=1000 applies this expensive restraint to the lowest resolution for each particle.
 evr = IMP.pmi.restraints.stereochemistry.ExcludedVolumeSphere(
-    included_objects=[root_hier], resolution=1000
+    included_objects=[root_hier], resolution=1000, kappa = 2
 )
 output_objects.append(evr)
 print("Excluded volume restraint applied")
@@ -437,8 +437,8 @@ for idx, row in df.iterrows():
 
     mpr = MinimumPairDistanceBindingRestraint(
     mdl,
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (start1, end1, p1, None, None), 1),
-    IMP.pmi.tools.select_by_tuple_2(root_hier, (start2, end2, p2, None, None), 1),
+    IMP.pmi.tools.select_by_tuple_2(root_hier, (start1, end1, p1, 0, None), 1),
+    IMP.pmi.tools.select_by_tuple_2(root_hier, (start2, end2, p2, 0, None), 1),
     5,
     1,
     f'{p1}_{p2}_mpr',

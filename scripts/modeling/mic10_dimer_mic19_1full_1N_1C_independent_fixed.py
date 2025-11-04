@@ -156,7 +156,7 @@ root_hier, dof = bs.execute_macro(max_rb_trans= 0.5,
                                   max_srb_trans= 0.4,
                                   max_srb_rot=0.02)
 
-rex_max_temp = 1.67
+rex_max_temp = 1.5
 
 ########### Fixing Mic60-Mic19 tetramer close to the membrane ######################
 fixed_particles = []

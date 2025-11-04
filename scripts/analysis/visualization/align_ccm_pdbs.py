@@ -103,4 +103,4 @@ for file_index in range(len(pdb_files)):
     ###################################################################################################
 
     IMP.atom.transform(reload, transformation)
-    IMP.atom.write_pdb(reload, f"./aligned_{pdb_file.split('/')[-1]}.pdb")
+    IMP.atom.write_pdb(reload, f"./aligned_offset_corrected/aligned_{pdb_file.split('/')[-1]}.pdb")

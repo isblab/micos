@@ -29,7 +29,7 @@ for sector in circos.sectors:
         ec="black",
         lw=0.5
     )
-    track.text(sector.name, size=9, r=105)
+    track.text(sector.name, size=20, r=105)
 
 # Links
 for _, row in df.iterrows():

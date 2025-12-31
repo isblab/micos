@@ -19,11 +19,13 @@ for i in range(len(distances)+1):
     y.append(i)
 
 name = xltype.split('.csv.csv')[0]
+title = name.replace("_", "/").rsplit("/", 1)
+title = " ".join(title)
 plt.figure()
 plt.plot(x,y, color='red')
 plt.hist(distances, bins=10, range=[0,50], color='#0095FF')
-plt.title(f'XL Distances for {name.upper()}', fontsize=20)
+plt.title(f'XL Distances for {title.upper()}', fontsize=20)
 plt.xlabel('Distance (Å)', fontsize=16)
 plt.ylabel('Number of XLs', fontsize=16)
 plt.savefig(f'{name}_hist.png')
-plt.show()
+# plt.show()

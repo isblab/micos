@@ -5,7 +5,8 @@ This repository is of the integrative model of the MICOS complex based on data f
 
 
 ## Depositions in PDB and ModelArchive
-PDB entry for the integrative model : 
+PDB entry for the integrative model:
+
 Model archive entries for Alphafold3 models: 
 
 ![Image](./metadata/thumb.png)
@@ -18,9 +19,9 @@ Model archive entries for Alphafold3 models:
 Additional data is uploaded in Zenodo (the set of major cluster models corresponding to the main modeling run presented in the paper).
  
 ## Information
-**Author(s):**
-**Date:** 
+**Author(s):** Muskaan Jindal, Rakesh Mahato, Arko Guha, Sreemoyee Das, Kartik Majila, Shreyas Arvindekar, Anand Vaidya, Shruthi Viswanath\
+**Date:** \
 **License:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
-International License.
-**Publications:**
+International License.\
+**Publications:** 

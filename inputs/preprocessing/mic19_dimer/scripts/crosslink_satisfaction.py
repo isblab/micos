@@ -63,24 +63,28 @@ df3 = pd.DataFrame(columns=["Residue1", "Residue2", "Distance"])
 if __name__ == "__main__":
     pdb_file = f"../servers/{pdb_file}"
     count_not_present = 0
+    rows2 = []
+    rows3 = []
+
     for index, row in df.iterrows():
-        res1 = row['Residue1']
-        res2 = row['Residue2']
+        res1 = int(row['Residue1'])
+        res2 = int(row['Residue2'])
 
-        result = calculate_distance(pdb_file, res1, res2, violation_)
+        if 59 < res1 < 175 and 59 < res2 < 175:
+            result = calculate_distance(pdb_file, res1, res2, violation_)
 
-        if result is not None:
-            distance, chainA, chainB, not_violated = result
-            if not_violated:
-                df2 = pd.concat([df2, pd.DataFrame({"Residue1": [res1], "Residue2": [res2], "Distance": [distance]})], ignore_index=True)
+            if result is not None:
+                distance, chainA, chainB, not_violated = result
+                if not_violated:
+                    rows2.append((res1, res2, distance))
+                else:
+                    rows3.append((res1, res2, distance))
             else:
-                df3 = pd.concat([df3, pd.DataFrame({"Residue1": [res1], "Residue2": [res2], "Distance": [distance]})], ignore_index=True)
-        else:
-            count_not_present += 1
+                count_not_present += 1
 
-    df2.to_csv(f"../distances/distances_{output_file}.csv", index=False)
-    df3.to_csv(f"../distances/distances_{output_file}_violated.csv", index=False)
-
+    df2 = pd.DataFrame(rows2, columns=["Residue1", "Residue2", "Distance"])
+    df3 = pd.DataFrame(rows3, columns=["Residue1", "Residue2", "Distance"])
+    
 print('not present in the pdb', count_not_present)
 try:
     print(output_file, (len(df2) / (len(df) - count_not_present)) * 100)

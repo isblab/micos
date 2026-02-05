@@ -1,6 +1,6 @@
 # #! /bin/bash
 
-input_directory="../../../data/crosslinks/human"
+input_directory="../../../data/crosslinks/"
 
 for file in $input_directory/*; do
   input_base_name=$(basename "$file")
@@ -23,6 +23,8 @@ for directory in "${directories[@]}";do
   for input_file in $directory/*; do
       if [[ $input_file == *BDP* ]]; then
           length=52
+      elif [[ $input_file == *BS3* ]]; then
+        length=35
       else
           length=30
       fi

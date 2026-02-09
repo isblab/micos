@@ -29,7 +29,11 @@ monomeric_links = df_filtered[~same_residue & within_range]
 # self_links = pd.concat([self_links, df_filtered[same_residue]])
 # monomeric_links = pd.concat([monomeric_links, df_filtered[~same_residue]])
 
-print(input_file, "Total:", len(df_filtered), "Self-links:", len(df_filtered[same_residue & within_range]), "monomeric_links:", len(df_filtered[~same_residue & within_range]))
+print(input_file, 
+      "Total mic19 cc:", (len(df_filtered[same_residue & within_range]) + len(df_filtered[~same_residue & within_range])),
+      "Total:", len(df_filtered), 
+      "Self-links:", len(df_filtered[same_residue & within_range]), 
+      "monomeric_links:", len(df_filtered[~same_residue & within_range]))
 
 self_links.to_csv(f"../self_links/self_{output_file}.csv", index=False)
 monomeric_links.to_csv(f"../monomeric_links/monomeric_{output_file}.csv", index=False)

@@ -85,8 +85,7 @@ if __name__ == "__main__":
     df2 = pd.DataFrame(rows2, columns=["Residue1", "Residue2", "Distance"])
     df3 = pd.DataFrame(rows3, columns=["Residue1", "Residue2", "Distance"])
     
-print('not present in the pdb', count_not_present)
 try:
-    print(output_file, (len(df2) / (len(df) - count_not_present)) * 100)
+    print(output_file, len(df2), (len(df2) / (len(df) - count_not_present)) * 100)
 except ZeroDivisionError:
     print('0%')

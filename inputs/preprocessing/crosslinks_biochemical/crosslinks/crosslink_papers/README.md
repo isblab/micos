@@ -1,11 +1,8 @@
 ### Preprocessing the crosslinks from papers
 
-#### These studies are done on human cells
+** Note: ** The filtered crosslinks from these studies (1-4) are saved in `../mapping_to_homologs/inputs` for the next steps.
 
-##### Note: The filtered crosslinks are saved in ../mapping_to_homologs/inputs
-##### Note: linden_2020 study was done in yeast. Crosslink residues were aligned to gap in MSA in human species, not considered further.
-##### Note: zhu_2024 crosslinks are used for only validation.
-
+#### Studies on human proteins
 
 1. `bartolec_2023`
 
@@ -43,3 +40,7 @@ Run the script:
 ```
 zhu_2024/zhu_filtering_data.py
 ```
+These crosslinks were used only for validation. 
+
+##### Studies on yeast (not used)
+`linden_2020` study was done in yeast. These crosslink residues were aligned to gap in MSA in human species.  Therefore they were not considered further.

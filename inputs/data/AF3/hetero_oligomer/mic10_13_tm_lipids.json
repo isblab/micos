@@ -1,0 +1,1762 @@
+[
+    {
+        "name": "mic10_13_tm_lipids_145",
+        "modelSeeds": [
+            145
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    },
+    {
+        "name": "mic10_13_tm_lipids_82",
+        "modelSeeds": [
+            82
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    },
+    {
+        "name": "mic10_13_tm_lipids_168",
+        "modelSeeds": [
+            168
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    },
+    {
+        "name": "mic10_13_tm_lipids_15",
+        "modelSeeds": [
+            15
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    },
+    {
+        "name": "mic10_13_tm_lipids_11",
+        "modelSeeds": [
+            11
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    },
+    {
+        "name": "mic10_13_tm_lipids_165",
+        "modelSeeds": [
+            165
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    },
+    {
+        "name": "mic10_13_tm_lipids_42",
+        "modelSeeds": [
+            42
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    },
+    {
+        "name": "mic10_13_tm_lipids_19",
+        "modelSeeds": [
+            19
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    },
+    {
+        "name": "mic10_13_tm_lipids_9",
+        "modelSeeds": [
+            9
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    },
+    {
+        "name": "mic10_13_tm_lipids_72",
+        "modelSeeds": [
+            72
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    },
+    {
+        "name": "mic10_13_tm_lipids_151",
+        "modelSeeds": [
+            151
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    },
+    {
+        "name": "mic10_13_tm_lipids_33",
+        "modelSeeds": [
+            33
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    },
+    {
+        "name": "mic10_13_tm_lipids_53",
+        "modelSeeds": [
+            53
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    },
+    {
+        "name": "mic10_13_tm_lipids_86",
+        "modelSeeds": [
+            86
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    },
+    {
+        "name": "mic10_13_tm_lipids_106",
+        "modelSeeds": [
+            106
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    },
+    {
+        "name": "mic10_13_tm_lipids_92",
+        "modelSeeds": [
+            92
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    },
+    {
+        "name": "mic10_13_tm_lipids_40",
+        "modelSeeds": [
+            40
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    },
+    {
+        "name": "mic10_13_tm_lipids_45",
+        "modelSeeds": [
+            45
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    },
+    {
+        "name": "mic10_13_tm_lipids_103",
+        "modelSeeds": [
+            103
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    },
+    {
+        "name": "mic10_13_tm_lipids_84",
+        "modelSeeds": [
+            84
+        ],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "CLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQH",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "LMRFLIKGSVAGGAVY",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "maxTemplateDate": "2021-09-30",
+                    "useStructureTemplate": true
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_PLM",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_OLA",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            },
+            {
+                "ligand": {
+                    "ligand": "CCD_MYR",
+                    "count": 1
+                }
+            }
+        ]
+    }
+]

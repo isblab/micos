@@ -1,0 +1,10 @@
+Percent crosslink violation is 5.88
+7 out of 119 crosslinks were violated in this cluster of models
+Following crosslinks were violated in this cluster:
+	MIC60,451,MIC19,63
+	MIC19,136,MIC19,45
+	MIC19,136,MIC19,76
+	MIC19,136,MIC19,63
+	MIC19,86,MIC19,136
+	MIC19,86,MIC19,136
+	MIC19,86,MIC19,136

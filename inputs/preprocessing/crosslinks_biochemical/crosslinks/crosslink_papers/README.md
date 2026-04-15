@@ -4,6 +4,7 @@
 
 ##### Note: The filtered crosslinks are saved in ../mapping_to_homologs/inputs
 ##### Note: linden_2020 study was done in yeast. Crosslink residues were aligned to gap in MSA in human species, not considered further.
+##### Note: zhu_2024 crosslinks are used for only validation.
 
 
 1. `bartolec_2023`
@@ -35,4 +36,10 @@ yugandhar_2020/yugandhar_filtering_data.py
 
 Download supplementary table 3 excel file and search manually for micos crosslinks. There are two crosslinks in 3rd sheet and one crosslink in 8th sheet, which are manually saved in a csv file.
 
+5. `zhu_2024`
 
+Download the supplementary table and parse through 'Supp Data 1_Combined (DSSO)' sheet to sort MICOS and non-MICOS crosslinks.
+Run the script:
+```
+zhu_2024/zhu_filtering_data.py
+```

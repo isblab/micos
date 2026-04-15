@@ -38,17 +38,17 @@ from scripts.constants.mutation_constants import (
 
 where_is_it = WhereIsIt()
 
-config_file = '/home/muskaan/projects/micos/mutations/configs.yml'
+config_file = '/home/muskaan/projects/x/mutations/configs.yml'
 odp_sequences_fasta = where_is_it.sequences.odp_sequences_fasta
 
-clinvar_output_dir = '/home/muskaan/projects/micos/mutations/'
-pairwise_alignments_dir = '/home/muskaan/projects/micos/mutations/'
-alpha_missense_dir = '/home/muskaan/projects/micos/mutations/'
+clinvar_output_dir = '/home/muskaan/projects/x/mutations/'
+pairwise_alignments_dir = '/home/muskaan/projects/x/mutations/'
+alpha_missense_dir = '/home/muskaan/projects/x/mutations/'
 
 config_yaml = yaml.load(open(config_file, "r"), Loader=yaml.FullLoader)
 
-protein_uniprot_map = config_yaml["micos_protein_uniprot_map"]
-protein_gene_map = config_yaml["micos_protein_gene_map"]
+protein_uniprot_map = config_yaml["x_protein_uniprot_map"]
+protein_gene_map = config_yaml["x_protein_gene_map"]
 
 odp_sequences = read_fasta(odp_sequences_fasta)
 

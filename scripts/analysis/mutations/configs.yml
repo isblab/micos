@@ -1,0 +1,12 @@
+# MICOS proteins
+micos_protein_uniprot_map:
+  MIC10: Q5TGZ0-1
+  MIC13: Q5XKP0
+  MIC19: Q9NX63
+  MIC60: Q16891-1
+
+micos_protein_gene_map:
+  MIC10: MICOS10
+  MIC13: MICOS13
+  MIC19: CHCHD3
+  MIC60: IMMT

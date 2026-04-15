@@ -89,9 +89,9 @@ You can use the following script to do all the above steps:
 scripts/analysis/post_sampcon/xl_prism_cm_fit.sh
 ```
 
-Note: You can also find these scripts in [IMP_Toolbox](https://github.com/isblab/IMP_Toolbox).
+- Mapped ClinVar missense variants, predicted to be likely pathogenic by AlphaMissense using `scripts/analysis/mutations/micos_clinvar_mutations.py` script.
 
-- Mapped ClinVar missense variants, predicted to be likely pathogenic by AlphaMissense using `scripts/analysis/mutations/clinvar_mutations.py` script.
+Note: You can also find these scripts in [IMP_Toolbox](https://github.com/isblab/IMP_Toolbox).
 
 
 ### Results
@@ -103,6 +103,7 @@ For the simulations, the results directory contains:
 - prism : Directory containing the PrISM output.
 - xl_violations : Directory containing the logs for crosslink violations.
 - ccm_pdb_aligned : Directory containing input structures aligned to the cluster center bead model for visualization.
+- mutations: Directory containing the ClinVar mutations and AlphaMissense annotations for pathogenicity.
 
 Additional data is uploaded in Zenodo (the set of major cluster models corresponding to the main modeling run presented in the paper).
  

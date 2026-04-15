@@ -5,9 +5,9 @@ This repository is of the integrative model of the MICOS complex based on data f
 
 
 ## Depositions in PDB and ModelArchive
-PDB entry for the integrative model:
+PDB entry for the integrative model: TBD
 
-Model archive entries for Alphafold3 models: 
+Model archive entries for Alphafold3 models: TBD
 
 ![Image](./metadata/thumb.png)
 
@@ -31,7 +31,7 @@ scripts/preprocessing/get_high_confidence_region_from_AF2.py
 The AF3 input JSON files are stored in `inputs/data/AF3` for homo-oligomers, hetero-oligomers, and higher-order oliogmers. The AF3 output, confident rigid bodies, and interacting patches are deposited in [Zenodo](https://doi.org/10.5281/zenodo.18383758). 
 
 
-3. Crosslinks from all the paralogs (mouse, yeast) were mapped to human using the scripts in `inputs/preprocessing/crosslinks_biochemical/scripts` directory and refer to [documentation](inputs/preprocessing/crosslinks_biochemical/README.md).
+3. Crosslinks from all the paralogs (mouse, yeast) were mapped to human proteins using the scripts in `inputs/preprocessing/crosslinks_biochemical/scripts` directory. See [details](inputs/preprocessing/crosslinks_biochemical/README.md).
 
 
 
@@ -49,7 +49,7 @@ scripts/modeling/production_run.sh
 
 1. Getting the good-scoring models
 
-Good-scoring models were selected using pmi_analysis (Please refer to [pmi_analysis tutorial](https://github.com/salilab/PMI_analysis) for more detailed explaination) along with our `variable_filter_v1.py` script.
+Good-scoring models were selected using pmi_analysis (Please refer to [pmi_analysis tutorial](https://github.com/salilab/PMI_analysis) for more detailed explanation) along with our `variable_filter_v1.py` script.
 
 Following are the scripts used:
 
@@ -79,7 +79,7 @@ scripts/analysis/sampcon/sampcon.sh
 
 - Compute crosslink violations using `scripts/analysis/post_sampcon/get_xl_viol_validation_set_v2.py` script.
 
-- Create contact maps for the protein pairs using `scripts/analysis/post_sampcon/contact_maps_surface_v2.py` script. The proteins to be considered are specified as lists protein1 and protein2.
+- Create contact maps for the protein pairs using `scripts/analysis/post_sampcon/contact_maps_surface_v2.py` script. The proteins to be considered are specified as lists protein1 and protein2. 
 
 - Obtain domainwise precision using [PrISM](https://doi.org/10.1093/bioinformatics/btac400).
 
@@ -109,7 +109,7 @@ Additional data is uploaded in Zenodo (the set of major cluster models correspon
  
 ## Information
 **Author(s):** Muskaan Jindal, Rakesh Mahato, Arko Guha, Sreemoyee Das, Kartik Majila, Shreyas Arvindekar, Anand Vaidya, Shruthi Viswanath\
-**Date:** \
+**Date:** 15th April 2026 \
 **License:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
 International License.\

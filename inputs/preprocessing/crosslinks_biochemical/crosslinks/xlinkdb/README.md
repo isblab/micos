@@ -12,7 +12,9 @@ Get the names of all the datasets that have crosslinks for MICOS proteins using:
 Download all the crosslink datasets from xlinkdb which have MICOS proteins and save in `xlinkdb_datasets/`.
 
 #### Step 3
-Separate the crosslinks based on the xlinker type and the species using:
+Separate the crosslinks based on the xlinker type and the species using `2_get_xlinkdb_crosslinks_by_xlinker.py`, followed by `3_sort_crosslinks_by_species.py`.
+
+Run the following master script to do the above:
 
 ```
 ../../scripts/xlinkdb_parse.sh

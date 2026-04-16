@@ -27,7 +27,7 @@ with open('yugandhar_supp_table4.csv', 'r') as readFile: #save th einput file as
 
             lines.append(content)
 
-with open('../../xl_data/inputs/yu_DSSO.csv', 'w') as writeFile:
+with open('../../../mapping_to_homologs/inputs/yu_DSSO.csv', 'w') as writeFile:
 
     writer = csv.writer(writeFile)
     writer.writerow(["Protein1","Residue1","Protein2", "Residue2"])

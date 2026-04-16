@@ -1,6 +1,6 @@
 ### Preprocessing the crosslinks from papers
 
-** Note: ** The filtered crosslinks from these studies (1-4) are saved in `../mapping_to_homologs/inputs` for the next steps.
+**Note:** The filtered crosslinks from these studies (1-4) are saved in `../mapping_to_homologs/inputs` for the next steps.
 
 #### Studies on human proteins
 
@@ -32,6 +32,7 @@ yugandhar_2020/yugandhar_filtering_data.py
 4. `sun_2022`
 
 Download supplementary table 3 excel file and search manually for micos crosslinks. There are two crosslinks in 3rd sheet and one crosslink in 8th sheet, which are manually saved in a csv file.
+
 
 5. `zhu_2024`
 

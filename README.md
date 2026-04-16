@@ -26,7 +26,7 @@ Model archive entries for Alphafold3 models: TBD
 scripts/preprocessing/get_high_confidence_region_from_AF2.py
 ```
 
-2. In case of AlphaFold3 predicted structures, rigid bodies and confidently predicted interfaces are obtained using [af_pipeline](https://github.com/isblab/af_pipeline). 
+2. In case of AlphaFold3 predicted structures, rigid bodies and confidently predicted interfaces are obtained using [af_pipeline](https://github.com/isblab/af_pipeline). See the [wrapper script](scripts/preprocessing/af3_micos.py) for this.
 
 The AF3 input JSON files are stored in `inputs/data/AF3` for homo-oligomers, hetero-oligomers, and higher-order oliogmers. The AF3 output, confident rigid bodies, and interacting patches are deposited in [Zenodo](https://doi.org/10.5281/zenodo.18383758). 
 
@@ -77,7 +77,7 @@ scripts/analysis/sampcon/sampcon.sh
 
 - Assess the fit to the input biochemical data using `scripts/analysis/post_sampcon/fit_to_binding_data.py` script.
 
-- Compute crosslink violations using `scripts/analysis/post_sampcon/get_xl_viol_validation_set_v2.py` script.
+- Compute crosslink violations using `scripts/analysis/post_sampcon/get_xl_viol_validation_set_v2.py` script. We used all (52) the crosslinks from [Zhu 2024](), stored in `inputs/data/crosslinks/evicalc_DHSO_DSSO_human.csv` for only validation. **Note:** This csv file also contains 7 crosslinks from other datasets.
 
 - Create contact maps for the protein pairs using `scripts/analysis/post_sampcon/contact_maps_surface_v2.py` script. The proteins to be considered are specified as lists protein1 and protein2. 
 

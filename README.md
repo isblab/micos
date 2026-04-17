@@ -37,7 +37,7 @@ The AF3 input JSON files are stored in `inputs/data/AF3` for homo-oligomers, het
 
 ### Sampling
 
-1. Compile IMP with the custom Desmosome module (scripts/modeling/custom_module). See the instructions for compilation in the [official guide](https://integrativemodeling.org/nightly/doc/manual/installation.html).
+1. Compile IMP with the custom Desmosome module (scripts/modeling/micos_module). See the instructions for compilation in the [official guide](https://integrativemodeling.org/nightly/doc/manual/installation.html).
 
 2. To perform production runs, run the following script:
 
@@ -77,7 +77,7 @@ scripts/analysis/sampcon/sampcon.sh
 
 - Assess the fit to the input biochemical data using `scripts/analysis/post_sampcon/fit_to_binding_data.py` script.
 
-- Compute crosslink violations using `scripts/analysis/post_sampcon/get_xl_viol_validation_set_v2.py` script. We used all (52) the crosslinks from [Zhu 2024](???), stored in `inputs/data/crosslinks/evicalc_DHSO_DSSO_human.csv` for validation. **Note:** This CSV file also contains 7 crosslinks from other datasets.
+- Compute crosslink violations using `scripts/analysis/post_sampcon/get_xl_viol_validation_set_v2.py` script. We used all (52) the crosslinks from [Zhu 2024](https://doi.org/10.1038/s41467-024-47569-x), stored in `inputs/data/crosslinks/evicalc_DHSO_DSSO_human.csv` for validation. **Note:** This CSV file also contains 7 crosslinks from other datasets.
 
 - Create contact maps for the protein pairs using `scripts/analysis/post_sampcon/contact_maps_surface_v2.py` script. The proteins to be considered are specified as lists protein1 and protein2. 
 

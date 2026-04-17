@@ -77,7 +77,7 @@ scripts/analysis/sampcon/sampcon.sh
 
 - Assess the fit to the input biochemical data using `scripts/analysis/post_sampcon/fit_to_binding_data.py` script.
 
-- Compute crosslink violations using `scripts/analysis/post_sampcon/get_xl_viol_validation_set_v2.py` script. We used all (52) the crosslinks from [Zhu 2024](), stored in `inputs/data/crosslinks/evicalc_DHSO_DSSO_human.csv` for only validation. **Note:** This csv file also contains 7 crosslinks from other datasets.
+- Compute crosslink violations using `scripts/analysis/post_sampcon/get_xl_viol_validation_set_v2.py` script. We used all (52) the crosslinks from [Zhu 2024](???), stored in `inputs/data/crosslinks/evicalc_DHSO_DSSO_human.csv` for validation. **Note:** This CSV file also contains 7 crosslinks from other datasets.
 
 - Create contact maps for the protein pairs using `scripts/analysis/post_sampcon/contact_maps_surface_v2.py` script. The proteins to be considered are specified as lists protein1 and protein2. 
 
@@ -98,12 +98,12 @@ Note: You can also find these scripts in [IMP_Toolbox](https://github.com/isblab
 
 For the simulations, the results directory contains: 
 
-- contact_maps : Directory containing of the contact map for each protein pair in the MICOS complex.
-- sampcon : Directory containing sampcon output for the largest cluster.
-- prism : Directory containing the PrISM output.
-- xl_violations : Directory containing the logs for crosslink violations.
-- ccm_pdb_aligned : Directory containing input structures aligned to the cluster center bead model for visualization.
-- mutations: Directory containing the ClinVar mutations and AlphaMissense annotations for pathogenicity.
+- `contact_maps` : Directory containing of the contact map for each protein pair in the MICOS complex.
+- `sampcon` : Directory containing sampcon output for the largest cluster.
+- `prism` : Directory containing the PrISM output.
+- `xl_violations` : Directory containing the logs for crosslink violations.
+- `ccm_pdb_aligned` : Directory containing input structures aligned to the cluster center bead model for visualization.
+- `mutations`: Directory containing the ClinVar mutations and AlphaMissense annotations for pathogenicity.
 
 Additional data is uploaded in Zenodo (the set of major cluster models corresponding to the main modeling run presented in the paper).
  

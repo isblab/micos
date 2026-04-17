@@ -14,7 +14,7 @@ Download all the crosslink datasets from xlinkdb which have MICOS proteins and s
 #### Step 3
 Separate the crosslinks based on the xlinker type and the species using `2_get_xlinkdb_crosslinks_by_xlinker.py`, followed by `3_sort_crosslinks_by_species.py`.
 
-Run the following master script to do the above:
+Run the following master script to do both 2_* and 3_*  above:
 
 ```
 ../../scripts/xlinkdb_parse.sh

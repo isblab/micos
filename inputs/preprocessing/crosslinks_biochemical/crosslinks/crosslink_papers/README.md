@@ -6,7 +6,7 @@
 
 1. `bartolec_2023`
 
-Download supplementary table 1 excel file and 4th and 5th sheet as csv files corresponding to DSSO and DHSO crosslinks, respectively.
+Download supplementary table 1 Excel file and 4th and 5th sheet as CSV files corresponding to DSSO and DHSO crosslinks, respectively.
 Run the script:
 ```
 bartolec_2023/bartolec_filtering_data.py
@@ -23,7 +23,7 @@ ryl_2020/ryl_filtering_data.py
 
 3. `yugandhar_2020`
 
-Download supplementary zip file, extract 156740_0_supp_420642_q05ccw.xlsx and save 'supplementary table 4' sheet as csv file.
+Download supplementary zip file, extract 156740_0_supp_420642_q05ccw.xlsx and save 'supplementary table 4' sheet as CSV file.
 Run the script:
 ```
 yugandhar_2020/yugandhar_filtering_data.py
@@ -31,7 +31,7 @@ yugandhar_2020/yugandhar_filtering_data.py
 
 4. `sun_2022`
 
-Download supplementary table 3 excel file and search manually for micos crosslinks. There are two crosslinks in 3rd sheet and one crosslink in 8th sheet, which are manually saved in a csv file.
+Download supplementary table 3 Excel file and search manually for micos crosslinks. There are two crosslinks in 3rd sheet and one crosslink in 8th sheet, which are manually saved in a CSV file.
 
 
 5. `zhu_2024`

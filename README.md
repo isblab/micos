@@ -42,7 +42,7 @@ The AF3 input JSON files are stored in `inputs/data/AF3` for homo-oligomers, het
 2. To perform production runs, run the following script:
 
 ```
-scripts/modeling/production_run.sh
+scripts/modeling/production_runs.sh
 ```
 
 ### Analysis

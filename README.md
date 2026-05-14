@@ -28,7 +28,20 @@ scripts/preprocessing/get_high_confidence_region_from_AF2.py
 
 2. In case of AlphaFold3 predicted structures, rigid bodies and confidently predicted interfaces are obtained using [af_pipeline](https://github.com/isblab/af_pipeline). See the [wrapper script](scripts/preprocessing/af3_micos.py) for this.
 
-The AF3 input JSON files are stored in `inputs/data/AF3` for homo-oligomers, hetero-oligomers, and higher-order oliogmers. The AF3 output, confident rigid bodies, and interacting patches are deposited in [Zenodo](https://doi.org/10.5281/zenodo.18383758). 
+The AF3 input JSON files and config files are stored in `inputs/data/AF3` for homo-oligomers, hetero-oligomers, and higher-order oliogmers. The AF3 output, confident rigid bodies, and interacting patches are deposited in [Zenodo](https://doi.org/10.5281/zenodo.18383758).
+
+> [!IMPORTANT] 
+> Use af_pipeline version v1.0.1.
+
+A. Create AF3 input JSON files using:
+```
+python examples/create_af_jobs.py -i path/to/configs_lipids.yml -p path/to/proteins.fasta -o output/path/
+```
+
+B. Rank the AF3 predictions to get the best seed using:
+```
+python examples/rank_af_predictions.py -i path/to/af3/input/json -o output/direc/for/ranked/alphafold/predictions -- pred_dirs path/to/AF3/predictions
+```
 
 
 3. Crosslinks from all the paralogs (mouse, yeast) were mapped to human proteins using the scripts in `inputs/preprocessing/crosslinks_biochemical/scripts` directory. See [details](inputs/preprocessing/crosslinks_biochemical/README.md).
@@ -108,9 +121,9 @@ For the simulations, the results directory contains:
 Additional data is uploaded in Zenodo (the set of major cluster models corresponding to the main modeling run presented in the paper).
  
 ## Information
-**Author(s):** Muskaan Jindal, Rakesh Mahato, Arko Guha, Sreemoyee Das, Kartik Majila, Shreyas Arvindekar, Anand Vaidya, Shruthi Viswanath\
+**Author(s):** Muskaan Jindal, Rakesh Mahato, Sreemoyee Das, Arko Guha, Kartik Majila, Shreyas Arvindekar, Anand Vaidya, Shruthi Viswanath\
 **Date:** 15th April 2026 \
 **License:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
 International License.\
-**Publications:** 
+**Publications:** Integrative structure determination of the human mitochondrial contact site and cristae organizing system (MICOS) complex. 

@@ -6,8 +6,8 @@ proteins:
 
 sequences: ../proteins.fasta
 af_jobs:
- higher_order_oligomer:
-  - name: "micos_1_1_1_lipids"
+  micos_1_1_1_lipids:
+  - job_set_name: "micos_1_1_1_lipids"
     modelSeeds: 20
     entities:
     - name: MIC10
@@ -44,7 +44,8 @@ af_jobs:
     - name: CCD_OLA
       type: ligand
 
-  - name: "micos_4_2_2_1_lipids"
+  micos_4_2_2_1_lipids:
+  - job_set_name: "micos_4_2_2_1_lipids"
     modelSeeds: 20
     entities:
     - name: MIC60
@@ -123,8 +124,9 @@ af_jobs:
       type: ligand
     - name: CCD_OLA
       type: ligand
-
-  - name: "mic60_dimer_link_lbs_m_mic13_mic10_dimer_more_lipids"
+      
+  mic60_dimer_link_lbs_m_mic13_mic10_dimer_more_lipids:
+  - job_set_name: "mic60_dimer_link_lbs_m_mic13_mic10_dimer_more_lipids"
     modelSeeds: 20
     entities:
     - name: MIC60

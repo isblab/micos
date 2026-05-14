@@ -6,8 +6,8 @@ proteins:
 
 sequences: ../proteins.fasta
 af_jobs:
- homo_oligomer:  
-  - name: "mic10_dimer_mix_lipids"
+  mic10_dimer_mix_lipids:
+  - job_set_name: "mic10_dimer_mix_lipids"
     modelSeeds: [2,12,14,74,92,100,103,110,115,123,126,150,154,160,167,175,180,182,189,196]
     entities:
     - name: MIC10
@@ -34,8 +34,8 @@ af_jobs:
       type: ligand
     - name: CCD_MYR
       type: ligand
-
-  - name: "mic10_tetramer_lipids"
+  mic10_tetramer_lipids:
+  - job_set_name: "mic10_tetramer_lipids"
     modelSeeds: 20
     entities:
     - name: MIC10
@@ -70,8 +70,8 @@ af_jobs:
       type: ligand
     - name: CCD_MYR
       type: ligand
-
-  - name: "mic10_octamer_lipids"
+  mic10_octamer_lipids:
+  - job_set_name: "mic10_octamer_lipids"
     modelSeeds: [11,12,20,21,26,40,64,73,80,96,104,108,117,119,123,135,138,185,191,195]
     entities:
     - name: MIC10
@@ -121,7 +121,8 @@ af_jobs:
     - name: CCD_MYR
       type: ligand
 
-  - name: "mic19_dimer"
+  mic19_dimer:
+  - job_set_name: "mic19_dimer"
     modelSeeds: 20
     entities:
     - name: MIC19_CC
@@ -130,8 +131,9 @@ af_jobs:
     - name: MIC19_CC
       type: proteinChain
       range: [59,174]
-
-  - name: "mic60_tetramer"
+      
+  mic60_tetramer:
+  - job_set_name: "mic60_tetramer"
     modelSeeds: 20
     entities:
     - name: MIC60_CC

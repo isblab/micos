@@ -1,7 +1,8 @@
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
-import os, sys
-import glob
+import sys
 import RMF
 import IMP
 import IMP.rmf
@@ -48,7 +49,7 @@ def plot_fit_to_data(df, output, ):
         d1 = IMP.atom.Selection(hierarchy=hier, molecule=str(p1), residue_indexes=range(start1, end1 + 1)).get_selected_particles()
         d2 = IMP.atom.Selection(hierarchy=hier, molecule=str(p2), residue_indexes=range(start2, end2 + 1)).get_selected_particles()
         selections.append((d1, d2))
-        labels.append(f'{p1}_{r1}_{p2}_{r2}')
+        labels.append(f'{p2}_{r2}_{p1}_{r1}')
 
     distance_dict = {}
 

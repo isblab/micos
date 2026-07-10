@@ -26,7 +26,7 @@ def calculate_distances(domain1, domain2):
         dist.append(min(x))
     return dist
 
-def plot_fit_to_data(df, output, ):
+def plot_fit_to_data(df, output):
     selections = []
     labels = []
 
@@ -35,7 +35,7 @@ def plot_fit_to_data(df, output, ):
         p2 = row['Protein2']
         r1 = row['Region1']
         r2 = row['Region2']
-        
+
         if '-' in str(r1):
             start1, end1 = map(int, r1.split('-'))
         else:
@@ -46,8 +46,18 @@ def plot_fit_to_data(df, output, ):
         else:
             start2 = end2 = int(r2)
 
-        d1 = IMP.atom.Selection(hierarchy=hier, molecule=str(p1), residue_indexes=range(start1, end1 + 1)).get_selected_particles()
-        d2 = IMP.atom.Selection(hierarchy=hier, molecule=str(p2), residue_indexes=range(start2, end2 + 1)).get_selected_particles()
+        d1 = IMP.atom.Selection(
+            hierarchy=hier,
+            molecule=str(p1),
+            residue_indexes=range(start1, end1 + 1)
+        ).get_selected_particles()
+
+        d2 = IMP.atom.Selection(
+            hierarchy=hier,
+            molecule=str(p2),
+            residue_indexes=range(start2, end2 + 1)
+        ).get_selected_particles()
+
         selections.append((d1, d2))
         labels.append(f'{p2}_{r2}_{p1}_{r1}')
 
@@ -57,20 +67,42 @@ def plot_fit_to_data(df, output, ):
         dist = calculate_distances(d1, d2)
         distance_dict[label] = dist
 
+    # Export to excel
+    export_rows = []
 
+    for label, distances in distance_dict.items():
+        for frame_idx, dist in enumerate(distances):
+            export_rows.append({
+                'Label': label,          
+                'Frame': frame_idx,
+                'Distance': dist         
+            })
+
+    export_df = pd.DataFrame(export_rows)
+
+    # Save Excel file
+    export_df.to_excel(f'{output}.xlsx', index=False)
+
+    # Plotting
     all_data = list(distance_dict.values())
     label_names = list(distance_dict.keys())
 
     fig, ax = plt.subplots(figsize=(12, 5))
-    violinplot = ax.violinplot(all_data, showmeans=True, showextrema=True, showmedians=True)
+
+    violinplot = ax.violinplot(
+        all_data,
+        showmeans=True,
+        showextrema=True,
+        showmedians=True
+    )
 
     ax.set_xticks(np.arange(1, len(label_names) + 1))
     ax.set_xticklabels(label_names, rotation=45, ha='right', fontsize=7)
     ax.set_ylabel('Minimum Distance (Å)')
 
     plt.tight_layout()
+
     plt.savefig(f'{output}.png', dpi=600)
-    # plt.show()
 
 
 rmf_file = sys.argv[1]

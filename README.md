@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18383758.svg)](https://doi.org/10.5281/zenodo.18383758)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo-blue.svg)](https://doi.org/10.5281/zenodo.18383758)
 
 # Mitochondrial contact site and cristae organizing system (MICOS)
 This repository is of the integrative model of the MICOS complex based on data from XLMS, biochemical assays, ET,  AF predictions, homology modeling, sequence alignments, and stereochemistry information. It contains input data, scripts for modeling and results including bead models and localization probability density maps. The modeling was performed using IMP (Integrative Modeling Platform).

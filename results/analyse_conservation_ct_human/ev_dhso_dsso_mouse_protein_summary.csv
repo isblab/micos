@@ -1,0 +1,5 @@
+Protein,Residue,Human_AA,Status,Identity (%),Species_Residues
+MIC19,45,K,Gap,0,Homo sapiens:K; Chaetomium thermophilum:-
+MIC19,121,K,Gap,0,Homo sapiens:K; Chaetomium thermophilum:-
+MIC19,142,K,Conserved,0,Homo sapiens:K; Chaetomium thermophilum:R
+MIC19,157,R,Gap,0,Homo sapiens:R; Chaetomium thermophilum:-

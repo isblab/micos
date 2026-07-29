@@ -1,26 +1,56 @@
-CLUSTAL format alignment by MAFFT FFT-NS-i (v7.487)
+CLUSTAL format alignment by MAFFT FFT-NS-i (v7.525)
 
 
-sp|P38341|MIC12_YEAST M-SKLGPLARSVKWTLSVGVIGSVFYLYRYSNNGYFYDHDATWLKQDHQVQDLVDRKEVV
-sp|C5E381|MIC12_LACTC M-SKVLKLT-SV--TLAASSLAAAGYFYAFDRDSYHYK-NASWKRIGDHVQGILDRKEDI
-sp|Q8R404|MIC13_MOUSE MVARVWSLMRFL--IKGSVAGGAVYLVYDQELLGPSDKSEAALRKAEEVVPPAMYQFSQY
-sp|Q5XKP0|MIC13_HUMAN MVARVWSLMRFL--IKGSVAGGAVYLVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQY
-sp|Q1LUK1|MIC13_DANRE MAAKIFPVVKFA--TKVTIAGGALYVAYDSGLLGGSNEGSVALARAKSAIPPAVDEWMKY
-sp|Q9VVH3|MIC13_DROME M------VLGFL--VRGGLVAATVYYTQKVGIWGDSDQTDKLYNDIKSELRPHVQKLEKQ
-                      *      :             .:          .   . .         :   : .    
+sp|P38341|MIC12 M-SKLGPLARSVKWTLSVGVIGSVFYLYRYSNNGYFYDHD----------ATWLKQDHQV
+sp|C5E381|MIC12 M-SKVLKL---TSVTLAASSLAAAGYFYAFDRDSYHYKNA-----------SWKRIGDHV
+sp|Q8R404|MIC13 MVARVWSL---MRFLIKGSVAGGAVYLVYDQ--------------------ELLGPSDKS
+sp|Q5XKP0|MIC13 MVARVWSL---MRFLIKGSVAGGAVYLVYDQ--------------------ELLGPSDKS
+sp|Q1LUK1|MIC13 MAAKIFPV---VKFATKVTIAGGALYVAYDS--------------------GLLGGSNEG
+sp|Q9VVH3|MIC13 ------MV---LGFLVRGGLVAATVYYTQKV--------------------GIWGDSDQT
+tr|G0SDJ0|G0SDJ M----GFL---AGFAGGATITLAATYLALHTHSQNRLAQATILRSQAATLDSLVPPTDEF
+                       :              .. *                               .. 
 
-sp|P38341|MIC12_YEAST P---GETRNRKLVVTDDGTAWSRTMGES-IKDIWNEQIRNSVDWI---------YS----
-sp|C5E381|MIC12_LACTC AVQRTSSEARDVTV--------RPIKET-MKDLWNEQVRNTAQWV---------YS----
-sp|Q8R404|MIC13_MOUSE VCQQTGLEMPQLPTP-------PKIKFPNFRDSWNSGIISVMSALSVAPSKAREYSKEGW
-sp|Q5XKP0|MIC13_HUMAN VCQQTGLQIPQLPAP-------PKIYFP-IRDSWNAGIMTVMSALSVAPSKAREYSKEGW
-sp|Q1LUK1|MIC13_DANRE F----GFE---LPAT-------PKIEFS-PLDAWNSGVQKSIHALSVAPSTVGDYTKQGL
-sp|Q9VVH3|MIC13_DROME L----PFEVPQLPKT-------GEMRFL-AKHYYNEGVKNTFRFIHMLPC----YAGRGL
-                             .   :            :      . :*  : .    :         *:    
+sp|P38341|MIC12 QDLVDRKE--VVPGETRNRKLVVTDDGTAWSRTMGES-----------------IKDIWN
+sp|C5E381|MIC12 QGILDRKEDIAVQRTSSEARDVT-------VRPIKET-----------------MKDLWN
+sp|Q8R404|MIC13 EAALRKAEEVVPPAMYQFSQYVC-------QQTGLEM--PQLPTPPKIKFP--NFRDSWN
+sp|Q5XKP0|MIC13 QAALQKAGEVVPPAMYQFSQYVC-------QQTGLQI--PQLPAPPKIYFP---IRDSWN
+sp|Q1LUK1|MIC13 SVALARAKSAIPPAVDEWMKYF-----------GFEL-----PATPKIEFS---PLDAWN
+sp|Q9VVH3|MIC13 DKLYNDIKSELRPHVQKLEKQL-----------PFEV--PQLPKTGEMRFL---AKHYYN
+tr|G0SDJ0|G0SDJ ELRRRHNASVILPDGTYLPRRSLLYSSPDDATAVLESLRPRGPTQGPISKLVESAKERWN
+                .                  :               :                    . :*
 
-sp|P38341|MIC12_YEAST -WGKN---------------------
-sp|C5E381|MIC12_LACTC -FGSNTSTK----------------A
-sp|Q8R404|MIC13_MOUSE EYLKEHSK------------------
-sp|Q5XKP0|MIC13_HUMAN EYVKARTK------------------
-sp|Q1LUK1|MIC13_DANRE QYVKDLSK------------------
-sp|Q9VVH3|MIC13_DROME KKVKDTFQDFAQSPAIAGGAESSPPK
-                         .                      
+sp|P38341|MIC12 EQIRNSVDW---------------------------------------------------
+sp|C5E381|MIC12 EQVRNTAQW---------------------------------------------------
+sp|Q8R404|MIC13 SGIISVMSA---------------------------------------------------
+sp|Q5XKP0|MIC13 AGIMTVMSA---------------------------------------------------
+sp|Q1LUK1|MIC13 SGVQKSIHA---------------------------------------------------
+sp|Q9VVH3|MIC13 EGVKNTFRF---------------------------------------------------
+tr|G0SDJ0|G0SDJ AELQGALRWAMETDWQGVREHLEENVARIMGWEVPKTVVEEVVVVRRPQQPPQRVQEVEW
+                  :                                                         
+
+sp|P38341|MIC12 ---------------IYSWGKN--------------------------------------
+sp|C5E381|MIC12 ---------------VYSFGSNTS-----------TKA----------------------
+sp|Q8R404|MIC13 ---------------LSVAPSKAR--EYSKEGWEYLKEHSK-------------------
+sp|Q5XKP0|MIC13 ---------------LSVAPSKAR--EYSKEGWEYVKARTK-------------------
+sp|Q1LUK1|MIC13 ---------------LSVAPSTVG--DYTKQGLQYVKDLSK-------------------
+sp|Q9VVH3|MIC13 ---------------IHMLPC------YAGRGLKKVKDTFQDFAQSP-------------
+tr|G0SDJ0|G0SDJ EERNHEPGLTVQAAALASAKTRAALHDARERAGQAVKEAERAVVEEAREVRDKMVREIRR
+                               :                                            
+
+sp|P38341|MIC12 ------------------------------------------------------------
+sp|C5E381|MIC12 ------------------------------------------------------------
+sp|Q8R404|MIC13 ------------------------------------------------------------
+sp|Q5XKP0|MIC13 ------------------------------------------------------------
+sp|Q1LUK1|MIC13 ------------------------------------------------------------
+sp|Q9VVH3|MIC13 ------------------------------------------------------AIAGGA
+tr|G0SDJ0|G0SDJ DVKVVQEELRHAKEKASGLIHEARERVQIAEDKAEEKLEHKVVEKVLEMTDVQRALAERF
+                                                                            
+
+sp|P38341|MIC12 -----------------------------------
+sp|C5E381|MIC12 -----------------------------------
+sp|Q8R404|MIC13 -----------------------------------
+sp|Q5XKP0|MIC13 -----------------------------------
+sp|Q1LUK1|MIC13 -----------------------------------
+sp|Q9VVH3|MIC13 ES-------------------SP----------PK
+tr|G0SDJ0|G0SDJ DSRLREERMNRSVEEVLRERYAPIGQRDNGRLRGL
+                                                   

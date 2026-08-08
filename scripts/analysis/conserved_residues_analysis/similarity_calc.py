@@ -4,10 +4,8 @@ import argparse
 from Bio import AlignIO
 from Bio.Align import substitution_matrices
 
-
-# BLOSUM62
-BLOSUM62 = substitution_matrices.load("BLOSUM62")
-
+# Load BLOSUM45
+BLOSUM45 = substitution_matrices.load("BLOSUM45")
 
 SPECIES = [
     "Homo sapiens",
@@ -25,51 +23,56 @@ SPECIES = [
 def find_species(alignment, keyword):
     for rec in alignment:
         desc = rec.description
+
         if keyword.lower() in desc.lower():
             return rec
+
     return None
 
 
 def similarity_score(ref_seq, target_seq):
+
     similar = 0
+    identical = 0
     compared = 0
 
-    for a,b in zip(ref_seq,target_seq):
+    for a, b in zip(ref_seq, target_seq):
 
+        # Ignore positions containing gaps
         if a == "-" or b == "-":
             continue
 
         compared += 1
 
+        # Exact identity
         if a == b:
+            identical += 1
             similar += 1
 
         else:
             try:
-                score = BLOSUM62[a,b]
-                # Positive BLOSUM score = conservative substitution
+                score = BLOSUM45[a, b]
+
+                # Positive BLOSUM45 score = conservative substitution
                 if score > 0:
                     similar += 1
 
             except KeyError:
                 pass
 
-
     if compared == 0:
-        return 0,0,0
+        return 0, 0, 0
 
+    identity = 100 * identical / compared
+    similarity = 100 * similar / compared
 
-    return (
-        compared,
-        100*similar/compared
-    )
-
+    return compared, identity, similarity
 
 
 def main():
 
     parser = argparse.ArgumentParser(
-        description="Calculate MSA similarity between species"
+        description="Calculate MSA identity and similarity between species"
     )
 
     parser.add_argument(
@@ -100,20 +103,22 @@ def main():
         help="Reference residue end"
     )
 
-
     args = parser.parse_args()
-
 
     alignment = AlignIO.read(
         args.input,
         "fasta"
     )
 
-
-    ref_record = find_species(alignment, args.reference)
+    ref_record = find_species(
+        alignment,
+        args.reference
+    )
 
     if ref_record is None:
-        raise ValueError(f"{args.reference} not found")
+        raise ValueError(
+            f"{args.reference} not found"
+        )
 
     print("\nReference:")
     print(ref_record.description)
@@ -127,7 +132,7 @@ def main():
 
     count = 0
 
-    for i,aa in enumerate(ref_record.seq):
+    for i, aa in enumerate(ref_record.seq):
 
         if aa != "-":
             count += 1
@@ -136,62 +141,61 @@ def main():
             start_col = i
 
         if count == args.end:
-            end_col = i+1
+            end_col = i + 1
             break
-
 
     if start_col is None or end_col is None:
         raise ValueError(
             "Residue range not found"
         )
 
-
     ref_seq = ref_record.seq[start_col:end_col]
-
 
     print(
         f"\nRange: {args.start}-{args.end}"
     )
 
-
     print(
-        "\n%-20s %12s %15s"
-        %
-        (
+        "\n%-30s %12s %12s %15s"
+        % (
             "Species",
             "Compared",
+            "Identity %",
             "Similarity %"
         )
     )
 
-    print("-"*55)
-
-
+    print("-" * 75)
 
     for species in SPECIES:
+
         if species == args.reference:
             continue
 
-        record = find_species(alignment, species)
+        record = find_species(
+            alignment,
+            species
+        )
 
         if record is None:
             continue
+
         target_seq = record.seq[start_col:end_col]
 
-        compared, similarity = similarity_score(
+        compared, identity, similarity = similarity_score(
             ref_seq,
             target_seq
         )
 
         print(
-            "%-30s %12d %14.1f"
+            "%-30s %12d %12.1f %15.1f"
             % (
                 species,
                 compared,
+                identity,
                 similarity,
             )
         )
-
 
 
 if __name__ == "__main__":

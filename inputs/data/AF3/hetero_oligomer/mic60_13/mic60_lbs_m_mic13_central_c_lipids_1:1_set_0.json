@@ -1,8 +1,8 @@
 [
     {
-        "name": "mic19_60_tetramer_lipids_160",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_721",
         "modelSeeds": [
-            160
+            721
         ],
         "sequences": [
             {
@@ -11,38 +11,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -108,9 +88,9 @@
         ]
     },
     {
-        "name": "mic19_60_tetramer_lipids_76",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_129",
         "modelSeeds": [
-            76
+            129
         ],
         "sequences": [
             {
@@ -119,38 +99,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -216,9 +176,9 @@
         ]
     },
     {
-        "name": "mic19_60_tetramer_lipids_71",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_882",
         "modelSeeds": [
-            71
+            882
         ],
         "sequences": [
             {
@@ -227,38 +187,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -324,9 +264,9 @@
         ]
     },
     {
-        "name": "mic19_60_tetramer_lipids_35",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_1134",
         "modelSeeds": [
-            35
+            1134
         ],
         "sequences": [
             {
@@ -335,38 +275,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -432,9 +352,9 @@
         ]
     },
     {
-        "name": "mic19_60_tetramer_lipids_120",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_930",
         "modelSeeds": [
-            120
+            930
         ],
         "sequences": [
             {
@@ -443,38 +363,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -540,9 +440,9 @@
         ]
     },
     {
-        "name": "mic19_60_tetramer_lipids_169",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_1169",
         "modelSeeds": [
-            169
+            1169
         ],
         "sequences": [
             {
@@ -551,38 +451,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -648,9 +528,9 @@
         ]
     },
     {
-        "name": "mic19_60_tetramer_lipids_40",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_704",
         "modelSeeds": [
-            40
+            704
         ],
         "sequences": [
             {
@@ -659,38 +539,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -756,9 +616,9 @@
         ]
     },
     {
-        "name": "mic19_60_tetramer_lipids_147",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_528",
         "modelSeeds": [
-            147
+            528
         ],
         "sequences": [
             {
@@ -767,38 +627,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -864,9 +704,9 @@
         ]
     },
     {
-        "name": "mic19_60_tetramer_lipids_96",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_1050",
         "modelSeeds": [
-            96
+            1050
         ],
         "sequences": [
             {
@@ -875,38 +715,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -972,9 +792,9 @@
         ]
     },
     {
-        "name": "mic19_60_tetramer_lipids_151",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_792",
         "modelSeeds": [
-            151
+            792
         ],
         "sequences": [
             {
@@ -983,38 +803,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1080,9 +880,9 @@
         ]
     },
     {
-        "name": "mic19_60_tetramer_lipids_95",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_804",
         "modelSeeds": [
-            95
+            804
         ],
         "sequences": [
             {
@@ -1091,38 +891,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1188,9 +968,9 @@
         ]
     },
     {
-        "name": "mic19_60_tetramer_lipids_78",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_1261",
         "modelSeeds": [
-            78
+            1261
         ],
         "sequences": [
             {
@@ -1199,38 +979,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1296,9 +1056,9 @@
         ]
     },
     {
-        "name": "mic19_60_tetramer_lipids_50",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_84",
         "modelSeeds": [
-            50
+            84
         ],
         "sequences": [
             {
@@ -1307,38 +1067,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1404,9 +1144,9 @@
         ]
     },
     {
-        "name": "mic19_60_tetramer_lipids_39",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_1629",
         "modelSeeds": [
-            39
+            1629
         ],
         "sequences": [
             {
@@ -1415,38 +1155,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1512,9 +1232,9 @@
         ]
     },
     {
-        "name": "mic19_60_tetramer_lipids_21",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_858",
         "modelSeeds": [
-            21
+            858
         ],
         "sequences": [
             {
@@ -1523,38 +1243,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1620,9 +1320,9 @@
         ]
     },
     {
-        "name": "mic19_60_tetramer_lipids_51",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_1349",
         "modelSeeds": [
-            51
+            1349
         ],
         "sequences": [
             {
@@ -1631,38 +1331,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1728,9 +1408,9 @@
         ]
     },
     {
-        "name": "mic19_60_tetramer_lipids_46",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_49",
         "modelSeeds": [
-            46
+            49
         ],
         "sequences": [
             {
@@ -1739,38 +1419,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1836,9 +1496,9 @@
         ]
     },
     {
-        "name": "mic19_60_tetramer_lipids_94",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_1961",
         "modelSeeds": [
-            94
+            1961
         ],
         "sequences": [
             {
@@ -1847,38 +1507,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1944,9 +1584,9 @@
         ]
     },
     {
-        "name": "mic19_60_tetramer_lipids_197",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_210",
         "modelSeeds": [
-            197
+            210
         ],
         "sequences": [
             {
@@ -1955,38 +1595,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2052,9 +1672,9 @@
         ]
     },
     {
-        "name": "mic19_60_tetramer_lipids_57",
+        "name": "mic60_lbs_m_mic13_central_c_lipids_1:1_2",
         "modelSeeds": [
-            57
+            2
         ],
         "sequences": [
             {
@@ -2063,38 +1683,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "SEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "LVYDQELLGPSDKSQAALQKAGEVVPPAMYQFSQYVCQQTGLQIPQLPAPPKIYFPIRDSWNAGIMTVMSALSVAPSKAREYSKEGWEYVKARTK",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "LQAKILQCYRENTHQTLKCSALATQYMHCVNHAKQSMLEKGG",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {

@@ -1,58 +1,48 @@
 [
     {
-        "name": "micos_4_2_2_1_lipids_38",
+        "name": "micos_4_2_2_1_lipids_721",
         "modelSeeds": [
-            38
+            721
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -61,8 +51,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -71,8 +71,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -81,8 +81,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -91,8 +91,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -254,59 +254,49 @@
         ]
     },
     {
-        "name": "micos_4_2_2_1_lipids_118",
+        "name": "micos_4_2_2_1_lipids_129",
         "modelSeeds": [
-            118
+            129
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -315,8 +305,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -325,8 +325,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -335,8 +335,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -345,8 +345,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -508,59 +508,49 @@
         ]
     },
     {
-        "name": "micos_4_2_2_1_lipids_117",
+        "name": "micos_4_2_2_1_lipids_882",
         "modelSeeds": [
-            117
+            882
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -569,8 +559,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -579,8 +579,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -589,8 +589,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -599,8 +599,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -762,59 +762,49 @@
         ]
     },
     {
-        "name": "micos_4_2_2_1_lipids_198",
+        "name": "micos_4_2_2_1_lipids_1134",
         "modelSeeds": [
-            198
+            1134
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -823,8 +813,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -833,8 +833,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -843,8 +843,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -853,8 +853,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1016,59 +1016,49 @@
         ]
     },
     {
-        "name": "micos_4_2_2_1_lipids_45",
+        "name": "micos_4_2_2_1_lipids_930",
         "modelSeeds": [
-            45
+            930
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1077,8 +1067,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1087,8 +1087,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1097,8 +1097,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1107,8 +1107,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1270,59 +1270,49 @@
         ]
     },
     {
-        "name": "micos_4_2_2_1_lipids_181",
+        "name": "micos_4_2_2_1_lipids_1169",
         "modelSeeds": [
-            181
+            1169
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1331,8 +1321,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1341,8 +1341,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1351,8 +1351,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1361,8 +1361,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1524,59 +1524,49 @@
         ]
     },
     {
-        "name": "micos_4_2_2_1_lipids_101",
+        "name": "micos_4_2_2_1_lipids_704",
         "modelSeeds": [
-            101
+            704
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1585,8 +1575,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1595,8 +1595,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1605,8 +1605,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1615,8 +1615,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1778,59 +1778,49 @@
         ]
     },
     {
-        "name": "micos_4_2_2_1_lipids_188",
+        "name": "micos_4_2_2_1_lipids_528",
         "modelSeeds": [
-            188
+            528
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1839,8 +1829,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1849,8 +1849,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1859,8 +1859,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -1869,8 +1869,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2032,59 +2032,49 @@
         ]
     },
     {
-        "name": "micos_4_2_2_1_lipids_90",
+        "name": "micos_4_2_2_1_lipids_1050",
         "modelSeeds": [
-            90
+            1050
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2093,8 +2083,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2103,8 +2103,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2113,8 +2113,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2123,8 +2123,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2286,59 +2286,49 @@
         ]
     },
     {
-        "name": "micos_4_2_2_1_lipids_111",
+        "name": "micos_4_2_2_1_lipids_792",
         "modelSeeds": [
-            111
+            792
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2347,8 +2337,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2357,8 +2357,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2367,8 +2367,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2377,8 +2377,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2540,59 +2540,49 @@
         ]
     },
     {
-        "name": "micos_4_2_2_1_lipids_130",
+        "name": "micos_4_2_2_1_lipids_804",
         "modelSeeds": [
-            130
+            804
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2601,8 +2591,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2611,8 +2611,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2621,8 +2621,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2631,8 +2631,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2794,59 +2794,49 @@
         ]
     },
     {
-        "name": "micos_4_2_2_1_lipids_29",
+        "name": "micos_4_2_2_1_lipids_1261",
         "modelSeeds": [
-            29
+            1261
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2855,8 +2845,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2865,8 +2865,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2875,8 +2875,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -2885,8 +2885,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3048,59 +3048,49 @@
         ]
     },
     {
-        "name": "micos_4_2_2_1_lipids_137",
+        "name": "micos_4_2_2_1_lipids_84",
         "modelSeeds": [
-            137
+            84
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3109,8 +3099,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3119,8 +3119,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3129,8 +3129,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3139,8 +3139,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3302,59 +3302,49 @@
         ]
     },
     {
-        "name": "micos_4_2_2_1_lipids_32",
+        "name": "micos_4_2_2_1_lipids_1629",
         "modelSeeds": [
-            32
+            1629
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3363,8 +3353,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3373,8 +3373,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3383,8 +3383,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3393,8 +3393,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3556,59 +3556,49 @@
         ]
     },
     {
-        "name": "micos_4_2_2_1_lipids_21",
+        "name": "micos_4_2_2_1_lipids_858",
         "modelSeeds": [
-            21
+            858
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3617,8 +3607,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3627,8 +3627,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3637,8 +3637,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3647,8 +3647,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3810,59 +3810,49 @@
         ]
     },
     {
-        "name": "micos_4_2_2_1_lipids_189",
+        "name": "micos_4_2_2_1_lipids_1349",
         "modelSeeds": [
-            189
+            1349
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3871,8 +3861,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3881,8 +3881,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3891,8 +3891,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -3901,8 +3901,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4064,59 +4064,49 @@
         ]
     },
     {
-        "name": "micos_4_2_2_1_lipids_68",
+        "name": "micos_4_2_2_1_lipids_49",
         "modelSeeds": [
-            68
+            49
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4125,8 +4115,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4135,8 +4135,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4145,8 +4145,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4155,8 +4155,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4318,59 +4318,49 @@
         ]
     },
     {
-        "name": "micos_4_2_2_1_lipids_13",
+        "name": "micos_4_2_2_1_lipids_1961",
         "modelSeeds": [
-            13
+            1961
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4379,8 +4369,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4389,8 +4389,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4399,8 +4399,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4409,8 +4409,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4572,59 +4572,49 @@
         ]
     },
     {
-        "name": "micos_4_2_2_1_lipids_169",
+        "name": "micos_4_2_2_1_lipids_210",
         "modelSeeds": [
-            169
+            210
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4633,8 +4623,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4643,8 +4643,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4653,8 +4653,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4663,8 +4663,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4826,59 +4826,49 @@
         ]
     },
     {
-        "name": "micos_4_2_2_1_lipids_166",
+        "name": "micos_4_2_2_1_lipids_2",
         "modelSeeds": [
-            166
+            2
         ],
         "sequences": [
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIKANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDETRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEHGDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGIGTTQVQPE",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
                 "proteinChain": {
-                    "sequence": "RRIDQLNRELAEQKATEKQHITLALEKQKLEEKRAFDSAVAKALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
+                    "sequence": "KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRVQEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIEQAVQSHAVAEEEARKAHQLWLSVEALKYSMKT",
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
-                }
-            },
-            {
-                "proteinChain": {
-                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
-                    "glycans": [],
-                    "modifications": [],
-                    "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4887,8 +4877,18 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMGLGMAYSNCQHDFQAPYLLHGKYVKEQEQ",
+                    "glycans": [],
+                    "modifications": [],
+                    "count": 1,
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4897,8 +4897,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4907,8 +4907,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {
@@ -4917,8 +4917,8 @@
                     "glycans": [],
                     "modifications": [],
                     "count": 1,
-                    "maxTemplateDate": "2021-09-30",
-                    "useStructureTemplate": true
+                    "useStructureTemplate": true,
+                    "maxTemplateDate": "2021-09-30"
                 }
             },
             {

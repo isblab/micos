@@ -4,8 +4,7 @@ proteins:
   MIC13: MIC13
   MIC19: MIC19
 
-sequences: ../proteins.fasta
-af_jobs:
+af_input_jobs:
   micos_1_1_1_lipids:
   - job_set_name: "micos_1_1_1_lipids"
     modelSeeds: 20
@@ -18,7 +17,7 @@ af_jobs:
       type: proteinChain
     - name: MIC60
       type: proteinChain
-      range: [410,758]
+      range: [451,758]
     - name: CCD_PLM
       type: ligand
     - name: CCD_PLM
@@ -50,16 +49,16 @@ af_jobs:
     entities:
     - name: MIC60
       type: proteinChain
-      range: [410, 758]
+      range: [451, 758]
     - name: MIC60
       type: proteinChain
-      range: [410, 758]
+      range: [451, 758]
     - name: MIC60
       type: proteinChain
-      range: [410, 582]
+      range: [451, 582]
     - name: MIC60
       type: proteinChain
-      range: [410, 582]
+      range: [451, 582]
     - name: MIC10
       type: proteinChain
     - name: MIC10
@@ -125,16 +124,16 @@ af_jobs:
     - name: CCD_OLA
       type: ligand
       
-  mic60_dimer_link_lbs_m_mic13_mic10_dimer_more_lipids:
-  - job_set_name: "mic60_dimer_link_lbs_m_mic13_mic10_dimer_more_lipids"
+  mic60_dimer_link_lbs_m_mic13_mic10_dimer_lipids:
+  - job_set_name: "mic60_dimer_link_lbs_m_mic13_mic10_dimer_lipids"
     modelSeeds: 20
     entities:
     - name: MIC60
       type: proteinChain
-      range: [583, 758]
+      range: [599, 758]
     - name: MIC60
       type: proteinChain
-      range: [583, 758]
+      range: [599, 758]
     - name: MIC10
       type: proteinChain
     - name: MIC10

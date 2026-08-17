@@ -6,120 +6,120 @@ proteins:
 
 sequences: ../proteins.fasta
 af_input_jobs:
-  # mic10_dimer_mix_lipids:
-  # - job_set_name: "mic10_dimer_mix_lipids"
-  #   modelSeeds: [2,12,14,74,92,100,103,110,115,123,126,150,154,160,167,175,180,182,189,196]
-  #   entities:
-  #   - name: MIC10
-  #     type: proteinChain
-  #   - name: MIC10
-  #     type: proteinChain
-  #   - name: CCD_PLM
-  #     type: ligand
-  #   - name: CCD_PLM
-  #     type: ligand
-  #   - name: CCD_PLM
-  #     type: ligand
-  #   - name: CCD_PLM
-  #     type: ligand
-  #   - name: CCD_OLA
-  #     type: ligand
-  #   - name: CCD_OLA
-  #     type: ligand
-  #   - name: CCD_OLA
-  #     type: ligand
-  #   - name: CCD_MYR
-  #     type: ligand
-  #   - name: CCD_MYR
-  #     type: ligand
-  #   - name: CCD_MYR
-  #     type: ligand
-  # mic10_tetramer_lipids:
-  # - job_set_name: "mic10_tetramer_lipids"
-  #   modelSeeds: 20
-  #   entities:
-  #   - name: MIC10
-  #     type: proteinChain
-  #   - name: MIC10
-  #     type: proteinChain
-  #   - name: MIC10
-  #     type: proteinChain
-  #   - name: MIC10
-  #     type: proteinChain
-  #   - name: CCD_PLM
-  #     type: ligand
-  #   - name: CCD_PLM
-  #     type: ligand
-  #   - name: CCD_PLM
-  #     type: ligand
-  #   - name: CCD_PLM
-  #     type: ligand
-  #   - name: CCD_OLA
-  #     type: ligand
-  #   - name: CCD_OLA
-  #     type: ligand
-  #   - name: CCD_OLA
-  #     type: ligand
-  #   - name: CCD_MYR
-  #     type: ligand
-  #   - name: CCD_MYR
-  #     type: ligand
-  #   - name: CCD_MYR
-  #     type: ligand
-  #   - name: CCD_OLA
-  #     type: ligand
-  #   - name: CCD_MYR
-  #     type: ligand
-  # mic10_octamer_lipids:
-  # - job_set_name: "mic10_octamer_lipids"
-  #   modelSeeds: [11,12,20,21,26,40,64,73,80,96,104,108,117,119,123,135,138,185,191,195]
-  #   entities:
-  #   - name: MIC10
-  #     type: proteinChain
-  #   - name: MIC10
-  #     type: proteinChain
-  #   - name: MIC10
-  #     type: proteinChain
-  #   - name: MIC10
-  #     type: proteinChain
-  #   - name: MIC10
-  #     type: proteinChain
-  #   - name: MIC10
-  #     type: proteinChain
-  #   - name: MIC10
-  #     type: proteinChain
-  #   - name: MIC10
-  #     type: proteinChain
-  #   - name: CCD_PLM
-  #     type: ligand
-  #   - name: CCD_PLM
-  #     type: ligand
-  #   - name: CCD_PLM
-  #     type: ligand
-  #   - name: CCD_PLM
-  #     type: ligand
-  #   - name: CCD_OLA
-  #     type: ligand
-  #   - name: CCD_OLA
-  #     type: ligand
-  #   - name: CCD_OLA
-  #     type: ligand
-  #   - name: CCD_MYR
-  #     type: ligand
-  #   - name: CCD_MYR
-  #     type: ligand
-  #   - name: CCD_MYR
-  #     type: ligand
-  #   - name: CCD_PLM
-  #     type: ligand
-  #   - name: CCD_PLM
-  #     type: ligand
-  #   - name: CCD_PLM
-  #     type: ligand
-  #   - name: CCD_OLA
-  #     type: ligand
-  #   - name: CCD_MYR
-  #     type: ligand
+  mic10_dimer_mix_lipids:
+  - job_set_name: "mic10_dimer_mix_lipids"
+    modelSeeds: [2,12,14,74,92,100,103,110,115,123,126,150,154,160,167,175,180,182,189,196]
+    entities:
+    - name: MIC10
+      type: proteinChain
+    - name: MIC10
+      type: proteinChain
+    - name: CCD_PLM
+      type: ligand
+    - name: CCD_PLM
+      type: ligand
+    - name: CCD_PLM
+      type: ligand
+    - name: CCD_PLM
+      type: ligand
+    - name: CCD_OLA
+      type: ligand
+    - name: CCD_OLA
+      type: ligand
+    - name: CCD_OLA
+      type: ligand
+    - name: CCD_MYR
+      type: ligand
+    - name: CCD_MYR
+      type: ligand
+    - name: CCD_MYR
+      type: ligand
+  mic10_tetramer_lipids:
+  - job_set_name: "mic10_tetramer_lipids"
+    modelSeeds: 20
+    entities:
+    - name: MIC10
+      type: proteinChain
+    - name: MIC10
+      type: proteinChain
+    - name: MIC10
+      type: proteinChain
+    - name: MIC10
+      type: proteinChain
+    - name: CCD_PLM
+      type: ligand
+    - name: CCD_PLM
+      type: ligand
+    - name: CCD_PLM
+      type: ligand
+    - name: CCD_PLM
+      type: ligand
+    - name: CCD_OLA
+      type: ligand
+    - name: CCD_OLA
+      type: ligand
+    - name: CCD_OLA
+      type: ligand
+    - name: CCD_MYR
+      type: ligand
+    - name: CCD_MYR
+      type: ligand
+    - name: CCD_MYR
+      type: ligand
+    - name: CCD_OLA
+      type: ligand
+    - name: CCD_MYR
+      type: ligand
+  mic10_octamer_lipids:
+  - job_set_name: "mic10_octamer_lipids"
+    modelSeeds: [11,12,20,21,26,40,64,73,80,96,104,108,117,119,123,135,138,185,191,195]
+    entities:
+    - name: MIC10
+      type: proteinChain
+    - name: MIC10
+      type: proteinChain
+    - name: MIC10
+      type: proteinChain
+    - name: MIC10
+      type: proteinChain
+    - name: MIC10
+      type: proteinChain
+    - name: MIC10
+      type: proteinChain
+    - name: MIC10
+      type: proteinChain
+    - name: MIC10
+      type: proteinChain
+    - name: CCD_PLM
+      type: ligand
+    - name: CCD_PLM
+      type: ligand
+    - name: CCD_PLM
+      type: ligand
+    - name: CCD_PLM
+      type: ligand
+    - name: CCD_OLA
+      type: ligand
+    - name: CCD_OLA
+      type: ligand
+    - name: CCD_OLA
+      type: ligand
+    - name: CCD_MYR
+      type: ligand
+    - name: CCD_MYR
+      type: ligand
+    - name: CCD_MYR
+      type: ligand
+    - name: CCD_PLM
+      type: ligand
+    - name: CCD_PLM
+      type: ligand
+    - name: CCD_PLM
+      type: ligand
+    - name: CCD_OLA
+      type: ligand
+    - name: CCD_MYR
+      type: ligand
 
   mic19_dimer:
   - job_set_name: "mic19_dimer"
@@ -127,10 +127,10 @@ af_input_jobs:
     entities:
     - name: MIC19
       type: proteinChain
-      range: [59,168]
+      range: [59,177]
     - name: MIC19
       type: proteinChain
-      range: [59,168]
+      range: [59,177]
       
   mic60_tetramer:
   - job_set_name: "mic60_tetramer"

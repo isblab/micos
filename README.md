@@ -44,7 +44,7 @@ python examples/rank_af_predictions.py -i path/to/af3/input/json -o output/direc
 ```
 
 
-3. Crosslinks from all the paralogs (mouse, yeast) were mapped to human proteins using the scripts in `inputs/preprocessing/crosslinks_biochemical/scripts` directory. See [details](inputs/preprocessing/crosslinks_biochemical/README.md).
+3. Crosslinks from all the paralogs (mouse, yeast) were mapped to human proteins using the scripts in `inputs/preprocessing/crosslinks_biochemical/scripts` directory. See [details](inputs/preprocessing/crosslinks_biochemical/README.md). The crosslinks were further filtered for Mic60 crosslinks > 451 residues and splitted into 3:1 ratio to be used in sampling and validation using `scripts/preprocessing/xl_data_split_filter_mic60.py`.
 
 
 

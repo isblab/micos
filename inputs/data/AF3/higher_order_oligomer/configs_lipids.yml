@@ -130,10 +130,10 @@ af_input_jobs:
     entities:
     - name: MIC60
       type: proteinChain
-      range: [599, 758]
+      range: [598, 758]
     - name: MIC60
       type: proteinChain
-      range: [599, 758]
+      range: [598, 758]
     - name: MIC10
       type: proteinChain
     - name: MIC10

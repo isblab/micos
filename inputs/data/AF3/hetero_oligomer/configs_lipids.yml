@@ -36,7 +36,7 @@ af_input_jobs:
       type: ligand
   
   mic10_dimer_mic13_lipids:
-    - job_set_name: mic10_dimer_mic13_lipids
+  - job_set_name: mic10_dimer_mic13_lipids
     modelSeeds: 20
     entities:
     - name: MIC10
@@ -106,7 +106,7 @@ af_input_jobs:
       type: ligand
 
   mic10_dimer_13_tm_lipids:
-    - job_set_name: mic10_13_tm_lipids
+  - job_set_name: mic10_13_tm_lipids
     modelSeeds: 20
     entities:
     - name: MIC10
@@ -249,7 +249,7 @@ af_input_jobs:
   
   mic60_19_FL_4_2_lipids:
   - job_set_name: mic60_19_FL_4_2_lipids
-      modelSeeds: 20
+    modelSeeds: 20
     entities:
     - name: MIC60
       type: proteinChain
@@ -375,7 +375,7 @@ af_input_jobs:
     modelSeeds: [4,8,20,26,38,40,49,63,69,72,76,78,90,121,129,130,132,171,184,193]
     entities:
     - name: MIC60
-      range: [599, 758]
+      range: [598, 758]
       type: proteinChain
     - name: MIC13
       range: [24, 118]
@@ -406,13 +406,13 @@ af_input_jobs:
     modelSeeds: [4,8,20,26,38,40,49,63,69,72,76,78,90,121,129,130,132,171,184,193]
     entities:
     - name: MIC60
-      range: [599, 758]
+      range: [598, 758]
       type: proteinChain
     - name: MIC13
       range: [24, 118]
       type: proteinChain
     - name: MIC60
-      range: [599, 758]
+      range: [598, 758]
       type: proteinChain
     - name: MIC13
       range: [24, 118]
@@ -454,10 +454,10 @@ af_input_jobs:
     entities:
     - name: MIC60
       type: proteinChain
-      range: [599, 758]
+      range: [598, 758]
     - name: MIC60
       type: proteinChain
-      range: [599, 758]
+      range: [598, 758]
     - name: MIC13
       type: proteinChain
       range: [24, 118]
@@ -610,7 +610,7 @@ af_input_jobs:
       type: proteinChain
     - name: MIC60
       type: proteinChain
-      range: [599, 758]
+      range: [598, 758]
     - name: CCD_PLM
       type: ligand
     - name: CCD_PLM

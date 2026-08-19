@@ -117,7 +117,7 @@ elif runType == "prod":
 xl_BDP_PIR_human = f"{data_direc}/crosslinks/sampling_BDP_PIR_human.csv"
 xl_BDP_PIR_mouse = f"{data_direc}/crosslinks/sampling_BDP_PIR_mouse.csv"
 xl_DSS_BS3_human = f"{data_direc}/crosslinks/sampling_DSS_BS3_human.csv"
-xl_DHSO_DSSO_human = f"{data_direc}/crosslinks/sampling_DHSO_DSSO_human.csv"  # yu. bartolec, xlinkdb dsso xlinks
+xl_DHSO_DSSO_human = f"{data_direc}/crosslinks/sampling_DHSO_DSSO_human.csv"  # yu. bartolec, zhu xlinkdb dsso xlinks
 xl_DSSO_mouse = f"{data_direc}/crosslinks/sampling_DSSO_mouse.csv"
 
 # AF3 predictions and biochemical data file
@@ -171,7 +171,7 @@ fixed_particles += IMP.atom.Selection(
 fixed_particles += IMP.atom.Selection(
     hierarchy=root_hier, 
     molecule="MIC19", 
-    residue_indexes=range(186, 227)
+    residue_indexes=range(178, 222)
 ).get_selected_particles()
 # doesnot work if select residue ranges, can work with full protein
 # print(fixed_particles)
@@ -241,19 +241,19 @@ protien_selections = {'mic10_n': IMP.atom.Selection(hierarchy=root_hier, molecul
                                           residue_indexes=range(24, 119),).get_selected_particles(),
 
     'mic60_cc': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC60", copy_indexes=[0, 1, 2, 3], resolution=10, 
-                                   residue_indexes=range(410, 583),).get_selected_particles(),
+                                   residue_indexes=range(451, 598),).get_selected_particles(),
 
     'mic60_link': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC60", copy_indexes=[0, 1], resolution=10, 
-                                    residue_indexes=range(583, 627),).get_selected_particles(),
+                                    residue_indexes=range(598, 627),).get_selected_particles(),
 
     'mic60_lbs_m': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC60", copy_indexes=[0, 1], resolution=10, 
                                       residue_indexes=range(627, 759),).get_selected_particles(),
 
     'mic19_n_cc': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC19", copy_indexes=[0, 1], resolution=10, 
-                                     residue_indexes=range(1, 186),).get_selected_particles(),
+                                     residue_indexes=range(1, 178),).get_selected_particles(),
 
     'mic19_chch': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC19", copy_indexes=[0, 2], resolution=10,
-                                     residue_indexes=range(186, 228),).get_selected_particles(),
+                                     residue_indexes=range(178, 228),).get_selected_particles(),
 
     'mic19_n_sam50': IMP.atom.Selection(hierarchy=root_hier, molecule="MIC19", copy_indexes=[0, 1], resolution=10,
                                         residue_indexes=range(1, 15),).get_selected_particles()}

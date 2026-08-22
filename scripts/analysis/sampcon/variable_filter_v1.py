@@ -8,7 +8,7 @@ Choose the largest number of models (lowest multiplier)
     If you dont find a multiplier even after the narrower search in point 1, [take a random subset of the nearest multiplier that passes the KS test] OR take a single lenient cutoff on EV (less than mean) along with score multipliers on the other restraints.
 '''
 
-import os, sys
+import os
 import argparse
 import numpy as np
 import pandas as pd
@@ -17,8 +17,7 @@ from tabulate import tabulate
 from scipy.stats import ks_2samp
 
 
-# This function will take the individual dataframes and compare them with the
-# mean-multiplier*std of common dataframe and output the dataframe of the models that satisfy the filter
+# This function will take the individual dataframes and compare them with the mean-multiplier*std of common dataframe and output the dataframe of the models that satisfy the filter
 def variable_filter(std_multiplier, df, score_list):
     temp = None
     for i in score_list:
@@ -69,7 +68,7 @@ print(f'Std-multiplier list: {std_mult_dtrst}')
 # Reading the CSV files and combining them to apply a common cutoff
 columns_to_ignore = ["traj", "rmf3_file", "half", "cluster", "frame_RMF3"]
 dfA = pd.read_csv(cluster_csv_fileA, usecols=lambda column: column not in columns_to_ignore )
-dfB = pd.read_csv(cluster_csv_fileB, usecols=lambda column: column not in columns_to_ignore)
+dfB = pd.read_csv(cluster_csv_fileB, usecols=lambda column: column not in columns_to_ignore )
 print('Loaded the csv files')
 df_list = [dfA, dfB]
 common_df = pd.concat(df_list, ignore_index=True)
@@ -85,49 +84,169 @@ mult_found = False
 dfA = pd.read_csv(cluster_csv_fileA)
 dfB = pd.read_csv(cluster_csv_fileB)
 
+default_restraints = [
+    'EV_sum',
+    'XLs_sum',
+    'ILR_sum',
+    'ZAR_sum',
+    'TMR_sum',
+    'MLR_sum',
+    'MPDBR_sum',
+    'Total_Score'
+]
+
+best_multiplier = None
+best_dfA = None
+best_dfB = None
+best_total = 0
+best_ksd = None
+best_ksp = None
+
 for multiplier in std_mult_dtrst:
-    default_restraints = ['EV_sum', 'XLs_sum', 'ILR_sum', 'ZAR_sum', 'TMR_sum', 'MLR_sum', 'MPDBR_sum', 'Total_Score'] #'SLR_sum', 
-    sel_dfA = variable_filter(multiplier, dfA, default_restraints)
-    sel_dfB = variable_filter(multiplier, dfB, default_restraints)
-    # Combining the score files for checking for run representation.
-    sel_df_list = [sel_dfA, sel_dfB]
-    sel_common_df = pd.concat(sel_df_list, ignore_index=True)
-    nModelsT = len(sel_common_df.index)
-    nModelsA = len(sel_dfA.index)
-    nModelsB = len(sel_dfB.index)
-    nRunsA = sel_dfA.traj.nunique()
-    nRunsB = sel_dfB.traj.nunique()
+    sel_dfA = variable_filter(
+        multiplier, dfA, default_restraints
+    )
 
-    # Obtaining the scoresA and scoresB for sampling convergence
-    scoresA = list(sel_dfA['Total_Score'])
-    scoresB = list(sel_dfB['Total_Score'])
-    scores = list(sel_common_df['Total_Score'])
+    sel_dfB = variable_filter(
+        multiplier, dfB, default_restraints
+    )
 
-    # Check if the two score distributions are similar
+    nModelsA = len(sel_dfA)
+    nModelsB = len(sel_dfB)
+    nModelsT = nModelsA + nModelsB
+
+    # Cannot run KS test if either set is empty
+    if nModelsA == 0 or nModelsB == 0:
+        print(
+            f"{multiplier:.2f}: "
+            f"A={nModelsA}, B={nModelsB}, "
+            f"total={nModelsT} -- empty set"
+        )
+        continue
+
+    scoresA = sel_dfA['Total_Score'].values
+    scoresB = sel_dfB['Total_Score'].values
+
     ksd_pval = ks_2samp(scoresA, scoresB)
-    ksd = ksd_pval[0]
-    ksp = ksd_pval[1]
-    # out = np.append(out,[multiplier, nModelsA, nModelsB, ksd, ksp])
-    results = [multiplier, nModelsA, nModelsB, nRunsA, nRunsB, ksd, ksp]
-    out.append(results)
-    if nModelsA + nModelsB <= args.num_models:
-        if (ksp > 0.05) or ((ksp <= 0.05) and (ksd < 0.3)):
-            mult_found = True
-            break
+    ksd = ksd_pval.statistic
+    ksp = ksd_pval.pvalue
 
-out = tabulate(out,
-               headers=['DRest_Multiplier', 'nModelsA', 'nModelsB', 'nRunsA', 'nRunsB',
-                        'KS_D-value', 'KS_p-value'])
-print(out)
+    ks_pass = (
+        ksp > 0.05
+        or
+        (ksp <= 0.05 and ksd < 0.3)
+    )
 
-if mult_found == True:
-    print(f'\nOptimal filter found.\nExtracted at {multiplier}')
+    print(
+        f"{multiplier:.2f}: "
+        f"A={nModelsA}, B={nModelsB}, "
+        f"total={nModelsT}, "
+        f"KS-D={ksd:.3f}, KS-p={ksp:.4g}, "
+        f"KS={'PASS' if ks_pass else 'FAIL'}"
+    )
+
+    # Save the current passing multiplier
+    if nModelsT >= num_models and ks_pass:
+
+        best_multiplier = multiplier
+        best_dfA = sel_dfA.copy()
+        best_dfB = sel_dfB.copy()
+        best_total = nModelsT
+        best_ksd = ksd
+        best_ksp = ksp
+
+    # Since we are going from high -> low,
+    # the first failure after a passing multiplier
+    # means the previous multiplier was the most stringent passing one.
+    elif best_multiplier is not None:
+
+        print(
+            f"\nStopping search at multiplier {multiplier:.2f}. "
+            f"Most stringent passing multiplier is {best_multiplier:.2f}."
+        )
+        break
+
+
+if best_multiplier is None:
+
+    print(
+        "\nNo multiplier found that provides "
+        f"at least {num_models} models AND passes KS."
+    )
+
+else:
+
+    print("\nOptimal multiplier found.")
+    print(f"Multiplier: {best_multiplier}")
+    print(f"Available A models: {len(best_dfA)}")
+    print(f"Available B models: {len(best_dfB)}")
+    print(f"Available total: {best_total}")
+    print(f"KS-D: {best_ksd}")
+    print(f"KS-p: {best_ksp}")
+
+    # ------------------------------------------
+    # Downsample to exactly num_models
+    # ------------------------------------------
+
+    target_A = round(
+        num_models * len(best_dfA) / best_total
+    )
+
+    target_B = num_models - target_A
+
+    best_dfA = best_dfA.sample(
+        n=target_A,
+        random_state=42
+    )
+
+    best_dfB = best_dfB.sample(
+        n=target_B,
+        random_state=42
+    )
+
+    print("\nFinal selection:")
+    print(f"A: {len(best_dfA)}")
+    print(f"B: {len(best_dfB)}")
+    print(f"Total: {len(best_dfA) + len(best_dfB)}")
+
+    best_dfA.to_csv(
+        cluster_csv_fileA.replace(
+            'selected_models',
+            'good_scoring_models'
+        ),
+        index=False
+    )
+
+    best_dfB.to_csv(
+        cluster_csv_fileB.replace(
+            'selected_models',
+            'good_scoring_models'
+        ),
+        index=False
+    )
+    
     with open('var_filt_out.log', 'w') as outf:
         outf.write(out_str)
-        outf.write(out)
-        outf.write(f'\n\nOptimal filter found.\nExtracted at {multiplier}')
-    nBins = int(max(scores) - min(scores))
-    print(nBins)
+        outf.write(
+            f'\nOptimal filter found.\n'
+            f'Extracted at {best_multiplier}\n'
+            f'A models: {len(best_dfA)}\n'
+            f'B models: {len(best_dfB)}\n'
+            f'Total models: {len(best_dfA) + len(best_dfB)}\n'
+            f'KS-D: {best_ksd}\n'
+            f'KS-p: {best_ksp}\n'
+        )
+
+    # Plot score distributions
+    scoresA = best_dfA['Total_Score'].values
+    scoresB = best_dfB['Total_Score'].values
+
+    nBins = int(
+        max(scoresA.max(), scoresB.max())
+        -
+        min(scoresA.min(), scoresB.min())
+    )
+
     plt.figure()
     plt.hist(scoresA, bins=nBins, histtype='step', label='ScoresA')
     plt.hist(scoresB, bins=nBins, histtype='step', label='ScoresB')
@@ -135,9 +254,8 @@ if mult_found == True:
     plt.xlabel('Total Score')
     plt.ylabel('nModels')
     plt.legend()
-    plt.savefig(f'var_filt_out.png')
+    plt.savefig('var_filt_out.png')
     plt.show()
-    sel_dfA.to_csv(cluster_csv_fileA.replace('selected_models', 'good_scoring_models'))
-    sel_dfB.to_csv(cluster_csv_fileB.replace('selected_models', 'good_scoring_models'))
-else:
-    print('\nOptimal multiplier not found')
+
+# The old mult_found block is no longer needed because
+# best_multiplier is used above.

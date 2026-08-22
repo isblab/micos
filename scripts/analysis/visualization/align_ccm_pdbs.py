@@ -32,10 +32,10 @@ pdb_files = ['offset_corrected/offset_corrected_MIC60_tet.pdb',\
 # [{protein:{chain_id,residue range}}, {protein:{chain_id,residue range}]
 # The order of entries in the offset list must be the same as that in the pdb_files list
 
-all_proteins = [{'MIC60':{'A':[0,range(410,583)]},'MIC60':{'B':[1,range(410,583)]},'MIC60':{'C':[2,range(410,583)]},'MIC60':{'D':[3,range(410,583)]}},\
-            {'MIC60':{'A':[0,range(627,649)]},'MIC60':{'A':[0,range(683,759)]},'MIC60':{'C':[1,range(627,649)]},'MIC60':{'C':[1,range(683,759)]},'MIC19':{'B':[0,range(186,227)]},'MIC19':{'D':[2,range(186,227)]}},\
-            {'MIC60':{'A':[0,range(588,627)]}},\
-            {'MIC60':{'A':[1,range(588,627)]}},\
+all_proteins = [{'MIC60':{'A':[0,range(451,597)]},'MIC60':{'B':[1,range(451,597)]},'MIC60':{'C':[2,range(451,597)]},'MIC60':{'D':[3,range(451,597)]}},\
+            {'MIC60':{'A':[0,range(627,649)]},'MIC60':{'A':[0,range(684,759)]},'MIC60':{'C':[1,range(627,649)]},'MIC60':{'C':[1,range(684,759)]},'MIC19':{'B':[0,range(178,227)]},'MIC19':{'D':[2,range(178,227)]}},\
+            {'MIC60':{'A':[0,range(598,627)]}},\
+            {'MIC60':{'A':[1,range(598,627)]}},\
             {'MIC19':{'A':[0,range(59,175)]}},\
             {'MIC19':{'A':[1,range(59,175)]}},\
             {'MIC10':{'A':[0,range(2,13)]}},\

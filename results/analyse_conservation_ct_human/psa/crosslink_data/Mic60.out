@@ -1,0 +1,69 @@
+########################################
+# Program: needle
+# Rundate: Tue  8 Sep 2026 07:51:22
+# Commandline: needle
+#    -auto
+#    -stdout
+#    -asequence emboss_needle-I20260908-075119-0874-98740234-p2m.asequence
+#    -bsequence emboss_needle-I20260908-075119-0874-98740234-p2m.bsequence
+#    -datafile EBLOSUM62
+#    -gapopen 10.0
+#    -gapextend 0.5
+#    -endopen 10.0
+#    -endextend 0.5
+#    -aformat3 pair
+#    -sprotein1
+#    -sprotein2
+# Align_format: pair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: EMBOSS_001
+# 2: EMBOSS_001
+# Matrix: EBLOSUM62
+# Gap_penalty: 10.0
+# Extend_penalty: 0.5
+#
+# Length: 308
+# Identity:     293/308 (95.1%)
+# Similarity:   300/308 (97.4%)
+# Gaps:           0/308 ( 0.0%)
+# Score: 1468.0
+# 
+#
+#=======================================
+
+EMBOSS_001         1 KALEHHRSEIQAEQDRKVEEVRDAMENEMRTQLRRQAAAHTDHLRDVLKV     50
+                     |||||||||||||||||:||||||||||||||||||||||||||||||:|
+EMBOSS_001         1 KALEHHRSEIQAEQDRKIEEVRDAMENEMRTQLRRQAAAHTDHLRDVLRV     50
+
+EMBOSS_001        51 QEQELKYEFEQGLSEKLSEQELEFRRRSQEQMDSFTLDINTAYARLRGIE    100
+                     ||||||.||||.||||||||||:|||.||||:|:||||||||||||||||
+EMBOSS_001        51 QEQELKSEFEQNLSEKLSEQELQFRRLSQEQVDNFTLDINTAYARLRGIE    100
+
+EMBOSS_001       101 QAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAEMPTIPLGSAVEAIR    150
+                     ||||||||||||||||||||||||||||||||||||.||||||||||||:
+EMBOSS_001       101 QAVQSHAVAEEEARKAHQLWLSVEALKYSMKTSSAETPTIPLGSAVEAIK    150
+
+EMBOSS_001       151 VNCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDE    200
+                     .|||||||||||||||||||||||||||||||||||||||||||||||||
+EMBOSS_001       151 ANCSDNEFTQALTAAIPPESLTRGVYSEETLRARFYAVQKLARRVAMIDE    200
+
+EMBOSS_001       201 TRNSLYQYFLSYLQSLLLFPPKQLKPPAELYPEDINTFKLLSYASYCIEH    250
+                     |||||||||||||||||||||:|||||.||.|||||||||||||||||||
+EMBOSS_001       201 TRNSLYQYFLSYLQSLLLFPPQQLKPPPELCPEDINTFKLLSYASYCIEH    250
+
+EMBOSS_001       251 GDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGI    300
+                     ||||||||||||||||||||||||||||||||||||||||||||||||||
+EMBOSS_001       251 GDLELAAKFVNQLKGESRRVAQDWLKEARMTLETKQIVEILTAYASAVGI    300
+
+EMBOSS_001       301 GTTQVQQE    308
+                     ||||||.|
+EMBOSS_001       301 GTTQVQPE    308
+
+
+#---------------------------------------
+#---------------------------------------

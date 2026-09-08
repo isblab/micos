@@ -1,0 +1,49 @@
+########################################
+# Program: needle
+# Rundate: Tue  8 Sep 2026 08:00:56
+# Commandline: needle
+#    -auto
+#    -stdout
+#    -asequence emboss_needle-I20260908-080052-0507-69002401-p1m.asequence
+#    -bsequence emboss_needle-I20260908-080052-0507-69002401-p1m.bsequence
+#    -datafile EBLOSUM62
+#    -gapopen 10.0
+#    -gapextend 0.5
+#    -endopen 10.0
+#    -endextend 0.5
+#    -aformat3 pair
+#    -sprotein1
+#    -sprotein2
+# Align_format: pair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: EMBOSS_001
+# 2: EMBOSS_001
+# Matrix: EBLOSUM62
+# Gap_penalty: 10.0
+# Extend_penalty: 0.5
+#
+# Length: 78
+# Identity:      72/78 (92.3%)
+# Similarity:    75/78 (96.2%)
+# Gaps:           2/78 ( 2.6%)
+# Score: 400.0
+# 
+#
+#=======================================
+
+EMBOSS_001         1 MSESELGRKWDRCMADTVVKLGTGFGLGIVFSLTFFKRRMWPLAFGSGVG     50
+                     |||||||||||||:||.|||:|||||||||||||||||||||||||||:|
+EMBOSS_001         1 MSESELGRKWDRCLADAVVKIGTGFGLGIVFSLTFFKRRMWPLAFGSGMG     50
+
+EMBOSS_001        51 LGMAYSNCQHDFQAPYLLHGKYVKEQ--     76
+                     ||||||||||||||||||||||||||  
+EMBOSS_001        51 LGMAYSNCQHDFQAPYLLHGKYVKEQEQ     78
+
+
+#---------------------------------------
+#---------------------------------------

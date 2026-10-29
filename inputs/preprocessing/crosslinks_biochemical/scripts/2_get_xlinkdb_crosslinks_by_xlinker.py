@@ -14,6 +14,16 @@ for data in sorted(glob.glob('../crosslinks/xlinkdb/xlinkdb_datasets/*.txt')):
     count += 1
     df1 = pd.read_table(data)
     df2 = df1[(df1['uniprotA'].str.startswith('MIC')) & (df1['uniprotB'].str.startswith('MIC')) & (~df1['uniprotA'].str.contains('MICA'))].copy() #it has all the "MIC" containing rows
+    df2 = df2[
+        (
+            (df2['uniprotA'].str.startswith('MIC60')) |
+            (df2['modposA'] >= 451)
+        ) &
+        (
+            (df2['uniprotB'].str.startswith('MIC60')) |
+            (df2['modposB'] >= 451)
+        )
+    ].copy()
     cols_ = df2.filter(['uniprotA', 'modposA','uniprotB','modposB'])
     print(data, len(df2)) # printing the number of rosslinks from each datasets
 
@@ -25,6 +35,7 @@ for data in sorted(glob.glob('../crosslinks/xlinkdb/xlinkdb_datasets/*.txt')):
 
     elif data.startswith("../crosslinks/xlinkdb/xlinkdb_datasets/Liu") or data.startswith("../crosslinks/xlinkdb/xlinkdb_datasets/Mango") or data.startswith("../crosslinks/xlinkdb/xlinkdb_datasets/Yeast"):
         DSSO_df = pd.concat([DSSO_df,cols_])
+    print(len(BDP_df), len(PIR_df), len(DSSO_df))
 
 PIR_df = PIR_df.to_csv('../mapping_to_homologs/inputs/PIR.csv', index = False)
 BDP_df = BDP_df.to_csv('../mapping_to_homologs/inputs/BDP.csv', index = False)

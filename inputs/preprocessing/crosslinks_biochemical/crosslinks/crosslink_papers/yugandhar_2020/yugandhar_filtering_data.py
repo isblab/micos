@@ -2,7 +2,7 @@ import csv
 
 lines = []
 
-with open('yugandhar_supp_table4.csv', 'r') as readFile: #save th einput file as csv otherwise it will give index error
+with open('yugandhar_supp_table4_sheet.csv', 'r') as readFile: #save th einput file as csv otherwise it will give index error
 
     reader = csv.reader(readFile)
     for row in reader:
@@ -24,6 +24,11 @@ with open('yugandhar_supp_table4.csv', 'r') as readFile: #save th einput file as
             content[1]=i
 
             content[3]=j
+            if content[0] == 'MIC60' and int(content[1]) < 451:
+                continue
+
+            if content[2] == 'MIC60' and int(content[3]) < 451:
+                continue
 
             lines.append(content)
 

@@ -6,6 +6,16 @@ for media in medias:
     df1 = pd.read_csv(f'bartolec_xlinks_{media}.csv', index_col = False)
     print(df1)
     micos_only = df1[(df1['Protein.Descriptions.A'].str.startswith('MIC')) & (df1['Protein.Descriptions.B'].str.startswith('MIC'))].copy() # taking only the micos proteins
+    micos_only = micos_only[
+        (
+            (micos_only['Protein.Descriptions.A'].str.startswith('MIC60')) |
+            (micos_only['Leading.Protein.Position.A'] >= 451)
+        ) &
+        (
+            (micos_only['Protein.Descriptions.B'].str.startswith('MIC60')) |
+            (micos_only['Leading.Protein.Position.B'] >= 451)
+        )
+    ].copy()
     out_df = pd.DataFrame(columns = ['Protein1','Residue1', 'Protein2','Residue2']) #output DataFrame
 
     for row in range(len(micos_only)):

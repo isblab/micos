@@ -7,7 +7,7 @@ for ((i=0; i<${#input_files[@]}; i++))
 do
     parameter="${parameters[$i]}"
 
-    python ../github/scripts/analysis/plot_xlviol/xl_distance_hist_plotter.py \
+    python ~/projects/micos/github/scripts/analysis/plot_xlviol/xl_distance_hist_plotter.py \
         "xl_viol/sampling/xl_violation_sampling_${input_files[$i]}" \
         "${input_files[$i]}" \
         "${parameter}"
@@ -25,7 +25,7 @@ for ((i=0; i<${#input_files[@]}; i++))
 do
         parameter="${parameters[$i]}"
 
-    python ../github/scripts/analysis/plot_xlviol/xl_distance_hist_plotter.py \
+    python ~/projects/micos/github/scripts/analysis/plot_xlviol/xl_distance_hist_plotter.py \
         "xl_viol/evicalc/xl_violation_evicalc_${input_files[$i]}" \
         "${input_files[$i]}" \
         "${parameter}"

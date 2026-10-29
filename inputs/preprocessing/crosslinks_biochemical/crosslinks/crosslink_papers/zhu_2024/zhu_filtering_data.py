@@ -39,9 +39,9 @@ nonmicos_xlinks.reset_index(inplace=True)
 ## Remove all mic60 crosslinks in N and TM domains (residues less than 410)
 to_drop = []
 for i in micos_xlinks.index:
-    if micos_xlinks.iloc[i, 1] == 'IMMT' and (int(micos_xlinks.iloc[i, 2]) < 410):
+    if micos_xlinks.iloc[i, 1] == 'IMMT' and (int(micos_xlinks.iloc[i, 2]) < 451):
         to_drop.append(i)
-    if micos_xlinks.iloc[i, 3] == 'IMMT'and (int(micos_xlinks.iloc[i, 4]) < 410):
+    if micos_xlinks.iloc[i, 3] == 'IMMT'and (int(micos_xlinks.iloc[i, 4]) < 451):
         to_drop.append(i)
 
     ## Rename proteins

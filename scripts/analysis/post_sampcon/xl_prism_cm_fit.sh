@@ -10,4 +10,4 @@
 
 ~/imp-clean/build/setup_environment.sh python ~/prism/src/main.py  --input sampcon/cluster.0.prism.npz --input_type npz --output prism/ --voxel_size 4 --return_spread --classes 3 --cores 8 --models 1.0 --n_breaks 50
 
-~/imp-clean/build/setup_environment.sh python ~/prism/src/color_precision.py --resolution 1 --annotations_file output/annotations_cl2.txt --input sampcon/cluster.0/cluster_center_model.rmf3 --output output/micos_patch_colored_cluster_center_model.rmf3
+~/imp-clean/build/setup_environment.sh python ~/prism/src/color_precision.py --resolution 1 --annotations_file prism/annotations_cl3.txt --input sampcon/cluster.0/cluster_center_model.rmf3 --output prism/micos_patch_colored_cluster_center_model.rmf3

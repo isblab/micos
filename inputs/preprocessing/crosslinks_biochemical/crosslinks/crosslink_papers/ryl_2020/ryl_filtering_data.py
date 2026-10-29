@@ -2,7 +2,7 @@ import csv
 import pandas as pd
 
 lines = []
-with open('Ryl_supp_S2B.csv', 'r') as readFile: #save th einput file as csv otherwise it will give index error
+with open('ryl_supp_S2B_sheet.csv', 'r') as readFile: #save th einput file as csv otherwise it will give index error
 
     reader = csv.reader(readFile)
     for row in reader:
@@ -23,6 +23,11 @@ with open('Ryl_supp_S2B.csv', 'r') as readFile: #save th einput file as csv othe
                                 content[j] = "MIC10"
                             if "MIC26" in content[j]:
                                 content[j] = "MIC26"
+                            if content[0] == "MIC60" and int(content[1]) < 451:
+                                continue
+
+                            if content[2] == "MIC60" and int(content[3]) < 451:
+                                continue
                         lines.append(content)
 
             except:

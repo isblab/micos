@@ -117,6 +117,7 @@ For the simulations, the results directory contains:
 - `xl_violations` : Directory containing the logs for crosslink violations.
 - `ccm_pdb_aligned` : Directory containing input structures aligned to the cluster center bead model for visualization.
 - `mutations`: Directory containing the ClinVar mutations and AlphaMissense annotations for pathogenicity.
+- `analyse_conservation_ct_human`: Directory containing the conservation analysis.
 
 Additional data is uploaded in Zenodo (the set of major cluster models corresponding to the main modeling run presented in the paper).
  

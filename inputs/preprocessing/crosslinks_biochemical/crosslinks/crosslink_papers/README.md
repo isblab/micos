@@ -41,7 +41,6 @@ Run the script:
 ```
 zhu_2024/zhu_filtering_data.py
 ```
-These crosslinks were used only for validation. 
 
 ##### Studies on yeast (not used)
 `linden_2020` study was done in yeast. These crosslink residues were aligned to gap in MSA in human species.  Therefore they were not considered further.
